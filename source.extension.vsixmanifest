@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="React.ac7a1cb7-d232-4201-8d32-9f8b655ccd0c" Version="1.0.0" Language="en-US" Publisher="Konstantin Tarkus" />
+    <DisplayName>React Starter Kit</DisplayName>
+    <Description xml:space="preserve">Web application front-end starter kit built with Facebook React, jQuery and Bootstrap. It contains Node.js-based dev tools all pre-configured: Webpack, Gulp etc.</Description>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+  </Dependencies>
+</PackageManifest>
