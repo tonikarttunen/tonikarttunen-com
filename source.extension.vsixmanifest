@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="React.ac7a1cb7-d232-4201-8d32-9f8b655ccd0c" Version="1.0.0" Language="en-US" Publisher="Konstantin Tarkus" />
+    <Identity Id="React.ac7a1cb7-d232-4201-8d32-9f8b655ccd0c" Version="0.1.0" Language="en-US" Publisher="Konstantin Tarkus" />
     <DisplayName>React Starter Kit</DisplayName>
-    <Description xml:space="preserve">Web application front-end starter kit built with Facebook React, jQuery, and Bootstrap. It contains Node.js-based dev tools all pre-configured: Webpack, Gulp etc.</Description>
+    <Description xml:space="preserve">Web application front-end starter kit built with Facebook React, jQuery, Bootstrap. It is a cross-platform project template powered by Node.js-based development tools (Gulp, Webpack, Karma, Protractor).</Description>
     <MoreInfo>https://github.com/kriasoft/React-Seed</MoreInfo>
     <License>LICENSE.txt</License>
     <Icon>icon.ico</Icon>
     <PreviewImage>preview.png</PreviewImage>
-    <Tags>Facebook React, React, React.js, ReactJS, Single Page Application, SPA, Webpack, Gulp, jQuery, Bootstrap</Tags>
+    <Tags>Facebook React, React, React.js, ReactJS, Single Page Application, SPA, Webpack, Gulp, Gulp.js, Grunt, Grunt.js, jQuery, Bootstrap</Tags>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.VWDExpress" Version="[11.0,]" />
@@ -17,8 +17,8 @@
   <Dependencies>
   </Dependencies>
   <Assets>
-    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\CSharp\Web\React.zip" />
-    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\JavaScript\React.zip" />
-    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\TypeScript\React.zip" />
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplatesCS" d:TargetPath="ProjectTemplatesCS\CSharp\Web\React.zip" />
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplatesJS" d:TargetPath="ProjectTemplatesJS\JavaScript\React.zip" />
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplatesTS" d:TargetPath="ProjectTemplatesTS\TypeScript\React.zip" />
   </Assets>
 </PackageManifest>

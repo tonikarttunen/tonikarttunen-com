@@ -34,7 +34,7 @@
     <ProjectGuid>{609D7AF6-7733-4592-9231-09953724964D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Template</RootNamespace>
-    <AssemblyName>React Starter Kit v1.0.0</AssemblyName>
+    <AssemblyName>React Starter Kit v0.1.0</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
@@ -95,13 +95,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\webpack.config.js" />
-    <Content Include="ProjectTemplates\CSharp\Web\React.zip">
+    <Content Include="ProjectTemplatesCS\CSharp\Web\React.zip">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\JavaScript\React.zip">
+    <Content Include="ProjectTemplatesJS\JavaScript\React.zip">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\TypeScript\React.zip">
+    <Content Include="ProjectTemplatesTS\TypeScript\React.zip">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="README.txt" />
@@ -149,20 +149,20 @@
   </Target>
   -->
   <Target Name="RemoveZipFiles">
-    <Delete Files="$(ProjectDir)ProjectTemplates\CSharp\Web\React.zip" />
-    <Delete Files="$(ProjectDir)ProjectTemplates\JavaScript\React.zip" />
-    <Delete Files="$(ProjectDir)ProjectTemplates\TypeScript\React.zip" />
+    <Delete Files="$(ProjectDir)ProjectTemplatesCS\CSharp\Web\React.zip" />
+    <Delete Files="$(ProjectDir)ProjectTemplatesJS\JavaScript\React.zip" />
+    <Delete Files="$(ProjectDir)ProjectTemplatesTS\TypeScript\React.zip" />
   </Target>
   <Target Name="BeforeBuild" DependsOnTargets="RemoveZipFiles">
     <ItemGroup>
       <FilesToZip Include="$(ProjectDir)config\**\*;$(ProjectDir)src\**\*;$(ProjectDir)*.*" Exclude="$(ProjectDir).gitattributes;$(ProjectDir).gitignore;$(ProjectDir).travis.yml;$(ProjectDir)LICENSE.txt;$(ProjectDir)README.md;$(ProjectDir)*.vsixmanifest;$(ProjectDir)*.sln;$(ProjectDir)*.suo;$(ProjectDir)Template.csproj;$(ProjectDir)*.user" />
     </ItemGroup>
-    <MSBuild.ExtensionPack.Compression.Zip TaskAction="Create" CompressFiles="@(FilesToZip)" RemoveRoot="$(ProjectDir)" ZipFileName="$(ProjectDir)ProjectTemplates\TypeScript\React.zip" />
+    <MSBuild.ExtensionPack.Compression.Zip TaskAction="Create" CompressFiles="@(FilesToZip)" RemoveRoot="$(ProjectDir)" ZipFileName="$(ProjectDir)ProjectTemplatesTS\TypeScript\React.zip" />
     <MSBuild.ExtensionPack.FileSystem.File TaskAction="Replace" TextEncoding="UTF-8" RegexPattern="ProjectType&gt;(.*?)&lt;" Replacement="ProjectType&gt;JavaScript&lt;" Files="$(ProjectDir)Project.vstemplate" />
-    <MSBuild.ExtensionPack.Compression.Zip TaskAction="Create" CompressFiles="@(FilesToZip)" RemoveRoot="$(ProjectDir)" ZipFileName="$(ProjectDir)ProjectTemplates\JavaScript\React.zip" />
+    <MSBuild.ExtensionPack.Compression.Zip TaskAction="Create" CompressFiles="@(FilesToZip)" RemoveRoot="$(ProjectDir)" ZipFileName="$(ProjectDir)ProjectTemplatesJS\JavaScript\React.zip" />
     <MSBuild.ExtensionPack.FileSystem.File TaskAction="Replace" TextEncoding="UTF-8" RegexPattern="ProjectType&gt;(.*?)&lt;" Replacement="ProjectType&gt;CSharp&lt;" Files="$(ProjectDir)Project.vstemplate" />
     <MSBuild.ExtensionPack.FileSystem.File TaskAction="Replace" TextEncoding="UTF-8" RegexPattern="ProjectSubType&gt;(.*?)&lt;" Replacement="ProjectSubType&gt;Web&lt;" Files="$(ProjectDir)Project.vstemplate" />
-    <MSBuild.ExtensionPack.Compression.Zip TaskAction="Create" CompressFiles="@(FilesToZip)" RemoveRoot="$(ProjectDir)" ZipFileName="$(ProjectDir)ProjectTemplates\CSharp\Web\React.zip" />
+    <MSBuild.ExtensionPack.Compression.Zip TaskAction="Create" CompressFiles="@(FilesToZip)" RemoveRoot="$(ProjectDir)" ZipFileName="$(ProjectDir)ProjectTemplatesCS\CSharp\Web\React.zip" />
     <MSBuild.ExtensionPack.FileSystem.File TaskAction="Replace" TextEncoding="UTF-8" RegexPattern="ProjectType&gt;(.*?)&lt;" Replacement="ProjectType&gt;TypeScript&lt;" Files="$(ProjectDir)Project.vstemplate" />
     <MSBuild.ExtensionPack.FileSystem.File TaskAction="Replace" TextEncoding="UTF-8" RegexPattern="ProjectSubType&gt;(.*?)&lt;" Replacement="ProjectSubType&gt;&lt;" Files="$(ProjectDir)Project.vstemplate" />
   </Target>

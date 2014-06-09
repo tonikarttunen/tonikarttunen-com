@@ -27,4 +27,6 @@ bld/
 [Oo]bj/
 [Pp]ackages/
 ItemTemplates/
-ProjectTemplates/
+ProjectTemplatesCS/
+ProjectTemplatesJS/
+ProjectTemplatesTS/
