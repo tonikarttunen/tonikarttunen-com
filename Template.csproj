@@ -34,7 +34,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Template</RootNamespace>
-    <AssemblyName>Template</AssemblyName>
+    <AssemblyName>React Starter Kit v1.0.0</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
@@ -110,6 +110,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Project.csproj" />
+    <Content Include="Project.vstemplate" />
     <Content Include="src\404.html" />
     <Content Include="src\assets\apple-touch-icon-precomposed.png" />
     <Content Include="src\assets\browserconfig.xml" />
