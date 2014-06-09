@@ -24,12 +24,33 @@
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
-    <Content Include="index.html" />
-    <Content Include="web.config" />
+    <Content Include="config\webpack.config.js" />
+    <Content Include="src\assets\apple-touch-icon-precomposed.png" />
+    <Content Include="src\assets\browserconfig.xml" />
+    <Content Include="src\assets\crossdomain.xml" />
+    <Content Include="src\assets\favicon.ico" />
+    <Content Include="src\assets\humans.txt" />
+    <Content Include="src\assets\robots.txt" />
+    <Content Include="src\assets\tile-wide.png" />
+    <Content Include="src\assets\tile.png" />
+    <Content Include="src\images\logo-small.png" />
+    <Content Include="src\images\logo-small@2x.png" />
+    <Content Include="src\styles\base.less" />
+    <Content Include="src\styles\navbar.less" />
+    <Content Include="src\styles\variables.less" />
+    <Content Include="src\404.html" />
+    <Content Include="src\app.jsx" />
+    <Content Include="src\app.less" />
+    <Content Include="src\index.html" />
+    <Content Include=".editorconfig" />
+    <Content Include=".jshintrc" />
+    <Content Include="bower.json" />
+    <Content Include="gulpfile.js" />
+    <Content Include="package.json" />
+    <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
+    <Folder Include="test\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

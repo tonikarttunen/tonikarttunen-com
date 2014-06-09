@@ -1,24 +1,55 @@
-<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>React Starter Kit</Name>
     <Description>Web application front-end starter kit built with Facebook React, jQuery, and Bootstrap. It contains Node.js-based dev tools all pre-configured: Webpack, Gulp etc.</Description>
+    <Icon>icon.ico</Icon>
+    <PreviewImage>preview.png</PreviewImage>
     <ProjectType>TypeScript</ProjectType>
     <ProjectSubType></ProjectSubType>
-    <SortOrder>1000</SortOrder>
+    <SortOrder>100</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>Web</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-    <Icon>icon.ico</Icon>
-    <PreviewImage>preview.png</PreviewImage>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="Project.csproj" File="Project.csproj" ReplaceParameters="true">
-      <ProjectItem ReplaceParameters="true" TargetFileName="app.css">app.css</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="index.html">index.html</ProjectItem>
-      <ProjectItem ReplaceParameters="false" TargetFileName="app.ts" OpenInEditor="true">app.ts</ProjectItem>
-      <ProjectItem ReplaceParameters="false" TargetFileName="web.config">web.config</ProjectItem>
+      <Folder Name="config" TargetFolderName="config">
+        <ProjectItem TargetFileName="webpack.config.js">webpack.config.js</ProjectItem>
+      </Folder>
+      <Folder Name="src" TargetFolderName="src">
+        <Folder Name="assets" TargetFolderName="assets">
+          <ProjectItem TargetFileName="apple-touch-icon-precomposed.png">apple-touch-icon-precomposed.png</ProjectItem>
+          <ProjectItem TargetFileName="browserconfig.xml">browserconfig.xml</ProjectItem>
+          <ProjectItem TargetFileName="crossdomain.xml">crossdomain.xml</ProjectItem>
+          <ProjectItem TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+          <ProjectItem TargetFileName="humans.txt">humans.txt</ProjectItem>
+          <ProjectItem TargetFileName="robots.txt">robots.txt</ProjectItem>
+          <ProjectItem TargetFileName="tile-wide.png">tile-wide.png</ProjectItem>
+          <ProjectItem TargetFileName="tile.png">tile.png</ProjectItem>
+        </Folder>
+        <Folder Name="images" TargetFolderName="images">
+          <ProjectItem TargetFileName="logo-small.png">logo-small.png</ProjectItem>
+          <ProjectItem TargetFileName="logo-small@2x.png">logo-small@2x.png</ProjectItem>
+        </Folder>
+        <Folder Name="styles" TargetFolderName="styles">
+          <ProjectItem TargetFileName="base.less">base.less</ProjectItem>
+          <ProjectItem TargetFileName="navbar.less">navbar.less</ProjectItem>
+          <ProjectItem TargetFileName="variables.less">variables.less</ProjectItem>
+        </Folder>
+        <ProjectItem TargetFileName="404.html">404.html</ProjectItem>
+        <ProjectItem TargetFileName="app.jsx" OpenInEditor="true" OpenOrder="10">app.jsx</ProjectItem>
+        <ProjectItem TargetFileName="app.less">app.less</ProjectItem>
+        <ProjectItem TargetFileName="index.html" OpenInEditor="true" OpenOrder="20">index.html</ProjectItem>
+      </Folder>
+      <ProjectItem TargetFileName=".editorconfig">.editorconfig</ProjectItem>
+      <ProjectItem TargetFileName=".jshintrc">.jshintrc</ProjectItem>
+      <ProjectItem TargetFileName="bower.json">bower.json</ProjectItem>
+      <ProjectItem TargetFileName="gulpfile.js" OpenInEditor="true" OpenOrder="30">gulpfile.js</ProjectItem>
+      <ProjectItem TargetFileName="package.json">package.json</ProjectItem>
+      <ProjectItem TargetFileName="README.txt" OpenInEditor="true" OpenOrder="1">README.txt</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>
