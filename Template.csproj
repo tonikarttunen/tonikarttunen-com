@@ -4,6 +4,7 @@
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ExtensionTasksPath Condition="'$(ExtensionTasksPath)' == ''">$(SolutionDir)packages\MSBuild.Extension.Pack.1.4.0\tools\net40\</ExtensionTasksPath>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>12.0</OldToolsVersion>
@@ -32,7 +33,6 @@
     <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{609D7AF6-7733-4592-9231-09953724964D}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Template</RootNamespace>
     <AssemblyName>React Starter Kit v1.0.0</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
@@ -47,7 +47,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -55,7 +55,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -125,11 +125,9 @@
     <Content Include="src\images\logo-small.png" />
     <Content Include="src\index.html" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(ExtensionTasksPath)MSBuild.ExtensionPack.tasks" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -137,4 +135,15 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="RemoveZipFiles">
+    <Delete Files="$(TargetDir)React.zip" />
+  </Target>
+  <Target Name="BeforeBuild" DependsOnTargets="RemoveZipFiles">
+    <ItemGroup>
+      <FilesToZip
+        Include="$(ProjectDir)config\**\*;$(ProjectDir)src\**\*;$(ProjectDir)*.*"
+        Exclude="$(ProjectDir).gitattributes;$(ProjectDir).gitignore;$(ProjectDir).travis.yml;$(ProjectDir)LICENSE.txt;$(ProjectDir)preview.png;$(ProjectDir)README.md;$(ProjectDir)*.vsixmanifest;$(ProjectDir)*.sln;$(ProjectDir)*.suo;$(ProjectDir)Template.csproj;$(ProjectDir)*.user" />
+    </ItemGroup>
+    <MSBuild.ExtensionPack.Compression.Zip TaskAction="Create" CompressFiles="@(FilesToZip)" RemoveRoot="$(ProjectDir)" ZipFileName="$(TargetDir)React.zip" />
+  </Target>
 </Project>
