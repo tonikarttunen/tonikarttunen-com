@@ -98,7 +98,18 @@
     <Content Include=".gitignore" />
     <Content Include="config\webpack.config.js" />
     <Content Include="gulpfile.js" />
-    <Content Include="LICENSE.txt" />
+    <Content Include="icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="LICENSE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="preview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="src\404.html" />
     <Content Include="src\assets\apple-touch-icon-precomposed.png" />
     <Content Include="src\assets\browserconfig.xml" />
