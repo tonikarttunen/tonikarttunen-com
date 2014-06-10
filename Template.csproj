@@ -34,7 +34,7 @@
     <ProjectGuid>{609D7AF6-7733-4592-9231-09953724964D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Template</RootNamespace>
-    <AssemblyName>React Starter Kit v0.1.0</AssemblyName>
+    <AssemblyName>React Starter Kit v0.1.1</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
