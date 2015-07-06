@@ -15,7 +15,9 @@
     "jade": "1.10.0",
     "lodash": "3.9.3",
     "normalize.css": "3.0.3",
-    "react": "0.13.3",
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.23.7",
+    "react-router": "^0.13.3",
     "source-map-support": "0.3.1",
     "superagent": "1.2.0"
   },
