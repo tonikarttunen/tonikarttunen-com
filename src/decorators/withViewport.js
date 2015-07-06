@@ -1,6 +1,6 @@
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import React, { Component } from 'react/addons'; // eslint-disable-line no-unused-vars
 import EventEmitter from 'eventemitter3';
 import { canUseDOM } from '../../node_modules/react/lib/ExecutionEnvironment';
 

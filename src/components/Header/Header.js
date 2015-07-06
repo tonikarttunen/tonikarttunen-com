@@ -1,6 +1,6 @@
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
-import React from 'react';
+import React from 'react/addons';
 import styles from './Header.less';
 import withStyles from '../../decorators/withStyles';
 import Link from '../../utils/Link';

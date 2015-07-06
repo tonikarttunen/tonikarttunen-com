@@ -1,6 +1,6 @@
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
-import React, { PropTypes } from 'react'; // eslint-disable-line no-unused-vars
+import React, { PropTypes } from 'react/addons'; // eslint-disable-line no-unused-vars
 import invariant from '../../node_modules/react/lib/invariant';
 import { canUseDOM } from '../../node_modules/react/lib/ExecutionEnvironment';
 

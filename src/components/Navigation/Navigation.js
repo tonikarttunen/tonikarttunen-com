@@ -1,6 +1,6 @@
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react/addons';
 import classNames from 'classnames';
 import styles from './Navigation.less';
 import withStyles from '../../decorators/withStyles';

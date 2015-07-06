@@ -1,7 +1,7 @@
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
 import 'babel/polyfill';
-import React from 'react';
+import React from 'react/addons';
 import FastClick from 'fastclick';
 import App from './components/App';
 import Dispatcher from './core/Dispatcher';
