@@ -1,6 +1,6 @@
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react/addons';
 import styles from './Footer.less';
 import withViewport from '../../decorators/withViewport';
 import withStyles from '../../decorators/withStyles';

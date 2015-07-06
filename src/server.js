@@ -5,7 +5,7 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 import express from 'express';
-import React from 'react';
+import React from 'react/addons';
 import './core/Dispatcher';
 import './stores/AppStore';
 import db from './core/Database';
