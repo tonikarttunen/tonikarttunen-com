@@ -26,6 +26,7 @@ class ContentPage {
             this.props.path === '/' ? null : <h1>{this.props.title}</h1>
           }
           <div dangerouslySetInnerHTML={{__html: this.props.content || ''}} />
+          <span className="icon-500px"></span> 500px
         </div>
       </div>
     );

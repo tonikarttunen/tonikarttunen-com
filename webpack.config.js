@@ -88,19 +88,19 @@ const config = {
         loader: 'url-loader?limit=10000&mimetype=image/png'
       },
       {
-        test: /\.woff$/,
+        test: /\.woff/,
         loader: "url-loader?limit=10000&mimetype=application/font-woff"
       },
       {
-        test: /\.woff2$/,
+        test: /\.woff2/,
         loader: "url-loader?limit=10000&mimetype=application/font-woff"
       },
       { 
-        test: /\.ttf$/,
+        test: /\.ttf/,
         loader: "file-loader"
       },
       { 
-        test: /\.eot$/,
+        test: /\.eot/,
         loader: "file-loader"
       },
       {
