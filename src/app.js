@@ -65,6 +65,7 @@ Promise.all([
     } else {
       window.attachEvent('onload', resolve);
     }
-  }).then(/* () => FastClick.attach(document.body)*/ )// ,
+  }).then(() => React.initializeTouchEvents()) // Configure React's event system to handle touch events
+  /* () => FastClick.attach(document.body) */ // ,
   // new Promise((resolve) => AppActions.loadPage(path, resolve))
 ]).then(run);
