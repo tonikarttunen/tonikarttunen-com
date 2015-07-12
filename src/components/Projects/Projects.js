@@ -42,6 +42,15 @@ export default class Projects {
           </div>
 
           <h2>Interaction Design and Evaluation Project</h2>
+          <div className="youtube">
+            <iframe
+              width="1280"
+              height="720"
+              src="https://www.youtube.com/embed/xoz7yhGl3p8?rel=0"
+              frameBorder="0"
+              allowFullScreen>
+            </iframe>
+          </div>
           <div>
             <CollapsibleContent>
               <div>
