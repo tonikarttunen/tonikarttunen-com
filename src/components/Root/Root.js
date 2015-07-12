@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react/addons';
 import { Router, Route } from 'react-router';
 import MainLayout from '../../components/MainLayout';
-import Home from '../../components/Home';
 import NotFound from '../../components/NotFound';
 import About from '../../components/About';
 import Projects from '../../components/Projects';

@@ -17,7 +17,7 @@ export default class MainLayout {
         <div className="MainLayout">
           <header>
             <nav className="navbar navbar-default navbar-fixed-top">
-              <div className="container">                                
+              <div className="container">
                 <div className="navbar-header">
                   <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse-1">
                     <span className="sr-only">Toggle navigation</span>
