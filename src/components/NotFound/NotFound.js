@@ -2,12 +2,15 @@
 
 import React from 'react/addons';
 import DocumentTitle from 'react-document-title';
+import styles from './NotFound.less';
+import withStyles from '../../decorators/withStyles';
 
-export default class NotFound extends React.Component {
+@withStyles(styles)
+export default class NotFound {
   render() {
     return (
       <DocumentTitle title="Page Not Found - Toni Karttunen">
-        <section className="not-found">
+        <section className="NotFound container">
           <h1>Page Not Found</h1>
         </section>
       </DocumentTitle>

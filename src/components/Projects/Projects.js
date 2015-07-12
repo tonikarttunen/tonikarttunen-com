@@ -2,12 +2,15 @@
 
 import React from 'react/addons';
 import DocumentTitle from 'react-document-title';
+import styles from './Projects.less';
+import withStyles from '../../decorators/withStyles';
 
-export default class Projects extends React.Component {
+@withStyles(styles)
+export default class Projects {
   render() {
     return (
       <DocumentTitle title="About - Toni Karttunen">
-        <section className="projects">
+        <section className="Projects container">
           <h1>Projects</h1>
         </section>
       </DocumentTitle>

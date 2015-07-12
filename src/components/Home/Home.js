@@ -1,11 +1,14 @@
 // Home
 
 import React from 'react/addons';
+import styles from './Home.less';
+import withStyles from '../../decorators/withStyles';
 
-export default class Home extends React.Component {
+@withStyles(styles)
+export default class Home {
   render() {
     return (
-      <section className="home">
+      <section className="Home container">
         <h1>Home</h1>
       </section>
     );

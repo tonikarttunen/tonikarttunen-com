@@ -5,7 +5,10 @@ import React, { PropTypes } from 'react/addons';
 import DocumentTitle from 'react-document-title';
 import { Link } from 'react-router';
 import Home from '../../components/Home';
+import styles from './MainLayout.less';
+import withStyles from '../../decorators/withStyles';
 
+@withStyles(styles)
 export default class MainLayout {
   static propTypes = {
     children: PropTypes.object
