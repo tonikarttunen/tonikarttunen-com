@@ -1,32 +1,29 @@
-/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
+// Header
 
 import React from 'react/addons';
+import { Link } from 'react-router';
 import styles from './Header.less';
 import withStyles from '../../decorators/withStyles';
-import Link from '../../utils/Link';
-import Navigation from '../Navigation';
+import { Nav, Navbar, CollapsibleNav } from 'react-bootstrap';
+// import { NavItemLink } from 'react-router-bootstrap';
 
 @withStyles(styles)
-class Header {
+export default class Header {
 
   render() {
     return (
-      <div className="Header">
-        <div className="Header-container">
-          <a className="Header-brand" href="/" onClick={Link.handleClick}>
-            <img className="Header-brandImg" src={require('./logo-small.png')} width="38" height="38" alt="React" />
-            <span className="Header-brandTxt">Your Company</span>
-          </a>
-          <Navigation className="Header-nav" />
-          <div className="Header-banner">
-            <h1 className="Header-bannerTitle">React</h1>
-            <p className="Header-bannerDesc">Complex web apps made easy</p>
-          </div>
-        </div>
-      </div>
+      <header>
+        <Navbar fixedTop brand="Toni Karttunen" toggleNavKey={0}>
+          <CollapsibleNav eventKey={0}> {/* Reference for toggling the nav */}
+            <Nav navbar right>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="projects">Projects</Link></li>
+              <li><Link to="about">About</Link></li>
+            </Nav>
+          </CollapsibleNav>
+        </Navbar>
+      </header>
     );
   }
 
 }
-
-export default Header;
