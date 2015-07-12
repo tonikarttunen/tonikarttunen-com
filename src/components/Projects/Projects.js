@@ -9,7 +9,7 @@ import withStyles from '../../decorators/withStyles';
 export default class Projects {
   render() {
     return (
-      <DocumentTitle title="About - Toni Karttunen">
+      <DocumentTitle title="Projects - Toni Karttunen">
         <section className="Projects container">
           <h1>Projects</h1>
         </section>
