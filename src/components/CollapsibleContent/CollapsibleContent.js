@@ -32,11 +32,16 @@ const CollapsibleContentInternal = React.createClass({
   render() {
     let classNameRef = 'CollapsibleContent';
     let styleSet = this.getCollapsibleClassSet(classNameRef);
-    let text = this.isExpanded() ? 'Less' : 'More';
+    let isExpanded = this.isExpanded();
+    let text = isExpanded ? 'Less' : 'More';
+    let arrow = isExpanded ? 'ion-chevron-up' : 'ion-chevron-down';
 
     return (
       <div>
-        <Button onClick={this.onHandleToggle}>{text} information</Button>
+        <div onClick={this.onHandleToggle} className="CollapsibleContentToggle" role="button">
+          <span className={arrow}/>
+          {text} information
+        </div>
         <div ref="collapsibleContentArea" className={classNames(styleSet)}>
           {this.props.children}
         </div>

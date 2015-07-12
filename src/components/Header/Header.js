@@ -11,7 +11,7 @@ export default class Header {
 
   render() {
     return (
-      <header>
+      <header class="Header">
         <Navbar fixedTop brand={<Link to="/">Toni Karttunen</Link>} toggleNavKey={0}>
           <CollapsibleNav eventKey={0}> {/* A reference for toggling the nav */}
             <Nav navbar right>
