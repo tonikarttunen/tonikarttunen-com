@@ -1,7 +1,6 @@
 // Collapsible content
 
 import React, { PropTypes } from 'react/addons'; // eslint-disable-line no-unused-vars
-import { Button } from 'react-bootstrap';
 import classNames from 'classnames';
 const CollapsibleMixin = require('react-bootstrap').CollapsibleMixin;
 import styles from './CollapsibleContent.less';
