@@ -36,7 +36,7 @@ const CollapsibleContentInternal = React.createClass({
     let arrow = isExpanded ? 'ion-chevron-up' : 'ion-chevron-down';
 
     return (
-      <div>
+      <div className="CollapsibleContentContainer">
         <div onClick={this.onHandleToggle} className="CollapsibleContentToggle" role="button">
           <span className={arrow}/>
           {text} information
