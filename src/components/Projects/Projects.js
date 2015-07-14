@@ -8,6 +8,7 @@ import Viima from '../../components/Viima';
 import InteractionDesignAndEvaluation from '../../components/InteractionDesignAndEvaluation';
 import StrategicUserCentredDesign from '../../components/StrategicUserCentredDesign';
 import HelsinkiGraph from '../../components/HelsinkiGraph';
+import LocationAwareApp from '../../components/LocationAwareApp';
 
 @withStyles(styles)
 export default class Projects {
@@ -20,6 +21,7 @@ export default class Projects {
           <InteractionDesignAndEvaluation/>
           <StrategicUserCentredDesign/>
           <HelsinkiGraph/>
+          <LocationAwareApp/>
         </div>
       </DocumentTitle>
     );
