@@ -1,0 +1,28 @@
+{
+  "name": "tonikarttunen-com",
+  "version": "0.5.0",
+  "description": "Toni Karttunen's website",
+  "main": [
+    "src/server.js"
+  ],
+  "dependencies": {
+    "ionicons": "~2.0.1"
+  },
+  "moduleType": [
+    "commonjs",
+    "node"
+  ],
+  "keywords": [
+    "Toni",
+    "Karttunen"
+  ],
+  "authors": [
+    "Toni Karttunen"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+  ]
+}

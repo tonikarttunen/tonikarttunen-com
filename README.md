@@ -47,6 +47,7 @@ $ git clone git@github.com:tonikarttunen/tonikarttunen-com.git
 $ cd tonikarttunen-com
 $ npm install -g gulp           # Install Gulp task runner globally
 $ npm install -g bower          # Install Bower package manager globally
+$ bower install                 # Install Bower modules
 $ npm install                   # Install Node.js components listed in ./package.json
 ```
 
