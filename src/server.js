@@ -13,7 +13,13 @@ import './stores/AppStore';
 
 const server = express();
 
-server.set('port', (process.env.PORT || 5000));
+var env = process.argv[2] || process.env.NODE_ENV || 'development';
+if (env === 'development') {
+  server.set('port', (process.env.PORT || 5000));
+} else {
+  server.set('port', (process.env.PORT || 15767));
+}
+
 server.use(express.static(path.join(__dirname, 'public')));
 
 //
