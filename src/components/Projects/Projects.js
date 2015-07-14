@@ -1,6 +1,7 @@
 // Projects
 
 import React from 'react/addons';
+import { Grid } from 'react-bootstrap';
 import DocumentTitle from 'react-document-title';
 import styles from './Projects.less';
 import withStyles from '../../decorators/withStyles';
@@ -17,8 +18,10 @@ export default class Projects {
   render() {
     return (
       <DocumentTitle title="Projects - Toni Karttunen">
-        <div className="Projects container">
-          <h1>Projects</h1>
+        <div className="Projects">
+          <Grid>
+            <h1>Projects</h1>
+          </Grid>
           <Viima/>
           <InteractionDesignAndEvaluation/>
           <StrategicUserCentredDesign/>

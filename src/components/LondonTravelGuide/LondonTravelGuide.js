@@ -1,7 +1,7 @@
 // London Travel Guide
 
 import React from 'react/addons';
-import { Carousel, CarouselItem } from 'react-bootstrap';
+import { Carousel, CarouselItem, Grid } from 'react-bootstrap';
 import styles from './LondonTravelGuide.less';
 import withStyles from '../../decorators/withStyles';
 import CollapsibleContent from '../../components/CollapsibleContent';
@@ -30,66 +30,68 @@ export default class LondonTravelGuide extends React.Component {
   render() {
     return (
       <section className="LondonTravelGuide">
-        <h2>London Travel Guide</h2>
+        <Grid>
+          <h2>London Travel Guide</h2>
 
-        <Carousel
-          activeIndex={this.state.index}
-          direction={this.state.direction}
-          onSelect={this.handleSelect}>
-          <CarouselItem>
-            <img
-              width={440}
-              height={660}
-              alt="220x330"
-              src={require('./images/Home_660.jpg')} />
-          </CarouselItem>
-          <CarouselItem>
-            <img
-              width={440}
-              height={660}
-              alt="220x330"
-              src={require('./images/Architecture_660.jpg')} />
-          </CarouselItem>
-          <CarouselItem>
-            <img
-              width={440}
-              height={660}
-              alt="220x330"
-              src={require('./images/MusicTheatreAndCinema_660.jpg')} />
-          </CarouselItem>
-          <CarouselItem>
-            <img
-              width={440}
-              height={660}
-              alt="220x330"
-              src={require('./images/TowerBridge_660.jpg')} />
-          </CarouselItem>
-          <CarouselItem>
-            <img
-              width={440}
-              height={660}
-              alt="220x330"
-              src={require('./images/CurrencyConverter_660.jpg')} />
-          </CarouselItem>
-        </Carousel>
+          <Carousel
+            activeIndex={this.state.index}
+            direction={this.state.direction}
+            onSelect={this.handleSelect}>
+            <CarouselItem>
+              <img
+                width={440}
+                height={660}
+                alt="220x330"
+                src={require('./images/Home_660.jpg')} />
+            </CarouselItem>
+            <CarouselItem>
+              <img
+                width={440}
+                height={660}
+                alt="220x330"
+                src={require('./images/Architecture_660.jpg')} />
+            </CarouselItem>
+            <CarouselItem>
+              <img
+                width={440}
+                height={660}
+                alt="220x330"
+                src={require('./images/MusicTheatreAndCinema_660.jpg')} />
+            </CarouselItem>
+            <CarouselItem>
+              <img
+                width={440}
+                height={660}
+                alt="220x330"
+                src={require('./images/TowerBridge_660.jpg')} />
+            </CarouselItem>
+            <CarouselItem>
+              <img
+                width={440}
+                height={660}
+                alt="220x330"
+                src={require('./images/CurrencyConverter_660.jpg')} />
+            </CarouselItem>
+          </Carousel>
 
-        <CollapsibleContent>
-          <div>
-            <p>
-              Autumn
-              2013
-            </p>
-            <p>
-              This app was my first iOS app. The development process began
-              in June 2012 and ended in August 2012. Even though it wasn't
-              a masterpiece in terms of software design, I learned a lot
-              while developing the app.
-            </p>
-            <p>
-              Technologies: Objective-C, HTML5, CSS3, JavaScript
-            </p>
-          </div>
-        </CollapsibleContent>
+          <CollapsibleContent>
+            <div>
+              <p>
+                Autumn
+                2013
+              </p>
+              <p>
+                This app was my first iOS app. The development process began
+                in June 2012 and ended in August 2012. Even though it wasn't
+                a masterpiece in terms of software design, I learned a lot
+                while developing the app.
+              </p>
+              <p>
+                Technologies: Objective-C, HTML5, CSS3, JavaScript
+              </p>
+            </div>
+          </CollapsibleContent>
+        </Grid>
       </section>
     );
   }
