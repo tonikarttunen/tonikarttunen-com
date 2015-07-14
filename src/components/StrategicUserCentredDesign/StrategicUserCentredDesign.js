@@ -15,7 +15,7 @@ export default class StrategicUserCentredDesign {
         <CollapsibleContent>
           <div>
             <p>
-              Year
+              Spring
               2015
             </p>
             <p>

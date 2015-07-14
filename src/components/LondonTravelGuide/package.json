@@ -1,0 +1,6 @@
+{
+  "name": "LondonTravelGuide",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./LondonTravelGuide.js"
+}

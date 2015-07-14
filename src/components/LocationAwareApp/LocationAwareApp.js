@@ -16,7 +16,7 @@ export default class LocationAwareApp {
         <CollapsibleContent>
           <div>
             <p>
-              Year
+              Spring
               2013
             </p>
             <p>

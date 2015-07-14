@@ -25,7 +25,7 @@ export default class InteractionDesignAndEvaluation {
         <CollapsibleContent>
           <div>
             <p>
-              Year
+              Spring
               2015
             </p>
             <p>
