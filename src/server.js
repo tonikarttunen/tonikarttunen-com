@@ -1,7 +1,7 @@
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
 import 'babel/polyfill';
-import _ from 'lodash';
+import _ from 'underscore';
 import fs from 'fs';
 import path from 'path';
 import express from 'express';
