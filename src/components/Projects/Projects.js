@@ -9,6 +9,7 @@ import InteractionDesignAndEvaluation from '../../components/InteractionDesignAn
 import StrategicUserCentredDesign from '../../components/StrategicUserCentredDesign';
 import HelsinkiGraph from '../../components/HelsinkiGraph';
 import LocationAwareApp from '../../components/LocationAwareApp';
+import PersonalFinance from '../../components/PersonalFinance';
 import LondonTravelGuide from '../../components/LondonTravelGuide';
 
 @withStyles(styles)
@@ -23,6 +24,7 @@ export default class Projects {
           <StrategicUserCentredDesign/>
           <HelsinkiGraph/>
           <LocationAwareApp/>
+          <PersonalFinance/>
           <LondonTravelGuide/>
         </div>
       </DocumentTitle>
