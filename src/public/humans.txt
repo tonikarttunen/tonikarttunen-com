@@ -3,13 +3,14 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Toni Karttunen -- Design, development, content production and software engineering -- @tonikarttunen
 
 # THANKS
 
-    <name>
+    ...to Facebook Inc. for developing React and Flux and
+    to Kriasoft for developing `react-starter-kit` (https://github.com/kriasoft/react-starter-kit).
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5, JavaScript
-    React, Flux, SuperAgent
+    CSS3, HTML5, JavaScript, React-Bootstrap
+    React, Flux, SuperAgent, React Router

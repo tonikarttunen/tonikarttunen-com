@@ -1,0 +1,6 @@
+{
+  "name": "Viima",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Viima.js"
+}

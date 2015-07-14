@@ -1,6 +1,16 @@
-@import (less) '../../../node_modules/normalize.css/normalize.css';
+/* App-wide styles */
 
-/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
+// Bootstrap CSS
+@import (less) '../../../node_modules/bootstrap/dist/css/bootstrap.css';
+
+// Ion icons
+@import (less) '../../../bower_components/ionicons/css/ionicons.css';
+
+// Roboto font
+// @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+
+// Source Sans Pro font
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 
 @import '../variables.less';
 
@@ -8,12 +18,47 @@
 // Base styles
 // -----------------------------------------------------------------------------
 
-html {
+html,
+body {
   color: #222;
-  font-weight: 100;
-  font-size: 1em; // ~16px;
+  font-weight: 400;
+  font-size: 1em; // 16px;
   font-family: @font-family-base;
-  line-height: 1.375; // ~22px
+  line-height: 1.5; // 24px
+}
+
+button:focus,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: 0 !important;
+  box-shadow:none;
+}
+
+// Typography
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: @font-family-heading;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 100;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 900;
 }
 
 /*
