@@ -77,8 +77,7 @@ export default class LondonTravelGuide extends React.Component {
           <CollapsibleContent>
             <div>
               <p>
-                Autumn
-                2013
+                Summer 2012
               </p>
               <p>
                 This app was my first iOS app. The development process began
