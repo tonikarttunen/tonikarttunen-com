@@ -10,11 +10,11 @@ export default class Footer {
     var currentYear = new Date().getFullYear();
 
     return (
-      <div className="Footer container">
+      <footer className="Footer container">
         <div className="Footer-container">
           <p>&copy; 2011—{currentYear} Toni Karttunen. All rights reserved.</p>
         </div>
-      </div>
+      </footer>
     );
   }
 

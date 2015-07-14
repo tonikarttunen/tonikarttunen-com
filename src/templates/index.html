@@ -40,9 +40,25 @@
   </head>
   <body>
     <!--[if lt IE 8]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <div class="browserupgrade">
+        <div class="container">
+          You are using an <strong>outdated</strong> browser.
+          Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+        </div>
+      </div>
     <![endif]-->
     <div id="root"><%= body %></div>
+    <noscript>
+      <div style="font-family: sans-serif; background-color: #fff2be; padding: 1em;">
+        <p>
+          Some features of this website work better with JavaScript. To learn how to enable JavaScript,
+          please visit <a href="http://www.activatejavascript.org/">http://www.activatejavascript.org/</a>.
+        </p>
+        <p>
+          After enabling JavaScript, please refresh this page.
+        </p>
+      </div>
+    </noscript>
     <script src="/app.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

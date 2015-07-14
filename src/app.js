@@ -4,7 +4,7 @@ import 'babel/polyfill';
 import React from 'react/addons';
 import BrowserHistory from 'react-router/lib/BrowserHistory';
 import Root from './components/Root';
-import FastClick from 'fastclick';
+// import FastClick from 'fastclick';
 // import App from './components/App';
 // import Dispatcher from './core/Dispatcher';
 // import AppActions from './actions/AppActions';
@@ -65,6 +65,7 @@ Promise.all([
     } else {
       window.attachEvent('onload', resolve);
     }
-  }).then(() => FastClick.attach(document.body))// ,
+  }).then(() => React.initializeTouchEvents()) // Configure React's event system to handle touch events
+  /* () => FastClick.attach(document.body) */ // ,
   // new Promise((resolve) => AppActions.loadPage(path, resolve))
 ]).then(run);

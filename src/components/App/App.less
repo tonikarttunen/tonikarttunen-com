@@ -27,6 +27,17 @@ body {
   line-height: 1.5; // 24px
 }
 
+button:focus,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: 0 !important;
+  box-shadow:none;
+}
+
 // Typography
 
 h1,
@@ -48,14 +59,6 @@ h4,
 h5,
 h6 {
   font-weight: 900;
-}
-
-// 500px logo - TODO: move this code to About.less
-
-.icon-500px:before {
-  font-family: sans-serif;
-  content: "5∞";
-  font-weight: 800;
 }
 
 /*
