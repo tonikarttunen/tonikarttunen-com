@@ -1,17 +1,78 @@
 // LocationAwareApp
 
 import React from 'react/addons';
+import { Carousel, CarouselItem } from 'react-bootstrap';
 import styles from './LocationAwareApp.less';
 import withStyles from '../../decorators/withStyles';
 import CollapsibleContent from '../../components/CollapsibleContent';
 
 @withStyles(styles)
-export default class LocationAwareApp {
+export default class LocationAwareApp extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      index: 0,
+      direction: null
+    };
+
+    // React >= 0.13.x does not autobind non-React methods to 'this'
+    this.handleSelect = this.handleSelect.bind(this);
+  }
+
+  handleSelect(selectedIndex, selectedDirection) {
+    this.setState({
+      index: selectedIndex,
+      direction: selectedDirection
+    });
+  }
+
   render() {
     return (
       <section className="LocationAwareApp">
         <h2>Location-Aware App</h2>
         <em>B. Sc. thesis project</em>
+
+        <Carousel
+          activeIndex={this.state.index}
+          direction={this.state.direction}
+          onSelect={this.handleSelect}>
+          <CarouselItem>
+            <img
+              width={440}
+              height={660}
+              alt="220x330"
+              src={require('./images/Pittsburgh.jpg')} />
+          </CarouselItem>
+          <CarouselItem>
+            <img
+              width={440}
+              height={660}
+              alt="220x330"
+              src={require('./images/Trending.jpg')} />
+          </CarouselItem>
+          <CarouselItem>
+            <img
+              width={440}
+              height={660}
+              alt="220x330"
+              src={require('./images/FoursquareCheckIn.jpg')} />
+          </CarouselItem>
+          <CarouselItem>
+            <img
+              width={440}
+              height={660}
+              alt="220x330"
+              src={require('./images/PrivacySettings.jpg')} />
+          </CarouselItem>
+          <CarouselItem>
+            <img
+              width={440}
+              height={660}
+              alt="220x330"
+              src={require('./images/KirjastoOmena.jpg')} />
+          </CarouselItem>
+        </Carousel>
 
         <CollapsibleContent>
           <div>
