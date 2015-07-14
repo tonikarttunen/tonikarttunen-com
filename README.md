@@ -93,9 +93,9 @@ the file is. Name the test by appending `-test.js` to the js file.
 
 ### Copyright and License
 
-* Source code is licensed under the MIT License (MIT). See [LICENSE.txt](./LICENSE.txt)
+* `react-starter-kit` source code is licensed under the MIT License (MIT). See [LICENSE.txt](./LICENSE.txt)
 file in the project root.
 * Documentation to the project is licensed under the
 [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/) license.
 * React logo image is a trademark of Facebook, Inc.
-* All the other images, videos and other artwork in this repository: (C) Copyright 2015 Toni Karttunen. All rights reserved. 
+* All the other images, videos, other artwork and code in this repository: Copyright (C) 2015 Toni Karttunen. All rights reserved. 
