@@ -1,10 +1,9 @@
 // LocationAwareApp
 
 import React from 'react/addons';
-import { Carousel, CarouselItem, Grid } from 'react-bootstrap';
+import { Carousel, CarouselItem, Grid, Row, Col } from 'react-bootstrap';
 import styles from './LocationAwareApp.less';
 import withStyles from '../../decorators/withStyles';
-import CollapsibleContent from '../../components/CollapsibleContent';
 
 @withStyles(styles)
 export default class LocationAwareApp extends React.Component {
@@ -75,12 +74,14 @@ export default class LocationAwareApp extends React.Component {
             </CarouselItem>
           </Carousel>
 
-          <CollapsibleContent>
-            <div>
-              <p>
-                Spring
-                2013
-              </p>
+          <Row>
+            <Col md={4} className="InfoBox">
+              <h3>Spring</h3>
+              <p>2013</p>
+              <h3>Technology</h3>
+              <p>Objective-C</p>
+            </Col>
+            <Col md={8}>
               <p>
                 I developed this app for my Bachelor's thesis.
                 The app enables the user to find points of interest nearby.
@@ -91,9 +92,6 @@ export default class LocationAwareApp extends React.Component {
                 location-aware apps are concerned about their privacy,
                 the app aims protect the user's privacy by providing privacy
                 settings and privacy tips.
-              </p>
-              <p>
-                Technology: Objective-C
               </p>
               <p>
                 Source code is available on&nbsp;
@@ -148,8 +146,8 @@ export default class LocationAwareApp extends React.Component {
               <p>
                 <a href="https://github.com/tonikarttunen/Paikkatietosovelluksen_testidata">Test data</a>
               </p>
-            </div>
-          </CollapsibleContent>
+            </Col>
+          </Row>
         </Grid>
       </section>
     );

@@ -1,10 +1,9 @@
 // Personal Finance
 
 import React from 'react/addons';
-import { Carousel, CarouselItem, Grid } from 'react-bootstrap';
+import { Carousel, CarouselItem, Grid, Row, Col } from 'react-bootstrap';
 import styles from './PersonalFinance.less';
 import withStyles from '../../decorators/withStyles';
-import CollapsibleContent from '../../components/CollapsibleContent';
 
 @withStyles(styles)
 export default class LondonTravelGuide extends React.Component {
@@ -74,11 +73,14 @@ export default class LondonTravelGuide extends React.Component {
             </CarouselItem>
           </Carousel>
 
-          <CollapsibleContent>
-            <div>
-              <p>
-                Autumn 2012—spring 2013
-              </p>
+          <Row>
+            <Col md={4} className="InfoBox">
+              <h3>Autumn 2012—spring 2013</h3>
+              <p>Autumn 2012—spring 2013</p>
+              <h3>Technology</h3>
+              <p>Objective-C</p>
+            </Col>
+            <Col md={8}>
               <p>
                 I developed this app prototype for my studies
                 (User Interface Construction class at Aalto University, Finland).
@@ -91,11 +93,8 @@ export default class LondonTravelGuide extends React.Component {
                 that it would be accessible to all the possible user groups,
                 including visually impaired and color blind users.
               </p>
-              <p>
-                Technology: Objective-C
-              </p>
-            </div>
-          </CollapsibleContent>
+            </Col>
+          </Row>
         </Grid>
       </section>
     );

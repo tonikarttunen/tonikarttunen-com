@@ -1,10 +1,9 @@
 // Viima
 
 import React from 'react/addons';
-import { Grid } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Viima.less';
 import withStyles from '../../decorators/withStyles';
-import CollapsibleContent from '../../components/CollapsibleContent';
 
 @withStyles(styles)
 export default class Viima {
@@ -13,17 +12,18 @@ export default class Viima {
       <section className="Viima">
         <Grid>
           <h2>Viima Mobile User Interface</h2>
-          <CollapsibleContent>
-            <div>
+          <Row>
+            <Col md={4} className="InfoBox">
+              <h3>Autumn 2014—spring 2015</h3>
+              <p>Autumn 2014—spring 2015</p>
+              <h3>Client</h3>
+              <p>Viima Solutions Oy</p>
+              <h3>Awards</h3>
+              <p>Accenture Quality Award Finalist</p>
+            </Col>
+            <Col md={8}>
               <p>
-                Autumn 2014—spring 2015
-              </p>
-              <p>
-                Client
-                Viima Solutions Oy
-              </p>
-              <p>
-                Accenture Quality Award Finalist
+                Goals
               </p>
               <p>
                 Challenges: web UI only tailored for large screens,
@@ -38,8 +38,8 @@ export default class Viima {
               <p>
                 Team members
               </p>
-            </div>
-          </CollapsibleContent>
+            </Col>
+          </Row>
         </Grid>
       </section>
     );
