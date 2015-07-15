@@ -1,6 +1,6 @@
 # Personal Website
 
-[![Build Status](https://travis-ci.org/tonikarttunen/tonikarttunen-com.svg?branch=develop)](https://travis-ci.org/tonikarttunen/tonikarttunen-com)
+[![Build Status](https://travis-ci.org/tonikarttunen/tonikarttunen-com.svg)](https://travis-ci.org/tonikarttunen/tonikarttunen-com)
 [![Dependency Status](https://david-dm.org/tonikarttunen/tonikarttunen-com.svg)](https://david-dm.org/tonikarttunen/tonikarttunen-com)
 
 This repository contains an upcoming redesign of [http://www.tonikarttunen.com](http://www.tonikarttunen.com). It is a modern single-page-application that is written in [React](https://facebook.github.io/react/), [Flux](http://facebook.github.io/flux/) and [EcmaScript 2015 (ES6)](https://babeljs.io/docs/learn-es2015/). The project is based on [react-starter-kit](https://github.com/kriasoft/react-starter-kit/).
