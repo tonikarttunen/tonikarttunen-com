@@ -21,6 +21,10 @@ export default class StrategicUserCentredDesign {
                 2015
               </p>
               <p>
+                Client
+                Länsimetro
+              </p>
+              <p>
                 Challenges: very little inteaction with the client company (Länsimetro)
               </p>
               <p>

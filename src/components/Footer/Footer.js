@@ -12,7 +12,10 @@ export default class Footer {
     return (
       <footer className="Footer container">
         <div className="Footer-container">
-          <p>&copy; 2011—{currentYear} Toni Karttunen. All rights reserved.</p>
+          <p>
+            &copy; 2011—{currentYear} Toni Karttunen. All rights reserved.&nbsp;
+            <a href="https://github.com/tonikarttunen/tonikarttunen-com/">Source code</a>.
+          </p>
         </div>
       </footer>
     );

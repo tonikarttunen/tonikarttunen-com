@@ -19,6 +19,13 @@ export default class Viima {
                 Autumn 2014—spring 2015
               </p>
               <p>
+                Client
+                Viima Solutions Oy
+              </p>
+              <p>
+                Accenture Quality Award Finalist
+              </p>
+              <p>
                 Challenges: web UI only tailored for large screens,
                 difficult to handle it on tiny mobile screens;
                 had to redesign the UI from scratch

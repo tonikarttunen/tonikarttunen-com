@@ -31,6 +31,10 @@ export default class InteractionDesignAndEvaluation {
                 2015
               </p>
               <p>
+                Client
+                Aalto University Learning Services, ICT for Learning Team
+              </p>
+              <p>
                 Challenges: bad mobile UI, lack of structure and broken information architecture
               </p>
               <p>
