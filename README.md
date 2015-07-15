@@ -76,7 +76,7 @@ $ gulp build --release          # Builds the project in release mode
 $ gulp deploy                   # or, `gulp deploy --production`
 ```
 
-For more information see `deploy` task in `gulpfile.js`.
+For more information see `deploy` task in `gulpfile.babel.js`.
 
 ### How to Test
 
