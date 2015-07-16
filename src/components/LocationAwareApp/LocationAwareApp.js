@@ -30,8 +30,7 @@ export default class LocationAwareApp extends React.Component {
     return (
       <section className="LocationAwareApp">
         <Grid>
-          <h2>Location-Aware App</h2>
-          <em>B. Sc. thesis project</em>
+          <h2>B. Sc. Thesis</h2>
 
           <Carousel
             activeIndex={this.state.index}
@@ -78,12 +77,34 @@ export default class LocationAwareApp extends React.Component {
             <Col md={4} className="InfoBox">
               <h3>Spring</h3>
               <p>2013</p>
-              <h3>Technology</h3>
-              <p>Objective-C</p>
-            </Col>
-            <Col md={8}>
+              <h3>B. Sc. Thesis<br/><span className="TitleDefinition">— in Finnish —</span></h3>
               <p>
-                I developed this app for my Bachelor's thesis.
+                <a href="about/bachelorsthesis/Bachelors_Thesis_Toni_Karttunen_Aalto_University_2013.pdf">
+                  PDF
+                </a>
+              </p>
+              <h3>Presentation slides<br/><span className="TitleDefinition">— in Finnish —</span></h3>
+              <p>
+                <a href="about/bachelorsthesis/Bachelors_Thesis_Presentation_Toni_Karttunen_Aalto_University_2013.pdf">
+                  PDF
+                </a>
+              </p>
+              <h3>Thesis Record</h3>
+              <p>
+                <a href="http://urn.fi/URN:NBN:fi:aalto-201307257437">
+                  Aalto University Library
+                </a>
+              </p>
+              <h3>Test Data</h3>
+              <p>
+                <a href="https://github.com/tonikarttunen/Paikkatietosovelluksen_testidata">
+                  <span className="ion-social-github"></span> GitHub
+                </a>
+              </p>
+              <hr/>
+              <h3>Location-Aware App</h3>
+              <p className="NormalParagraph">
+                As part of my thesis project, I developed an iOS app.
                 The app enables the user to find points of interest nearby.
                 You can select whether to use the new Apple Local Search API,
                 Foursquare API v.2 or Google Places API to find local search results.
@@ -93,17 +114,22 @@ export default class LocationAwareApp extends React.Component {
                 the app aims protect the user's privacy by providing privacy
                 settings and privacy tips.
               </p>
+              <h3>Source Code</h3>
               <p>
-                Source code is available on&nbsp;
-                <a href="https://github.com/tonikarttunen/LocationAwareAppProject">GitHub</a>.
+                <a href="https://github.com/tonikarttunen/LocationAwareAppProject">
+                  <span className="ion-social-github"></span> GitHub
+                </a>
               </p>
-              <h3>B. Sc. Thesis</h3>
+              <h3>Technology</h3>
+              <p>Objective-C</p>
+            </Col>
+            <Col md={8}>
               <p className="lead">
                 Paikkatiedon hyödyntäminen älypuhelinohjelmistoissa:
                 sovelluskehittäjän näkökulma<br/>
                 Location-Aware Smartphone Applications
               </p>
-              <h4>Summary in English</h4>
+              <h3>Summary in English</h3>
               <p>
                 Modern smartphone operating systems provide versatile application programming
                 interfaces (APIs) for developing location-aware applications. In addition
@@ -133,18 +159,6 @@ export default class LocationAwareApp extends React.Component {
                 of this thesis project. It was discovered that the overall quality of the Google
                 location APIs (Google Places API and Google Maps SDK for iOS) is higher than
                 the quality of the Apple MapKit framework and the Foursquare API.
-              </p>
-              <p>
-                PDF (in Finnish) **TODO**: Add link
-              </p>
-              <p>
-                Presentation slides (in Finnish) **TODO**: Add link
-              </p>
-              <p>
-                <a href="http://urn.fi/URN:NBN:fi:aalto-201307257437">Thesis record at Aalto University Library</a>
-              </p>
-              <p>
-                <a href="https://github.com/tonikarttunen/Paikkatietosovelluksen_testidata">Test data</a>
               </p>
             </Col>
           </Row>

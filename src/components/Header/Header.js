@@ -17,7 +17,7 @@ export default class Header {
             <Nav navbar right>
               <li><Link to="/">Home</Link></li>
               <li><Link to="projects">Projects</Link></li>
-              <li><Link to="about">About</Link></li>
+              <li><Link to="contact">About</Link></li>
             </Nav>
           </CollapsibleNav>
         </Navbar>

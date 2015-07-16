@@ -11,7 +11,7 @@ export default class HelsinkiGraph {
     return (
       <section className="HelsinkiGraph">
         <Grid>
-          <h2>HelsinkiGraph Mobile App Prototype</h2>
+          <h2>HelsinkiGraph</h2>
           <div className="youtube">
             <iframe
               width="1280"

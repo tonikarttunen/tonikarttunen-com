@@ -16,7 +16,7 @@ export default class Root extends Component {
     return (
       <Router history={history}>
         <Route name='MainLayout' path='/' component={MainLayout}>
-          <Route name='About' path='/about' component={About} />
+          <Route name='About' path='/contact' component={About} />
           <Route name='Projects' path='/projects' component={Projects} />
           <Route name="NotFound" path="*" component={NotFound} />
         </Route>

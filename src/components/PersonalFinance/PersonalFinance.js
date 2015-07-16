@@ -30,7 +30,7 @@ export default class LondonTravelGuide extends React.Component {
     return (
       <section className="PersonalFinance">
         <Grid>
-          <h2>Personal Finance App Prototype</h2>
+          <h2>Personal Finance</h2>
 
           <Carousel
             activeIndex={this.state.index}
