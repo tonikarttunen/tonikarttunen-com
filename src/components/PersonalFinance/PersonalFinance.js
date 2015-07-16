@@ -4,6 +4,7 @@ import React from 'react/addons';
 import { Carousel, CarouselItem, Grid, Row, Col } from 'react-bootstrap';
 import styles from './PersonalFinance.less';
 import withStyles from '../../decorators/withStyles';
+import DiagonalDivider from '../../components/DiagonalDivider';
 
 @withStyles(styles)
 export default class LondonTravelGuide extends React.Component {
@@ -75,8 +76,18 @@ export default class LondonTravelGuide extends React.Component {
 
           <Row>
             <Col md={4} className="InfoBox">
-              <h3>Autumn 2012—spring 2013</h3>
-              <p>Autumn 2012—spring 2013</p>
+              <div className='InlineBlock WidthAuto VerticalAlignTop'>
+                <h3>Autumn</h3>
+                <p>2012</p>
+              </div>
+              <DiagonalDivider
+                id={'DiagonalDividerPersonalFinance'}
+                className='InlineBlock WidthAuto VerticalAlignTop'
+                color={'#6CCFAC'}/>
+              <div className='InlineBlock WidthAuto VerticalAlignTop'>
+                <h3>Spring</h3>
+                <p>2013</p>
+              </div>
               <h3>Technology</h3>
               <p>Objective-C</p>
             </Col>

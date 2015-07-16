@@ -28,7 +28,7 @@ export default class LocationAwareApp extends React.Component {
 
   render() {
     return (
-      <section className="LocationAwareApp">
+      <section className='LocationAwareApp'>
         <Grid>
           <h2>B. Sc. Thesis</h2>
 
@@ -40,70 +40,72 @@ export default class LocationAwareApp extends React.Component {
               <img
                 width={440}
                 height={660}
-                alt="220x330"
+                alt='220x330'
                 src={require('./images/Pittsburgh.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
+                alt='220x330'
                 src={require('./images/Trending.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
+                alt='220x330'
                 src={require('./images/FoursquareCheckIn.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
+                alt='220x330'
                 src={require('./images/PrivacySettings.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
+                alt='220x330'
                 src={require('./images/KirjastoOmena.jpg')} />
             </CarouselItem>
           </Carousel>
 
           <Row>
-            <Col md={4} className="InfoBox">
+            <Col md={4} className='InfoBox'>
               <h3>Spring</h3>
               <p>2013</p>
-              <h3>B. Sc. Thesis<br/><span className="TitleDefinition">— in Finnish —</span></h3>
+              <h3>B. Sc. Thesis</h3>
               <p>
-                <a href="about/bachelorsthesis/Bachelors_Thesis_Toni_Karttunen_Aalto_University_2013.pdf">
+                <a href='about/bachelorsthesis/Bachelors_Thesis_Toni_Karttunen_Aalto_University_2013.pdf'>
                   PDF
                 </a>
+                &nbsp;(42 pages, in Finnish)
               </p>
-              <h3>Presentation slides<br/><span className="TitleDefinition">— in Finnish —</span></h3>
+              <h3>Presentation slides</h3>
               <p>
-                <a href="about/bachelorsthesis/Bachelors_Thesis_Presentation_Toni_Karttunen_Aalto_University_2013.pdf">
+                <a href='about/bachelorsthesis/Bachelors_Thesis_Presentation_Toni_Karttunen_Aalto_University_2013.pdf'>
                   PDF
                 </a>
+                &nbsp;(15 pages, in Finnish)
               </p>
               <h3>Thesis Record</h3>
               <p>
-                <a href="http://urn.fi/URN:NBN:fi:aalto-201307257437">
+                <a href='http://urn.fi/URN:NBN:fi:aalto-201307257437'>
                   Aalto University Library
                 </a>
               </p>
               <h3>Test Data</h3>
               <p>
-                <a href="https://github.com/tonikarttunen/Paikkatietosovelluksen_testidata">
-                  <span className="ion-social-github"></span> GitHub
+                <a href='https://github.com/tonikarttunen/Paikkatietosovelluksen_testidata'>
+                  <span className='ion-social-github'></span> GitHub
                 </a>
               </p>
               <hr/>
               <h3>Location-Aware App</h3>
-              <p className="NormalParagraph">
+              <p className='NormalParagraph'>
                 As part of my thesis project, I developed an iOS app.
                 The app enables the user to find points of interest nearby.
                 You can select whether to use the new Apple Local Search API,
@@ -116,15 +118,15 @@ export default class LocationAwareApp extends React.Component {
               </p>
               <h3>Source Code</h3>
               <p>
-                <a href="https://github.com/tonikarttunen/LocationAwareAppProject">
-                  <span className="ion-social-github"></span> GitHub
+                <a href='https://github.com/tonikarttunen/LocationAwareAppProject'>
+                  <span className='ion-social-github'></span> GitHub
                 </a>
               </p>
               <h3>Technology</h3>
               <p>Objective-C</p>
             </Col>
             <Col md={8}>
-              <p className="lead">
+              <p className='lead'>
                 Paikkatiedon hyödyntäminen älypuhelinohjelmistoissa:
                 sovelluskehittäjän näkökulma<br/>
                 Location-Aware Smartphone Applications
