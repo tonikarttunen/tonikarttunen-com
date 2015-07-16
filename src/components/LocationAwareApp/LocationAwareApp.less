@@ -3,23 +3,23 @@
 @import '../variables.less';
 
 .LocationAwareApp {
-  color: white;
-  background-color: #353535; // #1e1e1e;
+  // color: white;
+  // background-color: #353535; // #1e1e1e;
 
   h2 {
-    color: #e3e3e3; // #cfcfcf;
+    color: #5485a7; // #345267; // #e3e3e3; // #cfcfcf;
   }
 
-  .InfoBox {
-    h3 {
-      color: #F2F2F2; // #8DBCDB;; // #8CBEE0; // #B1D8F2; // #B0D6F0;
+  h3 {
+      color: #d0d0d0; // color: #B9C9D3; // #c8c8c8; // #F2F2F2; // #8DBCDB;; // #8CBEE0; // #B1D8F2; // #B0D6F0;
     }
 
+  .InfoBox {
     p {
-      color: #ADADAD; // #4E81A6; // #487FA8; #3D7BA8;
+      // color: #ADADAD; // #4E81A6; // #487FA8; #3D7BA8;
 
       &.NormalParagraph {
-        color: white;
+        // color: white;
         font-weight: 400;
         font-size: 1em; // 16px;
         font-family: @font-family-base;
@@ -31,15 +31,19 @@
       a:hover,
       a:active,
       a:focus {
-        color: rgb(55, 147, 182);
+        color: #5493BE; // #5485a7; // #77ACD2; // hsl(205, 52%, 52%); // rgb(55, 147, 182);
         text-decoration: none;
       }
     }
 
     hr {
       padding: 1.5em 0 0 0;
-      border-top: 2px solid #ADADAD;
+      border-top: 2px solid #d0d0d0;
       margin: 1em 0 0.0em 0;
     }
+  }
+
+  .carousel {
+    background-color: #345267; // #67B2CF; // rgb(55, 147, 182); // #777;
   }
 }
