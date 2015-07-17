@@ -1,10 +1,10 @@
 // Personal Finance
 
 import React from 'react/addons';
-import { Carousel, CarouselItem, Grid } from 'react-bootstrap';
+import { Carousel, CarouselItem, Grid, Row, Col } from 'react-bootstrap';
 import styles from './PersonalFinance.less';
 import withStyles from '../../decorators/withStyles';
-import CollapsibleContent from '../../components/CollapsibleContent';
+import DiagonalDivider from '../../components/DiagonalDivider';
 
 @withStyles(styles)
 export default class LondonTravelGuide extends React.Component {
@@ -31,7 +31,7 @@ export default class LondonTravelGuide extends React.Component {
     return (
       <section className="PersonalFinance">
         <Grid>
-          <h2>Personal Finance App Prototype</h2>
+          <h2>Personal Finance</h2>
 
           <Carousel
             activeIndex={this.state.index}
@@ -74,11 +74,24 @@ export default class LondonTravelGuide extends React.Component {
             </CarouselItem>
           </Carousel>
 
-          <CollapsibleContent>
-            <div>
-              <p>
-                Autumn 2012—spring 2013
-              </p>
+          <Row>
+            <Col md={4} className="InfoBox">
+              <div className='InlineBlock WidthAuto VerticalAlignTop'>
+                <h3>Autumn</h3>
+                <p>2012</p>
+              </div>
+              <DiagonalDivider
+                id={'DiagonalDividerPersonalFinance'}
+                className='InlineBlock WidthAuto VerticalAlignTop'
+                color={'#6CCFAC'}/>
+              <div className='InlineBlock WidthAuto VerticalAlignTop'>
+                <h3>Spring</h3>
+                <p>2013</p>
+              </div>
+              <h3>Technology</h3>
+              <p>Objective-C</p>
+            </Col>
+            <Col md={8}>
               <p>
                 I developed this app prototype for my studies
                 (User Interface Construction class at Aalto University, Finland).
@@ -91,11 +104,8 @@ export default class LondonTravelGuide extends React.Component {
                 that it would be accessible to all the possible user groups,
                 including visually impaired and color blind users.
               </p>
-              <p>
-                Technology: Objective-C
-              </p>
-            </div>
-          </CollapsibleContent>
+            </Col>
+          </Row>
         </Grid>
       </section>
     );

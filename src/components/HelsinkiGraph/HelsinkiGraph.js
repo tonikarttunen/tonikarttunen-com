@@ -1,10 +1,9 @@
 // HelsinkiGraph
 
 import React from 'react/addons';
-import { Grid } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './HelsinkiGraph.less';
 import withStyles from '../../decorators/withStyles';
-import CollapsibleContent from '../../components/CollapsibleContent';
 
 @withStyles(styles)
 export default class HelsinkiGraph {
@@ -12,7 +11,7 @@ export default class HelsinkiGraph {
     return (
       <section className="HelsinkiGraph">
         <Grid>
-          <h2>HelsinkiGraph Mobile App Prototype</h2>
+          <h2>HelsinkiGraph</h2>
           <div className="youtube">
             <iframe
               width="1280"
@@ -22,22 +21,23 @@ export default class HelsinkiGraph {
               allowFullScreen>
             </iframe>
           </div>
-          <CollapsibleContent>
-            <div>
+          <Row>
+            <Col md={4} className="InfoBox">
+              <h3>Autumn</h3>
+              <p>2013</p>
+              <h3>Technology</h3>
+              <p>Objective-C</p>
+            </Col>
+            <Col md={8}>
               <p>
-                Autumn
-                2013
+                Goals
               </p>
               <p>
                 This app prototype used Finnkino XML API for showing movie showtimes
                 and Foursquare API for finding points of interest nearby.
               </p>
-              <p>
-                Technology
-                Objective-C
-              </p>
-            </div>
-          </CollapsibleContent>
+            </Col>
+          </Row>
         </Grid>
       </section>
     );

@@ -1,10 +1,9 @@
 // Interaction Design and Evaluation project
 
 import React from 'react/addons';
-import { Grid } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './InteractionDesignAndEvaluation.less';
 import withStyles from '../../decorators/withStyles';
-import CollapsibleContent from '../../components/CollapsibleContent';
 
 @withStyles(styles)
 export default class InteractionDesignAndEvaluation {
@@ -24,15 +23,19 @@ export default class InteractionDesignAndEvaluation {
             </iframe>
           </div>
 
-          <CollapsibleContent>
-            <div>
+          <Row>
+            <Col md={4} className="InfoBox">
+              <h3>Spring</h3>
+              <p>2015</p>
+              <h3>Client</h3>
+              <p>Aalto University Learning Services, ICT for Learning Team</p>
+            </Col>
+            <Col md={8}>
               <p>
-                Spring
-                2015
-              </p>
-              <p>
-                Client
-                Aalto University Learning Services, ICT for Learning Team
+                Goals
+                Mainly focused on high-level issues such as navigation and
+                information structure; did not consider visual design
+                -> mid/medium fidelity prototype
               </p>
               <p>
                 Challenges: bad mobile UI, lack of structure and broken information architecture
@@ -45,8 +48,8 @@ export default class InteractionDesignAndEvaluation {
               <p>
                 Team members
               </p>
-            </div>
-          </CollapsibleContent>
+            </Col>
+          </Row>
         </Grid>
       </section>
     );

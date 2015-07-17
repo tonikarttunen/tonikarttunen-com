@@ -11,13 +11,12 @@ export default class Header {
 
   render() {
     return (
-      <header className="Header">
-        <Navbar fixedTop brand={<Link to="/">Toni Karttunen</Link>} toggleNavKey={0}>
+      <header className='Header'>
+        <Navbar fixedTop brand={<Link to='/'>Toni Karttunen</Link>} toggleNavKey={0}>
           <CollapsibleNav eventKey={0}> {/* A reference for toggling the nav */}
             <Nav navbar right>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="projects">Projects</Link></li>
-              <li><Link to="about">About</Link></li>
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/projects'>Projects</Link></li>
             </Nav>
           </CollapsibleNav>
         </Navbar>

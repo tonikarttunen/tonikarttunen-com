@@ -17,8 +17,8 @@ import LondonTravelGuide from '../../components/LondonTravelGuide';
 export default class Projects {
   render() {
     return (
-      <DocumentTitle title="Projects - Toni Karttunen">
-        <div className="Projects">
+      <DocumentTitle title='Projects - Toni Karttunen'>
+        <article className='Projects'>
           <Grid>
             <h1>Projects</h1>
           </Grid>
@@ -29,7 +29,7 @@ export default class Projects {
           <LocationAwareApp/>
           <PersonalFinance/>
           <LondonTravelGuide/>
-        </div>
+        </article>
       </DocumentTitle>
     );
   }

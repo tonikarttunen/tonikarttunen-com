@@ -1,0 +1,6 @@
+{
+  "name": "DiagonalDivider",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./DiagonalDivider.js"
+}
