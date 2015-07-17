@@ -37,5 +37,59 @@
     .carousel-indicators {
       bottom: -4px !important;
     }
+
+    .carousel-control {
+      .glyphicon-chevron-left,
+      .icon-prev {
+        left: 56px;
+      }
+
+      @media
+      (max-width: 768px),
+      (max-device-width: 768px) {
+        .glyphicon-chevron-left,
+        .icon-prev {
+          left: 36px;
+        }
+      }
+
+      .glyphicon-chevron-right,
+      .icon-next {
+        right: 56px;
+      }
+
+      @media
+      (max-width: 768px),
+      (max-device-width: 768px) {
+        .glyphicon-chevron-right,
+        .icon-next {
+          right: 36px;
+        }
+      }
+
+      .glyphicon-chevron-left,
+      .glyphicon-chevron-right,
+      .icon-prev,
+      .icon-next {
+        width: 60px;
+        height: 60px;
+        margin-top: -30px;
+        font-size: 60px;
+      }
+
+      @media
+      (max-width: 768px),
+      (max-device-width: 768px) {
+        .glyphicon-chevron-left,
+        .glyphicon-chevron-right,
+        .icon-prev,
+        .icon-next {
+          width: 30px;
+          height: 30px;
+          margin-top: -15px;
+          font-size: 30px;
+        }
+      }
+    }
   }
 }
