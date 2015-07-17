@@ -14,7 +14,8 @@ export default class Footer {
         <div className="Footer-container">
           <p>
             &copy; 2011—{currentYear} Toni Karttunen. All rights reserved.&nbsp;
-            <a href="https://github.com/tonikarttunen/tonikarttunen-com/">Source code</a>.
+            <a href="https://github.com/tonikarttunen/tonikarttunen-com/">Source code</a>.&nbsp;
+            Bebas Neue font &copy; <a href='http://www.fontfabric.com'>Font Fabric</a>.
           </p>
         </div>
       </footer>

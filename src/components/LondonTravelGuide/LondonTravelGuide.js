@@ -1,10 +1,9 @@
 // London Travel Guide
 
 import React from 'react/addons';
-import { Carousel, CarouselItem, Grid } from 'react-bootstrap';
+import { Carousel, CarouselItem, Grid, Row, Col } from 'react-bootstrap';
 import styles from './LondonTravelGuide.less';
 import withStyles from '../../decorators/withStyles';
-import CollapsibleContent from '../../components/CollapsibleContent';
 
 @withStyles(styles)
 export default class LondonTravelGuide extends React.Component {
@@ -74,22 +73,22 @@ export default class LondonTravelGuide extends React.Component {
             </CarouselItem>
           </Carousel>
 
-          <CollapsibleContent>
-            <div>
-              <p>
-                Summer 2012
-              </p>
+          <Row>
+            <Col md={4} className="InfoBox">
+              <h3>Summer</h3>
+              <p>2012</p>
+              <h3>Technologies</h3>
+              <p>Objective-C, HTML, CSS, JavaScript</p>
+            </Col>
+            <Col md={8}>
               <p>
                 This app was my first iOS app. The development process began
                 in June 2012 and ended in August 2012. Even though it wasn't
                 a masterpiece in terms of software design, I learned a lot
                 while developing the app.
               </p>
-              <p>
-                Technologies: Objective-C, HTML5, CSS3, JavaScript
-              </p>
-            </div>
-          </CollapsibleContent>
+            </Col>
+          </Row>
         </Grid>
       </section>
     );

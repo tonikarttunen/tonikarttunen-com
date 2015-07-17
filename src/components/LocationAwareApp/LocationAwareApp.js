@@ -1,10 +1,9 @@
 // LocationAwareApp
 
 import React from 'react/addons';
-import { Carousel, CarouselItem, Grid } from 'react-bootstrap';
+import { Carousel, CarouselItem, Grid, Row, Col } from 'react-bootstrap';
 import styles from './LocationAwareApp.less';
 import withStyles from '../../decorators/withStyles';
-import CollapsibleContent from '../../components/CollapsibleContent';
 
 @withStyles(styles)
 export default class LocationAwareApp extends React.Component {
@@ -29,10 +28,9 @@ export default class LocationAwareApp extends React.Component {
 
   render() {
     return (
-      <section className="LocationAwareApp">
+      <section className='LocationAwareApp'>
         <Grid>
-          <h2>Location-Aware App</h2>
-          <em>B. Sc. thesis project</em>
+          <h2>B. Sc. Thesis</h2>
 
           <Carousel
             activeIndex={this.state.index}
@@ -42,47 +40,73 @@ export default class LocationAwareApp extends React.Component {
               <img
                 width={440}
                 height={660}
-                alt="220x330"
+                alt='220x330'
                 src={require('./images/Pittsburgh.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
+                alt='220x330'
                 src={require('./images/Trending.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
+                alt='220x330'
                 src={require('./images/FoursquareCheckIn.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
+                alt='220x330'
                 src={require('./images/PrivacySettings.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
+                alt='220x330'
                 src={require('./images/KirjastoOmena.jpg')} />
             </CarouselItem>
           </Carousel>
 
-          <CollapsibleContent>
-            <div>
+          <Row>
+            <Col md={4} className='InfoBox'>
+              <h3>Spring</h3>
+              <p>2013</p>
+              <h3>B. Sc. Thesis</h3>
               <p>
-                Spring
-                2013
+                <a href='about/bachelorsthesis/Bachelors_Thesis_Toni_Karttunen_Aalto_University_2013.pdf'>
+                  PDF
+                </a>
+                &nbsp;(42 pages, in Finnish)
               </p>
+              <h3>Presentation slides</h3>
               <p>
-                I developed this app for my Bachelor's thesis.
+                <a href='about/bachelorsthesis/Bachelors_Thesis_Presentation_Toni_Karttunen_Aalto_University_2013.pdf'>
+                  PDF
+                </a>
+                &nbsp;(15 pages, in Finnish)
+              </p>
+              <h3>Thesis Record</h3>
+              <p>
+                <a href='http://urn.fi/URN:NBN:fi:aalto-201307257437'>
+                  Aalto University Library
+                </a>
+              </p>
+              <h3>Test Data</h3>
+              <p>
+                <a href='https://github.com/tonikarttunen/Paikkatietosovelluksen_testidata'>
+                  <span className='ion-social-github'></span> GitHub
+                </a>
+              </p>
+              <hr/>
+              <h3>Location-Aware App</h3>
+              <p className='NormalParagraph'>
+                As part of my thesis project, I developed an iOS app.
                 The app enables the user to find points of interest nearby.
                 You can select whether to use the new Apple Local Search API,
                 Foursquare API v.2 or Google Places API to find local search results.
@@ -92,20 +116,22 @@ export default class LocationAwareApp extends React.Component {
                 the app aims protect the user's privacy by providing privacy
                 settings and privacy tips.
               </p>
+              <h3>Source Code</h3>
               <p>
-                Technology: Objective-C
+                <a href='https://github.com/tonikarttunen/LocationAwareAppProject'>
+                  <span className='ion-social-github'></span> GitHub
+                </a>
               </p>
-              <p>
-                Source code is available on&nbsp;
-                <a href="https://github.com/tonikarttunen/LocationAwareAppProject">GitHub</a>.
-              </p>
-              <h3>B. Sc. Thesis</h3>
-              <p className="lead">
+              <h3>Technology</h3>
+              <p>Objective-C</p>
+            </Col>
+            <Col md={8}>
+              <p className='lead'>
                 Paikkatiedon hyödyntäminen älypuhelinohjelmistoissa:
                 sovelluskehittäjän näkökulma<br/>
                 Location-Aware Smartphone Applications
               </p>
-              <h4>Summary in English</h4>
+              <h3>Summary in English</h3>
               <p>
                 Modern smartphone operating systems provide versatile application programming
                 interfaces (APIs) for developing location-aware applications. In addition
@@ -136,20 +162,8 @@ export default class LocationAwareApp extends React.Component {
                 location APIs (Google Places API and Google Maps SDK for iOS) is higher than
                 the quality of the Apple MapKit framework and the Foursquare API.
               </p>
-              <p>
-                PDF (in Finnish) **TODO**: Add link
-              </p>
-              <p>
-                Presentation slides (in Finnish) **TODO**: Add link
-              </p>
-              <p>
-                <a href="http://urn.fi/URN:NBN:fi:aalto-201307257437">Thesis record at Aalto University Library</a>
-              </p>
-              <p>
-                <a href="https://github.com/tonikarttunen/Paikkatietosovelluksen_testidata">Test data</a>
-              </p>
-            </div>
-          </CollapsibleContent>
+            </Col>
+          </Row>
         </Grid>
       </section>
     );

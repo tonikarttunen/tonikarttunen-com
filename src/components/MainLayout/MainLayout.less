@@ -6,12 +6,6 @@
 // Ion icons
 @import (less) '../../../bower_components/ionicons/css/ionicons.css';
 
-// Roboto font
-// @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
-
-// Source Sans Pro font
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
-
 @import '../variables.less';
 
 //
@@ -20,7 +14,7 @@
 
 html,
 body {
-  color: #222;
+  color: #232323;
   font-weight: 400;
   font-size: 1em; // 16px;
   font-family: @font-family-base;
@@ -40,18 +34,32 @@ h4,
 h5,
 h6 {
   font-family: @font-family-heading;
+  font-weight: 800;
+
+  .TitleDefinition {
+    font-weight: 100;
+    text-transform: none;
+    color: #676767;
+  }
 }
 
-h1,
-h2,
-h3 {
-  font-weight: 100;
+h2 {
+  font-size: 4em;
+  line-height: 0.97em;
+  margin: 1.5em 0 0.5em 0;
+  color: #3d3d3d;
 }
 
-h4,
-h5,
-h6 {
-  font-weight: 900;
+.InlineBlock {
+  display: inline-block;
+}
+
+.WidthAuto {
+  width: auto;
+}
+
+.VerticalAlignTop {
+  vertical-align: top;
 }
 
 /*
