@@ -1,6 +1,7 @@
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
 import React from 'react/addons';
+import Contact from '../../components/Contact';
 import styles from './Footer.less';
 import withStyles from '../../decorators/withStyles';
 
@@ -11,6 +12,7 @@ export default class Footer {
 
     return (
       <footer className="Footer container">
+        <Contact/>
         <div className="Footer-container">
           <p>
             &copy; 2011—{currentYear} Toni Karttunen. All rights reserved.&nbsp;

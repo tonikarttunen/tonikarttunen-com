@@ -2,7 +2,6 @@
 
 import React from 'react/addons';
 import { Grid, Row, Col } from 'react-bootstrap';
-import Contact from '../../components/Contact';
 import Projects from '../../components/Projects';
 import styles from './Home.less';
 import withStyles from '../../decorators/withStyles';
@@ -14,17 +13,14 @@ export default class Home {
       <article>
         <Grid componentClass='section' className='Home'>
           <Row>
-            <Col md={3}>
+            <Col md={4}>
               UX Design
             </Col>
-            <Col md={3}>
+            <Col md={4}>
               Web Development
             </Col>
-            <Col md={3}>
+            <Col md={4}>
               Mobile App Development
-            </Col>
-            <Col md={3}>
-              <Contact/>
             </Col>
           </Row>
         </Grid>
