@@ -4,7 +4,6 @@ import React from 'react/addons';
 import { Link } from 'react-router';
 import styles from './Header.less';
 import withStyles from '../../decorators/withStyles';
-import { Navbar } from 'react-bootstrap';
 
 @withStyles(styles)
 export default class Header {
@@ -12,7 +11,13 @@ export default class Header {
   render() {
     return (
       <header className='Header'>
-        <Navbar brand={<Link to='/'>Toni Karttunen</Link>} toggleNavKey={0}/>
+        <nav className='navbar navbar-default' role='navigation'>
+          <div className='container'>
+            <div className='navbar-header'>
+              <Link to='/' className='navbar-brand'>Toni Karttunen</Link>
+            </div>
+          </div>
+        </nav>
       </header>
     );
   }
