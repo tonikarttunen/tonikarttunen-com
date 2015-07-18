@@ -109,7 +109,7 @@ gulp.task('build:watch', cb => {
 gulp.task('serve', ['build:watch'], cb => {
   src.server = [
     'build/server.js',
-    'build/content/**/*',
+    // 'build/content/**/*', // No jade templates anymore -> not needed anymore
     'build/templates/**/*'
   ];
   let started = false;
