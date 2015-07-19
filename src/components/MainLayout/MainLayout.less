@@ -19,6 +19,26 @@ body {
   font-size: 1em; // 16px;
   font-family: @font-family-base;
   line-height: 1.5; // 24px
+
+  // Kerning
+  text-rendering: optimizeLegibility;    // optional: for older browsers
+  -moz-font-feature-settings: "kern=1";  // pre-Firefox 14+
+  -webkit-font-feature-settings: "kern"; // Old WebKit browsers
+  -moz-font-feature-settings: "kern";    // Firefox 14+
+  font-feature-settings: "kern";         // Standard
+  font-kerning: normal;                  // Safari 7+, Firefox 24+, Chrome 33(?)+, Opera 21+
+
+  // Common ligatures
+  -webkit-font-variant-ligatures: common-ligatures; // iOS and Safari 6
+  font-variant-ligatures: common-ligatures;         // Up-to-date browsers, including IE10 and Opera 21
+}
+
+// Disable kerning and ligatures on resource-constrained (=mobile) devices
+@media and (max-device-width : 480px) {
+  html,
+  body {
+    text-rendering: optimizeSpeed;
+  }
 }
 
 body {
