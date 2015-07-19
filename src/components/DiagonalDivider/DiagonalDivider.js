@@ -19,9 +19,10 @@ export default class DiagonalDivider extends React.Component {
       let context = canvas.getContext('2d');
 
       // Make canvas drawings look sharp on high-density ("Retina") screens
+      let devicePixelRatio = 1;
       if ('devicePixelRatio' in window) {
         if (window.devicePixelRatio > 1) {
-          const devicePixelRatio = window.devicePixelRatio;
+          devicePixelRatio = window.devicePixelRatio;
           canvas.width = canvas.width * devicePixelRatio;
           canvas.height = canvas.height * devicePixelRatio;
 
@@ -31,9 +32,9 @@ export default class DiagonalDivider extends React.Component {
       }
 
       context.strokeStyle = this.props.color;
-      context.lineWidth = 2;
-      context.moveTo(1, 61);
-      context.lineTo(13, 1);
+      context.lineWidth = 2 * devicePixelRatio;
+      context.moveTo(1 * devicePixelRatio, 61 * devicePixelRatio);
+      context.lineTo(13 * devicePixelRatio, 1 * devicePixelRatio);
       context.stroke();
     }
   }
