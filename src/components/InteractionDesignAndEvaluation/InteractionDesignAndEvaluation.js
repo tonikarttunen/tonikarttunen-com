@@ -11,7 +11,7 @@ export default class InteractionDesignAndEvaluation {
     return (
       <section className="InteractionDesignAndEvaluation">
         <Grid>
-          <h2>Interaction Design and Evaluation Project</h2>
+          <h2>Aalto MyCourses Mobile User Interface Usability Evaluation</h2>
 
           <div className="youtube">
             <iframe
