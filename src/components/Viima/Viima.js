@@ -45,13 +45,18 @@ export default class Viima {
               <p>
                 The main challenge of the project was that the playful
                 and highly visual desktop user interface of the Viima
-                system was tailored for large desktop computer screens.
+                system was only tailored for large desktop computer screens.
                 We had to completely redesign the user interface for
-                mobile device maintaining the same playfulness as in
-                the desktop user interface. To get a realistic picture
-                of how the users of the application perceived our designs,
-                we conducted lots of user testing during the project
-                (first with paper prototypes and later with real software).
+                mobile device while maintaining the same playfulness as in
+                the desktop user interface. 
+                Additionally, an important requirement for the new user
+                interface was that it had to be customizable so that
+                it would work nicely with various brand colours of the
+                client companies.
+                To get a realistic picture of how the users of the
+                application perceived our designs, we conducted lots of
+                user testing during the project (first with paper
+                prototypes and later with real software).
               </p>
               <p>
                 The project was done as part Software Project course at
