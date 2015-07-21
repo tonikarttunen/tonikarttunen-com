@@ -39,7 +39,8 @@ server.get('*', async (req, res, next) => {
   try {
     let data = {
       title: 'Toni Karttunen',
-      description: '',
+      description: 'Toni Karttunen is a Finnish user experience designer ' +
+                   'and software developer.',
       body: '',
       css: ''
     };
