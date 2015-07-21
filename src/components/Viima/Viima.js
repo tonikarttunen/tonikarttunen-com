@@ -48,7 +48,7 @@ export default class Viima {
                 system was only tailored for large desktop computer screens.
                 We had to completely redesign the user interface for
                 mobile device while maintaining the same playfulness as in
-                the desktop user interface. 
+                the desktop user interface.
                 Additionally, an important requirement for the new user
                 interface was that it had to be customizable so that
                 it would work nicely with various brand colours of the
