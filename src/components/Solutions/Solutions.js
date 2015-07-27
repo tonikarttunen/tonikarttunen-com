@@ -14,9 +14,6 @@ export default class Solutions {
           <h1>Solutions</h1>
           <Row>
             <Col md={6} sm={6}>
-              <div className='SolutionIcon'>
-                <span className='ion-easel'/> <span className='ion-edit'/>
-              </div>
               <h2>User Experience Design</h2>
               <ul>
                 <li>Usability evaluation</li>
@@ -26,9 +23,6 @@ export default class Solutions {
               </ul>
             </Col>
             <Col md={6} sm={6}>
-              <div className='SolutionIcon'>
-                <span className='ion-laptop'/> <span className='ion-monitor'/> <span className='ion-iphone'/>
-              </div>
               <h2>Software Development</h2>
               <ul>
                 <li>Web applications</li>

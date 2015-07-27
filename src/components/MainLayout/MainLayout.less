@@ -31,12 +31,9 @@ body {
   // Common ligatures
   -webkit-font-variant-ligatures: common-ligatures; // iOS and Safari 6
   font-variant-ligatures: common-ligatures;         // Up-to-date browsers, including IE10 and Opera 21
-}
 
-// Disable kerning and ligatures on resource-constrained (=mobile) devices
-@media and (max-device-width : 480px) {
-  html,
-  body {
+  // Disable kerning and ligatures on resource-constrained (=mobile) devices
+  @media and (max-device-width : 480px) {
     text-rendering: optimizeSpeed;
   }
 }
@@ -54,7 +51,7 @@ h4,
 h5,
 h6 {
   font-family: @font-family-heading;
-  font-weight: 800;
+  font-weight: 900;
 
   .TitleDefinition {
     font-weight: 100;
@@ -73,14 +70,30 @@ h2 {
   line-height: 0.97em;
   margin: 1.5em 0 0.5em 0;
   color: #3d3d3d;
-}
+  font-weight: 300;
 
-@media
-(max-width: 768px),
-(max-device-width: 768px) {
-  h2 {
+  @media
+  (max-width: 768px),
+  (max-device-width: 768px) {
     font-size: 2.25em;
     margin: 1em 0 0.5em 0;
+  }
+}
+
+p,
+ul,
+ol {
+  font-size: 1.125em;
+  margin-bottom: 1em;
+}
+
+// Override Bootstrap defaults
+.lead,
+p.lead {
+  font-size: 1.5em;
+
+  @media (min-width: 768px) {
+    font-size: 1.5em;
   }
 }
 
