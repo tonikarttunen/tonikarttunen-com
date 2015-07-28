@@ -1,12 +1,14 @@
 // Static file helpers
 
-import ExecutionEnvironment from 'react/lib/ExecutionEnvironment';
+import { canUseDOM } from 'react/lib/ExecutionEnvironment';
+
+const os = require('os');
 
 const PRODUCTION_STATIC_ROOT = 'http://static.tonikarttunen.com/static/';
 const DEVELOPMENT_STATIC_ROOT = 'http://127.0.0.1:8888/';
 
 const getStaticRootUrl = () => {
-  if (ExecutionEnvironment.canUseDOM) {
+  if (canUseDOM) {
     const HOST_BASE_URL =
     window.location.origin || /* Modern browsers */
     window.location.protocol + '//' + window.location.hostname +
@@ -16,7 +18,7 @@ const getStaticRootUrl = () => {
       PRODUCTION_STATIC_ROOT :
       DEVELOPMENT_STATIC_ROOT);
   } else {
-    return (process.env.WEBSITE_HOSTNAME ?
+    return (os.hostname().includes('tonikarttunen.com') ?
       PRODUCTION_STATIC_ROOT :
       DEVELOPMENT_STATIC_ROOT);
   }
