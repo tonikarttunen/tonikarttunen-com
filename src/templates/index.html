@@ -7,9 +7,13 @@
     <meta name="description" content="<%- description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Bootstrap -->
+    <link href="<%= staticPath('bower_components/bootstrap/dist/css/bootstrap.min.css') %>" rel="stylesheet" type="text/css">
+    <!-- Ion icons -->
+    <link href="<%= staticPath('bower_components/ionicons/css/ionicons.min.css') %>" rel="stylesheet" type="text/css">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-    <link href='http://static.tonikarttunen.com/static/Fonts/Bebas-Neue/Bebas-Neue.css' rel='stylesheet' type='text/css'>
+    <link href="<%= staticPath('Fonts/Bebas-Neue/Bebas-Neue.css') %>" rel="stylesheet" type="text/css">
     <style id="css"><%= css %></style>
     <!--[if lt IE 9]>
       <script>
