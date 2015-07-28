@@ -2,8 +2,6 @@
 
 import { canUseDOM } from 'react/lib/ExecutionEnvironment';
 
-const os = require('os');
-
 const PRODUCTION_STATIC_ROOT = 'http://static.tonikarttunen.com/static/';
 const DEVELOPMENT_STATIC_ROOT = 'http://127.0.0.1:8888/';
 
@@ -18,9 +16,8 @@ const getStaticRootUrl = () => {
       PRODUCTION_STATIC_ROOT :
       DEVELOPMENT_STATIC_ROOT);
   } else {
-    return (os.hostname().includes('tonikarttunen.com') ?
-      PRODUCTION_STATIC_ROOT :
-      DEVELOPMENT_STATIC_ROOT);
+    const DEVELOPMENT = process.env.NODE_ENV !== 'production';
+    return DEVELOPMENT ? DEVELOPMENT_STATIC_ROOT : PRODUCTION_STATIC_ROOT;
   }
 };
 
