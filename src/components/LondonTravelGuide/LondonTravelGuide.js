@@ -4,6 +4,7 @@ import React from 'react/addons';
 import { Carousel, CarouselItem, Grid, Row, Col } from 'react-bootstrap';
 import styles from './LondonTravelGuide.less';
 import withStyles from '../../decorators/withStyles';
+import { staticPath } from '../../utilities/static/StaticPath';
 
 @withStyles(styles)
 export default class LondonTravelGuide extends React.Component {
@@ -27,6 +28,8 @@ export default class LondonTravelGuide extends React.Component {
   }
 
   render() {
+    const IMAGE_PATH_PREFIX = 'src/components/LondonTravelGuide/images/';
+
     return (
       <section className="LondonTravelGuide">
         <Grid>
@@ -40,36 +43,36 @@ export default class LondonTravelGuide extends React.Component {
               <img
                 width={440}
                 height={660}
-                alt="220x330"
-                src={require('./images/Home_660.jpg')} />
+                alt="App home view"
+                src={staticPath(IMAGE_PATH_PREFIX + 'Home_660.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
-                src={require('./images/Architecture_660.jpg')} />
+                alt="Architecture"
+                src={staticPath(IMAGE_PATH_PREFIX + 'Architecture_660.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
-                src={require('./images/MusicTheatreAndCinema_660.jpg')} />
+                alt="Music, theatre and cinema"
+                src={staticPath(IMAGE_PATH_PREFIX + 'MusicTheatreAndCinema_660.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
-                src={require('./images/TowerBridge_660.jpg')} />
+                alt="Tower Bridge"
+                src={staticPath(IMAGE_PATH_PREFIX + 'TowerBridge_660.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
-                alt="220x330"
-                src={require('./images/CurrencyConverter_660.jpg')} />
+                alt="Currency converter"
+                src={staticPath(IMAGE_PATH_PREFIX + 'CurrencyConverter_660.jpg')} />
             </CarouselItem>
           </Carousel>
 
