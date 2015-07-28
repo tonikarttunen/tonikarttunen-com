@@ -1,15 +1,12 @@
 {
   "name": "tonikarttunen-com",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Toni Karttunen's website",
   "main": [
     "src/server.js"
   ],
-  "dependencies": {
-    "ionicons": "~2.0.1"
-  },
   "moduleType": [
-    "commonjs",
+    "commonjs2",
     "node"
   ],
   "keywords": [

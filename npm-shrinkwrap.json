@@ -397,11 +397,6 @@
         }
       }
     },
-    "bootstrap": {
-      "version": "3.3.5",
-      "from": "bootstrap@>=3.3.5 <4.0.0",
-      "resolved": "https://registry.npmjs.org/bootstrap/-/bootstrap-3.3.5.tgz"
-    },
     "classnames": {
       "version": "2.1.2",
       "from": "classnames@2.1.2",

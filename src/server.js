@@ -8,13 +8,14 @@ import express from 'express';
 // import React from 'react/addons';
 import './core/Dispatcher';
 import './stores/AppStore';
+import { staticPath } from './utilities/static/StaticPath';
 // import db from './core/Database';
 // import App from './components/App';
 
 const server = express();
 
-var development = process.env.NODE_ENV !== 'production';
-if (development === true) {
+const DEVELOPMENT = process.env.NODE_ENV !== 'production';
+if (DEVELOPMENT === true) {
   server.set('port', (process.env.PORT || 5000));
 } else {
   server.set('port', (process.env.PORT || 15767));
@@ -42,8 +43,10 @@ server.get('*', async (req, res, next) => {
       description: 'Toni Karttunen is a Finnish user experience designer ' +
                    'and software developer.',
       body: '',
-      css: ''
+      css: '',
+      staticPath: staticPath
     };
+
     let html = template(data);
     res.send(html);
 
