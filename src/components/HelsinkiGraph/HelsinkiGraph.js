@@ -30,11 +30,10 @@ export default class HelsinkiGraph {
             </Col>
             <Col md={8}>
               <p>
-                Goals
-              </p>
-              <p>
-                This app prototype used Finnkino XML API for showing movie showtimes
-                and Foursquare API for finding points of interest nearby.
+                This app prototype can be used for finding movie showtimes in
+                Finnish cinemas. It can also be used for finding points of
+                interests nearby. It uses Finnkino API for showing movie
+                showtimes and Foursquare API for finding points of interest.
               </p>
             </Col>
           </Row>

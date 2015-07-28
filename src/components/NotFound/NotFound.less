@@ -1,3 +1,34 @@
 .NotFound {
-	
+  margin-bottom: -2em;
+
+  @media
+  (max-width: 768px),
+  (max-device-width: 768px) {
+    margin-bottom: -0.325em;
+  }
+
+  h1 {
+    text-transform: none;
+    font-size: 3em;
+    color: 4a4a4a;
+    font-weight: 300;
+    margin-bottom: 0.325em;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    display: inline-block;
+    padding: 0.5em 1.25em 0.5em 0.95em;
+    font-weight: 400;
+    color: #5493BE;
+    text-decoration: none;
+    border: 1px solid #5493BE;
+    border-radius: 5px;
+
+    .LinkText {
+      font-size: 1.25em;
+    }
+  }
 }

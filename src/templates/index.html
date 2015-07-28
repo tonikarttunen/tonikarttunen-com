@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,500italic,400italic,300italic,100italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link href='http://static.tonikarttunen.com/static/Fonts/Bebas-Neue/Bebas-Neue.css' rel='stylesheet' type='text/css'>
     <style id="css"><%= css %></style>
     <!--[if lt IE 9]>
@@ -50,14 +50,6 @@
         </div>
       </div>
     <![endif]-->
-    <div id="root">
-      <div style="text-align: center; margin: auto; height: 100vh;">
-        <h1 style="font-size: 1.75em; font-family: 'SF UI Display', Roboto, 'Segoe UI', 'Helvetica Neue', sans-serif; font-weight: 200 !important; color: #cdcdcd; position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%);">
-          Loading
-        </h1>
-      </div>
-      <%= body %>
-    </div>
     <noscript>
       <div style="font-family: sans-serif; background-color: #fff2be; padding: 1em;">
         <p>
@@ -69,6 +61,14 @@
         </p>
       </div>
     </noscript>
+    <div id="root">
+      <div style="text-align: center; margin: auto; height: 100vh;">
+        <h1 style="font-size: 1.75em; font-family: 'Helvetica Neue', Helvetica, Roboto, 'Segoe UI', sans-serif; font-weight: 300 !important; color: #cdcdcd; position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%);">
+          Loading
+        </h1>
+      </div>
+      <%= body %>
+    </div>
     <script src="/app.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

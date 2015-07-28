@@ -2,7 +2,6 @@
 
 import React from 'react/addons';
 import { Grid } from 'react-bootstrap';
-import DocumentTitle from 'react-document-title';
 import styles from './Projects.less';
 import withStyles from '../../decorators/withStyles';
 import Viima from '../../components/Viima';
@@ -17,20 +16,18 @@ import LondonTravelGuide from '../../components/LondonTravelGuide';
 export default class Projects {
   render() {
     return (
-      <DocumentTitle title='Projects - Toni Karttunen'>
-        <article className='Projects'>
-          <Grid>
-            <h1>Projects</h1>
-          </Grid>
-          <Viima/>
-          <InteractionDesignAndEvaluation/>
-          <StrategicUserCentredDesign/>
-          <HelsinkiGraph/>
-          <LocationAwareApp/>
-          <PersonalFinance/>
-          <LondonTravelGuide/>
-        </article>
-      </DocumentTitle>
+      <div className='Projects'>
+        <Grid>
+          <h1>Projects</h1>
+        </Grid>
+        <Viima/>
+        <InteractionDesignAndEvaluation/>
+        <StrategicUserCentredDesign/>
+        <HelsinkiGraph/>
+        <LocationAwareApp/>
+        <PersonalFinance/>
+        <LondonTravelGuide/>
+      </div>
     );
   }
 }

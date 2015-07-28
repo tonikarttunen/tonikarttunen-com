@@ -19,10 +19,22 @@ body {
   font-size: 1em; // 16px;
   font-family: @font-family-base;
   line-height: 1.5; // 24px
+
+  // Kerning
+  text-rendering: optimizeLegibility;    // optional: for older browsers
+  -moz-font-feature-settings: "kern=1";  // pre-Firefox 14+
+  -webkit-font-feature-settings: "kern"; // Old WebKit browsers
+  -moz-font-feature-settings: "kern";    // Firefox 14+
+  font-feature-settings: "kern";         // Standard
+  font-kerning: normal;                  // Safari 7+, Firefox 24+, Chrome 33(?)+, Opera 21+
+
+  // Common ligatures
+  -webkit-font-variant-ligatures: common-ligatures; // iOS and Safari 6
+  font-variant-ligatures: common-ligatures;         // Up-to-date browsers, including IE10 and Opera 21
 }
 
 body {
-  margin-top: 51px; // Fixed navigation bar height
+  // margin-top: 51px; // Fixed navigation bar height
 }
 
 // Typography
@@ -34,7 +46,7 @@ h4,
 h5,
 h6 {
   font-family: @font-family-heading;
-  font-weight: 800;
+  font-weight: 900;
 
   .TitleDefinition {
     font-weight: 100;
@@ -43,11 +55,42 @@ h6 {
   }
 }
 
+h1 {
+  text-transform: uppercase;
+  font-size: 1.55em;
+}
+
 h2 {
   font-size: 4em;
-  line-height: 0.97em;
+  line-height: 0.97;
   margin: 1.5em 0 0.5em 0;
   color: #3d3d3d;
+  font-weight: 300;
+
+  @media
+  (max-width: 768px),
+  (max-device-width: 768px) {
+    font-size: 2.25em;
+    margin: 1em 0 0.5em 0;
+  }
+}
+
+p,
+ul,
+ol {
+  font-size: 1.125em; // 18px
+  line-height: 1.444; // 28px
+  margin-bottom: 1em;
+}
+
+// Override Bootstrap defaults
+.lead,
+p.lead {
+  font-size: 1.5em;
+
+  @media (min-width: 768px) {
+    font-size: 1.5em;
+  }
 }
 
 .InlineBlock {

@@ -11,7 +11,7 @@ export default class StrategicUserCentredDesign {
     return (
       <section className="StrategicUserCentredDesign">
         <Grid>
-          <h2>Strategic User-Centred Design Project</h2>
+          <h2>Internet of Things Solutions for Länsimetro</h2>
 
           <Row>
             <Col md={4} className="InfoBox">
@@ -25,7 +25,7 @@ export default class StrategicUserCentredDesign {
                 Goals
               </p>
               <p>
-                Challenges: very little inteaction with the client company (Länsimetro)
+                Challenges: very little interaction with the client company (Länsimetro)
               </p>
               <p>
                 Good stuff usability testing, ideation (444 ideas), the whole SUCD process

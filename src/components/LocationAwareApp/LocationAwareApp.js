@@ -100,7 +100,7 @@ export default class LocationAwareApp extends React.Component {
               <h3>Test Data</h3>
               <p>
                 <a href='https://github.com/tonikarttunen/Paikkatietosovelluksen_testidata'>
-                  <span className='ion-social-github'></span> GitHub
+                  GitHub
                 </a>
               </p>
               <hr/>
@@ -119,7 +119,7 @@ export default class LocationAwareApp extends React.Component {
               <h3>Source Code</h3>
               <p>
                 <a href='https://github.com/tonikarttunen/LocationAwareAppProject'>
-                  <span className='ion-social-github'></span> GitHub
+                  GitHub
                 </a>
               </p>
               <h3>Technology</h3>
@@ -128,10 +128,9 @@ export default class LocationAwareApp extends React.Component {
             <Col md={8}>
               <p className='lead'>
                 Paikkatiedon hyödyntäminen älypuhelinohjelmistoissa:
-                sovelluskehittäjän näkökulma<br/>
+                sovelluskehittäjän näkökulma&nbsp; —&nbsp;
                 Location-Aware Smartphone Applications
               </p>
-              <h3>Summary in English</h3>
               <p>
                 Modern smartphone operating systems provide versatile application programming
                 interfaces (APIs) for developing location-aware applications. In addition

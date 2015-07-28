@@ -14,6 +14,7 @@ export default class DiagonalDivider extends React.Component {
   componentDidMount() {
     let canvas = document.getElementById(this.props.id);
 
+    // Check if the <canvas> element exists and the browser supports <canvas>
     if (canvas && canvas.getContext) {
       let context = canvas.getContext('2d');
       context.strokeStyle = this.props.color;

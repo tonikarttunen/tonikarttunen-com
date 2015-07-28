@@ -2,8 +2,23 @@
 
 footer,
 .Footer {
-  padding-top: 1em;
-  padding-bottom: 0.5em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+
+  @media
+  (max-width: 768px),
+  (max-device-width: 768px) {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    color: #5493BE;
+    text-decoration: none;
+  }
 
   p {
     font-size: 0.8em;
