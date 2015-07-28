@@ -31,11 +31,6 @@ body {
   // Common ligatures
   -webkit-font-variant-ligatures: common-ligatures; // iOS and Safari 6
   font-variant-ligatures: common-ligatures;         // Up-to-date browsers, including IE10 and Opera 21
-
-  // Disable kerning and ligatures on resource-constrained (=mobile) devices
-  @media and (max-device-width : 480px) {
-    text-rendering: optimizeSpeed;
-  }
 }
 
 body {
