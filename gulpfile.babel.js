@@ -46,7 +46,7 @@ gulp.task('assets', () => {
 gulp.task('resources', () => {
   src.resources = [
     'package.json',
-    'src/content*/**',
+    // 'src/content*/**', // No jade templates anymore -> not needed anymore
     'src/templates*/**'
   ];
   return gulp.src(src.resources)
@@ -177,7 +177,7 @@ gulp.task('deploy', cb => {
 gulp.task('pagespeed', cb => {
   const pagespeed = require('psi');
   // Update the below URL to the public URL of your site
-  pagespeed('example.com', {
+  pagespeed('tonikarttunen.com', {
     strategy: 'mobile'
     // By default we use the PageSpeed Insights free (no API key) tier.
     // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
