@@ -5,9 +5,6 @@
   "main": [
     "src/server.js"
   ],
-  "dependencies": {
-    "ionicons": "~2.0.1"
-  },
   "moduleType": [
     "commonjs",
     "node"

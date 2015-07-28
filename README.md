@@ -47,6 +47,7 @@ $ git clone git@github.com:tonikarttunen/tonikarttunen-com.git
 $ cd tonikarttunen-com
 $ npm install -g gulp           # Install Gulp task runner globally
 $ npm install -g bower          # Install Bower package manager globally
+$ npm install http-server -g    # Install a HTTP server for serving static files (for deveopment)
 $ bower install                 # Install Bower modules
 $ npm install                   # Install Node.js components listed in ./package.json
 ```
@@ -61,6 +62,10 @@ By default, it builds in debug mode. If you need to build in release mode, add
 `--release` flag.
 
 ### How to Run
+
+**_Note to self:_** If you are intending to run the server locally,
+you'll need to run a static file server at port 8888 with CORS enabled:  
+`http-server -p 8888 --cors`.
 
 ```shell
 $ gulp                          # or, `gulp --release`

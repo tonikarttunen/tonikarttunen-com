@@ -5,6 +5,7 @@ import { Carousel, CarouselItem, Grid, Row, Col } from 'react-bootstrap';
 import styles from './PersonalFinance.less';
 import withStyles from '../../decorators/withStyles';
 import DiagonalDivider from '../../components/DiagonalDivider';
+import { staticPath } from '../../utilities/static/StaticPath';
 
 @withStyles(styles)
 export default class LondonTravelGuide extends React.Component {
@@ -28,6 +29,8 @@ export default class LondonTravelGuide extends React.Component {
   }
 
   render() {
+    const IMAGE_PATH_PREFIX = 'src/components/PersonalFinance/images/';
+
     return (
       <section className="PersonalFinance">
         <Grid>
@@ -42,35 +45,35 @@ export default class LondonTravelGuide extends React.Component {
                 width={440}
                 height={660}
                 alt="220x330"
-                src={require('./images/Personal-Finance-1.jpg')} />
+                src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-1.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
                 alt="220x330"
-                src={require('./images/Personal-Finance-2.jpg')} />
+                src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-2.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
                 alt="220x330"
-                src={require('./images/Personal-Finance-3.jpg')} />
+                src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-3.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
                 alt="220x330"
-                src={require('./images/Personal-Finance-4.jpg')} />
+                src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-4.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
                 alt="220x330"
-                src={require('./images/Personal-Finance-5.jpg')} />
+                src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-5.jpg')} />
             </CarouselItem>
           </Carousel>
 

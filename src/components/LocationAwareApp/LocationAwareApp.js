@@ -4,6 +4,7 @@ import React from 'react/addons';
 import { Carousel, CarouselItem, Grid, Row, Col } from 'react-bootstrap';
 import styles from './LocationAwareApp.less';
 import withStyles from '../../decorators/withStyles';
+import { staticPath } from '../../utilities/static/StaticPath';
 
 @withStyles(styles)
 export default class LocationAwareApp extends React.Component {
@@ -27,6 +28,8 @@ export default class LocationAwareApp extends React.Component {
   }
 
   render() {
+    const IMAGE_PATH_PREFIX = 'src/components/LocationAwareApp/images/';
+
     return (
       <section className='LocationAwareApp'>
         <Grid>
@@ -41,35 +44,35 @@ export default class LocationAwareApp extends React.Component {
                 width={440}
                 height={660}
                 alt='220x330'
-                src={require('./images/Pittsburgh.jpg')} />
+                src={staticPath(IMAGE_PATH_PREFIX + 'Trending.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
                 alt='220x330'
-                src={require('./images/Trending.jpg')} />
+                src={staticPath(IMAGE_PATH_PREFIX + 'Pittsburgh.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
                 alt='220x330'
-                src={require('./images/FoursquareCheckIn.jpg')} />
+                src={staticPath(IMAGE_PATH_PREFIX + 'KirjastoOmena.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
                 alt='220x330'
-                src={require('./images/PrivacySettings.jpg')} />
+                src={staticPath(IMAGE_PATH_PREFIX + 'FoursquareCheckIn.jpg')} />
             </CarouselItem>
             <CarouselItem>
               <img
                 width={440}
                 height={660}
                 alt='220x330'
-                src={require('./images/KirjastoOmena.jpg')} />
+                src={staticPath(IMAGE_PATH_PREFIX + 'PrivacySettings.jpg')} />
             </CarouselItem>
           </Carousel>
 
@@ -79,14 +82,14 @@ export default class LocationAwareApp extends React.Component {
               <p>2013</p>
               <h3>B. Sc. Thesis</h3>
               <p>
-                <a href='about/bachelorsthesis/Bachelors_Thesis_Toni_Karttunen_Aalto_University_2013.pdf'>
+                <a href='http://www.tonikarttunen.com/about/bachelorsthesis/Bachelors_Thesis_Toni_Karttunen_Aalto_University_2013.pdf'>
                   PDF
                 </a>
                 &nbsp;(42 pages, in Finnish)
               </p>
               <h3>Presentation slides</h3>
               <p>
-                <a href='about/bachelorsthesis/Bachelors_Thesis_Presentation_Toni_Karttunen_Aalto_University_2013.pdf'>
+                <a href='http://www.tonikarttunen.com/about/bachelorsthesis/Bachelors_Thesis_Presentation_Toni_Karttunen_Aalto_University_2013.pdf'>
                   PDF
                 </a>
                 &nbsp;(15 pages, in Finnish)
