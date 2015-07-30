@@ -59,13 +59,13 @@ export default class Viima {
                 prototypes and later with real software).
               </p>
               <p>
-                The project was done as part Software Project course at
-                Aalto University. Our team, which consisted of seven students,
-                was selected as the second best team of the course by
-                Accenture and the course staff (there were 16 other teams
-                participating in the course). During the project, my tasks
-                included user interface design (both low-fidelity wireframing
-                and high-fidelity visual design with Adobe Illustrator),
+                The project was done as part the CSE-C2610/CSE-C2620
+                Software Project course at Aalto University. Our team, which
+                consisted of seven students, was selected as the second best
+                team of the course by Accenture and the course staff (there
+                were 16 other teams participating in the course). During the
+                project, my tasks included user interface design (both low-fidelity
+                wireframing and high-fidelity visual design with Adobe Illustrator),
                 usability testing, front-end software development and testing.
               </p>
             </Col>
