@@ -6,10 +6,10 @@ import { Grid } from 'react-bootstrap';
 import styles from './Header.less';
 import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
+import MenuToggle from '../../components/MenuToggle';
 
 @withStyles(styles)
 export default class Header {
-
   render() {
     const logoStyles = {
       'background': 'url(' + staticPath('src/components/Header/images/Header-Logo-Light-Text.png') + ')',
@@ -27,22 +27,7 @@ export default class Header {
             </div>
             <div className='NavigationBarRight'>
               <div className='NavigationBarRightContainer'>
-                <div className='hidden-xs'>
-                  <Link to='/user-experience-design' className='NavigationLink'>
-                    UX Design
-                  </Link>
-                  <Link to='/software-development' className='NavigationLink'>
-                    Software Development
-                  </Link>
-                  <Link to='/projects' className='NavigationLink'>
-                    Projects
-                  </Link>
-                </div>
-                <div className='visible-xs'>
-                  <Link to='/menu' className='NavigationLink MenuToggle'>
-                    Menu <span className='ion-arrow-down-b'/>
-                  </Link>
-                </div>
+                <MenuToggle/>
               </div>
             </div>
           </Grid>
