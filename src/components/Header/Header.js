@@ -2,6 +2,7 @@
 
 import React from 'react/addons';
 import { Link } from 'react-router';
+import { Grid } from 'react-bootstrap';
 import styles from './Header.less';
 import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
@@ -17,17 +18,36 @@ export default class Header {
 
     return (
       <header className='Header'>
-        <nav className='navbar navbar-default navbar-fixed-top' role='navigation'>
-          <div className='container'>
-            <div className='navbar-header'>
-              <Link to='/' className='navbar-brand'>
-                <span className='logo' style={logoStyles} />Toni Karttunen
+        <nav className='NavigationBar' role='navigation'>
+          <Grid>
+            <div className='NavigationBarLeft'>
+              <Link to='/' className='LogoContainer'>
+                <span className='Logo' style={logoStyles} />Toni Karttunen
               </Link>
             </div>
-          </div>
+            <div className='NavigationBarRight'>
+              <div className='NavigationBarRightContainer'>
+                <div className='hidden-xs'>
+                  <Link to='/user-experience-design' className='NavigationLink'>
+                    UX Design
+                  </Link>
+                  <Link to='/software-development' className='NavigationLink'>
+                    Software Development
+                  </Link>
+                  <Link to='/projects' className='NavigationLink'>
+                    Projects
+                  </Link>
+                </div>
+                <div className='visible-xs'>
+                  <Link to='/menu' className='NavigationLink MenuToggle'>
+                    Menu <span className='ion-arrow-down-b'/>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Grid>
         </nav>
       </header>
     );
   }
-
 }
