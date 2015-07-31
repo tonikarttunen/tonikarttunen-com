@@ -60,8 +60,8 @@ export default class Menu {
       },
       {
         id: 6,
-        title: '/projects/personal-finance',
-        url: 'Personal Finance'
+        title: 'Personal Finance',
+        url: '/projects/personal-finance'
       },
       {
         id: 7,
