@@ -6,89 +6,97 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Menu.less';
 import withStyles from '../../decorators/withStyles';
 
-const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-
 @withStyles(styles)
 export default class Menu {
   render() {
+    const menuItems = [
+      {
+        id: 1,
+        title: 'Home',
+        url: '/'
+      },
+      {
+        id: 2,
+        title: 'User Experience Design',
+        url: '/user-experience-design'
+      },
+      {
+        id: 3,
+        title: 'Software Development',
+        url: '/software-development'
+      },
+      {
+        id: 4,
+        title: 'Projects',
+        url: 'projects'
+      }
+    ];
+
+    const projects = [
+      {
+        id: 1,
+        title: 'Viima Mobile User Interface',
+        url: '/projects/viima-mobile-user-interface'
+      },
+      {
+        id: 2,
+        title: 'Aalto MyCourses Usability Evaluation',
+        url: '/projects/aalto-mycourses-usability-evaluation'
+      },
+      {
+        id: 3,
+        title: 'Internet of Things Solutions for Länsimetro',
+        url: '/projects/internet-of-things-solutions-for-lansimetro'
+      },
+      {
+        id: 4,
+        title: 'HelsinkiGraph',
+        url: '/projects/helsinkigraph'
+      },
+      {
+        id: 5,
+        title: 'B. Sc. Thesis',
+        url: '/projects/b-sc-thesis'
+      },
+      {
+        id: 6,
+        title: '/projects/personal-finance',
+        url: 'Personal Finance'
+      },
+      {
+        id: 7,
+        title: 'London Travel Guide',
+        url: '/projects/london-travel-guide'
+      }
+    ];
+
     return (
-      <ReactCSSTransitionGroup transitionName='Menu' transitionAppear={true}>
-        <Grid className='Menu' key={this}>
-          <Row>
-            <Col md={12}>
-              <h2>
-                <Link to='/'>
-                  Home
-                </Link>
-              </h2>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <h2>
-                <Link to='/user-experience-design'>
-                    User Experience Design
-                </Link>
-              </h2>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <h2>
-                <Link to='/software-development'>
-                    Software Development
-                </Link>
-              </h2>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <h2>
-                <Link to='/projects'>
-                    Projects
-                </Link>
-              </h2>
-              <ul>
-                <li>
-                  <Link to='/projects/viima-mobile-user-interface'>
-                    Viima Mobile User Interface
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/projects/aalto-mycourses-usability-evaluation'>
-                    Aalto MyCourses Usability Evaluation
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/projects/internet-of-things-solutions-for-lansimetro'>
-                    Internet of Things Solutions for Länsimetro
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/projects/helsinkigraph'>
-                    HelsinkiGraph
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/projects/b-sc-thesis'>
-                    B. Sc. Thesis
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/projects/personal-finance'>
-                    Personal Finance
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/projects/london-travel-guide'>
-                    London Travel Guide
-                  </Link>
-                </li>
-              </ul>
-            </Col>
-          </Row>
-        </Grid>
-      </ReactCSSTransitionGroup>
+      <Grid className='Menu'>
+        {menuItems.map(item => {
+          return (
+            <Row key={item.id}>
+              <Col md={12}>
+                <h2>
+                  <Link to={item.url}>{item.title}</Link>
+                </h2>
+              </Col>
+            </Row>
+          );
+        })}
+        <Row>
+          <Col md={12}>
+            <ul>
+              {projects.map(project => {
+                return (
+                  <li key={project.id}>
+                    <Link to={project.url}>{project.title}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }
