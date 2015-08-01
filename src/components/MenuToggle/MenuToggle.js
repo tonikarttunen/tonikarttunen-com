@@ -11,7 +11,7 @@ const MenuToggleInternal = React.createClass({
 
   render() {
     let isOpen = false;
-    let canGoBack;
+    let canGoBack = false;
 
     if (canUseDOM) {
       isOpen = window.location.pathname.includes('/menu');
@@ -23,12 +23,24 @@ const MenuToggleInternal = React.createClass({
 
     if (isOpen) {
       if (canGoBack) {
-        toggleElement = <span className='NavigationLink MenuToggle' onClick={() => this.goBack()}>Menu <span className={arrow}/></span>;
+        toggleElement = (
+          <span className='NavigationLink MenuToggle' onClick={() => this.goBack()}>
+            Menu <span className={arrow}/>
+          </span>
+        );
       } else {
-        toggleElement = <Link to='/' className='NavigationLink MenuToggle'>Menu <span className={arrow}/></Link>;
+        toggleElement = (
+          <Link to='/' className='NavigationLink MenuToggle'>
+            Menu <span className={arrow}/>
+          </Link>
+        );
       }
     } else {
-      toggleElement = <Link to='/menu' className='NavigationLink MenuToggle'>Menu <span className={arrow}/></Link>;
+      toggleElement = (
+        <Link to='/menu' className='NavigationLink MenuToggle'>
+          Menu <span className={arrow}/>
+        </Link>
+      );
     }
 
     return (
