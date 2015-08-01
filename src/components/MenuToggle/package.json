@@ -1,0 +1,6 @@
+{
+  "name": "MenuToggle",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./MenuToggle.js"
+}

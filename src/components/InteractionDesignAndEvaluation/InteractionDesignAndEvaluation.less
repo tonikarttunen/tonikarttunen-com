@@ -1,8 +1,25 @@
 // InteractionDesignAndEvaluation.less
 
+@import (less) '../../components/Header/HeaderWithWhiteText.less';
+@import (less) '../../components/Footer/FooterForColorFulPage.less';
+
+@backgroundColor: #353535;
+
+header .NavigationBar,
+.Header .NavigationBar,
+.InteractionDesignAndEvaluation {
+  background-color: @backgroundColor;
+}
+
+header,
+.Header {
+  .NavigationBar {
+    border-bottom: 1px solid @backgroundColor;
+  }
+}
+
 .InteractionDesignAndEvaluation {
   color: white;
-  background-color: #353535;
   
   h2 {
     color: #e3e3e3; // #cfcfcf;
@@ -14,7 +31,7 @@
     }
 
     p {
-      color: #8e8e8e; // #494949;
+      color: #8e8e8e !important; // #494949;
     }
   }
 }
