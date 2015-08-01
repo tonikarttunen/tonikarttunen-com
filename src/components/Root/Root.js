@@ -20,22 +20,38 @@ export default class Root extends Component {
   render() {
     const { history } = this.props;
 
+    // TODO: figure out how to append trailing slashes automatically
+    // just like the Django router does
+
     return (
       <Router history={history}>
         <Route path='/' component={MainLayout}>
           <Route path='menu' component={Menu}/>
+          <Route path='menu/' component={Menu}/>
           <Route path='projects' component={Projects}/>
+          <Route path='projects/' component={Projects}/>
           <Route path='projects/viima-mobile-user-interface' component={Viima}/>
+          <Route path='projects/viima-mobile-user-interface/' component={Viima}/>
           <Route
             path='projects/aalto-mycourses-usability-evaluation'
             component={InteractionDesignAndEvaluation}/>
           <Route
+            path='projects/aalto-mycourses-usability-evaluation/'
+            component={InteractionDesignAndEvaluation}/>
+          <Route
             path='projects/internet-of-things-solutions-for-lansimetro'
             component={StrategicUserCentredDesign}/>
+          <Route
+            path='projects/internet-of-things-solutions-for-lansimetro/'
+            component={StrategicUserCentredDesign}/>
           <Route path='projects/helsinkigraph' component={HelsinkiGraph}/>
+          <Route path='projects/helsinkigraph/' component={HelsinkiGraph}/>
           <Route path='projects/b-sc-thesis' component={LocationAwareApp}/>
+          <Route path='projects/b-sc-thesis/' component={LocationAwareApp}/>
           <Route path='projects/personal-finance' component={PersonalFinance}/>
+          <Route path='projects/personal-finance/' component={PersonalFinance}/>
           <Route path='projects/london-travel-guide' component={LondonTravelGuide}/>
+          <Route path='projects/london-travel-guide/' component={LondonTravelGuide}/>
           <Route path='*' component={NotFound}/>
         </Route>
       </Router>
