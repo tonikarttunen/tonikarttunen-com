@@ -1,8 +1,25 @@
 // LondonTravelGuide.less
 
+@import (less) '../../components/Header/HeaderWithWhiteText.less';
+@import (less) '../../components/Footer/FooterForColorFulPage.less';
+
+@backgroundColor: #345267;
+
+header .NavigationBar,
+.Header .NavigationBar,
+.LondonTravelGuide {
+  background-color: @backgroundColor; // hsl(205, 52%, 52%);
+}
+
+header,
+.Header {
+  .NavigationBar {
+    border-bottom: 1px solid @backgroundColor;
+  }
+}
+
 .LondonTravelGuide {
   color: white;
-  background-color: #345267; // hsl(205, 52%, 52%);
 
   h2 {
     color: #9DC5DF; // #ABD4EF;
@@ -14,7 +31,7 @@
     }
 
     p {
-      color: #4E81A6; // #487FA8; #3D7BA8;
+      color: #4E81A6 !important; // #487FA8; #3D7BA8;
     }
   }
 }

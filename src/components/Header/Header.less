@@ -3,21 +3,13 @@
 @import '../variables.less';
 @import '../less-mixins-and-utils.less';
 
-@headerTextColor: #909090;
+@headerTextColor: #a7a7a7; // #909090;
 
 header,
 .Header {
   .unselectable;
   color: @headerTextColor;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-
-  @media
-  (max-width: 991px),
-  (max-device-width: 991px) {
-    letter-spacing: 0;
-  }
+  font-weight: 700;
 
   a,
   a:active,
@@ -31,7 +23,7 @@ header,
     position: fixed;
     top: 0;
     background-color: white;
-    border-bottom: 1px solid #f4f4f4;
+    border-bottom: 1px solid white; // #f4f4f4;
     font-size: 1.0625em;
     line-height: 1;
     height: 50px;
@@ -53,12 +45,6 @@ header,
           padding: 15px 0;
         }
 
-        @media
-        (max-width: 300px),
-        (max-device-width: 300px) {
-          text-transform: none;
-        }
-
         .Logo {
           width: 36px;
           height: 36px;
@@ -67,6 +53,14 @@ header,
           margin-right: 8px;
           margin-top: -3px;
           vertical-align: middle;
+          
+          // Legacy browsers
+          background-image:
+            url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Light-Text.png);
+          // Modern browsers
+          background-image:
+            url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Light-Text.svg),
+            linear-gradient(transparent, transparent);
 
           @media
           (max-width: 991px),
@@ -79,6 +73,7 @@ header,
 
     .NavigationBarRight {
       float: right;
+      text-transform: uppercase;
 
       .NavigationBarRightContainer {
         position: relative;
@@ -94,14 +89,6 @@ header,
           }
 
           &.MenuToggle {
-            font-weight: 700;
-
-            @media
-            (max-width: 767px),
-            (max-device-width: 767px) {
-              padding: 15px 0 15px 15px;
-            }
-
             @media
             (max-width: 400px),
             (max-device-width: 400px) {

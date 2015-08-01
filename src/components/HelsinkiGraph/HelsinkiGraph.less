@@ -1,8 +1,25 @@
 // HelsinkiGraph.less
 
+@import (less) '../../components/Header/HeaderWithWhiteText.less';
+@import (less) '../../components/Footer/FooterForColorFulPage.less';
+
+@backgroundColor: rgb(55, 147, 182);
+
+header .NavigationBar,
+.Header .NavigationBar,
+.HelsinkiGraph {
+  background-color: @backgroundColor;
+}
+
+header,
+.Header {
+  .NavigationBar {
+    border-bottom: 1px solid @backgroundColor;
+  }
+}
+
 .HelsinkiGraph {
   color: white;
-  background-color: rgb(55, 147, 182);
 
   h2 {
     color: #c6e7fe; // #D0EDF9;
@@ -14,7 +31,7 @@
     }
 
     p {
-      color: #6EC3DF; // #7BC7E0; // #99CCDD;
+      color: #6EC3DF !important; // #7BC7E0; // #99CCDD;
     }
   }
 }

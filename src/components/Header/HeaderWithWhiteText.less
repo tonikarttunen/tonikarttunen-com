@@ -1,0 +1,33 @@
+// Header with white text
+
+header,
+.Header {
+  color: white;
+
+  a,
+  a:active,
+  a:focus,
+  a:visited {
+    color: white !important;
+    text-decoration: none;
+  }
+
+  .NavigationBar {
+    background-color: #333;
+    border-bottom: 1px solid #222;
+
+    .NavigationBarLeft {
+      .LogoContainer {
+        .Logo {
+          // Legacy browsers
+          background-image:
+            url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Dark-Text.png);
+          // Modern browsers
+          background-image:
+            url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Dark-Text.svg),
+            linear-gradient(transparent, transparent);
+        }
+      }
+    }
+  }
+}

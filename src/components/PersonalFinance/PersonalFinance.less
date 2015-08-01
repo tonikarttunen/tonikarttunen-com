@@ -1,8 +1,25 @@
 // PersonalFinance.less
 
+@import (less) '../../components/Header/HeaderWithWhiteText.less';
+@import (less) '../../components/Footer/FooterForColorFulPage.less';
+
+@backgroundColor: #45A080;
+
+header .NavigationBar,
+.Header .NavigationBar,
+.PersonalFinance {
+  background-color: @backgroundColor; // #46A685; // #45A080; #3D997A; // #3D997A; // #1F7F5E; // hsl(159, 63%, 25%);
+} 
+
+header,
+.Header {
+  .NavigationBar {
+    border-bottom: 1px solid @backgroundColor;
+  }
+}
+
 .PersonalFinance {
   color: white;
-  background-color: #45A080; // #46A685; // #45A080; #3D997A; // #3D997A; // #1F7F5E; // hsl(159, 63%, 25%);
 
   h2 {
     color: #B0F5DD;
@@ -14,7 +31,7 @@
     }
 
     p {
-      color: #6CCFAC;
+      color: #6CCFAC !important;
     }
   }
 }
