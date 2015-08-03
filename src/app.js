@@ -14,7 +14,7 @@ function run() {
   React.render(<Root history={history}/>, rootElement);
 
   React.initializeTouchEvents();    // Configure React's event system to handle touch events
-  FastClick.attach(document.body);  // Disable 300ms click delay on touchscreen devices 
+  FastClick.attach(document.body);  // Disable 300ms click delay on touchscreen devices
 }
 
 // Run the application when both DOM is ready
