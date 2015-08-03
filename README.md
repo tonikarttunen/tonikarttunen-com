@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/tonikarttunen/tonikarttunen-com.svg)](https://travis-ci.org/tonikarttunen/tonikarttunen-com)
 [![Dependency Status](https://david-dm.org/tonikarttunen/tonikarttunen-com.svg)](https://david-dm.org/tonikarttunen/tonikarttunen-com)
 
-This repository contains the source code of [http://www.tonikarttunen.com](http://www.tonikarttunen.com). It is a modern single-page-application that is written in [React](https://facebook.github.io/react/) and [EcmaScript 2015 (ES6)](https://babeljs.io/docs/learn-es2015/). The project is based on [react-starter-kit](https://github.com/kriasoft/react-starter-kit/).
+This repository contains the source code of the [tonikarttunen.com](http://www.tonikarttunen.com) web application. It is a modern single-page-application that is written in [React](https://facebook.github.io/react/) and [EcmaScript 2015 (ES6)](https://babeljs.io/docs/learn-es2015/). The project is based on [react-starter-kit](https://github.com/kriasoft/react-starter-kit/).
 
 
 ### Documentation
