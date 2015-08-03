@@ -1,59 +1,20 @@
-/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
+// app.js
 
 import 'babel/polyfill';
 import React from 'react/addons';
 import BrowserHistory from 'react-router/lib/BrowserHistory';
 import Root from './components/Root';
-// import FastClick from 'fastclick';
-// import App from './components/App';
-// import Dispatcher from './core/Dispatcher';
-// import AppActions from './actions/AppActions';
-// import ActionTypes from './constants/ActionTypes';
-
-// let path = decodeURI(window.location.pathname);
-// let onSetMeta = (name, content) => {
-//   // Remove and create a new <meta /> tag in order to make it work
-//   // with bookmarks in Safari
-//   let elements = document.getElementsByTagName('meta');
-//   [].slice.call(elements).forEach((element) => {
-//     if (element.getAttribute('name') === name) {
-//       element.parentNode.removeChild(element);
-//     }
-//   });
-//   let meta = document.createElement('meta');
-//   meta.setAttribute('name', name);
-//   meta.setAttribute('content', content);
-//   document.getElementsByTagName('head')[0].appendChild(meta);
-// };
+import FastClick from 'fastclick';
 
 function run() {
   // Render the top-level React component
-
   const rootElement = document.getElementById('root');
   const history = new BrowserHistory();
 
   React.render(<Root history={history}/>, rootElement);
 
-  // let props = {
-  //   path: path,
-  //   context: {
-  //     onSetTitle: value => document.title = value,
-  //     onSetMeta
-  //   }
-  // };
-  // let element = React.createElement(App, props);
-  // React.render(element, document.getElementById('app'), () => {
-  //   let css = document.getElementById('css');
-  //   css.parentNode.removeChild(css);
-  // });
-
-  // // Update `Application.path` prop when `window.location` is changed
-  // Dispatcher.register((action) => {
-  //   if (action.type === ActionTypes.CHANGE_LOCATION) {
-  //     element = React.cloneElement(element, {path: action.path});
-  //     React.render(element, document.getElementById('app'));
-  //   }
-  // });
+  React.initializeTouchEvents();    // Configure React's event system to handle touch events
+  FastClick.attach(document.body);  // Disable 300ms click delay on touchscreen devices 
 }
 
 // Run the application when both DOM is ready
@@ -65,7 +26,5 @@ Promise.all([
     } else {
       window.attachEvent('onload', resolve);
     }
-  }).then(() => React.initializeTouchEvents()) // Configure React's event system to handle touch events
-  /* () => FastClick.attach(document.body) */ // ,
-  // new Promise((resolve) => AppActions.loadPage(path, resolve))
+  })
 ]).then(run);
