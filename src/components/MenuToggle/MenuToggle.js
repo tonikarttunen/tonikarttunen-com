@@ -15,7 +15,10 @@ const MenuToggleInternal = React.createClass({
 
     if (canUseDOM) {
       isOpen = window.location.pathname.includes('/menu');
-      canGoBack = window.history.length > 1;
+
+      // IE does not support document.referrer
+      const referrer = document.referrer || 'http://www.tonikarttunen.com';
+      canGoBack = window.history.length > 1 && referrer.includes(window.location.hostname);
     }
 
     let arrow = isOpen ? 'ion-arrow-up-b' : 'ion-arrow-down-b';
