@@ -57,8 +57,8 @@ export default class Projects {
           <ul>
           {projects.map((project) => {
             return (
-              <li>
-                <Link to={project.url} key={project.title}>
+              <li key={project.title}>
+                <Link to={project.url}>
                   {project.title}
                 {/*
                   <Col sm={6}>
