@@ -47,7 +47,7 @@ export default class InteractionDesignAndEvaluation {
 
                   First, we conducted expert reviews with back-of-the-envelope action
                   analysis and usability guidelines. Then, the usability of the system
-                  was evaluated with potential test users. In user tests, we utilized
+                  was evaluated with test users. In user tests, we utilized
                   visual walkthrough method with utility analysis and traditional
                   usability tests in a usability laboratory. After the user tests, we
                   created an improved prototype of the system with the Axure prototyping

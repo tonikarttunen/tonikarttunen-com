@@ -11,7 +11,6 @@ export default class Solutions {
     return (
       <div className='Solutions'>
         <Grid componentClass='section'>
-          <h1>Solutions</h1>
           <Row>
             <Col md={6} sm={6}>
               <h2>User Experience Design</h2>
