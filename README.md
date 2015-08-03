@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/tonikarttunen/tonikarttunen-com.svg)](https://travis-ci.org/tonikarttunen/tonikarttunen-com)
 [![Dependency Status](https://david-dm.org/tonikarttunen/tonikarttunen-com.svg)](https://david-dm.org/tonikarttunen/tonikarttunen-com)
 
-This repository contains an upcoming redesign of [http://www.tonikarttunen.com](http://www.tonikarttunen.com). It is a modern single-page-application that is written in [React](https://facebook.github.io/react/), [Flux](http://facebook.github.io/flux/) and [EcmaScript 2015 (ES6)](https://babeljs.io/docs/learn-es2015/). The project is based on [react-starter-kit](https://github.com/kriasoft/react-starter-kit/).
+This repository contains the source code of [http://www.tonikarttunen.com](http://www.tonikarttunen.com). It is a modern single-page-application that is written in [React](https://facebook.github.io/react/) and [EcmaScript 2015 (ES6)](https://babeljs.io/docs/learn-es2015/). The project is based on [react-starter-kit](https://github.com/kriasoft/react-starter-kit/).
 
 
 ### Documentation
@@ -100,7 +100,7 @@ the file is. Name the test by appending `-test.js` to the js file.
 
 * `react-starter-kit` source code is licensed under the MIT License (MIT). See [LICENSE.txt](./LICENSE.txt)
 file in the project root.
+* All the other code in this repository: Copyright (C) 2015 Toni Karttunen. All rights reserved.
+* All the images and other artwork in this repository: Copyright (C) 2015 Toni Karttunen. All rights reserved.
 * Documentation to the project is licensed under the
 [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/) license.
-* React logo image is a trademark of Facebook, Inc.
-* All the other images, videos, other artwork and code in this repository: Copyright (C) 2015 Toni Karttunen. All rights reserved. 
