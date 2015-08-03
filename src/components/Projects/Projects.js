@@ -2,7 +2,7 @@
 
 import React from 'react/addons';
 import { Link } from 'react-router';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row } from 'react-bootstrap'; // import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Projects.less';
 import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
@@ -55,7 +55,7 @@ export default class Projects {
         <h2>Projects</h2>
         <Row>
           <ul>
-          {projects.map((project, index) => {
+          {projects.map((project) => {
             return (
               <li>
                 <Link to={project.url} key={project.title}>
