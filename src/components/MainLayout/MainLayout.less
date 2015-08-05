@@ -1,6 +1,7 @@
 /* App-wide styles */
 
 @import '../variables.less';
+@import '../less-mixins-and-utils.less';
 
 //
 // Base styles
@@ -145,6 +146,17 @@ img,
 svg,
 video {
   vertical-align: middle;
+}
+
+// Responsive element with 16:9 width/height ratio
+
+.WideScreenMediaContainer {
+  .responsive-resize-outer-element(56.25%);
+
+  .WideScreenMedia {
+    .responsive-resize-inner-element;
+    background-size: cover !important;
+  }
 }
 
 // Responsive YouTube video embedding

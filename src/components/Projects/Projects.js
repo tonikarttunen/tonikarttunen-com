@@ -36,17 +36,17 @@ export default class Projects {
       {
         title: 'B. Sc. Thesis',
         url: '/projects/b-sc-thesis',
-        imageUrl: staticPath(IMAGE_PATH_PREFIX + 'B-Sc-Thesis.jpg')
+        imageUrl: staticPath(IMAGE_PATH_PREFIX + 'Projects-v4_B%20Sc%20Thesis.jpg')
       },
       {
         title: 'Personal Finance',
         url: '/projects/personal-finance',
-        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects_Aalto%20MyCourses%203.jpg'
+        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects-v3----_Personal%20Finance.jpg'
       },
       {
         title: 'London Travel Guide',
         url: '/projects/london-travel-guide',
-        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects_Aalto%20MyCourses%203.jpg'
+        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects-v3----_London%20Travel%20Guide.jpg'
       }
     ];
 
@@ -62,8 +62,8 @@ export default class Projects {
 
           return (
             <Link to={project.url} key={project.title} title={project.title}>
-              <div className='ProjectCoverImageContainer'>
-                <div style={projectStyle} className='ProjectCoverImage'/>
+              <div className='WideScreenMediaContainer ProjectCoverImageContainer'>
+                <div style={projectStyle} className='WideScreenMedia'/>
               </div>
             </Link>
           );

@@ -1,7 +1,6 @@
 // Projects.less
 
 @import '../variables.less';
-@import '../less-mixins-and-utils.less';
 
 body {
   margin-top: 50px;
@@ -32,7 +31,6 @@ body {
   }
 
   .ProjectCoverImageContainer {
-    .responsive-resize-outer-element(56.25%);
     margin-bottom: 2em;
 
     @media
@@ -40,10 +38,5 @@ body {
     (max-device-width: 767px) {
       margin-bottom: 1em;
     }
-  }
-
-  .ProjectCoverImage {
-    .responsive-resize-inner-element;
-    background-size: cover;
   }
 }

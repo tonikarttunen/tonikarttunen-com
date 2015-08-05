@@ -1,5 +1,27 @@
 // InteractionDesignAndEvaluation.less
 
 .InteractionDesignAndEvaluation {
+  .ProcessDiagram {
+    // Legacy browsers
+    background-image:
+      url(http://static.tonikarttunen.com/static/src/components/InteractionDesignAndEvaluation/Aalto-MyCourses-Process-Wide.png);
+    // Modern browsers
+    background-image:
+      url(http://static.tonikarttunen.com/static/src/components/InteractionDesignAndEvaluation/Aalto-MyCourses-Process-Wide.svg),
+      linear-gradient(transparent, transparent);
+  }
 
+  .ProcessDiagramMobile {
+    width: 283px;
+    height: 1502px;
+    background-size: 100% 100%;
+
+    // Legacy browsers
+    background-image:
+      url(http://static.tonikarttunen.com/static/src/components/InteractionDesignAndEvaluation/Aalto-MyCourses-Process-Mobile.png);
+    // Modern browsers
+    background-image:
+      url(http://static.tonikarttunen.com/static/src/components/InteractionDesignAndEvaluation/Aalto-MyCourses-Process-Mobile.svg),
+      linear-gradient(transparent, transparent);
+  }
 }
