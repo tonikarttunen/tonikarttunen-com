@@ -21,7 +21,7 @@ export default class Projects {
       {
         title: 'Aalto MyCourses Usability Evaluation',
         url: '/projects/aalto-mycourses-usability-evaluation',
-        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects_Aalto%20MyCourses%203.jpg'
+        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects-v2_Aalto%20MyCourses%204.jpg'
       },
       {
         title: 'Internet of Things Solutions for Länsimetro',
@@ -53,27 +53,21 @@ export default class Projects {
     return (
       <Grid className='Projects' componentClass='article'>
         <h2>Projects</h2>
+        {projects.map((project) => {
+          const projectStyle = {
+            backgroundImage: 'url(' + project.imageUrl + ')',
+            filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")',
+            msFilter: '\"progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")\"'
+          };
 
-          {projects.map((project) => {
-            const projectStyle = {
-              backgroundImage: 'url(' + project.imageUrl + ')',
-              filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")',
-              msFilter: '\"progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")\"'
-            };
-
-            return (
-              <Link to={project.url} key={project.title}>
-                <div className='ProjectCoverImageContainer'>
-                  <div style={projectStyle} className='ProjectCoverImage'>
-                    <div className='Gradient'>
-                      <h3>{project.title}</h3>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-
+          return (
+            <Link to={project.url} key={project.title} title={project.title}>
+              <div className='ProjectCoverImageContainer'>
+                <div style={projectStyle} className='ProjectCoverImage'/>
+              </div>
+            </Link>
+          );
+        })}
       </Grid>
     );
   }
