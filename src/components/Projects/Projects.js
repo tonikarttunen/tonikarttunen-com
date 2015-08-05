@@ -21,7 +21,7 @@ export default class Projects {
       {
         title: 'Aalto MyCourses Usability Evaluation',
         url: '/projects/aalto-mycourses-usability-evaluation',
-        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects-v2_Aalto%20MyCourses%204.jpg'
+        imageUrl: staticPath(IMAGE_PATH_PREFIX + 'Aalto-MyCourses.jpg')
       },
       {
         title: 'Internet of Things Solutions for Länsimetro',
@@ -36,17 +36,17 @@ export default class Projects {
       {
         title: 'B. Sc. Thesis',
         url: '/projects/b-sc-thesis',
-        imageUrl: staticPath(IMAGE_PATH_PREFIX + 'Projects-v4_B%20Sc%20Thesis.jpg')
+        imageUrl: staticPath(IMAGE_PATH_PREFIX + 'B-Sc-Thesis.jpg')
       },
       {
         title: 'Personal Finance',
         url: '/projects/personal-finance',
-        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects-v3----_Personal%20Finance.jpg'
+        imageUrl: staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance.jpg')
       },
       {
         title: 'London Travel Guide',
         url: '/projects/london-travel-guide',
-        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects-v3----_London%20Travel%20Guide.jpg'
+        imageUrl: staticPath(IMAGE_PATH_PREFIX + 'London-Travel-Guide.jpg')
       }
     ];
 
