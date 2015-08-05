@@ -31,7 +31,7 @@ export default class Projects {
       {
         title: 'HelsinkiGraph',
         url: '/projects/helsinkigraph',
-        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects_Aalto%20MyCourses%203.jpg'
+        imageUrl: staticPath(IMAGE_PATH_PREFIX + 'HelsinkiGraph.jpg')
       },
       {
         title: 'B. Sc. Thesis',
