@@ -26,7 +26,7 @@ export default class Projects {
       {
         title: 'Internet of Things Solutions for Länsimetro',
         url: '/projects/internet-of-things-solutions-for-lansimetro',
-        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects_Aalto%20MyCourses%203.jpg'
+        imageUrl: staticPath(IMAGE_PATH_PREFIX + 'IoT-Solutions.jpg')
       },
       {
         title: 'HelsinkiGraph',
