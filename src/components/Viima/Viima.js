@@ -19,6 +19,9 @@ export default class Viima {
             <div className='WideScreenMediaContainer Figure'>
               <div className='WideScreenMedia FunAndEngaging'/>
             </div>
+            <div className='WideScreenMediaContainer Figure'>
+              <div className='WideScreenMedia TailoredForEachClient'/>
+            </div>
 
             <Row>
               <Col md={4} className='InfoBox'>
