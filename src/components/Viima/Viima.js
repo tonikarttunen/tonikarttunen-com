@@ -15,7 +15,7 @@ export default class Viima {
         <section className='Viima'>
           <Grid>
             <h2>Viima Mobile User Interface</h2>
-            
+
             <div className='WideScreenMediaContainer Figure'>
               <div className='WideScreenMedia FunAndEngaging'/>
             </div>
