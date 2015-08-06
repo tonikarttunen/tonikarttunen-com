@@ -1,6 +1,6 @@
 {
   "name": "tonikarttunen-com",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Toni Karttunen's website",
   "main": [
     "src/server.js"
