@@ -22,6 +22,18 @@ export default class Viima {
             <div className='WideScreenMediaContainer Figure'>
               <div className='WideScreenMedia TailoredForEachClient'/>
             </div>
+            <div className='WideScreenMediaContainer Figure'>
+              <div className='WideScreenMedia Master'/>
+            </div>
+            <div className='WideScreenMediaContainer Figure'>
+              <div className='WideScreenMedia ItemDetail'/>
+            </div>
+            <div className='WideScreenMediaContainer Figure'>
+              <div className='WideScreenMedia NewSuggestion'/>
+            </div>
+            <div className='WideScreenMediaContainer Figure'>
+              <div className='WideScreenMedia Login'/>
+            </div>
 
             <Row>
               <Col md={4} className='InfoBox'>
