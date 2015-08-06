@@ -16,7 +16,7 @@ export default class Projects {
       {
         title: 'Viima Mobile User Interface',
         url: '/projects/viima-mobile-user-interface',
-        imageUrl: 'http://localhost:8888/src/components/Projects/images/Projects_Aalto%20MyCourses%203.jpg'
+        imageUrl: staticPath(IMAGE_PATH_PREFIX + 'Viima.jpg')
       },
       {
         title: 'Aalto MyCourses Usability Evaluation',
