@@ -7,29 +7,21 @@ body {
 }
 
 .Projects {
-  h3 {
-    font-weight: 600;
-    font-size: 1.5em;
-    margin: 0;
-    padding: 0.625em;
-    line-height: 1.1em;
-    height: 2.35em;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    
-    @media
-    (max-width: 767px),
-    (max-device-width: 767px) {
-      font-size: 1.25em;
-    }
+  @media
+  (max-width: 767px),
+  (max-device-width: 767px) {
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    margin: 0.5em 0 0.35em 0;
   }
 
   a,
   a:hover,
   a:visited,
   a:active {
-    // color: #232323; // #b1b1b1;
+    color: white;
     text-decoration: none;
   }
 
@@ -38,12 +30,13 @@ body {
     margin-bottom: 1.0em;
   }
 
-  .ProjectInformation {
-    background-color: #f7f7f7;
-    margin: 0 0 1.875em 0;
-  }
+  .ProjectCoverImageContainer {
+    margin-bottom: 2em;
 
-  .ProjectCoverImage img {
-    width: 100%;
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-bottom: 1em;
+    }
   }
 }

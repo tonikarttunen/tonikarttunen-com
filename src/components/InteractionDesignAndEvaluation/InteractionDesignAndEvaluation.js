@@ -15,6 +15,12 @@ export default class InteractionDesignAndEvaluation {
           <Grid>
             <h2>Aalto MyCourses Usability Evaluation</h2>
 
+            <div className='WideScreenMediaContainer Figure hidden-xs'>
+              <div className='WideScreenMedia ProcessDiagram'/>
+            </div>
+
+            <div className='ProcessDiagramMobile Figure visible-xs'/>
+
             <div className="youtube">
               <iframe
                 width="1280"

@@ -1,3 +1,52 @@
+// LESS mixins and helpers
+
+.background-size-auto(@url) {
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  -ms-background-size: auto;
+  background-size: auto;
+  background-image: url(@url);
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{url}', sizingMethod='image');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{url}', sizingMethod='image')";
+}
+
+.background-size-contain(@url) {
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  -ms-background-size: contain;
+  background-size: contain;
+  background-image: url(@url);
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{url}', sizingMethod='crop');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{url}', sizingMethod='crop')";
+}
+
+.background-size-cover(@url) {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  background-image: url(@url);
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{url}', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{url}', sizingMethod='scale')";
+}
+
+.responsive-resize-outer-element(@ratio) {
+  width: 100%;
+  padding-top: @ratio;
+  position: relative;
+}
+
+.responsive-resize-inner-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .unselectable {
   -webkit-user-select: none;
   -khtml-user-select: none;

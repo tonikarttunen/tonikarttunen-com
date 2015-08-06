@@ -23,18 +23,19 @@ server.use(express.static(path.join(__dirname, 'public')));
 //
 // Register API middleware
 // -----------------------------------------------------------------------------
-server.use('/api/query', require('./api/query'));
+
+// server.use('/api/query', require('./api/query'));
 
 //
 // Register server-side rendering middleware
 // -----------------------------------------------------------------------------
 
-// The top-level React component + HTML template for it
-const templateFile = path.join(__dirname, 'templates/index.html');
-const template = _.template(fs.readFileSync(templateFile, 'utf8'));
-
 server.get('*', async (req, res, next) => {
   try {
+    // The top-level React component + HTML template for it
+    const templateFile = path.join(__dirname, 'templates/index.html');
+    const template = _.template(fs.readFileSync(templateFile, 'utf8'));
+
     let data = {
       title: 'Toni Karttunen',
       description: 'Toni Karttunen is a Finnish user experience designer ' +
@@ -46,6 +47,23 @@ server.get('*', async (req, res, next) => {
 
     let html = template(data);
     res.send(html);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// 500 internal server error handler
+server.use(function(error, req, res, next) {
+  try {
+    const templateFile = path.join(__dirname, 'templates/ErrorView.html');
+    const template = _.template(fs.readFileSync(templateFile, 'utf8'));
+
+    const data = {
+      'title': 'Something Went Wrong'
+    };
+
+    const html = template(data);
+    res.status(500).send(html);
   } catch (err) {
     next(err);
   }

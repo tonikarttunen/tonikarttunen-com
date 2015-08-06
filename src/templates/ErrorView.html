@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toni Karttunen — <%- title %></title>
+    
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/png" href="http://static.tonikarttunen.com/static/src/public/favicons/favicon.ico"/>
+    <link rel="apple-touch-icon" href="http://static.tonikarttunen.com/static/src/public/favicons/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="58x58" href="http://static.tonikarttunen.com/static/src/public/favicons/apple-touch-icon.png"/> <!-- Android -->
+    <link rel="apple-touch-icon" sizes="76x76" href="http://static.tonikarttunen.com/static/src/public/favicons/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="http://static.tonikarttunen.com/static/src/public/favicons/apple-touch-icon.png"/>
+    <link rel="icon" sizes="128x128" href="http://static.tonikarttunen.com/static/src/public/favicons/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="128x128" href="http://static.tonikarttunen.com/static/src/public/favicons/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="http://static.tonikarttunen.com/static/src/public/favicons/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="http://static.tonikarttunen.com/static/src/public/favicons/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="http://static.tonikarttunen.com/static/src/public/favicons/apple-touch-icon.png"/>
+
+    <!-- Bootstrap -->
+    <link href="http://static.tonikarttunen.com/static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Ion icons -->
+    <link href="http://static.tonikarttunen.com/static/bower_components/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Work+Sans:400,900' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+      html, body {
+        color: #232323;
+        font-family: 'Avenir Next', 'Work Sans', 'Helvetica Neue', 'Roboto', sans-serif;
+        background-color: white;
+        font-size: 16px;
+      }
+
+      .header {
+        color: #a7a7a7;
+        font-weight: 600;
+        margin-top: 1em;
+      }
+
+      .logo {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        vertical-align: middle;
+        margin-right: 5px;
+        background-image: url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Light-Text.png);
+        background-image: url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Light-Text.svg), -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent));
+        background-image: url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Light-Text.svg), -webkit-linear-gradient(transparent, transparent);
+        background-image: url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Light-Text.svg), -o-linear-gradient(transparent, transparent);
+        background-image: url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Light-Text.svg), linear-gradient(transparent, transparent);
+      }
+
+      h1 {
+        color: #3d3d3d;
+        font-weight: 800;
+        font-size: 4em;
+        line-height: 1.1 !important;
+        font-size: 4em;
+      }
+
+      p {
+        font-size: 1.5em;
+        line-height: 1.5;
+      }
+
+      a,
+      a:hover,
+      a:focus,
+      a:active {
+        display: inline-block;
+        padding: 0.5em 1.25em 0.5em 0.95em;
+        font-weight: 400;
+        color: #5493BE;
+        text-decoration: none;
+        border: 1px solid #5493BE;
+        border-radius: 5px;
+        font-size: 0.833em;
+      }
+
+      .row {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+      }
+
+      @media (max-width: 767px), (max-device-width: 767px) {
+        h1 {
+          font-size: 2em;
+        }
+
+        h2 {
+          font-size: 1.5em;
+        }
+
+        p {
+          font-size: 1.125em;
+        }
+
+        .row {
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <span class="logo"></span> Toni Karttunen
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h1>
+            <%- title %>
+          </h1>
+          <p>
+            An error occurred on the web server. 
+          </p>
+          <p>
+            <a href="/">
+              <span className='LinkText'>Back to Homepage</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

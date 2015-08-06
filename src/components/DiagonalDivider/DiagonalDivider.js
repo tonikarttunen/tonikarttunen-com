@@ -19,7 +19,7 @@ export default class DiagonalDivider extends React.Component {
       let context = canvas.getContext('2d');
       context.strokeStyle = this.props.color;
       context.lineWidth = 2;
-      context.moveTo(1, 61);
+      context.moveTo(1, 58);
       context.lineTo(13, 1);
       context.stroke();
     }
@@ -27,7 +27,7 @@ export default class DiagonalDivider extends React.Component {
 
   render() {
     return (
-      <canvas id={this.props.id} className='DiagonalDivider' width='14' height='62'>
+      <canvas id={this.props.id} className='DiagonalDivider' width='14' height='59'>
       </canvas>
     );
   }
