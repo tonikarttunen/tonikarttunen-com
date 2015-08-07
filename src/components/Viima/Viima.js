@@ -20,16 +20,16 @@ export default class Viima {
               <div className='WideScreenMedia FunAndEngaging'/>
             </div>
             <div className='WideScreenMediaContainer Figure'>
-              <div className='WideScreenMedia TailoredForEachClient'/>
-            </div>
-            <div className='WideScreenMediaContainer Figure'>
               <div className='WideScreenMedia Master'/>
             </div>
             <div className='WideScreenMediaContainer Figure'>
-              <div className='WideScreenMedia ItemDetail'/>
+              <div className='WideScreenMedia NewSuggestion'/>
             </div>
             <div className='WideScreenMediaContainer Figure'>
-              <div className='WideScreenMedia NewSuggestion'/>
+              <div className='WideScreenMedia TailoredForEachClient'/>
+            </div>
+            <div className='WideScreenMediaContainer Figure'>
+              <div className='WideScreenMedia ItemDetail'/>
             </div>
             <div className='WideScreenMediaContainer Figure'>
               <div className='WideScreenMedia Login'/>
@@ -69,7 +69,7 @@ export default class Viima {
                   and highly visual desktop user interface of the Viima
                   system was only tailored for large desktop computer screens.
                   We had to completely redesign the user interface for
-                  mobile device while maintaining the same playfulness as in
+                  mobile devices while maintaining the same playfulness as in
                   the desktop user interface.
                   Additionally, an important requirement for the new user
                   interface was that it had to be customizable so that
