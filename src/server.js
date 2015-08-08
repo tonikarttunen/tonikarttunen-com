@@ -6,7 +6,6 @@ import fs from 'fs';
 import path from 'path';
 import express from 'express';
 import './core/Dispatcher';
-import './stores/AppStore';
 import { staticPath } from './utilities/static/StaticPath';
 
 const server = express();
@@ -19,12 +18,6 @@ if (DEVELOPMENT === true) {
 }
 
 server.use(express.static(path.join(__dirname, 'public')));
-
-//
-// Register API middleware
-// -----------------------------------------------------------------------------
-
-// server.use('/api/query', require('./api/query'));
 
 //
 // Register server-side rendering middleware
