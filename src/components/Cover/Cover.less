@@ -1,0 +1,100 @@
+// Cover.less
+
+@accentColorPrimary: #505050;
+
+body {
+  margin-top: 50px;
+}
+
+.Cover {
+  text-align: center;
+  transform-style: preserve-3d;
+
+  .CoverInner {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  a,
+  a:hover,
+  a:active,
+  a:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  a.SectionTitle,
+  a.SectionTitle:hover,
+  a.SectionTitle:active,
+  a.SectionTitle:visited {
+    display: block;
+    margin-top: -25px; // 50% of navigation bar height
+    color: #505050;
+    font-size: 84px;
+    font-weight: 900;
+    line-height: 64px;
+    letter-spacing: -0.05em;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      font-size: 4em;
+      line-height: 0.8;
+    }
+
+    @media
+    (max-width: 479px),
+    (max-device-width: 479px) {
+      font-size: 2.15em;
+    }
+  }
+
+  a.MoreInformation,
+  a.MoreInformation:hover,
+  a.MoreInformation:active,
+  a.MoreInformation:visited {
+    display: inline-block;
+    font-size: 1.125em;
+    color: white;
+    background-color: @accentColorPrimary;
+    padding: 0.695em 1.5em;
+    border-radius: 26px;
+  }
+
+  .ScrollToNextSectionArrow {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    width: auto;
+    font-size: 48px;
+
+    @media
+    (max-width: 599px),
+    (max-device-width: 599px) {
+      bottom: -4px;
+    }
+
+    .ScrollToNextSectionArrowButton {
+      color: @accentColorPrimary;
+    }
+  }
+}
+
+.Cover.UserExperienceDesignCover {
+  
+}
+
+.Cover.SoftwareDevelopmentCover {
+  
+}
+
+.Cover.ProjectsCover {
+  
+}

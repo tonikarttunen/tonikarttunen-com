@@ -14,14 +14,14 @@ export default class Menu {
         title: 'Home',
         url: '/'
       },
-      /* {
+      {
         title: 'User Experience Design',
         url: '/user-experience-design'
       },
       {
         title: 'Software Development',
         url: '/software-development'
-      }, */
+      },
       {
         title: 'Projects',
         url: 'projects'
