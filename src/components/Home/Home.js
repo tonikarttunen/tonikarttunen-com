@@ -4,9 +4,47 @@ import React from 'react/addons';
 import Cover from '../../components/Cover';
 import styles from './Home.less';
 import withStyles from '../../decorators/withStyles';
+import $ from 'jquery';
 
 @withStyles(styles)
-export default class Home {
+export default class Home extends React.Component {
+  constructor() {
+    super();
+    this.scrollThrottler = null;
+  }
+
+  // Attach a handler for scroll events
+  componentDidMount() {
+    let didScroll = false;
+
+    if (typeof window.onscroll !== 'undefined') {
+      $(window).on('scroll', () => {
+        didScroll = true;
+      });
+
+      this.scrollThrottler = setInterval(() => {
+        if (didScroll) {
+          didScroll = false;
+
+          // TODO
+          console.log('You scrolled.');
+
+          let t = $('#section1');
+          console.log(t.offset().top);
+          console.log($('body').scrollTop());
+        }
+      }, 300);
+    }
+  }
+
+  // Remove scroll event handler
+  componentWillUnmount() {
+    if (typeof window.onscroll !== 'undefined') {
+      $(window).off('scroll');
+      window.clearInterval(this.scrollThrottler);
+    }
+  }
+
   render() {
     const categories = [
       {

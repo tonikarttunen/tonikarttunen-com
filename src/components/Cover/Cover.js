@@ -10,7 +10,7 @@ import $ from 'jquery';
 
 @withViewport
 @withStyles(styles)
-export default class Cover {
+export default class Cover extends React.Component {
   static propTypes = {
     title: React.PropTypes.string,
     description: React.PropTypes.string,
