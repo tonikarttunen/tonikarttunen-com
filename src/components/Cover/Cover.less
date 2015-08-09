@@ -6,6 +6,15 @@ body {
   margin-top: 50px;
 }
 
+footer,
+.Footer {
+  @media
+  (max-width: 767px),
+  (max-device-width: 767px) {
+    margin-top: 0 !important;
+  }
+}
+
 .Cover {
   text-align: center;
   transform-style: preserve-3d;
@@ -19,6 +28,14 @@ body {
   p {
     margin-top: 1em;
     margin-bottom: 1em;
+
+    @media
+    (orientation: landscape) and
+    (max-device-width: 560px) {
+      margin-top: 0.75em;
+      margin-bottom: 0.75em;
+      font-size: 1em;
+    }
   }
 
   a,
@@ -49,8 +66,8 @@ body {
     }
 
     @media
-    (max-width: 479px),
-    (max-device-width: 479px) {
+    (max-width: 500px),
+    (max-device-width: 500px) {
       font-size: 2.15em;
     }
   }
@@ -79,6 +96,18 @@ body {
     (max-width: 599px),
     (max-device-width: 599px) {
       bottom: -4px;
+    }
+
+    @media
+    (orientation: landscape) and
+    (max-device-width: 560px) {
+      font-size: 2em;
+    }
+
+    @media
+    (orientation: portrait) and
+    (max-device-width: 500px) {
+      font-size: 2em;
     }
 
     .ScrollToNextSectionArrowButton {
