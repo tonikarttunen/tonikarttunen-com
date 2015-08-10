@@ -31,10 +31,10 @@ export default class SoftwareDevelopment {
                 <h4>Front-End Development</h4>
                 <p>
                   I have experience in developing modern single-page apps with Backbone.js.
-                  I used Backbone.js when developing
-                  &nbsp;<Link to='/projects/viima-mobile-user-interface'>Viima mobile user interface</Link>.
-                  &nbsp;Recently, I have been learning React and ECMAScript 2015 (ES6); this website
-                  uses React and ES6 for its user interface.
+                  I used Backbone.js when developing&nbsp;
+                  <Link to='/projects/viima-mobile-user-interface'>Viima mobile user interface</Link>.&nbsp;
+                  Recently, I have been learning React and ECMAScript 2015 (ES6); this website
+                  uses React and ES6 for its user interface components.
                 </p>
               </Col>
               <Col md={4}>
