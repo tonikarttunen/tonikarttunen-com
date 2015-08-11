@@ -6,11 +6,35 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Menu.less';
 import withViewport from '../../decorators/withViewport';
 import withStyles from '../../decorators/withStyles';
-import $ from 'jquery';
+import MenuActions from '../../actions/MenuActions';
 
 @withViewport
 @withStyles(styles)
-export default class Menu {
+export default class Menu extends React.Component {
+  static propTypes = {
+    isOpen: React.PropTypes.bool,
+    viewport: React.PropTypes.shape({
+      width: React.PropTypes.number.isRequired,
+      height: React.PropTypes.number.isRequired
+    }).isRequired
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.defaultProps = {
+      isOpen: false
+    };
+  }
+
+  openMenu() {
+    MenuActions.openMenu(true);
+  }
+
+  closeMenu() {
+    MenuActions.openMenu(false);
+  }
+
   render() {
     const categories = [
       {
@@ -62,16 +86,13 @@ export default class Menu {
       }
     ];
 
-    let { width, height } = this.props.viewport;
-    let style = width > 991 ? {display: 'none !important'} : ''; 
+    let displayStyle = (this.props.viewport.width <= 991 && this.props.isOpen === true) ?
+    {display: 'block'} :
+    {display: 'none'};
 
     return (
-      <div id='MenuContainer'>
+      <div id='MenuContainer' style={displayStyle}>
         <Grid className='Menu'>
-          { (() => { if (width > 991) { 
-            $('#MenuContainer').hide();
-            $('body').css({overflow: 'auto'});
-          } })() }
           {categories.map(item => {
             return (
               <Row key={item.title}>
@@ -81,9 +102,7 @@ export default class Menu {
                       to={item.url}
                       onClick={
                         () => {
-                          // Temporary solution; should be replaced with Flux
-                          $('#MenuContainer').hide();
-                          $('body').css({overflow: 'auto'});
+                          this.closeMenu();
                         }
                       }>
                       {item.title}
@@ -103,9 +122,7 @@ export default class Menu {
                         to={project.url}
                         onClick={
                           () => {
-                            // Temporary solution; should be replaced with Flux
-                            $('#MenuContainer').hide();
-                            $('body').css({overflow: 'auto'});
+                            this.closeMenu();
                           }
                         }>
                         {project.title}

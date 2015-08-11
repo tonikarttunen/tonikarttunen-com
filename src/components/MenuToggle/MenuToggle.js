@@ -4,30 +4,36 @@ import React from 'react/addons'; // eslint-disable-line no-unused-vars
 // import { canUseDOM } from 'react/lib/ExecutionEnvironment';
 import styles from './MenuToggle.less';
 import withStyles from '../../decorators/withStyles';
-import $ from 'jquery';
+import MenuActions from '../../actions/MenuActions';
 
 const MenuToggleInternal = React.createClass({
-  getInitialState() {
+  propTypes: {
+    isOpen: React.PropTypes.bool
+  },
+
+  getDefaultProps: function() {
     return {
       isOpen: false
     };
   },
 
+  openMenu() {
+    MenuActions.openMenu(true);
+  },
+
+  closeMenu() {
+    MenuActions.openMenu(false);
+  },
+
   render() {
-    let arrow = 'ion-navicon-round'; // this.state.isOpen ? 'ion-arrow-up-b' : 'ion-arrow-down-b';
+    let arrow = this.props.isOpen ? 'ion-arrow-up-b' : 'ion-arrow-down-b';
     let toggleElement;
 
-    if ($('#MenuContainer').css('display') === 'block') { // this.state.isOpen
+    if (this.props.isOpen === true) {
       toggleElement = (
         <span className='NavigationLink MenuToggle' onClick={
           () => {
-            // Temporary solution; should be replaced with Flux
-            $('#MenuContainer').hide();
-            $('body').css({overflow: 'auto'});
-
-            this.setState({
-              isOpen: false
-            });
+            this.closeMenu();
           }}>
           Menu <span className={arrow}/>
         </span>
@@ -36,13 +42,7 @@ const MenuToggleInternal = React.createClass({
       toggleElement = (
         <span className='NavigationLink MenuToggle' onClick={
           () => {
-            // Temporary solution; should be replaced with Flux
-            $('#MenuContainer').show();
-            $('body').css({overflow: 'hidden'});
-
-            this.setState({
-              isOpen: true
-            });
+            this.openMenu();
           }}>
           Menu <span className={arrow}/>
         </span>

@@ -5,7 +5,6 @@ import _ from 'underscore';
 import fs from 'fs';
 import path from 'path';
 import express from 'express';
-import './core/Dispatcher';
 import { staticPath } from './utilities/static/StaticPath';
 
 const server = express();
