@@ -7,25 +7,15 @@ import withStyles from '../../decorators/withStyles';
 
 @withStyles(styles)
 export default class LargeScreenMenu {
+  static propTypes = {
+    menuItems: React.PropTypes.shape({
+      categories: React.PropTypes.array,
+      projects: React.PropTypes.array
+    }).isRequired
+  };
+
   render() {
-    const categories = [
-      {
-        title: 'Home',
-        url: '/'
-      },
-      {
-        title: 'User Experience Design',
-        url: '/user-experience-design'
-      },
-      {
-        title: 'Software Development',
-        url: '/software-development'
-      },
-      {
-        title: 'Projects',
-        url: '/projects'
-      }
-    ];
+    const categories = this.props.menuItems.categories;
 
     return (
       <span className='hidden-sm hidden-xs'>

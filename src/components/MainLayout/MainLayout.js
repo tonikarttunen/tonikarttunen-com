@@ -46,7 +46,7 @@ export default class MainLayout extends React.Component {
     return (
       <DocumentTitle title="Toni Karttunen">
         <div className="MainLayout">
-          <Header isOpen={this.state.isOpen}/>
+          <Header isOpen={this.state.isOpen} menuItems={this.state.menuItems}/>
           <Menu isOpen={this.state.isOpen} menuItems={this.state.menuItems}/>
           {this.props.children || <Home/>}
           <Footer/>

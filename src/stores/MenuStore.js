@@ -52,7 +52,7 @@ AppDispatcher.register((payload) => {
       break;
 
     case ActionTypes.MOBILE_MENU_RECEIVE_DATA:
-      setData(payload.data);
+      setData(payload.action.data);
       break;
 
     default:

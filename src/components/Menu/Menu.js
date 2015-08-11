@@ -13,6 +13,10 @@ import MenuActions from '../../actions/MenuActions';
 export default class Menu extends React.Component {
   static propTypes = {
     isOpen: React.PropTypes.bool,
+    menuItems: React.PropTypes.shape({
+      categories: React.PropTypes.array,
+      projects: React.PropTypes.array
+    }).isRequired,
     viewport: React.PropTypes.shape({
       width: React.PropTypes.number.isRequired,
       height: React.PropTypes.number.isRequired
@@ -36,55 +40,8 @@ export default class Menu extends React.Component {
   }
 
   render() {
-    const categories = [
-      {
-        title: 'Home',
-        url: '/'
-      },
-      {
-        title: 'User Experience Design',
-        url: '/user-experience-design'
-      },
-      {
-        title: 'Software Development',
-        url: '/software-development'
-      },
-      {
-        title: 'Projects',
-        url: '/projects'
-      }
-    ];
-
-    const projects = [
-      {
-        title: 'Viima Mobile User Interface',
-        url: '/projects/viima-mobile-user-interface'
-      },
-      {
-        title: 'Aalto MyCourses Usability Evaluation',
-        url: '/projects/aalto-mycourses-usability-evaluation'
-      },
-      {
-        title: 'Internet of Things Solutions for Länsimetro',
-        url: '/projects/internet-of-things-solutions-for-lansimetro'
-      },
-      {
-        title: 'HelsinkiGraph',
-        url: '/projects/helsinkigraph'
-      },
-      {
-        title: 'B. Sc. Thesis',
-        url: '/projects/b-sc-thesis'
-      },
-      {
-        title: 'Personal Finance',
-        url: '/projects/personal-finance'
-      },
-      {
-        title: 'London Travel Guide',
-        url: '/projects/london-travel-guide'
-      }
-    ];
+    const categories = this.props.menuItems.categories;
+    const projects = this.props.menuItems.projects;
 
     let displayStyle = (this.props.viewport.width <= 991 && this.props.isOpen === true) ?
     {display: 'block'} :

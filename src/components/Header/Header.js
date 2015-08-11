@@ -12,7 +12,11 @@ import MenuActions from '../../actions/MenuActions';
 @withStyles(styles)
 export default class Header extends React.Component {
   static propTypes = {
-    isOpen: React.PropTypes.bool
+    isOpen: React.PropTypes.bool,
+    menuItems: React.PropTypes.shape({
+      categories: React.PropTypes.array,
+      projects: React.PropTypes.array
+    }).isRequired
   };
 
   constructor(props) {
@@ -44,7 +48,7 @@ export default class Header extends React.Component {
             <div className='NavigationBarRight'>
               <div className='NavigationBarRightContainer'>
                 <MenuToggle isOpen={this.props.isOpen}/>
-                <LargeScreenMenu/>
+                <LargeScreenMenu menuItems={this.props.menuItems}/>
               </div>
             </div>
           </Grid>
