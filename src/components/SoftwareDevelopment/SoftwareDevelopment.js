@@ -2,11 +2,12 @@
 
 import React from 'react/addons';
 import { Link } from 'react-router';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import styles from './SoftwareDevelopment.less';
 import withStyles from '../../decorators/withStyles';
 import CategoryDetailView from '../../components/CategoryDetailView';
 import ContentGrid from '../../components/ContentGrid';
+import Cover from '../../components/Cover';
 
 @withStyles(styles)
 export default class SoftwareDevelopment {
@@ -16,15 +17,17 @@ export default class SoftwareDevelopment {
 
     return (
       <CategoryDetailView>
+        <Cover
+          title={'Software<br/>Development'}
+          description={''}
+          coverClassName={'SoftwareDevelopmentCover'}
+          url={''}
+          backgroundImageUrl={''}
+          isLastElement={true}
+          isFullSizeCover={false}
+          sectionId={1}
+        />
         <div className='SoftwareDevelopment'>
-          <Grid>
-            <Row>
-              <Col md={12}>
-                <h2>Software Development</h2>
-              </Col>
-            </Row>
-          </Grid>
-
           <ContentGrid title={servicesTitle}>
             <Row>
               <Col md={4}>

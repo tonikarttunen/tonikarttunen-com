@@ -26,12 +26,11 @@ export default class Home extends React.Component {
         if (didScroll) {
           didScroll = false;
 
-          // TODO
-          console.log('You scrolled.');
-
-          let t = $('#section1');
-          console.log(t.offset().top);
-          console.log($('body').scrollTop());
+          // TODO: Add some scroll effects
+          // console.log('You scrolled.');
+          // let t = $('#section1');
+          // console.log(t.offset().top);
+          // console.log($('body').scrollTop());
         }
       }, 300);
     }
@@ -48,25 +47,22 @@ export default class Home extends React.Component {
   render() {
     const categories = [
       {
-        title: 'User Experience Design',
+        title: 'User<br/>Experience<br/>Design',
         description: 'User Interface Design + Prototyping + Usability Evaluation + User Research',
         coverClassName: 'UserExperienceDesignCover',
-        url: '/user-experience-design',
-        backgroundImageUrl: ''
+        url: '/user-experience-design'
       },
       {
-        title: 'Software Development',
+        title: 'Software<br/>Development',
         description: 'Web Applications + Native iOS Applications',
         coverClassName: 'SoftwareDevelopmentCover',
-        url: '/software-development',
-        backgroundImageUrl: ''
+        url: '/software-development'
       },
       {
         title: 'Projects',
         description: 'User Experience Design and Software Development Project Portfolio',
         coverClassName: 'ProjectsCover',
-        url: '/projects',
-        backgroundImageUrl: ''
+        url: '/projects'
       }
     ];
 
@@ -84,6 +80,7 @@ export default class Home extends React.Component {
               url={category.url}
               backgroundImageUrl={category.backgroundImageUrl}
               isLastElement={isLastElement}
+              isFullSizeCover={true}
               sectionId={index + 1}
             />
           );

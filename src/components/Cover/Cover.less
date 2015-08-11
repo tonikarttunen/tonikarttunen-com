@@ -1,6 +1,7 @@
 // Cover.less
 
 @import '../variables.less';
+@import '../less-mixins-and-utils.less';
 
 body {
   margin-top: @navigationBarHeight;
@@ -42,17 +43,17 @@ footer,
   a:hover,
   a:active,
   a:visited {
-    text-transform: uppercase;
     text-decoration: none;
   }
 
-  a.SectionTitle,
-  a.SectionTitle:hover,
-  a.SectionTitle:active,
-  a.SectionTitle:visited {
+  .SectionTitle,
+  .SectionTitle:hover,
+  .SectionTitle:active,
+  .SectionTitle:visited {
+    text-transform: uppercase;
     display: block;
     margin-top: -25px; // 50% of navigation bar height
-    color: #505050;
+    color: #3d3d3d;
     font-size: 84px;
     font-weight: 900;
     line-height: 64px;
@@ -66,9 +67,46 @@ footer,
     }
 
     @media
-    (max-width: 500px),
-    (max-device-width: 500px) {
+    (max-width: 550px),
+    (max-device-width: 550px) {
       font-size: 2.15em;
+    }
+  }
+
+  &.DetailView {
+    height: 36em;
+    margin-bottom: 2em;
+
+    @media
+    (min-width: 1199px) and
+    (min-device-height: 1100px) {
+      height: 48em;
+    }
+
+    @media
+    (min-width: 1199px) and
+    (min-device-height: 950px) {
+      height: 42em;
+    }
+
+    @media
+    (max-width: 991px),
+    (max-device-width: 991px) {
+      height: 30em;
+    }
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      height: 18em;
+      margin-bottom: 2.5em;
+    }
+
+    .SectionTitle,
+    .SectionTitle:hover,
+    .SectionTitle:active,
+    .SectionTitle:visited {
+      margin-top: 0;
     }
   }
 
@@ -76,6 +114,7 @@ footer,
   a.MoreInformation:hover,
   a.MoreInformation:active,
   a.MoreInformation:visited {
+    text-transform: uppercase;
     display: inline-block;
     font-size: 1.125em;
     color: white;
@@ -121,7 +160,41 @@ footer,
 }
 
 .Cover.SoftwareDevelopmentCover {
+  @softwareDevelopmentCoverShadowDark: 0 0 6px darken(@accentColorPrimary, 20%);
+  @softwareDevelopmentCoverShadowLight: 0 0 7px @accentColorPrimary;
+  background-color: @accentColorPrimary;
+  .background-size-cover('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Software-Development.png');
   
+  // Background image for browsers that support SVG
+  background-image:
+    url(http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Software-Development.svg),
+    linear-gradient(transparent, transparent);
+
+  p {
+    color: white;
+    text-shadow: @softwareDevelopmentCoverShadowDark;
+  }
+
+  .SectionTitle,
+  .SectionTitle:hover,
+  .SectionTitle:active,
+  .SectionTitle:visited {
+    color: white;
+    text-shadow: @softwareDevelopmentCoverShadowLight;
+  }
+
+  a.MoreInformation,
+  a.MoreInformation:hover,
+  a.MoreInformation:active,
+  a.MoreInformation:visited {
+    color: @accentColorPrimary;
+    background-color: white;
+    box-shadow: @softwareDevelopmentCoverShadowLight;
+  }
+
+  .ScrollToNextSectionArrowButton {
+      color: white;
+    }
 }
 
 .Cover.ProjectsCover {
