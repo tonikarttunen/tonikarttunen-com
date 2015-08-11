@@ -6,6 +6,7 @@ import { Grid } from 'react-bootstrap';
 import styles from './Header.less';
 import withStyles from '../../decorators/withStyles';
 import MenuToggle from '../../components/MenuToggle';
+import LargeScreenMenu from '../../components/LargeScreenMenu';
 
 @withStyles(styles)
 export default class Header {
@@ -22,6 +23,7 @@ export default class Header {
             <div className='NavigationBarRight'>
               <div className='NavigationBarRightContainer'>
                 <MenuToggle/>
+                <LargeScreenMenu/>
               </div>
             </div>
           </Grid>

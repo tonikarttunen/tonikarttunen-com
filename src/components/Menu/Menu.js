@@ -4,8 +4,11 @@ import React from 'react/addons';
 import { Link } from 'react-router';
 import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Menu.less';
+import withViewport from '../../decorators/withViewport';
 import withStyles from '../../decorators/withStyles';
+import $ from 'jquery';
 
+@withViewport
 @withStyles(styles)
 export default class Menu {
   render() {
@@ -24,7 +27,7 @@ export default class Menu {
       },
       {
         title: 'Projects',
-        url: 'projects'
+        url: '/projects'
       }
     ];
 
@@ -59,33 +62,62 @@ export default class Menu {
       }
     ];
 
+    let { width, height } = this.props.viewport;
+    let style = width > 991 ? {display: 'none !important'} : ''; 
+
     return (
-      <Grid className='Menu'>
-        {categories.map(item => {
-          return (
-            <Row key={item.title}>
-              <Col md={12}>
-                <h2>
-                  <Link to={item.url}>{item.title}</Link>
-                </h2>
-              </Col>
-            </Row>
-          );
-        })}
-        <Row>
-          <Col md={12}>
-            <ul>
-              {projects.map(project => {
-                return (
-                  <li key={project.title}>
-                    <Link to={project.url}>{project.title}</Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </Col>
-        </Row>
-      </Grid>
+      <div id='MenuContainer'>
+        <Grid className='Menu'>
+          { (() => { if (width > 991) { 
+            $('#MenuContainer').hide();
+            $('body').css({overflow: 'auto'});
+          } })() }
+          {categories.map(item => {
+            return (
+              <Row key={item.title}>
+                <Col md={12}>
+                  <h2>
+                    <Link
+                      to={item.url}
+                      onClick={
+                        () => {
+                          // Temporary solution; should be replaced with Flux
+                          $('#MenuContainer').hide();
+                          $('body').css({overflow: 'auto'});
+                        }
+                      }>
+                      {item.title}
+                    </Link>
+                  </h2>
+                </Col>
+              </Row>
+            );
+          })}
+          <Row>
+            <Col md={12}>
+              <ul>
+                {projects.map(project => {
+                  return (
+                    <li key={project.title}>
+                      <Link
+                        to={project.url}
+                        onClick={
+                          () => {
+                            // Temporary solution; should be replaced with Flux
+                            $('#MenuContainer').hide();
+                            $('body').css({overflow: 'auto'});
+                          }
+                        }>
+                        {project.title}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </Col>
+          </Row>
+        </Grid>
+      </div>
     );
   }
 }

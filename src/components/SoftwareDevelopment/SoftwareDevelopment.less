@@ -1,5 +1,20 @@
 // SoftwareDevelopment.less
 
+@import '../variables.less';
+@import '../../components/Header/HeaderWithWhiteText.less';
+
+header,
+.Header {
+  .NavigationBar {
+  	background-color: @accentColorPrimary;
+    border-bottom: 1px solid darken(@accentColorPrimary, 5%);
+
+    .NavigationBarRight .NavigationBarRightContainer .NavigationLink.selected {
+      color: darken(@accentColorPrimary, 22%) !important;
+    }
+  }
+}
+
 .SoftwareDevelopment {
   padding-top: 2em;
   border-top: 1px solid #dfdfdf;

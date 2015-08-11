@@ -9,7 +9,13 @@ header,
 .Header {
   .unselectable;
   color: @headerTextColor;
-  font-weight: 700;
+  font-weight: 500;
+
+  @media
+  (max-width: 991px),
+  (max-device-width: 991px) {
+    font-weight: 700;
+  }
 
   a,
   a:active,
@@ -73,22 +79,44 @@ header,
 
     .NavigationBarRight {
       float: right;
-      text-transform: uppercase;
 
       .NavigationBarRightContainer {
         position: relative;
         top: 16px;
 
         .NavigationLink {
-          padding: 15px 0 15px 25px;
+          margin: 15px 0 15px 24px;
+          display: inline-block;
+          height: 50px;
+          line-height: 39px;
+          margin-top: -16px;
 
           @media
           (max-width: 991px),
           (max-device-width: 991px) {
-            padding: 15px 0 15px 15px;
+            margin: 15px 0 15px 15px;
+          }
+
+          &.selected {
+            color: #3d3d3d !important;
+            font-weight: 600;
           }
 
           &.MenuToggle {
+            text-transform: uppercase;
+            margin: 0;
+            padding: 15px 0 15px 25px;
+            display: inline;
+            height: auto;
+            line-height: 1;
+            margin-top: 0;
+
+            @media
+            (max-width: 991px),
+            (max-device-width: 991px) {
+              margin: 0;
+            }
+
             @media
             (max-width: 400px),
             (max-device-width: 400px) {

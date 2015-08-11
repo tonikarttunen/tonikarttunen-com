@@ -6,6 +6,7 @@ import DocumentTitle from 'react-document-title';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Home from '../../components/Home';
+import Menu from '../../components/Menu';
 import styles from './MainLayout.less';
 import withStyles from '../../decorators/withStyles';
 
@@ -20,6 +21,7 @@ export default class MainLayout {
       <DocumentTitle title="Toni Karttunen">
         <div className="MainLayout">
           <Header/>
+          <Menu/>
           {this.props.children || <Home/>}
           <Footer/>
         </div>
