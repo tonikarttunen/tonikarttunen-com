@@ -6,6 +6,7 @@ import { Grid } from 'react-bootstrap';
 import styles from './Projects.less';
 import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
+import Cover from '../../components/Cover';
 
 @withStyles(styles)
 export default class Projects {
@@ -51,24 +52,34 @@ export default class Projects {
     ];
 
     return (
-      <Grid className='Projects' componentClass='article'>
-        <h2>Projects</h2>
-        {projects.map((project) => {
-          const projectStyle = {
-            backgroundImage: 'url(' + project.imageUrl + ')',
-            filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")',
-            msFilter: '\"progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")\"'
-          };
+      <div>
+        <Cover
+          title={'Projects'}
+          description={''}
+          coverClassName={'ProjectsCover'}
+          url={''}
+          isLastElement={false}
+          isHomePageCover={false}
+          sectionId={1}
+        />
+        <Grid className='Projects' componentClass='article' id='section2'>
+          {projects.map((project) => {
+            const projectStyle = {
+              backgroundImage: 'url(' + project.imageUrl + ')',
+              filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")',
+              msFilter: '\"progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")\"'
+            };
 
-          return (
-            <Link to={project.url} key={project.title} title={project.title}>
-              <div className='WideScreenMediaContainer ProjectCoverImageContainer'>
-                <div style={projectStyle} className='WideScreenMedia'/>
-              </div>
-            </Link>
-          );
-        })}
-      </Grid>
+            return (
+              <Link to={project.url} key={project.title} title={project.title}>
+                <div className='WideScreenMediaContainer ProjectCoverImageContainer'>
+                  <div style={projectStyle} className='WideScreenMedia'/>
+                </div>
+              </Link>
+            );
+          })}
+        </Grid>
+      </div>
     );
   }
 }

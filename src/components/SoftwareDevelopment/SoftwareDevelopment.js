@@ -22,12 +22,11 @@ export default class SoftwareDevelopment {
           description={''}
           coverClassName={'SoftwareDevelopmentCover'}
           url={''}
-          backgroundImageUrl={''}
-          isLastElement={true}
-          isFullSizeCover={false}
+          isLastElement={false}
+          isHomePageCover={false}
           sectionId={1}
         />
-        <div className='SoftwareDevelopment'>
+        <div className='SoftwareDevelopment' id='section2'>
           <ContentGrid title={servicesTitle}>
             <Row>
               <Col md={4}>

@@ -17,7 +17,7 @@ export default class Cover extends React.Component {
     coverClassName: React.PropTypes.string,
     url: React.PropTypes.string,
     isLastElement: React.PropTypes.bool,
-    isFullSizeCover: React.PropTypes.bool,
+    isHomePageCover: React.PropTypes.bool,
     sectionId: React.PropTypes.number,
     viewport: React.PropTypes.shape({
       width: React.PropTypes.number.isRequired,
@@ -27,19 +27,15 @@ export default class Cover extends React.Component {
 
   render() {
     const navigationBarHeight = 50;
-    let coverStyle = {};
+    let { width, height } = this.props.viewport;
 
-    if (this.props.isFullSizeCover === true) {
-      let { width, height } = this.props.viewport;
-
-      coverStyle = {
-        width: width,
-        height: height - navigationBarHeight
-      };
-    }
+    let coverStyle = {
+      width: width,
+      height: height - navigationBarHeight
+    };
 
     const scrollToNextSectionArrow =
-    ((this.props.isFullSizeCover === true) && (this.props.isLastElement === false)) ?
+    (this.props.isLastElement === false) ?
     (
       <div className='ScrollToNextSectionArrow'>
         <span
@@ -60,7 +56,7 @@ export default class Cover extends React.Component {
     const title = {__html: this.props.title};
 
     const textContents =
-    (this.props.isFullSizeCover) ?
+    (this.props.isHomePageCover) ?
     (
       <span>
         <Link to={this.props.url} className='SectionTitle'>
@@ -74,8 +70,8 @@ export default class Cover extends React.Component {
       <span className='SectionTitle' dangerouslySetInnerHTML={title}/>
     );
 
-    const outerElementClassName = (this.props.isFullSizeCover === true) ? '' : ' DetailView';
-    const innerElementClassName = (this.props.isFullSizeCover === true) ? '' : ' DetailView';
+    const outerElementClassName = (this.props.isHomePageCover === true) ? ' HomePageCover' : '';
+    const innerElementClassName = (this.props.isHomePageCover === true) ? ' HomePageCover' : '';
 
     return (
       <div

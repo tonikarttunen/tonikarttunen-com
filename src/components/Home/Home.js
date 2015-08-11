@@ -80,7 +80,7 @@ export default class Home extends React.Component {
               url={category.url}
               backgroundImageUrl={category.backgroundImageUrl}
               isLastElement={isLastElement}
-              isFullSizeCover={true}
+              isHomePageCover={true}
               sectionId={index + 1}
             />
           );

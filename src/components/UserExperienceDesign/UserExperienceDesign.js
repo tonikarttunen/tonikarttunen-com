@@ -2,11 +2,12 @@
 
 import React from 'react/addons';
 import { Link } from 'react-router';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import styles from './UserExperienceDesign.less';
 import withStyles from '../../decorators/withStyles';
 import CategoryDetailView from '../../components/CategoryDetailView';
 import ContentGrid from '../../components/ContentGrid';
+import Cover from '../../components/Cover';
 
 @withStyles(styles)
 export default class UserExperienceDesign {
@@ -17,15 +18,16 @@ export default class UserExperienceDesign {
 
     return (
       <CategoryDetailView>
-        <div className='UserExperienceDesign'>
-          <Grid>
-            <Row>
-              <Col md={12}>
-                <h2>User Experience Design</h2>
-              </Col>
-            </Row>
-          </Grid>
-
+        <Cover
+          title={'User<br/>Experience<br/>Design'}
+          description={''}
+          coverClassName={'UserExperienceDesignCover'}
+          url={''}
+          isLastElement={false}
+          isHomePageCover={false}
+          sectionId={1}
+        />
+        <div className='UserExperienceDesign' id='section2'>
           <ContentGrid title={servicesTitle}>
             <Row>
               <Col md={4}>
