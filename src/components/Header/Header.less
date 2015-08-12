@@ -6,7 +6,8 @@
 @headerTextColor: #a7a7a7; // #909090;
 
 header,
-.Header {
+.Header,
+.MobileHeader {
   .unselectable;
   color: @headerTextColor;
   font-weight: 500;
@@ -127,4 +128,10 @@ header,
       }
     }
   }
+}
+
+.MobileHeader .NavigationBar {
+  background-color: transparent !important;
+  border-bottom: 1px transparent;
+  z-index: 5002;
 }

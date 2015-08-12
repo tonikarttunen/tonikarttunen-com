@@ -3,6 +3,7 @@
 import React from 'react/addons';
 import { Link } from 'react-router';
 import { Grid, Row, Col } from 'react-bootstrap';
+import MenuToggle from '../../components/MenuToggle';
 import styles from './Menu.less';
 import withViewport from '../../decorators/withViewport';
 import withStyles from '../../decorators/withStyles';
@@ -49,6 +50,22 @@ export default class Menu extends React.Component {
 
     return (
       <div id='MenuContainer' style={displayStyle}>
+        <div className='MobileHeader'>
+          <nav className='NavigationBar' role='navigation'>
+            <Grid>
+              <div className='NavigationBarLeft'>
+                <Link to='/' className='LogoContainer' onClick={() => { this.closeMenu(); }}>
+                  <span className='Logo'/>Toni Karttunen
+                </Link>
+              </div>
+              <div className='NavigationBarRight'>
+                <div className='NavigationBarRightContainer'>
+                  <MenuToggle isOpen={this.props.isOpen}/>
+                </div>
+              </div>
+            </Grid>
+          </nav>
+        </div>
         <Grid className='Menu'>
           {categories.map(item => {
             return (
