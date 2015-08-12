@@ -162,5 +162,39 @@ footer,
 }
 
 .Cover.ProjectsCover {
-  
+  &.HomePageCover {
+    margin-bottom: 1.625em;
+    border-bottom: 1px solid #dfdfdf;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-bottom: 1.5em;
+    }
+  }
+
+  .background-size-cover('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Projects-Wide-v5-1280px.jpg');
+
+  @media
+  (min-width: 1281px),
+  (min-height: 901px) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Projects-Wide-v5-2560px.jpg');
+  }
+
+  @media
+  (min-width: 1000px) and
+  (min-device-pixel-ratio: 1.5) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Projects-Wide-v5-2560px.jpg');
+  }
+
+  @media
+  (min-width: 2800px) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Projects-Wide-v5-4K.jpg');
+  }
+
+  @media
+  (min-width: 1920px) and
+  (min-device-pixel-ratio: 1.5) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Projects-Wide-v5-4K.jpg');
+  }
 }
