@@ -27,10 +27,7 @@ export default class Home extends React.Component {
           didScroll = false;
 
           // TODO: Add some scroll effects
-          // console.log('You scrolled.');
-          // let t = $('#section1');
-          // console.log(t.offset().top);
-          // console.log($('body').scrollTop());
+
         }
       }, 300);
     }
