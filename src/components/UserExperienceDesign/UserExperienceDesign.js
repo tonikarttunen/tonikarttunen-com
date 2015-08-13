@@ -19,7 +19,6 @@ export default class UserExperienceDesign {
     return (
       <CategoryDetailView>
         <Cover
-          title={'User<br/>Experience<br/>Design'}
           description={''}
           coverClassName={'UserExperienceDesignCover'}
           url={''}

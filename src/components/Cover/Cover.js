@@ -12,7 +12,6 @@ import $ from 'jquery';
 @withStyles(styles)
 export default class Cover extends React.Component {
   static propTypes = {
-    title: React.PropTypes.string,
     description: React.PropTypes.string,
     coverClassName: React.PropTypes.string,
     url: React.PropTypes.string,
@@ -59,15 +58,21 @@ export default class Cover extends React.Component {
     (this.props.isHomePageCover) ?
     (
       <span>
-        <Link to={this.props.url} className='SectionTitle'>
-          <span dangerouslySetInnerHTML={title}/>
+        <Link to={this.props.url} className='SectionTitleContainer'>
+          <div className='SectionTitleResponsiveOuterElement'>
+            <div className='SectionTitleResponsiveInnerElement'/>
+          </div>
         </Link>
         <p>{this.props.description}</p>
         <Link to={this.props.url} className='MoreInformation'>More Information</Link>
       </span>
     ) :
     (
-      <span className='SectionTitle' dangerouslySetInnerHTML={title}/>
+      <Link to={this.props.url} className='SectionTitleContainer'>
+        <div className='SectionTitleResponsiveOuterElement'>
+          <div className='SectionTitleResponsiveInnerElement'/>
+        </div>
+      </Link>
     );
 
     const outerElementClassName = (this.props.isHomePageCover === true) ? ' HomePageCover' : '';

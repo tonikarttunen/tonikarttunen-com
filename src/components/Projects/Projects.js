@@ -54,7 +54,6 @@ export default class Projects {
     return (
       <div>
         <Cover
-          title={'Projects'}
           description={''}
           coverClassName={'ProjectsCover'}
           url={''}

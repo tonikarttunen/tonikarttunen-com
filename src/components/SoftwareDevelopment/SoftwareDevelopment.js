@@ -18,7 +18,6 @@ export default class SoftwareDevelopment {
     return (
       <CategoryDetailView>
         <Cover
-          title={'Software<br/>Development'}
           description={''}
           coverClassName={'SoftwareDevelopmentCover'}
           url={''}

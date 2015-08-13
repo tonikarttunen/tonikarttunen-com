@@ -47,30 +47,39 @@ footer,
     text-decoration: none;
   }
 
-  .SectionTitle,
-  .SectionTitle:hover,
-  .SectionTitle:active,
-  .SectionTitle:visited {
-    text-transform: uppercase;
+  .SectionTitleContainer,
+  .SectionTitleContainer:hover,
+  .SectionTitleContainer:active,
+  .SectionTitleContainer:visited {
     display: block;
     margin-top: -25px; // 50% of navigation bar height
-    color: #3d3d3d;
-    font-size: 84px;
-    font-weight: 900;
-    line-height: 64px;
-    letter-spacing: -0.05em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 65%;
 
     @media
-    (max-width: 767px),
-    (max-device-width: 767px) {
-      font-size: 4em;
-      line-height: 0.8;
+    (max-width: 590px),
+    (max-device-width: 590px) {
+      max-width: 75%;
     }
 
     @media
-    (max-width: 550px),
-    (max-device-width: 550px) {
-      font-size: 2.15em;
+    (max-width: 480px),
+    (max-device-width: 480px) {
+      max-width: 100%;
+    }
+
+    .SectionTitleResponsiveOuterElement {
+      width: 100%;
+      position: relative;
+
+      .SectionTitleResponsiveInnerElement {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
     }
   }
 
@@ -194,12 +203,25 @@ footer,
     background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-Narrow-1280px.jpg');
   }
 
+  .SectionTitleContainer {
+    width: 499px;
+
+    .SectionTitleResponsiveOuterElement {
+      padding-top: 38.677355%;
+
+      .SectionTitleResponsiveInnerElement {
+        .background-size-contain('http://static.tonikarttunen.com/static/src/components/Cover/images/Title-Texts/UserExperienceDesignTitle.png');
+
+        // Image for browsers that support SVG
+        background-image:
+          url(http://static.tonikarttunen.com/static/src/components/Cover/images/Title-Texts/UserExperienceDesignTitle.svg),
+          linear-gradient(transparent, transparent);
+      }
+    }
+  }
+
   @uxDesignShadow: 0 0 10px white;
 
-  .SectionTitle,
-  .SectionTitle:hover,
-  .SectionTitle:active,
-  .SectionTitle:visited,
   p,
   .ScrollToNextSectionArrowButton {
     text-shadow: @uxDesignShadow;
@@ -231,12 +253,21 @@ footer,
     text-shadow: @softwareDevelopmentCoverShadowDark;
   }
 
-  .SectionTitle,
-  .SectionTitle:hover,
-  .SectionTitle:active,
-  .SectionTitle:visited {
-    color: white;
-    text-shadow: @softwareDevelopmentCoverShadowLight;
+  .SectionTitleContainer {
+    width: 607px;
+
+    .SectionTitleResponsiveOuterElement {
+      padding-top: 21.087315%;
+
+      .SectionTitleResponsiveInnerElement {
+        .background-size-contain('http://static.tonikarttunen.com/static/src/components/Cover/images/Title-Texts/SoftwareDevelopmentTitle.png');
+
+        // Image for browsers that support SVG
+        background-image:
+          url(http://static.tonikarttunen.com/static/src/components/Cover/images/Title-Texts/SoftwareDevelopmentTitle.svg),
+          linear-gradient(transparent, transparent);
+      }
+    }
   }
 
   a.MoreInformation,
@@ -262,6 +293,23 @@ footer,
     (max-width: 767px),
     (max-device-width: 767px) {
       margin-bottom: 1.5em;
+    }
+  }
+
+  .SectionTitleContainer {
+    width: 410px; //
+
+    .SectionTitleResponsiveOuterElement {
+      padding-top: 15.609756%; //
+
+      .SectionTitleResponsiveInnerElement {
+        .background-size-contain('http://static.tonikarttunen.com/static/src/components/Cover/images/Title-Texts/ProjectsTitle.png');
+
+        // Image for browsers that support SVG
+        background-image:
+          url(http://static.tonikarttunen.com/static/src/components/Cover/images/Title-Texts/ProjectsTitle.svg),
+          linear-gradient(transparent, transparent);
+      }
     }
   }
 
