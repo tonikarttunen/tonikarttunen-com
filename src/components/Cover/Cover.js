@@ -52,8 +52,6 @@ export default class Cover extends React.Component {
     ) :
     '';
 
-    const title = {__html: this.props.title};
-
     const textContents =
     (this.props.isHomePageCover) ?
     (
