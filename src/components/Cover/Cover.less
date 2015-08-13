@@ -120,19 +120,111 @@ footer,
 }
 
 .Cover.UserExperienceDesignCover {
-  
+  .background-size-cover('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-4K.jpg');
+
+  @media
+  (min-width: 1281px),
+  (min-height: 901px) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-2560px.jpg');
+  }
+
+  @media
+  (min-width: 1000px) and
+  (min-device-pixel-ratio: 1.5) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-2560px.jpg');
+  }
+
+  @media
+  (min-width: 2800px) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-4K.jpg');
+  }
+
+  @media
+  (min-width: 1920px) and
+  (min-device-pixel-ratio: 1.5) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-4K.jpg');
+  }
+
+  @media
+  (orientation: portrait) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-Narrow-1280px.jpg');
+  }
+
+  @media
+  (orientation: portrait) and
+  (min-width: 1281px) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-Narrow-2560px.jpg');
+  }
+
+  @media
+  (orientation: portrait) and
+  (min-width: 641px) and
+  (min-device-pixel-ratio: 1.5) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-Narrow-2560px.jpg');
+  }
+
+  @media
+  (orientation: portrait) and
+  (min-width: 2561px) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-Narrow-4K.jpg');
+  }
+
+  @media
+  (orientation: portrait) and
+  (min-width: 1281px) and
+  (min-device-pixel-ratio: 1.5) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-Narrow-4K.jpg');
+  }
+
+  @media
+  (min-height: 800px) and
+  (max-width: 1000) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-Narrow-1280px.jpg');
+  }
+
+  @media
+  (min-height: 1000px) and
+  (max-width: 1200) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-Narrow-1280px.jpg');
+  }
+
+  @media
+  (min-height: 1200px) and
+  (max-width: 1400) {
+    background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-Narrow-1280px.jpg');
+  }
+
+  @uxDesignShadow: 0 0 10px white;
+
+  .SectionTitle,
+  .SectionTitle:hover,
+  .SectionTitle:active,
+  .SectionTitle:visited,
+  p,
+  .ScrollToNextSectionArrowButton {
+    text-shadow: @uxDesignShadow;
+  }
+
+  a.MoreInformation,
+  a.MoreInformation:hover,
+  a.MoreInformation:active,
+  a.MoreInformation:visited {
+    box-shadow: @uxDesignShadow;
+  }
 }
 
 .Cover.SoftwareDevelopmentCover {
-  @softwareDevelopmentCoverShadowDark: 0 0 6px darken(#44B27B, 20%);
-  @softwareDevelopmentCoverShadowLight: 0 0 7px #44B27B;
   background-color: #44B27B;
+
   .background-size-cover('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Software-Development-v2.jpg');
   
   // Background image for browsers that support SVG
   background-image:
     url(http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Software-Development-v2.svg),
     linear-gradient(transparent, transparent);
+
+  @softwareDevelopmentCoverShadowDark: 0 0 6px darken(#44B27B, 20%);
+  @softwareDevelopmentCoverShadowLight: 0 0 7px #44B27B;
 
   p {
     color: white;
@@ -157,8 +249,8 @@ footer,
   }
 
   .ScrollToNextSectionArrowButton {
-      color: white;
-    }
+    color: white;
+  }
 }
 
 .Cover.ProjectsCover {
