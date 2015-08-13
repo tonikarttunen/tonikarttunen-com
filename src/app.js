@@ -4,12 +4,15 @@ import 'babel/polyfill';
 import React from 'react/addons';
 import BrowserHistory from 'react-router/lib/BrowserHistory';
 import Root from './components/Root';
+import MenuAPI from './api/MenuAPI';
 import FastClick from 'fastclick';
 
 function run() {
   // Render the top-level React component
   const rootElement = document.getElementById('root');
   const history = new BrowserHistory();
+
+  MenuAPI.getMenuData();
 
   React.render(<Root history={history}/>, rootElement);
 

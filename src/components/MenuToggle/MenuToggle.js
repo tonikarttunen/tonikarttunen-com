@@ -1,53 +1,56 @@
 // MenuToggle
 
 import React from 'react/addons'; // eslint-disable-line no-unused-vars
-import { canUseDOM } from 'react/lib/ExecutionEnvironment';
-import { Link, Navigation } from 'react-router';
+// import { canUseDOM } from 'react/lib/ExecutionEnvironment';
 import styles from './MenuToggle.less';
 import withStyles from '../../decorators/withStyles';
+import MenuActions from '../../actions/MenuActions';
 
 const MenuToggleInternal = React.createClass({
-  mixins: [Navigation],
+  propTypes: {
+    isOpen: React.PropTypes.bool
+  },
+
+  getDefaultProps: function() {
+    return {
+      isOpen: false
+    };
+  },
+
+  openMenu() {
+    MenuActions.openMenu(true);
+  },
+
+  closeMenu() {
+    MenuActions.openMenu(false);
+  },
 
   render() {
-    let isOpen = false;
-    let canGoBack = false;
-
-    if (canUseDOM) {
-      isOpen = window.location.pathname.includes('/menu');
-
-      // IE does not support document.referrer
-      const referrer = document.referrer || 'http://www.tonikarttunen.com';
-      canGoBack = window.history.length > 1 && referrer.includes(window.location.hostname);
-    }
-
-    let arrow = isOpen ? 'ion-arrow-up-b' : 'ion-arrow-down-b';
+    let arrow = this.props.isOpen ? 'ion-arrow-up-b' : 'ion-arrow-down-b';
     let toggleElement;
 
-    if (isOpen) {
-      if (canGoBack) {
-        toggleElement = (
-          <span className='NavigationLink MenuToggle' onClick={() => this.goBack()}>
-            Menu <span className={arrow}/>
-          </span>
-        );
-      } else {
-        toggleElement = (
-          <Link to='/' className='NavigationLink MenuToggle'>
-            Menu <span className={arrow}/>
-          </Link>
-        );
-      }
+    if (this.props.isOpen === true) {
+      toggleElement = (
+        <span className='NavigationLink MenuToggle' onClick={
+          () => {
+            this.closeMenu();
+          }}>
+          Menu <span className={arrow}/>
+        </span>
+      );
     } else {
       toggleElement = (
-        <Link to='/menu' className='NavigationLink MenuToggle'>
+        <span className='NavigationLink MenuToggle' onClick={
+          () => {
+            this.openMenu();
+          }}>
           Menu <span className={arrow}/>
-        </Link>
+        </span>
       );
     }
 
     return (
-      <div className='MenuToggleContainer'>
+      <div className='MenuToggleContainer visible-sm visible-xs'>
         {toggleElement}
       </div>
     );
