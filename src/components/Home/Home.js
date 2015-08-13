@@ -67,7 +67,7 @@ export default class Home extends React.Component {
 
           return (
             <Cover
-              key={category.title}
+              key={category.description}
               description={category.description}
               coverClassName={category.coverClassName}
               url={category.url}
