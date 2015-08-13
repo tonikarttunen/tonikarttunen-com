@@ -3,15 +3,11 @@
 @import '../variables.less';
 
 body {
-  margin-top: 50px;
+  margin-top: @navigationBarHeight;
 }
 
 .Projects {
-  @media
-  (max-width: 767px),
-  (max-device-width: 767px) {
-    margin-bottom: 1em;
-  }
+  border-top: 1px solid #dfdfdf;
 
   h2 {
     margin: 0.5em 0 0.35em 0;
@@ -26,17 +22,18 @@ body {
   }
 
   .row {
-    margin-top: 2em;
-    margin-bottom: 1.0em;
-  }
-
-  .ProjectCoverImageContainer {
-    margin-bottom: 2em;
+    margin-top: 2.25em;
+    margin-bottom: 1.125em;
 
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      margin-bottom: 1em;
+      margin-top: 1.125em;
+      margin-bottom: 0;
     }
+  }
+
+  .ProjectCoverImageContainer {
+    margin-bottom: 1.125em;
   }
 }

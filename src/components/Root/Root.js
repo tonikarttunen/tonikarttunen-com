@@ -2,7 +2,8 @@ import React, { Component, PropTypes } from 'react/addons';
 import { Router, Route } from 'react-router';
 import MainLayout from '../../components/MainLayout';
 import NotFound from '../../components/NotFound';
-import Menu from '../../components/Menu';
+import UserExperienceDesign from '../../components/UserExperienceDesign';
+import SoftwareDevelopment from '../../components/SoftwareDevelopment';
 import Projects from '../../components/Projects';
 import Viima from '../../components/Viima';
 import InteractionDesignAndEvaluation from '../../components/InteractionDesignAndEvaluation';
@@ -26,8 +27,10 @@ export default class Root extends Component {
     return (
       <Router history={history}>
         <Route path='/' component={MainLayout}>
-          <Route path='menu' component={Menu}/>
-          <Route path='menu/' component={Menu}/>
+          <Route path='user-experience-design' component={UserExperienceDesign}/>
+          <Route path='user-experience-design/' component={UserExperienceDesign}/>
+          <Route path='software-development' component={SoftwareDevelopment}/>
+          <Route path='software-development/' component={SoftwareDevelopment}/>
           <Route path='projects' component={Projects}/>
           <Route path='projects/' component={Projects}/>
           <Route path='projects/viima-mobile-user-interface' component={Viima}/>

@@ -8,13 +8,17 @@
 header .NavigationBar,
 .Header .NavigationBar,
 .LondonTravelGuide {
-  background-color: @backgroundColor; // hsl(205, 52%, 52%);
+  background-color: @backgroundColor;
 }
 
 header,
 .Header {
   .NavigationBar {
     border-bottom: 1px solid @backgroundColor;
+
+    .NavigationBarRight .NavigationBarRightContainer .NavigationLink.selected {
+      color: #9DC5DF !important;
+    }
   }
 }
 
@@ -22,16 +26,16 @@ header,
   color: white;
 
   h2 {
-    color: #9DC5DF; // #ABD4EF;
+    color: #9DC5DF;
   }
 
   .InfoBox {
     h3 {
-      color: #8DBCDB; // #8CBEE0; // #B1D8F2; // #B0D6F0;
+      color: #8DBCDB;
     }
 
     p {
-      color: #4E81A6 !important; // #487FA8; #3D7BA8;
+      color: #4E81A6 !important;
     }
   }
 }

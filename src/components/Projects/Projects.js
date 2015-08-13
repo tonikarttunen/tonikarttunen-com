@@ -2,10 +2,11 @@
 
 import React from 'react/addons';
 import { Link } from 'react-router';
-import { Grid } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Projects.less';
 import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
+import Cover from '../../components/Cover';
 
 @withStyles(styles)
 export default class Projects {
@@ -51,24 +52,39 @@ export default class Projects {
     ];
 
     return (
-      <Grid className='Projects' componentClass='article'>
-        <h2>Projects</h2>
-        {projects.map((project) => {
-          const projectStyle = {
-            backgroundImage: 'url(' + project.imageUrl + ')',
-            filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")',
-            msFilter: '\"progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")\"'
-          };
+      <div>
+        <Cover
+          description={''}
+          coverClassName={'ProjectsCover'}
+          url={''}
+          isLastElement={false}
+          isHomePageCover={false}
+          sectionId={1}
+        />
+        <article className='Projects' id='section2'>
+          <Grid>
+            <Row>
+             <Col md={12}>
+                {projects.map((project) => {
+                  const projectStyle = {
+                    backgroundImage: 'url(' + project.imageUrl + ')',
+                    filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")',
+                    msFilter: '\"progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + project.imageUrl + '" , sizingMethod="scale")\"'
+                  };
 
-          return (
-            <Link to={project.url} key={project.title} title={project.title}>
-              <div className='WideScreenMediaContainer ProjectCoverImageContainer'>
-                <div style={projectStyle} className='WideScreenMedia'/>
-              </div>
-            </Link>
-          );
-        })}
-      </Grid>
+                  return (
+                    <Link to={project.url} key={project.title} title={project.title}>
+                      <div className='WideScreenMediaContainer ProjectCoverImageContainer'>
+                        <div style={projectStyle} className='WideScreenMedia'/>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </Col>
+            </Row>
+          </Grid>
+        </article>
+      </div>
     );
   }
 }

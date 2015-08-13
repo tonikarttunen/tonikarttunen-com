@@ -3,13 +3,20 @@
 @import '../variables.less';
 @import '../less-mixins-and-utils.less';
 
-@headerTextColor: #a7a7a7; // #909090;
+@headerTextColor: #a7a7a7;
 
 header,
-.Header {
+.Header,
+.MobileHeader {
   .unselectable;
   color: @headerTextColor;
-  font-weight: 700;
+  font-weight: 500;
+
+  @media
+  (max-width: 991px),
+  (max-device-width: 991px) {
+    font-weight: 700;
+  }
 
   a,
   a:active,
@@ -23,10 +30,10 @@ header,
     position: fixed;
     top: 0;
     background-color: white;
-    border-bottom: 1px solid white; // #f4f4f4;
+    border-bottom: 1px solid white;
     font-size: 1.0625em;
     line-height: 1;
-    height: 50px;
+    height: @navigationBarHeight;
     overflow: hidden;
     width: 100%;
     z-index: 5000;
@@ -73,22 +80,44 @@ header,
 
     .NavigationBarRight {
       float: right;
-      text-transform: uppercase;
 
       .NavigationBarRightContainer {
         position: relative;
         top: 16px;
 
         .NavigationLink {
-          padding: 15px 0 15px 25px;
+          margin: 15px 0 15px 24px;
+          display: inline-block;
+          height: 50px;
+          line-height: 39px;
+          margin-top: -16px;
 
           @media
           (max-width: 991px),
           (max-device-width: 991px) {
-            padding: 15px 0 15px 15px;
+            margin: 15px 0 15px 15px;
+          }
+
+          &.selected {
+            color: #3d3d3d !important;
+            font-weight: 600;
           }
 
           &.MenuToggle {
+            text-transform: uppercase;
+            margin: 0;
+            padding: 15px 0 15px 25px;
+            display: inline;
+            height: auto;
+            line-height: 1;
+            margin-top: 0;
+
+            @media
+            (max-width: 991px),
+            (max-device-width: 991px) {
+              margin: 0;
+            }
+
             @media
             (max-width: 400px),
             (max-device-width: 400px) {
@@ -99,4 +128,10 @@ header,
       }
     }
   }
+}
+
+.MobileHeader .NavigationBar {
+  background-color: white;
+  border-bottom: 1px solid white !important;
+  z-index: 5002;
 }

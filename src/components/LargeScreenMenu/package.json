@@ -1,0 +1,6 @@
+{
+  "name": "LargeScreenMenu",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./LargeScreenMenu.js"
+}

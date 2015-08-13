@@ -1,0 +1,27 @@
+// SoftwareDevelopment.less
+
+@import '../variables.less';
+@import '../../components/Header/HeaderWithWhiteText.less';
+
+header,
+.Header {
+  .NavigationBar {
+  	background-color: #44B27B;
+    border-bottom: 1px solid darken(#44B27B, 5%);
+
+    .NavigationBarRight .NavigationBarRightContainer .NavigationLink.selected {
+      color: darken(#44B27B, 22%) !important;
+    }
+  }
+}
+
+.SoftwareDevelopment {
+  padding-top: 2em;
+  border-top: 1px solid #dfdfdf;
+
+  @media
+  (max-width: 767px),
+  (max-device-width: 767px) {
+    padding-top: 2.5em;
+  }
+}
