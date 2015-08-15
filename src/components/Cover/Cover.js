@@ -66,11 +66,11 @@ export default class Cover extends React.Component {
       </span>
     ) :
     (
-      <Link to={this.props.url} className='SectionTitleContainer'>
+      <span className='SectionTitleContainer'>
         <div className='SectionTitleResponsiveOuterElement'>
           <div className='SectionTitleResponsiveInnerElement'/>
         </div>
-      </Link>
+      </span>
     );
 
     const outerElementClassName = (this.props.isHomePageCover === true) ? ' HomePageCover' : '';
