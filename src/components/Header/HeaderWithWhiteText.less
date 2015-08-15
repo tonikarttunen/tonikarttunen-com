@@ -12,6 +12,10 @@ header,
     text-decoration: none;
   }
 
+  a:hover {
+    color: darken(white, 10%) !important;
+  }
+
   .NavigationBar {
     background-color: #333;
     border-bottom: 1px solid #222;
@@ -28,6 +32,10 @@ header,
             linear-gradient(transparent, transparent);
         }
       }
+    }
+
+    .NavigationBarRight .NavigationBarRightContainer .NavigationLink.MenuToggle:hover {
+      color: darken(white, 10%) !important;
     }
   }
 }
