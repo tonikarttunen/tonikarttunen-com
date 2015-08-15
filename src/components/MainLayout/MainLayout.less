@@ -91,10 +91,14 @@ p.lead {
 }
 
 a,
-a:hover,
 a:focus,
 a:active {
   color: @linkColorPrimary;
+  transition: color 0.25s ease-in-out;
+}
+
+a:hover {
+  color: @linkCoverPrimaryHover;
 }
 
 .InlineBlock {

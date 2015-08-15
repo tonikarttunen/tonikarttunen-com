@@ -94,6 +94,11 @@ footer,
     background-color: @accentColorPrimary;
     padding: 0.695em 1.5em;
     border-radius: 26px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  a.MoreInformation:hover {
+    background-color: @linkCoverPrimaryHover;
   }
 
   .ScrollToNextSectionArrow {
@@ -113,17 +118,23 @@ footer,
     @media
     (orientation: landscape) and
     (max-device-width: 560px) {
-      font-size: 2em;
+      font-size: 3em;
     }
 
     @media
     (orientation: portrait) and
     (max-device-width: 500px) {
-      font-size: 2em;
+      font-size: 3em;
     }
 
     .ScrollToNextSectionArrowButton {
       color: @accentColorPrimary;
+      transition: color 0.5s ease-in-out;
+
+      &:hover {
+        color: @linkCoverPrimaryHover;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -279,8 +290,16 @@ footer,
     box-shadow: @softwareDevelopmentCoverShadowLight;
   }
 
+  a.MoreInformation:hover {
+    background-color: darken(white, 15%);
+  }
+
   .ScrollToNextSectionArrowButton {
     color: white;
+
+    &:hover {
+      color: darken(white, 15%);
+    }
   }
 }
 
