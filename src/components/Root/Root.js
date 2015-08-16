@@ -22,7 +22,8 @@ export default class Root extends Component {
     const { history } = this.props;
 
     // TODO: figure out how to append trailing slashes automatically
-    // just like the Django router does
+    // just like the Django router does. Additionally, consider handling
+    // nested routes in a different way.
 
     return (
       <Router history={history}>
