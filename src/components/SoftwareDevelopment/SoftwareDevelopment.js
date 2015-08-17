@@ -7,7 +7,7 @@ import styles from './SoftwareDevelopment.less';
 import withStyles from '../../decorators/withStyles';
 import CategoryDetailView from '../../components/CategoryDetailView';
 import ContentGrid from '../../components/ContentGrid';
-import Cover from '../../components/Cover';
+import DetailViewCover from '../../components/DetailViewCover';
 
 @withStyles(styles)
 export default class SoftwareDevelopment {
@@ -17,13 +17,9 @@ export default class SoftwareDevelopment {
 
     return (
       <CategoryDetailView>
-        <Cover
-          description={''}
-          coverClassName={'SoftwareDevelopmentCover'}
-          url={''}
-          isLastElement={false}
-          isHomePageCover={false}
-          sectionId={1}
+        <DetailViewCover
+          title={'Software Development'}
+          coverClassName={'SoftwareDevelopmentDetailViewCover'}
         />
         <div className='SoftwareDevelopment' id='section2'>
           <ContentGrid title={servicesTitle}>

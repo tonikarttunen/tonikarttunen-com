@@ -7,7 +7,7 @@ import styles from './UserExperienceDesign.less';
 import withStyles from '../../decorators/withStyles';
 import CategoryDetailView from '../../components/CategoryDetailView';
 import ContentGrid from '../../components/ContentGrid';
-import Cover from '../../components/Cover';
+import DetailViewCover from '../../components/DetailViewCover';
 
 @withStyles(styles)
 export default class UserExperienceDesign {
@@ -18,15 +18,12 @@ export default class UserExperienceDesign {
 
     return (
       <CategoryDetailView>
-        <Cover
-          description={''}
-          coverClassName={'UserExperienceDesignCover'}
-          url={''}
-          isLastElement={false}
-          isHomePageCover={false}
-          sectionId={1}
-        />
-        <div className='UserExperienceDesign' id='section2'>
+        <DetailViewCover
+          title={'User Experience Design'}
+          coverClassName={'UserExperienceDetailViewCover'}>
+          <p>hello</p>
+        </DetailViewCover>
+        <div className='UserExperienceDesign'>
           <ContentGrid title={servicesTitle}>
             <Row>
               <Col md={4}>

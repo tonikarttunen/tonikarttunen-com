@@ -1,23 +1,37 @@
 // SoftwareDevelopment.less
 
 @import '../variables.less';
-@import '../../components/Header/HeaderWithWhiteText.less';
+@import '../less-mixins-and-utils.less';
+// @import '../../components/Header/HeaderWithWhiteText.less';
 
-header,
-.Header {
-  .NavigationBar {
-  	background-color: #44B27B;
-    border-bottom: 1px solid darken(#44B27B, 5%);
+// header,
+// .Header {
+//   .NavigationBar {
+//   	background-color: #44B27B;
+//     border-bottom: 1px solid darken(#44B27B, 5%);
 
-    .NavigationBarRight .NavigationBarRightContainer .NavigationLink.selected {
-      color: darken(#44B27B, 22%) !important;
-    }
+//     .NavigationBarRight .NavigationBarRightContainer .NavigationLink.selected {
+//       color: darken(#44B27B, 22%) !important;
+//     }
+//   }
+// }
+
+.SoftwareDevelopmentDetailViewCover {
+  background-color: #44B27B;
+  .background-size-cover('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Software-Development-v2.jpg');
+  
+  // Background image for browsers that support SVG
+  background-image:
+    url(http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Software-Development-v2.svg),
+    linear-gradient(transparent, transparent);
+
+  h2 {
+    color: white;
   }
 }
 
 .SoftwareDevelopment {
   padding-top: 2em;
-  border-top: 1px solid #dfdfdf;
 
   @media
   (max-width: 767px),

@@ -6,7 +6,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Projects.less';
 import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
-import Cover from '../../components/Cover';
+import DetailViewCover from '../../components/DetailViewCover';
 
 @withStyles(styles)
 export default class Projects {
@@ -53,14 +53,11 @@ export default class Projects {
 
     return (
       <div>
-        <Cover
-          description={''}
-          coverClassName={'ProjectsCover'}
-          url={''}
-          isLastElement={false}
-          isHomePageCover={false}
-          sectionId={1}
-        />
+        <DetailViewCover
+          title={'Projects'}
+          coverClassName={'ProjectsDetailViewCover'}>
+          <p>hello</p>
+        </DetailViewCover>
         <article className='Projects' id='section2'>
           <Grid>
             <Row>

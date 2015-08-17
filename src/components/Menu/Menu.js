@@ -86,27 +86,29 @@ export default class Menu extends React.Component {
               </Row>
             );
           })}
-          <Row>
-            <Col md={12}>
-              <ul>
-                {projects.map(project => {
-                  return (
-                    <li key={project.title}>
-                      <Link
-                        to={project.url}
-                        onClick={
-                          () => {
-                            this.closeMenu();
-                          }
-                        }>
-                        {project.title}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </Col>
-          </Row>
+          {/*
+            <Row>
+              <Col md={12}>
+                <ul>
+                  {projects.map(project => {
+                    return (
+                      <li key={project.title}>
+                        <Link
+                          to={project.url}
+                          onClick={
+                            () => {
+                              this.closeMenu();
+                            }
+                          }>
+                          {project.title}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </Col>
+            </Row>
+          */}
         </Grid>
       </div>
     );
