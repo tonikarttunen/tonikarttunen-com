@@ -8,8 +8,8 @@ import $ from 'jquery';
 
 @withStyles(styles)
 export default class Home extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.scrollThrottler = null;
   }
 

@@ -42,7 +42,7 @@ export default class Menu extends React.Component {
 
   render() {
     const categories = this.props.menuItems.categories;
-    const projects = this.props.menuItems.projects;
+    // const projects = this.props.menuItems.projects;
 
     let displayStyle = (this.props.viewport.width <= 991 && this.props.isOpen === true) ?
     {display: 'block'} :

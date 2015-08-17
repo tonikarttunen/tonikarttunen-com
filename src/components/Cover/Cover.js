@@ -26,11 +26,9 @@ export default class Cover extends React.Component {
 
   render() {
     const navigationBarHeight = 50;
-    let { width, height } = this.props.viewport;
 
     let coverStyle = {
-      width: width,
-      height: height - navigationBarHeight
+      height: this.props.viewport.height - navigationBarHeight
     };
 
     const scrollToNextSectionArrow =
