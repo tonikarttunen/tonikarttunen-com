@@ -19,7 +19,7 @@ export default class DetailViewCover extends React.Component {
       <div className={'DetailViewCover ' + this.props.coverClassName}>
         <Grid>
           <Row>
-            <Col md={12}>
+            <Col md={12} className='DetailViewCoverContents'>
               <h2>{this.props.title}</h2>
               {this.props.children}
             </Col>

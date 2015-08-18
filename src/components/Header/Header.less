@@ -11,11 +11,16 @@ header,
   .unselectable;
   color: @headerTextColor;
   font-weight: 500;
+  z-index: 4999;
 
   @media
   (max-width: 991px),
   (max-device-width: 991px) {
     font-weight: 700;
+  }
+
+  * {
+    z-index: 5000;
   }
 
   a,

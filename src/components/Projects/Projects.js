@@ -8,6 +8,29 @@ import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
 import DetailViewCover from '../../components/DetailViewCover';
 
+function supportsCSSTransforms() {
+  const transforms = [
+    'transform',
+    'webkitTransform',
+    'WebkitTransform',
+    'mozTransform',
+    'MozTransform',
+    'oTransform',
+    'OTransform',
+    'msTransform'
+  ];
+
+  let div = document.createElement('div');
+
+  for (let i = 0; i < transforms.length; i++) {
+    if ((typeof div.style[transforms[i]]) !== 'undefined') {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 @withStyles(styles)
 export default class Projects {
   render() {
@@ -51,12 +74,46 @@ export default class Projects {
       }
     ];
 
+    let coverContents;
+
+    if (supportsCSSTransforms()) {
+      coverContents = (
+        <span>
+          <img
+          id='ProjectCoverImage1'
+          className='ProjectCoverImage'
+          alt=''
+          src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage1.jpg')}/>
+        <img
+          id='ProjectCoverImage2'
+          className='ProjectCoverImage'
+          alt=''
+          src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage2.jpg')}/>
+        <img
+          id='ProjectCoverImage3'
+          className='ProjectCoverImage'
+          alt=''
+          src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage3.jpg')}/>
+        <img
+          id='ProjectCoverImage4'
+          className='ProjectCoverImage'
+          alt=''
+          src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage4.jpg')}/>
+        </span>
+      );
+    } else {
+      coverContents = (
+        <img
+          alt=''
+          className='ProjectCoverFallbackImage'
+          src={staticPath(IMAGE_PATH_PREFIX + 'ProjectsFallbackImage.jpg')}/>
+      );
+    }
+
     return (
       <div>
-        <DetailViewCover
-          title={'Projects'}
-          coverClassName={'ProjectsDetailViewCover'}>
-          <p>hello</p>
+        <DetailViewCover title='Projects'>
+          {coverContents}
         </DetailViewCover>
         <article className='Projects' id='section2'>
           <Grid>
@@ -71,7 +128,7 @@ export default class Projects {
 
                   return (
                     <Link to={project.url} key={project.title} title={project.title}>
-                      <div className='WideScreenMediaContainer ProjectCoverImageContainer'>
+                      <div className='WideScreenMediaContainer ProjectImageContainer'>
                         <div style={projectStyle} className='WideScreenMedia'/>
                       </div>
                     </Link>
