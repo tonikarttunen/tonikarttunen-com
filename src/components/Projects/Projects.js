@@ -78,35 +78,37 @@ export default class Projects {
 
     if (supportsCSSTransforms()) {
       coverContents = (
-        <span>
+        <div className='ProjectCoverImageContainer'>
           <img
-          id='ProjectCoverImage1'
-          className='ProjectCoverImage'
-          alt=''
-          src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage1.jpg')}/>
-        <img
-          id='ProjectCoverImage2'
-          className='ProjectCoverImage'
-          alt=''
-          src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage2.jpg')}/>
-        <img
-          id='ProjectCoverImage3'
-          className='ProjectCoverImage'
-          alt=''
-          src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage3.jpg')}/>
-        <img
-          id='ProjectCoverImage4'
-          className='ProjectCoverImage'
-          alt=''
-          src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage4.jpg')}/>
-        </span>
+            id='ProjectCoverImage1'
+            className='ProjectCoverImage'
+            alt=''
+            src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage1.jpg')}/>
+          <img
+            id='ProjectCoverImage2'
+            className='ProjectCoverImage'
+            alt=''
+            src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage2.jpg')}/>
+          <img
+            id='ProjectCoverImage3'
+            className='ProjectCoverImage'
+            alt=''
+            src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage3.jpg')}/>
+          <img
+            id='ProjectCoverImage4'
+            className='ProjectCoverImage'
+            alt=''
+            src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage4.jpg')}/>
+        </div>
       );
     } else {
       coverContents = (
-        <img
-          alt=''
-          className='ProjectCoverFallbackImage'
-          src={staticPath(IMAGE_PATH_PREFIX + 'ProjectsFallbackImage.jpg')}/>
+        <div className='ProjectCoverImageContainer'>
+          <img
+            alt=''
+            className='ProjectCoverFallbackImage'
+            src={staticPath(IMAGE_PATH_PREFIX + 'ProjectsFallbackImage.jpg')}/>
+        </div>
       );
     }
 
