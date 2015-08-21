@@ -6,30 +6,8 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Projects.less';
 import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
+import { supportsCSSTransforms } from '../../utilities/FeatureDetection/FeatureDetection';
 import DetailViewCover from '../../components/DetailViewCover';
-
-function supportsCSSTransforms() {
-  const transforms = [
-    'transform',
-    'webkitTransform',
-    'WebkitTransform',
-    'mozTransform',
-    'MozTransform',
-    'oTransform',
-    'OTransform',
-    'msTransform'
-  ];
-
-  let div = document.createElement('div');
-
-  for (let i = 0; i < transforms.length; i++) {
-    if ((typeof div.style[transforms[i]]) !== 'undefined') {
-      return true;
-    }
-  }
-
-  return false;
-}
 
 @withStyles(styles)
 export default class Projects {
