@@ -37,6 +37,12 @@ export default class SoftwareDevelopment extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    if (this.svgAnimation) {
+      this.svgAnimation.stop().reset();
+    }
+  }
+
   insertSVG() {
     request
     .get(staticPath('src/components/Cover/images/Software-Development-Cover.svg'))
@@ -53,6 +59,7 @@ export default class SoftwareDevelopment extends React.Component {
         'Software-Development-Cover-SVG',
         {
           type: 'async',
+          start: 'autostart',
           duration: 110,
           animTimingFunction: Vivus.EASE_OUT
         },
