@@ -10,24 +10,80 @@ import ContentGrid from '../../components/ContentGrid';
 import DetailViewCover from '../../components/DetailViewCover';
 import { staticPath } from '../../utilities/static/StaticPath';
 import { supportsSVG } from '../../utilities/FeatureDetection/FeatureDetection';
+import Vivus from 'vivus';
+import $ from 'jquery';
+const request = require('superagent');
 
 @withStyles(styles)
-export default class SoftwareDevelopment {
+export default class SoftwareDevelopment extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.svgAnimation = null;
+    this.insertSVG.bind(this);
+    this.animateSVG.bind(this);
+    this.loadSVG.bind(this);
+  }
+
+  componentDidMount() {
+    if (supportsSVG() === true) {
+      this.loadSVG();
+    } else {
+      $('#SoftwareDevelopmentDetailViewCoverImage').html(
+        '<img alt="Software Development" src="' +
+        staticPath('src/components/Cover/images/Software-Development-Cover.png') +
+        '"/>'
+      );
+    }
+  }
+
+  insertSVG() {
+    request
+    .get(staticPath('src/components/Cover/images/Software-Development-Cover.svg'))
+    .end((err, res) => {
+      if (!err) {
+        $('#SoftwareDevelopmentDetailViewCoverImage').html(res.text);
+      }
+    });
+  }
+
+  animateSVG() {
+    if (supportsSVG() === true) {
+      this.svgAnimation = new Vivus(
+        'Software-Development-Cover-SVG',
+        {
+          type: 'async',
+          duration: 110,
+          animTimingFunction: Vivus.EASE_OUT
+        },
+        this.insertSVG
+      );
+    }
+  }
+
+  loadSVG() {
+    request
+    .get(staticPath('src/components/Cover/images/Software-Development-Cover-Paths.svg'))
+    .end((err, res) => {
+      if (err) {
+        this.insertSVG();
+      } else {
+        $('#SoftwareDevelopmentDetailViewCoverImage').html(res.text);
+        this.animateSVG();
+      }
+    });
+  }
+
   render() {
     const servicesTitle = 'Programming Experience';
     const projectsTitle = 'Related Projects';
-    const imagePathPrefix = 'src/components/Cover/images/Software-Development-Cover';
-    const imagePath = supportsSVG() ? imagePathPrefix + '.svg' : imagePathPrefix + '.png';
 
     return (
       <CategoryDetailView>
         <DetailViewCover
           title={'Software Development'}
           coverClassName={'SoftwareDevelopmentDetailViewCover'}>
-          <img
-            id='SoftwareDevelopmentDetailViewCoverImage'
-            alt='Software Development'
-            src={staticPath(imagePath)}/>
+          <div id='SoftwareDevelopmentDetailViewCoverImage'/>
         </DetailViewCover>
 
         <div className='SoftwareDevelopment' id='section2'>
