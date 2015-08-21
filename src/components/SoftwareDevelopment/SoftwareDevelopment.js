@@ -4,51 +4,30 @@ import React from 'react/addons';
 import { Link } from 'react-router';
 import { Row, Col } from 'react-bootstrap';
 import styles from './SoftwareDevelopment.less';
-import withViewport from '../../decorators/withViewport';
 import withStyles from '../../decorators/withStyles';
 import CategoryDetailView from '../../components/CategoryDetailView';
 import ContentGrid from '../../components/ContentGrid';
 import DetailViewCover from '../../components/DetailViewCover';
+import { staticPath } from '../../utilities/static/StaticPath';
+import { supportsSVG } from '../../utilities/FeatureDetection/FeatureDetection';
 
-@withViewport
 @withStyles(styles)
 export default class SoftwareDevelopment {
-  static propTypes = {
-    viewport: React.PropTypes.shape({
-      width: React.PropTypes.number.isRequired,
-      height: React.PropTypes.number.isRequired
-    }).isRequired
-  };
-
   render() {
     const servicesTitle = 'Programming Experience';
     const projectsTitle = 'Related Projects';
-
-    const viewportWidth = this.props.viewport.width;
-    let canvasWidth = 1140; // Width when viewport width >= 1200px
-    let canvasHeight = 680; // Height when viewport width >= 1200px
-
-    if (viewportWidth <= 1199 && viewportWidth > 991) {
-      canvasWidth = 940;
-    } else if (viewportWidth <= 991 && viewportWidth > 767) {
-      canvasWidth = 720;
-    } else if (viewportWidth <= 767) {
-      canvasWidth = viewportWidth - 30;
-    }
-
-    if (viewportWidth <= 1199) {
-      canvasHeight = Math.floor(canvasWidth * 680 / 1140);
-    }
+    const imagePathPrefix = 'src/Components/Cover/images/Software-Development-Cover';
+    const imagePath = supportsSVG() ? imagePathPrefix + '.svg' : imagePathPrefix + '.png';
 
     return (
       <CategoryDetailView>
         <DetailViewCover
           title={'Software Development'}
           coverClassName={'SoftwareDevelopmentDetailViewCover'}>
-          <canvas
-            id='SoftwareDevelopmentDetailViewCoverCanvas'
-            width={canvasWidth}
-            height={canvasHeight}/>
+          <img
+            id='SoftwareDevelopmentDetailViewCoverImage'
+            alt='Software Development'
+            src={staticPath(imagePath)}/>
         </DetailViewCover>
 
         <div className='SoftwareDevelopment' id='section2'>

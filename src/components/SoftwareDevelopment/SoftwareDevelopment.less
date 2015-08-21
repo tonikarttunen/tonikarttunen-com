@@ -4,7 +4,22 @@
 @import '../less-mixins-and-utils.less';
 
 .SoftwareDevelopmentDetailViewCover {
-  
+  height: auto !important;
+
+  .DetailViewCoverContents {
+    height: auto !important;
+  }
+
+  #SoftwareDevelopmentDetailViewCoverImage {
+    width: 100%;
+    margin-top: 1.85em;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-top: 0.5em;
+    }
+  }
 }
 
 .SoftwareDevelopment {
