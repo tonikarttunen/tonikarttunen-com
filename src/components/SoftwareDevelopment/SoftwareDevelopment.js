@@ -54,18 +54,16 @@ export default class SoftwareDevelopment extends React.Component {
   }
 
   animateSVG() {
-    if (supportsSVG() === true) {
-      this.svgAnimation = new Vivus(
-        'Software-Development-Cover-SVG',
-        {
-          type: 'async',
-          start: 'autostart',
-          duration: 110,
-          animTimingFunction: Vivus.EASE_OUT
-        },
-        this.insertSVG
-      );
-    }
+    this.svgAnimation = new Vivus(
+      'Software-Development-Cover-SVG',
+      {
+        type: 'async',
+        start: 'autostart',
+        duration: 110,
+        animTimingFunction: Vivus.EASE_OUT
+      },
+      this.insertSVG
+    );
   }
 
   loadSVG() {

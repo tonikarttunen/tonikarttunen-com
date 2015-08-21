@@ -12,20 +12,27 @@
 
   #SoftwareDevelopmentDetailViewCoverImage {
     width: 100% !important;
+    height: 0;
+    position: relative;
+    padding: 0;
+    padding-bottom: 48.245614035%; // 550px/1140px
+    margin-top: 3em;
+    margin-bottom: 1em;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-top: 1.25em;
+      margin-bottom: 0;
+    }
 
     svg,
     img {
       width: 100% !important;
-      height: auto !important;
-      margin-top: 2em;
-      margin-bottom: 1em;
-
-      @media
-      (max-width: 767px),
-      (max-device-width: 767px) {
-        margin-top: 0.5em;
-        margin-bottom: 0;
-      }
+      height: 100% !important;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
 
     @keyframes ScreenBackgroundKeyframes {
