@@ -16,7 +16,7 @@ export default class SoftwareDevelopment {
   render() {
     const servicesTitle = 'Programming Experience';
     const projectsTitle = 'Related Projects';
-    const imagePathPrefix = 'src/Components/Cover/images/Software-Development-Cover';
+    const imagePathPrefix = 'src/components/Cover/images/Software-Development-Cover';
     const imagePath = supportsSVG() ? imagePathPrefix + '.svg' : imagePathPrefix + '.png';
 
     return (
