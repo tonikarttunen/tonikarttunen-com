@@ -59,7 +59,7 @@ export default class SoftwareDevelopment extends React.Component {
       {
         type: 'async',
         start: 'autostart',
-        duration: 110,
+        duration: 100,
         animTimingFunction: Vivus.EASE_OUT
       },
       this.insertSVG
