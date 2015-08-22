@@ -1,3 +1,7 @@
+// 404 Not Found error view
+
+@import '../variables.less';
+
 .NotFound {
   margin-bottom: 1em;
 
@@ -24,10 +28,16 @@
     display: inline-block;
     padding: 0.5em 1.5em 0.5em 1.25em;
     font-weight: 400;
-    color: #5493BE;
+    color: @accentColorPrimary;
     text-decoration: none;
-    border: 1px solid #5493BE;
+    border: 1px solid @accentColorPrimary;
     border-radius: 27px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: white;
+      background-color: @accentColorPrimary;
+    }
 
     .LinkText {
       font-size: 1.25em;

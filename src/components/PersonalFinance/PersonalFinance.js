@@ -9,9 +9,9 @@ import { staticPath } from '../../utilities/static/StaticPath';
 import ProjectDetailView from '../../components/ProjectDetailView';
 
 @withStyles(styles)
-export default class LondonTravelGuide extends React.Component {
-  constructor() {
-    super();
+export default class PersonalFinance extends React.Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
       index: 0,

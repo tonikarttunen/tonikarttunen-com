@@ -24,8 +24,8 @@ export default class MainLayout extends React.Component {
     children: PropTypes.object
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = getMenuState();
     this.onChange = this.onChange.bind(this);
   }

@@ -1,6 +1,6 @@
 {
   "name": "tonikarttunen-com",
-  "version": "0.7.6",
+  "version": "0.8.1",
   "dependencies": {
     "babel": {
       "version": "5.5.6",
@@ -1433,6 +1433,11 @@
       "version": "1.8.3",
       "from": "underscore@*",
       "resolved": "https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz"
+    },
+    "vivus": {
+      "version": "0.2.2",
+      "from": "vivus@*",
+      "resolved": "https://registry.npmjs.org/vivus/-/vivus-0.2.2.tgz"
     }
   }
 }

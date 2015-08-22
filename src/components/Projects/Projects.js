@@ -6,7 +6,8 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Projects.less';
 import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
-import Cover from '../../components/Cover';
+import { supportsCSSTransforms } from '../../utilities/FeatureDetection/FeatureDetection';
+import DetailViewCover from '../../components/DetailViewCover';
 
 @withStyles(styles)
 export default class Projects {
@@ -51,16 +52,49 @@ export default class Projects {
       }
     ];
 
+    let coverContents;
+
+    if (supportsCSSTransforms()) {
+      coverContents = (
+        <div className='ProjectCoverImageContainer'>
+          <img
+            id='ProjectCoverImage1'
+            className='ProjectCoverImage'
+            alt=''
+            src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage1.jpg')}/>
+          <img
+            id='ProjectCoverImage2'
+            className='ProjectCoverImage'
+            alt=''
+            src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage2.jpg')}/>
+          <img
+            id='ProjectCoverImage3'
+            className='ProjectCoverImage'
+            alt=''
+            src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage3.jpg')}/>
+          <img
+            id='ProjectCoverImage4'
+            className='ProjectCoverImage'
+            alt=''
+            src={staticPath(IMAGE_PATH_PREFIX + 'ProjectCoverImage4.jpg')}/>
+        </div>
+      );
+    } else {
+      coverContents = (
+        <div className='ProjectCoverImageContainer'>
+          <img
+            alt=''
+            className='ProjectCoverFallbackImage'
+            src={staticPath(IMAGE_PATH_PREFIX + 'ProjectsFallbackImage.jpg')}/>
+        </div>
+      );
+    }
+
     return (
       <div>
-        <Cover
-          description={''}
-          coverClassName={'ProjectsCover'}
-          url={''}
-          isLastElement={false}
-          isHomePageCover={false}
-          sectionId={1}
-        />
+        <DetailViewCover title='Projects'>
+          {coverContents}
+        </DetailViewCover>
         <article className='Projects' id='section2'>
           <Grid>
             <Row>
@@ -74,7 +108,7 @@ export default class Projects {
 
                   return (
                     <Link to={project.url} key={project.title} title={project.title}>
-                      <div className='WideScreenMediaContainer ProjectCoverImageContainer'>
+                      <div className='WideScreenMediaContainer ProjectImageContainer'>
                         <div style={projectStyle} className='WideScreenMedia'/>
                       </div>
                     </Link>

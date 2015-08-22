@@ -7,10 +7,78 @@ import styles from './UserExperienceDesign.less';
 import withStyles from '../../decorators/withStyles';
 import CategoryDetailView from '../../components/CategoryDetailView';
 import ContentGrid from '../../components/ContentGrid';
-import Cover from '../../components/Cover';
+import DetailViewCover from '../../components/DetailViewCover';
+import { staticPath } from '../../utilities/static/StaticPath';
+import { supportsSVG } from '../../utilities/FeatureDetection/FeatureDetection';
+import Vivus from 'vivus';
+import $ from 'jquery';
+const request = require('superagent');
 
 @withStyles(styles)
-export default class UserExperienceDesign {
+export default class UserExperienceDesign extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.svgAnimation = null;
+    this.insertSVG.bind(this);
+    this.animateSVG.bind(this);
+    this.loadSVG.bind(this);
+  }
+
+  componentDidMount() {
+    if (supportsSVG() === true) {
+      this.loadSVG();
+    } else {
+      $('#UserExperienceDesignDetailViewCoverImage').html(
+        '<img alt="User Experience Design" src="' +
+        staticPath('src/components/Cover/images/User-Experience-Design-Cover-Thin.png') +
+        '"/>'
+      );
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.svgAnimation) {
+      this.svgAnimation.stop().reset();
+    }
+  }
+
+  insertSVG() {
+    request
+    .get(staticPath('src/components/Cover/images/User-Experience-Design-Cover-Thin.svg'))
+    .end((err, res) => {
+      if (!err) {
+        $('#UserExperienceDesignDetailViewCoverImage').html(res.text);
+      }
+    });
+  }
+
+  animateSVG() {
+    this.svgAnimation = new Vivus(
+      'User-Experience-Design-Cover-SVG',
+      {
+        type: 'async',
+        start: 'autostart',
+        duration: 105,
+        animTimingFunction: Vivus.EASE_OUT
+      },
+      this.insertSVG
+    );
+  }
+
+  loadSVG() {
+    request
+    .get(staticPath('src/components/Cover/images/User-Experience-Design-Cover-Thin-Paths.svg'))
+    .end((err, res) => {
+      if (err) {
+        this.insertSVG();
+      } else {
+        $('#UserExperienceDesignDetailViewCoverImage').html(res.text);
+        this.animateSVG();
+      }
+    });
+  }
+
   render() {
     const servicesTitle = 'User-Centred Design Methods';
     const toolsTitle = 'Design Tool Usage Skills';
@@ -18,15 +86,12 @@ export default class UserExperienceDesign {
 
     return (
       <CategoryDetailView>
-        <Cover
-          description={''}
-          coverClassName={'UserExperienceDesignCover'}
-          url={''}
-          isLastElement={false}
-          isHomePageCover={false}
-          sectionId={1}
-        />
-        <div className='UserExperienceDesign' id='section2'>
+        <DetailViewCover
+          title={'User Experience Design'}
+          coverClassName={'UserExperienceDesignDetailViewCover'}>
+          <div id='UserExperienceDesignDetailViewCoverImage'/>
+        </DetailViewCover>
+        <div className='UserExperienceDesign'>
           <ContentGrid title={servicesTitle}>
             <Row>
               <Col md={4}>

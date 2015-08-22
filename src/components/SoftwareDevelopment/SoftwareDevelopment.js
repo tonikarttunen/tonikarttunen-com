@@ -7,24 +7,90 @@ import styles from './SoftwareDevelopment.less';
 import withStyles from '../../decorators/withStyles';
 import CategoryDetailView from '../../components/CategoryDetailView';
 import ContentGrid from '../../components/ContentGrid';
-import Cover from '../../components/Cover';
+import DetailViewCover from '../../components/DetailViewCover';
+import { staticPath } from '../../utilities/static/StaticPath';
+import { supportsSVG } from '../../utilities/FeatureDetection/FeatureDetection';
+import Vivus from 'vivus';
+import $ from 'jquery';
+const request = require('superagent');
 
 @withStyles(styles)
-export default class SoftwareDevelopment {
+export default class SoftwareDevelopment extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.svgAnimation = null;
+    this.insertSVG.bind(this);
+    this.animateSVG.bind(this);
+    this.loadSVG.bind(this);
+  }
+
+  componentDidMount() {
+    if (supportsSVG() === true) {
+      this.loadSVG();
+    } else {
+      $('#SoftwareDevelopmentDetailViewCoverImage').html(
+        '<img alt="Software Development" src="' +
+        staticPath('src/components/Cover/images/Software-Development-Cover.png') +
+        '"/>'
+      );
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.svgAnimation) {
+      this.svgAnimation.stop().reset();
+    }
+  }
+
+  insertSVG() {
+    request
+    .get(staticPath('src/components/Cover/images/Software-Development-Cover.svg'))
+    .end((err, res) => {
+      if (!err) {
+        $('#SoftwareDevelopmentDetailViewCoverImage').html(res.text);
+      }
+    });
+  }
+
+  animateSVG() {
+    this.svgAnimation = new Vivus(
+      'Software-Development-Cover-SVG',
+      {
+        type: 'async',
+        start: 'autostart',
+        duration: 100,
+        animTimingFunction: Vivus.EASE_OUT
+      },
+      this.insertSVG
+    );
+  }
+
+  loadSVG() {
+    request
+    .get(staticPath('src/components/Cover/images/Software-Development-Cover-Paths.svg'))
+    .end((err, res) => {
+      if (err) {
+        this.insertSVG();
+      } else {
+        $('#SoftwareDevelopmentDetailViewCoverImage').html(res.text);
+        this.animateSVG();
+      }
+    });
+  }
+
   render() {
     const servicesTitle = 'Programming Experience';
     const projectsTitle = 'Related Projects';
 
     return (
       <CategoryDetailView>
-        <Cover
-          description={''}
-          coverClassName={'SoftwareDevelopmentCover'}
-          url={''}
-          isLastElement={false}
-          isHomePageCover={false}
-          sectionId={1}
-        />
+        <DetailViewCover
+          title={'Software Development'}
+          coverClassName={'SoftwareDevelopmentDetailViewCover'}>
+          <div id='SoftwareDevelopmentDetailViewCoverImage'/>
+        </DetailViewCover>
+
         <div className='SoftwareDevelopment' id='section2'>
           <ContentGrid title={servicesTitle}>
             <Row>

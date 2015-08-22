@@ -18,11 +18,23 @@ footer,
   a:hover,
   a:focus,
   a:active {
+    color: #a7a7a7;
     text-decoration: none;
+  }
+
+  a:hover {
+    color: @linkColorPrimary;
   }
 
   p {
     font-size: 0.8em;
-    color: #b1b1b1;
+    color: #a7a7a7;
+
+    a,
+    a:hover,
+    a:focus,
+    a:active {
+      text-decoration: underline;
+    }
   }
 }

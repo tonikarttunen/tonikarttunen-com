@@ -26,11 +26,9 @@ export default class Cover extends React.Component {
 
   render() {
     const navigationBarHeight = 50;
-    let { width, height } = this.props.viewport;
 
     let coverStyle = {
-      width: width,
-      height: height - navigationBarHeight
+      height: this.props.viewport.height - navigationBarHeight
     };
 
     const scrollToNextSectionArrow =
@@ -66,11 +64,11 @@ export default class Cover extends React.Component {
       </span>
     ) :
     (
-      <Link to={this.props.url} className='SectionTitleContainer'>
+      <span className='SectionTitleContainer'>
         <div className='SectionTitleResponsiveOuterElement'>
           <div className='SectionTitleResponsiveInnerElement'/>
         </div>
-      </Link>
+      </span>
     );
 
     const outerElementClassName = (this.props.isHomePageCover === true) ? ' HomePageCover' : '';

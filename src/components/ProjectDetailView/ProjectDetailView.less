@@ -9,7 +9,13 @@ body {
 .ProjectDetailView {
   .row {
     margin-top: 2em;
-    margin-bottom: 1.0em;
+    margin-bottom: 2em;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-bottom: 1em;
+    }
   }
 
   h3 {

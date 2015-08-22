@@ -42,7 +42,7 @@ export default class Menu extends React.Component {
 
   render() {
     const categories = this.props.menuItems.categories;
-    const projects = this.props.menuItems.projects;
+    // const projects = this.props.menuItems.projects;
 
     let displayStyle = (this.props.viewport.width <= 991 && this.props.isOpen === true) ?
     {display: 'block'} :
@@ -86,27 +86,29 @@ export default class Menu extends React.Component {
               </Row>
             );
           })}
-          <Row>
-            <Col md={12}>
-              <ul>
-                {projects.map(project => {
-                  return (
-                    <li key={project.title}>
-                      <Link
-                        to={project.url}
-                        onClick={
-                          () => {
-                            this.closeMenu();
-                          }
-                        }>
-                        {project.title}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </Col>
-          </Row>
+          {/*
+            <Row>
+              <Col md={12}>
+                <ul>
+                  {projects.map(project => {
+                    return (
+                      <li key={project.title}>
+                        <Link
+                          to={project.url}
+                          onClick={
+                            () => {
+                              this.closeMenu();
+                            }
+                          }>
+                          {project.title}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </Col>
+            </Row>
+          */}
         </Grid>
       </div>
     );

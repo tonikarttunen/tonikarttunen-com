@@ -1,8 +1,50 @@
 // UserExperienceDesign.less
 
+.UserExperienceDesignDetailViewCover {
+  height: auto !important;
+
+  .DetailViewCoverContents {
+    height: auto !important;
+  }
+
+  #UserExperienceDesignDetailViewCoverImage {
+    width: 100% !important;
+    height: 0;
+    position: relative;
+    padding: 0;
+    padding-bottom: 46.666666666%; // 532px/1140px
+    margin-top: 3.5em;
+    margin-bottom: 1em;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-top: 1.25em;
+      margin-bottom: 0;
+    }
+
+    svg,
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    @keyframes FillKeyframes {
+      0% { fill-opacity: 0 }
+      100% { fill-opacity: 1 }
+    }
+
+    #FillShapes {
+      animation: FillKeyframes 0.55s ease-in-out;
+    }
+  }
+}
+
 .UserExperienceDesign {
   padding-top: 2em;
-  border-top: 1px solid #dfdfdf;
 
   @media
   (max-width: 767px),

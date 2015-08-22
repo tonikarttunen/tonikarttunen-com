@@ -1,23 +1,53 @@
 // SoftwareDevelopment.less
 
 @import '../variables.less';
-@import '../../components/Header/HeaderWithWhiteText.less';
+@import '../less-mixins-and-utils.less';
 
-header,
-.Header {
-  .NavigationBar {
-  	background-color: #44B27B;
-    border-bottom: 1px solid darken(#44B27B, 5%);
+.SoftwareDevelopmentDetailViewCover {
+  height: auto !important;
 
-    .NavigationBarRight .NavigationBarRightContainer .NavigationLink.selected {
-      color: darken(#44B27B, 22%) !important;
+  .DetailViewCoverContents {
+    height: auto !important;
+  }
+
+  #SoftwareDevelopmentDetailViewCoverImage {
+    width: 100% !important;
+    height: 0;
+    position: relative;
+    padding: 0;
+    padding-bottom: 48.245614035%; // 550px/1140px
+    margin-top: 3.25em;
+    margin-bottom: 0.75em;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-top: 1.25em;
+      margin-bottom: 0;
+    }
+
+    svg,
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    @keyframes ScreenBackgroundKeyframes {
+      0% { fill: #FFFFFF }
+      100% { fill: #2FB475 }
+    }
+
+    #ScreenBackground {
+      animation: ScreenBackgroundKeyframes 0.65s ease-in-out;
     }
   }
 }
 
 .SoftwareDevelopment {
   padding-top: 2em;
-  border-top: 1px solid #dfdfdf;
 
   @media
   (max-width: 767px),

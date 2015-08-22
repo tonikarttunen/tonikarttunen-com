@@ -6,6 +6,7 @@ import BrowserHistory from 'react-router/lib/BrowserHistory';
 import Root from './components/Root';
 import MenuAPI from './api/MenuAPI';
 import FastClick from 'fastclick';
+import $ from 'jquery';
 
 function run() {
   // Render the top-level React component
@@ -18,6 +19,7 @@ function run() {
 
   React.initializeTouchEvents();    // Configure React's event system to handle touch events
   FastClick.attach(document.body);  // Disable 300ms click delay on touchscreen devices
+  $('body').bind('touchstart', function() {});  // Enable hover effects on touch screen devices
 }
 
 // Run the application when both DOM is ready

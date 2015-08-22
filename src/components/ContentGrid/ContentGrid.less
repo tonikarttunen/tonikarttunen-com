@@ -29,6 +29,8 @@
     (max-width: 767px),
     (max-device-width: 767px) {
       font-size: 2em;
+      margin-top: 0.25em;
+      margin-bottom: 0;
     }
   }
 
@@ -48,7 +50,6 @@
   }
 
   a.MoreInformation,
-  a.MoreInformation:hover,
   a.MoreInformation:active,
   a.MoreInformation:visited {
     border: 1px solid @linkColorPrimary;
@@ -56,5 +57,11 @@
     padding: 0.417em 0.9em;
     border-radius: 21px;
     margin-top: -12px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  a.MoreInformation:hover {
+    color: white;
+    background-color: @linkColorPrimary;
   }
 }
