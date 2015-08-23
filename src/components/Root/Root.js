@@ -38,7 +38,7 @@ export default class Root extends Component {
 
   // Fix a layout bug that occurs in iOS UIWebView after orientation change
   handleOrientationChange() {
-    $('header').toggleClass('Repaint');
+    $('.Header').toggleClass('Repaint');
     $('.MobileHeader').toggleClass('Repaint');
   }
 

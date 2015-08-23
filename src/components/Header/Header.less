@@ -11,6 +11,10 @@
   100% { width: 100%; }
 }
 
+.Repaint {
+  animation: RepaintKeyframes 0.1s;
+}
+
 header,
 .Header,
 .MobileHeader {
@@ -23,10 +27,6 @@ header,
   (max-width: 991px),
   (max-device-width: 991px) {
     font-weight: 700;
-  }
-
-  &.Repaint {
-    animation: RepaintKeyframes 1ms;
   }
 
   * {
