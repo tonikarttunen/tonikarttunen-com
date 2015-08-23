@@ -5,6 +5,12 @@
 
 @headerTextColor: #a7a7a7;
 
+// Force iOS UIWebView to repaint a fixed positioned element after orientation change
+@keyframes RepaintKeyframes {
+  0% { width: 99.999%; }
+  100% { width: 100%; }
+}
+
 header,
 .Header,
 .MobileHeader {
@@ -17,6 +23,10 @@ header,
   (max-width: 991px),
   (max-device-width: 991px) {
     font-weight: 700;
+  }
+
+  &.Repaint {
+    animation: RepaintKeyframes 1ms;
   }
 
   * {
