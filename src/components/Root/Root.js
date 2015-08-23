@@ -12,10 +12,34 @@ import HelsinkiGraph from '../../components/HelsinkiGraph';
 import LocationAwareApp from '../../components/LocationAwareApp';
 import PersonalFinance from '../../components/PersonalFinance';
 import LondonTravelGuide from '../../components/LondonTravelGuide';
+import $ from 'jquery';
 
 export default class Root extends Component {
   static propTypes = {
     history: PropTypes.object.isRequired
+  }
+
+  constructor(props) {
+    super(props);
+    this.handleOrientationChange.bind(this);
+  }
+
+  componentDidMount() {
+    if (window.addEventListener) {
+      window.addEventListener('orientationchange', this.handleOrientationChange);
+    }
+  }
+
+  componentWillUnmount() {
+    if (window.removeEventListener) {
+      window.removeEventListener('orientationchange', this.handleOrientationChange);
+    }
+  }
+
+  // Fix a layout bug that occurs in iOS UIWebView after orientation change
+  handleOrientationChange() {
+    $('header').toggleClass('Repaint');
+    $('.MobileHeader').toggleClass('Repaint');
   }
 
   render() {
