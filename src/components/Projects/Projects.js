@@ -6,7 +6,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Projects.less';
 import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
-import { supportsCSSTransforms } from '../../utilities/FeatureDetection/FeatureDetection';
+import { supportsCSSTransforms, isIE9OrOlder } from '../../utilities/FeatureDetection/FeatureDetection';
 import DetailViewCover from '../../components/DetailViewCover';
 
 @withStyles(styles)
@@ -54,7 +54,7 @@ export default class Projects {
 
     let coverContents;
 
-    if (supportsCSSTransforms()) {
+    if (!isIE9OrOlder() && supportsCSSTransforms()) {
       coverContents = (
         <div className='ProjectCoverImageContainer'>
           <img
@@ -83,7 +83,7 @@ export default class Projects {
       coverContents = (
         <div className='ProjectCoverImageContainer'>
           <img
-            alt=''
+            alt='Projects'
             className='ProjectCoverFallbackImage'
             src={staticPath(IMAGE_PATH_PREFIX + 'ProjectsFallbackImage.jpg')}/>
         </div>

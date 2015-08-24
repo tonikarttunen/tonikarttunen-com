@@ -67,16 +67,25 @@ export default class UserExperienceDesign extends React.Component {
   }
 
   loadSVG() {
-    request
-    .get(staticPath('src/components/Cover/images/User-Experience-Design-Cover-Thin-Paths.svg'))
-    .end((err, res) => {
-      if (err) {
-        this.insertSVG();
-      } else {
-        $('#UserExperienceDesignDetailViewCoverImage').html(res.text);
-        this.animateSVG();
-      }
-    });
+    try {
+      request
+      .get(staticPath('src/components/Cover/images/User-Experience-Design-Cover-Thin-Paths.svg'))
+      .end((err, res) => {
+        if (err) {
+          this.insertSVG();
+        } else {
+          $('#UserExperienceDesignDetailViewCoverImage').html(res.text);
+          this.animateSVG();
+        }
+      });
+    } catch (e) {
+      // Loading an SVG file with an XHR will fail in IE 9
+      $('#UserExperienceDesignDetailViewCoverImage').html(
+        '<img alt="User Experience Design" src="' +
+        staticPath('src/components/Cover/images/User-Experience-Design-Cover-Thin.svg') +
+        '"/>'
+      );
+    }
   }
 
   render() {
