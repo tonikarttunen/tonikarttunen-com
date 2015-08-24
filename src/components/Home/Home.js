@@ -45,14 +45,17 @@ export default class Home extends React.Component {
     const categories = [
       {
         coverClassName: 'UserExperienceDesignCover',
+        titleImageFileName: 'src/components/Cover/images/Title-Texts/UserExperienceDesignTitle',
         url: '/user-experience-design'
       },
       {
         coverClassName: 'SoftwareDevelopmentCover',
+        titleImageFileName: 'src/components/Cover/images/Title-Texts/SoftwareDevelopmentTitle',
         url: '/software-development'
       },
       {
         coverClassName: 'ProjectsCover',
+        titleImageFileName: 'src/components/Cover/images/Title-Texts/ProjectsTitle',
         url: '/projects'
       }
     ];
@@ -64,8 +67,9 @@ export default class Home extends React.Component {
 
           return (
             <Cover
-              key={category.description}
+              key={category.url}
               coverClassName={category.coverClassName}
+              titleImageFileName={category.titleImageFileName}
               url={category.url}
               isLastElement={isLastElement}
               sectionId={index + 1}
