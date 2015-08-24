@@ -14,7 +14,7 @@ export default class HelsinkiGraph {
         <section className="HelsinkiGraph">
           <Grid>
             <h2>HelsinkiGraph</h2>
-            <div className="youtube">
+            <div className="YouTube">
               <iframe
                 width="1280"
                 height="720"

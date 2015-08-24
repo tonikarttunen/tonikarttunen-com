@@ -21,7 +21,7 @@ export default class InteractionDesignAndEvaluation {
 
             <div className='ProcessDiagramMobile Figure visible-xs'/>
 
-            <div className="youtube">
+            <div className="YouTube">
               <iframe
                 width="1280"
                 height="720"
