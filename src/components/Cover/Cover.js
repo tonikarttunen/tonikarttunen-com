@@ -9,11 +9,9 @@ import withStyles from '../../decorators/withStyles';
 @withStyles(styles)
 export default class Cover extends React.Component {
   static propTypes = {
-    description: React.PropTypes.string,
     coverClassName: React.PropTypes.string,
     url: React.PropTypes.string,
     isLastElement: React.PropTypes.bool,
-    isHomePageCover: React.PropTypes.bool,
     sectionId: React.PropTypes.number
   };
 

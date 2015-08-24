@@ -44,17 +44,14 @@ export default class Home extends React.Component {
   render() {
     const categories = [
       {
-        description: 'User Interface Design + Prototyping + Usability Evaluation + User Research',
         coverClassName: 'UserExperienceDesignCover',
         url: '/user-experience-design'
       },
       {
-        description: 'Web Applications + Native iOS Applications',
         coverClassName: 'SoftwareDevelopmentCover',
         url: '/software-development'
       },
       {
-        description: 'User Experience Design and Software Development Project Portfolio',
         coverClassName: 'ProjectsCover',
         url: '/projects'
       }
@@ -68,12 +65,9 @@ export default class Home extends React.Component {
           return (
             <Cover
               key={category.description}
-              description={category.description}
               coverClassName={category.coverClassName}
               url={category.url}
-              backgroundImageUrl={category.backgroundImageUrl}
               isLastElement={isLastElement}
-              isHomePageCover={true}
               sectionId={index + 1}
             />
           );
