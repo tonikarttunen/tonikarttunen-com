@@ -11,28 +11,6 @@ import Vivus from 'vivus';
 import $ from 'jquery';
 const request = require('superagent');
 
-function insertSVG(titleImageFileName, selectorName) {
-  request
-  .get(staticPath(titleImageFileName + '.svg'))
-  .end((err, res) => {
-    if (!err) {
-      $(selectorName).html(res.text);
-    }
-  });
-}
-
-function animateSVG(titleImageFileName, selectorName, elementId) {
-  return new Vivus(
-    elementId,
-    {
-      type: 'delayed',
-      duration: 85,
-      animTimingFunction: Vivus.EASE
-    },
-    function() { insertSVG(titleImageFileName, selectorName); }
-  );
-}
-
 @withStyles(styles)
 export default class Cover extends React.Component {
   static propTypes = {
@@ -47,13 +25,13 @@ export default class Cover extends React.Component {
     super(props);
 
     this.svgAnimation = null;
+    this.insertSVG.bind(this);
   }
 
   componentDidMount() {
     const selectorName = '.' + this.props.coverClassName + ' .SectionTitleResponsiveElement';
     const titleImageFileName = this.props.titleImageFileName;
     const elementId = this.props.coverClassName + '-SVG';
-    var self = this;
 
     if (supportsSVG() === true) {
       request
@@ -69,7 +47,7 @@ export default class Cover extends React.Component {
               duration: 85,
               animTimingFunction: Vivus.EASE
             },
-            function() { insertSVG(titleImageFileName, selectorName); }
+            () => { this.insertSVG(titleImageFileName, selectorName); }
           );
         }
       });
@@ -84,30 +62,17 @@ export default class Cover extends React.Component {
     }
   }
 
+  insertSVG(titleImageFileName, selectorName) {
+    request
+    .get(staticPath(titleImageFileName + '.svg'))
+    .end((err, res) => {
+      if (!err) {
+        $(selectorName).html(res.text);
+      }
+    });
+  }
+
   render() {
-    /*
-    const navigationBarHeight = 50;
-
-    const scrollToNextSectionArrow =
-    (this.props.isLastElement === false) ?
-    (
-      <div className='ScrollToNextSectionArrow'>
-        <span
-          className='ion-chevron-down ScrollToNextSectionArrowButton'
-          onClick={() => {
-            const currentSectionNumber = this.props.sectionId;
-
-            const destination = '#section' + (currentSectionNumber + 1);
-            $('html, body').animate({
-                scrollTop: $(destination).offset().top - navigationBarHeight
-            }, 500);
-          }}
-        />
-      </div>
-    ) :
-    '';
-    */
-
     return (
       <div
         className={'Cover container-fluid ' + this.props.coverClassName}
@@ -125,7 +90,6 @@ export default class Cover extends React.Component {
             </Col>
           </Row>
         </Grid>
-        {/* scrollToNextSectionArrow */}
       </div>
     );
   }
