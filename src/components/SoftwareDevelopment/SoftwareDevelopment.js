@@ -67,16 +67,25 @@ export default class SoftwareDevelopment extends React.Component {
   }
 
   loadSVG() {
-    request
-    .get(staticPath('src/components/Cover/images/Software-Development-Cover-Paths.svg'))
-    .end((err, res) => {
-      if (err) {
-        this.insertSVG();
-      } else {
-        $('#SoftwareDevelopmentDetailViewCoverImage').html(res.text);
-        this.animateSVG();
-      }
-    });
+    try {
+      request
+      .get(staticPath('src/components/Cover/images/Software-Development-Cover-Paths.svg'))
+      .end((err, res) => {
+        if (err) {
+          this.insertSVG();
+        } else {
+          $('#SoftwareDevelopmentDetailViewCoverImage').html(res.text);
+          this.animateSVG();
+        }
+      });
+    } catch (e) {
+      // Loading an SVG file with an XHR will fail in IE 9
+      $('#SoftwareDevelopmentDetailViewCoverImage').html(
+        '<img alt="Software Development" src="' +
+        staticPath('src/components/Cover/images/Software-Development-Cover.svg') +
+        '"/>'
+      );
+    }
   }
 
   render() {

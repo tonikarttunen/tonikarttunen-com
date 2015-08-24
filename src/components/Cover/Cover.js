@@ -34,23 +34,28 @@ export default class Cover extends React.Component {
     const elementId = this.props.coverClassName + '-SVG';
 
     if (supportsSVG() === true) {
-      request
-      .get(staticPath(titleImageFileName + '-Outline.svg'))
-      .end((err, res) => {
-        if (!err) {
-          $(selectorName).html(res.text);
+      try {
+        request
+        .get(staticPath(titleImageFileName + '-Outline.svg'))
+        .end((err, res) => {
+          if (!err) {
+            $(selectorName).html(res.text);
 
-          this.svgAnimation = new Vivus(
-            elementId,
-            {
-              type: 'delayed',
-              duration: 85,
-              animTimingFunction: Vivus.EASE
-            },
-            () => { this.insertSVG(titleImageFileName, selectorName); }
-          );
-        }
-      });
+            this.svgAnimation = new Vivus(
+              elementId,
+              {
+                type: 'delayed',
+                duration: 85,
+                animTimingFunction: Vivus.EASE
+              },
+              () => { this.insertSVG(titleImageFileName, selectorName); }
+            );
+          }
+        });
+      } catch (e) {
+        // Loading an SVG file with an XHR will fail in IE 9
+        $(selectorName).html('<img alt="" src="' + staticPath(titleImageFileName + '.svg') + '"/>');
+      }
     } else {
       $(selectorName).html('<img alt="" src="' + staticPath(titleImageFileName + '.png') + '"/>');
     }
