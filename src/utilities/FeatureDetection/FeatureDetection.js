@@ -1,6 +1,12 @@
 // FeatureDetection
 
 export default {
+  // IE 9 or older
+  isIE9OrOlder: () => {
+    return (navigator.appVersion.indexOf('MSIE') !== -1) &&
+    (parseFloat(navigator.appVersion.split('MSIE')[1]) < 10);
+  },
+
   // CSS transforms
   supportsCSSTransforms: () => {
     const transforms = [
