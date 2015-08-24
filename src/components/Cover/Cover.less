@@ -19,12 +19,14 @@ footer,
 @keyframes TitleTextKeyframesLight {
   0% {
     fill-opacity: 0;
-    stroke: rgb(255, 255, 255) !important;
+    stroke-opacity: 1;
+    stroke: white !important;
   }
 
   100% {
     fill-opacity: 1;
     stroke: transparent;
+    stroke-opacity: 0;
   }
 }
 
@@ -50,7 +52,8 @@ footer,
 #SoftwareDevelopmentCover-SVG-Final {
   animation: 0.85s TitleTextKeyframesLight ease-in-out;
   stroke-width: 2;
-  stroke: transparent;
+  stroke: white !important;
+  stroke-opacity: 0;
 }
 
 .Cover {
