@@ -5,10 +5,7 @@ import { Link } from 'react-router';
 import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Cover.less';
 import withStyles from '../../decorators/withStyles';
-import withViewport from '../../decorators/withViewport';
-import $ from 'jquery';
 
-@withViewport
 @withStyles(styles)
 export default class Cover extends React.Component {
   static propTypes = {
@@ -17,19 +14,12 @@ export default class Cover extends React.Component {
     url: React.PropTypes.string,
     isLastElement: React.PropTypes.bool,
     isHomePageCover: React.PropTypes.bool,
-    sectionId: React.PropTypes.number,
-    viewport: React.PropTypes.shape({
-      width: React.PropTypes.number.isRequired,
-      height: React.PropTypes.number.isRequired
-    }).isRequired
+    sectionId: React.PropTypes.number
   };
 
   render() {
+    /*
     const navigationBarHeight = 50;
-
-    let coverStyle = {
-      height: this.props.viewport.height - navigationBarHeight
-    };
 
     const scrollToNextSectionArrow =
     (this.props.isLastElement === false) ?
@@ -49,44 +39,25 @@ export default class Cover extends React.Component {
       </div>
     ) :
     '';
-
-    const textContents =
-    (this.props.isHomePageCover) ?
-    (
-      <span>
-        <Link to={this.props.url} className='SectionTitleContainer'>
-          <div className='SectionTitleResponsiveOuterElement'>
-            <div className='SectionTitleResponsiveInnerElement'/>
-          </div>
-        </Link>
-        <p>{this.props.description}</p>
-        <Link to={this.props.url} className='MoreInformation'>More Information</Link>
-      </span>
-    ) :
-    (
-      <span className='SectionTitleContainer'>
-        <div className='SectionTitleResponsiveOuterElement'>
-          <div className='SectionTitleResponsiveInnerElement'/>
-        </div>
-      </span>
-    );
-
-    const outerElementClassName = (this.props.isHomePageCover === true) ? ' HomePageCover' : '';
-    const innerElementClassName = (this.props.isHomePageCover === true) ? ' HomePageCover' : '';
+    */
 
     return (
       <div
-        className={'Cover container-fluid ' + this.props.coverClassName + outerElementClassName}
-        style={coverStyle}
+        className={'Cover container-fluid ' + this.props.coverClassName}
         id={'section' + this.props.sectionId}>
-        <Grid className={'CoverInner' + innerElementClassName}>
+        <Grid className='CoverInner'>
           <Row>
             <Col md={12}>
-              {textContents}
+              <Link to={this.props.url} className='SectionTitleContainer'>
+                <div className='SectionTitleResponsiveOuterElement'>
+                  <div className='SectionTitleResponsiveInnerElement'/>
+                </div>
+              </Link>
+              <Link to={this.props.url} className='MoreInformation'>More Information</Link>
             </Col>
           </Row>
         </Grid>
-        {scrollToNextSectionArrow}
+        {/* scrollToNextSectionArrow */}
       </div>
     );
   }

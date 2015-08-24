@@ -19,6 +19,25 @@ footer,
 .Cover {
   text-align: center;
   transform-style: preserve-3d;
+  height: 655px;
+
+  @media
+  (max-width: 1199px),
+  (max-device-width: 1199px) {
+    height: 560px;
+  }
+
+  @media
+  (max-width: 991px),
+  (max-device-width: 991px) {
+    height: 518px;
+  }
+
+  @media
+  (max-device-width: 680px) and
+  (orientation: landscape) {
+    height: 300px;
+  }
 
   .CoverInner {
     position: relative;
@@ -52,7 +71,7 @@ footer,
   .SectionTitleContainer:active,
   .SectionTitleContainer:visited {
     display: block;
-    margin-top: -25px; // 50% of navigation bar height
+    // margin-top: -25px; // 50% of navigation bar height
     margin-left: auto;
     margin-right: auto;
     max-width: 65%;
@@ -93,6 +112,7 @@ footer,
     color: white;
     background-color: @accentColorPrimary;
     padding: 0.695em 1.5em;
+    margin-top: 1em;
     border-radius: 26px;
     transition: all 0.3s ease-in-out;
   }
@@ -165,6 +185,7 @@ footer,
     background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-4K.jpg');
   }
 
+  /*
   @media
   (orientation: portrait) {
     background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-Narrow-1280px.jpg');
@@ -213,6 +234,7 @@ footer,
   (max-width: 1400) {
     background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-Narrow-1280px.jpg');
   }
+  */
 
   .SectionTitleContainer {
     width: 499px;
@@ -304,15 +326,13 @@ footer,
 }
 
 .Cover.ProjectsCover {
-  &.HomePageCover {
-    margin-bottom: 1.625em;
-    border-bottom: 1px solid #dfdfdf;
+  margin-bottom: 1.625em;
+  border-bottom: 1px solid #dfdfdf;
 
-    @media
-    (max-width: 767px),
-    (max-device-width: 767px) {
-      margin-bottom: 1.5em;
-    }
+  @media
+  (max-width: 767px),
+  (max-device-width: 767px) {
+    margin-bottom: 1.5em;
   }
 
   .SectionTitleContainer {
