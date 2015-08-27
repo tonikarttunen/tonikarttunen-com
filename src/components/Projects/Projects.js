@@ -233,7 +233,7 @@ export default class Projects {
                             More Information
                           </Link>
                         </Col>
-                      </Row>  
+                      </Row>
                     </Col>
                     <Col lg={4} md={4} sm={6} className='hidden-xs'>
                       <Link to={project.url} title={project.title}>
