@@ -11,7 +11,19 @@ body {
   img {
     width: 360px;
     max-width: 100%;
-    border: 1px solid #E6E6E6;;
+    border: 1px solid #E6E6E6;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-bottom: 1.5em;
+    }
+
+    @media
+    (max-device-width: 420px) and
+    (orientation: portrait) {
+      width: 100%;
+    }
   }
 
   h2 {
@@ -62,15 +74,15 @@ body {
     background-color: @linkColorPrimaryHover;
   }
 
-  .row {
-    margin-top: 3em;
-    margin-bottom: 3em;
+  .container {
+    padding-top: 3em;
+    padding-bottom: 3em;
 
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      margin-top: 2em;
-      margin-bottom: 2em;
+      padding-top: 2em;
+      padding-bottom: 2em;
     }
   }
 
@@ -125,13 +137,13 @@ body {
   }
 
   .Viima {
-    .row {
-      margin-top: 1.5em;
+    .container {
+      padding-top: 2em;
 
       @media
       (max-width: 767px),
       (max-device-width: 767px) {
-        margin-top: 0.5em;
+        padding-top: 0.5em;
       }
     }
   }
