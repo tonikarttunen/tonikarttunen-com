@@ -6,7 +6,6 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Projects.less';
 import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
-import { supportsCSSTransforms, isIE9OrOlder } from '../../utilities/FeatureDetection/FeatureDetection';
 import DetailViewCover from '../../components/DetailViewCover';
 import DiagonalDivider from '../../components/DiagonalDivider';
 
