@@ -22,7 +22,7 @@ export default class LondonTravelGuide extends React.Component {
   }
 
   handleSelect(selectedIndex, selectedDirection) {
-    this.setState({
+    this.setState({ // eslint-disable-line react/no-set-state
       index: selectedIndex,
       direction: selectedDirection
     });
@@ -40,41 +40,47 @@ export default class LondonTravelGuide extends React.Component {
             <Carousel
               activeIndex={this.state.index}
               direction={this.state.direction}
-              onSelect={this.handleSelect}>
+              onSelect={this.handleSelect}
+            >
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt="App home view"
-                  src={staticPath(IMAGE_PATH_PREFIX + 'Home_660.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'Home_660.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt="Architecture"
-                  src={staticPath(IMAGE_PATH_PREFIX + 'Architecture_660.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'Architecture_660.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt="Music, theatre and cinema"
-                  src={staticPath(IMAGE_PATH_PREFIX + 'MusicTheatreAndCinema_660.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'MusicTheatreAndCinema_660.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt="Tower Bridge"
-                  src={staticPath(IMAGE_PATH_PREFIX + 'TowerBridge_660.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'TowerBridge_660.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt="Currency converter"
-                  src={staticPath(IMAGE_PATH_PREFIX + 'CurrencyConverter_660.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'CurrencyConverter_660.jpg')}
+                />
               </CarouselItem>
             </Carousel>
 

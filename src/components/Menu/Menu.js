@@ -74,11 +74,8 @@ export default class Menu extends React.Component {
                   <h2>
                     <Link
                       to={item.url}
-                      onClick={
-                        () => {
-                          this.closeMenu();
-                        }
-                      }>
+                      onClick={() => { this.closeMenu(); }}
+                    >
                       {item.title}
                     </Link>
                   </h2>

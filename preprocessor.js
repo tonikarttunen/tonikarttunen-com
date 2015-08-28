@@ -20,6 +20,10 @@ module.exports = {
     if (filename.indexOf('node_modules') === -1) {
       return babel.transform(src, {filename: filename}).code;
     }
+    // Ignore all files within bower_components
+    else if (filename.indexOf('bower_components') === -1) {
+      return babel.transform(src, {filename: filename}).code;
+    }
     return src;
   }
 };

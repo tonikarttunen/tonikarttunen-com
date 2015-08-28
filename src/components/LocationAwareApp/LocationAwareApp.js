@@ -22,7 +22,7 @@ export default class LocationAwareApp extends React.Component {
   }
 
   handleSelect(selectedIndex, selectedDirection) {
-    this.setState({
+    this.setState({ // eslint-disable-line react/no-set-state
       index: selectedIndex,
       direction: selectedDirection
     });
@@ -40,41 +40,47 @@ export default class LocationAwareApp extends React.Component {
             <Carousel
               activeIndex={this.state.index}
               direction={this.state.direction}
-              onSelect={this.handleSelect}>
+              onSelect={this.handleSelect}
+            >
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt='220x330'
-                  src={staticPath(IMAGE_PATH_PREFIX + 'Trending.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'Trending.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt='220x330'
-                  src={staticPath(IMAGE_PATH_PREFIX + 'Pittsburgh.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'Pittsburgh.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt='220x330'
-                  src={staticPath(IMAGE_PATH_PREFIX + 'KirjastoOmena.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'KirjastoOmena.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt='220x330'
-                  src={staticPath(IMAGE_PATH_PREFIX + 'FoursquareCheckIn.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'FoursquareCheckIn.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt='220x330'
-                  src={staticPath(IMAGE_PATH_PREFIX + 'PrivacySettings.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'PrivacySettings.jpg')}
+                />
               </CarouselItem>
             </Carousel>
 

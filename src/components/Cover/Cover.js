@@ -81,7 +81,8 @@ export default class Cover extends React.Component {
     return (
       <div
         className={'Cover container-fluid ' + this.props.coverClassName}
-        id={'section' + this.props.sectionId}>
+        id={'section' + this.props.sectionId}
+      >
         <Grid className='CoverInner'>
           <Row>
             <Col md={12}>
