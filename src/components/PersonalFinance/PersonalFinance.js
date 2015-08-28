@@ -23,7 +23,7 @@ export default class PersonalFinance extends React.Component {
   }
 
   handleSelect(selectedIndex, selectedDirection) {
-    this.setState({
+    this.setState({ // eslint-disable-line react/no-set-state
       index: selectedIndex,
       direction: selectedDirection
     });
@@ -41,41 +41,47 @@ export default class PersonalFinance extends React.Component {
             <Carousel
               activeIndex={this.state.index}
               direction={this.state.direction}
-              onSelect={this.handleSelect}>
+              onSelect={this.handleSelect}
+            >
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt="220x330"
-                  src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-1.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-1.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt="220x330"
-                  src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-2.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-2.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt="220x330"
-                  src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-3.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-3.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt="220x330"
-                  src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-4.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-4.jpg')}
+                />
               </CarouselItem>
               <CarouselItem>
                 <img
                   width={440}
                   height={660}
                   alt="220x330"
-                  src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-5.jpg')} />
+                  src={staticPath(IMAGE_PATH_PREFIX + 'Personal-Finance-5.jpg')}
+                />
               </CarouselItem>
             </Carousel>
 
@@ -88,7 +94,8 @@ export default class PersonalFinance extends React.Component {
                 <DiagonalDivider
                   id={'DiagonalDividerPersonalFinance'}
                   className='InlineBlock WidthAuto VerticalAlignTop'
-                  color={'#6CCFAC'}/>
+                  color={'#6CCFAC'}
+                />
                 <div className='InlineBlock WidthAuto VerticalAlignTop'>
                   <h3>Spring</h3>
                   <p>2013</p>

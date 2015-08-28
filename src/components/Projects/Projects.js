@@ -95,145 +95,148 @@ export default class Projects {
                           {
                             (() => {
                               switch (project.title) {
-                                case 'Viima Mobile User Interface':
-                                  return (
-                                    <div className='InfoBox'>
-                                      <div className='InlineBlock WidthAuto VerticalAlignTop'>
-                                        <h3>Autumn</h3>
-                                        <p>2014</p>
-                                      </div>
-                                      <DiagonalDivider
-                                        id={'DiagonalDividerViima'}
-                                        className='InlineBlock WidthAuto VerticalAlignTop'
-                                        color={'#d7d7d7'}/>
-                                      <div className='InlineBlock WidthAuto VerticalAlignTop'>
-                                        <h3>Spring</h3>
-                                        <p>2015</p>
-                                      </div>
-                                      <h3>Client</h3>
-                                      <p>Viima Solutions Oy</p>
-                                      <h3>Awards</h3>
-                                      <p>Accenture Quality Award Finalist</p>
-                                      <h3>Technology</h3>
-                                      <p>Backbone.JS</p>
-                                    </div>
-                                  );
-
-                                case 'Aalto MyCourses Usability Evaluation':
-                                  return (
-                                    <div className="InfoBox">
-                                      <h3>Spring</h3>
-                                      <p>2015</p>
-                                      <h3>Client</h3>
-                                      <p>Aalto University Learning Services, ICT for Learning Team</p>
-                                    </div>
-                                  );
-
-                                case 'Internet of Things Solutions for Länsimetro':
-                                  return (
-                                    <div className="InfoBox">
-                                      <h3>Spring</h3>
-                                      <p>2015</p>
-                                      <h3>Client</h3>
-                                      <p>Länsimetro</p>
-                                    </div>
-                                  );
-
-                                case 'HelsinkiGraph':
-                                  return (
-                                    <div className="InfoBox">
+                              case 'Viima Mobile User Interface':
+                                return (
+                                  <div className='InfoBox'>
+                                    <div className='InlineBlock WidthAuto VerticalAlignTop'>
                                       <h3>Autumn</h3>
-                                      <p>2013</p>
-                                      <h3>Technology</h3>
-                                      <p>Objective-C</p>
+                                      <p>2014</p>
                                     </div>
-                                  );
+                                    <DiagonalDivider
+                                      id={'DiagonalDividerViima'}
+                                      className='InlineBlock WidthAuto VerticalAlignTop'
+                                      color={'#d7d7d7'}
+                                    />
+                                    <div className='InlineBlock WidthAuto VerticalAlignTop'>
+                                      <h3>Spring</h3>
+                                      <p>2015</p>
+                                    </div>
+                                    <h3>Client</h3>
+                                    <p>Viima Solutions Oy</p>
+                                    <h3>Awards</h3>
+                                    <p>Accenture Quality Award Finalist</p>
+                                    <h3>Technology</h3>
+                                    <p>Backbone.JS</p>
+                                  </div>
+                                );
 
-                                case 'B. Sc. Thesis':
-                                  return (
-                                    <div className='InfoBox'>
+                              case 'Aalto MyCourses Usability Evaluation':
+                                return (
+                                  <div className="InfoBox">
+                                    <h3>Spring</h3>
+                                    <p>2015</p>
+                                    <h3>Client</h3>
+                                    <p>Aalto University Learning Services, ICT for Learning Team</p>
+                                  </div>
+                                );
+
+                              case 'Internet of Things Solutions for Länsimetro':
+                                return (
+                                  <div className="InfoBox">
+                                    <h3>Spring</h3>
+                                    <p>2015</p>
+                                    <h3>Client</h3>
+                                    <p>Länsimetro</p>
+                                  </div>
+                                );
+
+                              case 'HelsinkiGraph':
+                                return (
+                                  <div className="InfoBox">
+                                    <h3>Autumn</h3>
+                                    <p>2013</p>
+                                    <h3>Technology</h3>
+                                    <p>Objective-C</p>
+                                  </div>
+                                );
+
+                              case 'B. Sc. Thesis':
+                                return (
+                                  <div className='InfoBox'>
+                                    <h3>Spring</h3>
+                                    <p>2013</p>
+                                    <h3>B. Sc. Thesis</h3>
+                                    <p>
+                                      <a href='http://www.tonikarttunen.com/about/bachelorsthesis/Bachelors_Thesis_Toni_Karttunen_Aalto_University_2013.pdf'>
+                                        PDF
+                                      </a>
+                                      &nbsp;(42 pages, in Finnish)
+                                    </p>
+                                    <h3>Presentation slides</h3>
+                                    <p>
+                                      <a href='http://www.tonikarttunen.com/about/bachelorsthesis/Bachelors_Thesis_Presentation_Toni_Karttunen_Aalto_University_2013.pdf'>
+                                        PDF
+                                      </a>
+                                      &nbsp;(15 pages, in Finnish)
+                                    </p>
+                                    <h3>Thesis Record</h3>
+                                    <p>
+                                      <a href='http://urn.fi/URN:NBN:fi:aalto-201307257437'>
+                                        Aalto University Library
+                                      </a>
+                                    </p>
+                                    <h3>Technology</h3>
+                                    <p>Objective-C</p>
+                                    <h3>App Source Code</h3>
+                                    <p>
+                                      <a href='https://github.com/tonikarttunen/LocationAwareAppProject'>
+                                        GitHub
+                                      </a>
+                                    </p>
+                                    <h3>Test Data</h3>
+                                    <p>
+                                      <a href='https://github.com/tonikarttunen/Paikkatietosovelluksen_testidata'>
+                                        GitHub
+                                      </a>
+                                    </p>
+                                  </div>
+                                );
+
+                              case 'Personal Finance':
+                                return (
+                                  <div className="InfoBox">
+                                    <div className='InlineBlock WidthAuto VerticalAlignTop'>
+                                      <h3>Autumn</h3>
+                                      <p>2012</p>
+                                    </div>
+                                    <DiagonalDivider
+                                      id={'DiagonalDividerPersonalFinance'}
+                                      className='InlineBlock WidthAuto VerticalAlignTop'
+                                      color={'#6CCFAC'}
+                                    />
+                                    <div className='InlineBlock WidthAuto VerticalAlignTop'>
                                       <h3>Spring</h3>
                                       <p>2013</p>
-                                      <h3>B. Sc. Thesis</h3>
-                                      <p>
-                                        <a href='http://www.tonikarttunen.com/about/bachelorsthesis/Bachelors_Thesis_Toni_Karttunen_Aalto_University_2013.pdf'>
-                                          PDF
-                                        </a>
-                                        &nbsp;(42 pages, in Finnish)
-                                      </p>
-                                      <h3>Presentation slides</h3>
-                                      <p>
-                                        <a href='http://www.tonikarttunen.com/about/bachelorsthesis/Bachelors_Thesis_Presentation_Toni_Karttunen_Aalto_University_2013.pdf'>
-                                          PDF
-                                        </a>
-                                        &nbsp;(15 pages, in Finnish)
-                                      </p>
-                                      <h3>Thesis Record</h3>
-                                      <p>
-                                        <a href='http://urn.fi/URN:NBN:fi:aalto-201307257437'>
-                                          Aalto University Library
-                                        </a>
-                                      </p>
-                                      <h3>Technology</h3>
-                                      <p>Objective-C</p>
-                                      <h3>App Source Code</h3>
-                                      <p>
-                                        <a href='https://github.com/tonikarttunen/LocationAwareAppProject'>
-                                          GitHub
-                                        </a>
-                                      </p>
-                                      <h3>Test Data</h3>
-                                      <p>
-                                        <a href='https://github.com/tonikarttunen/Paikkatietosovelluksen_testidata'>
-                                          GitHub
-                                        </a>
-                                      </p>
                                     </div>
-                                  );
+                                    <h3>Technology</h3>
+                                    <p>Objective-C</p>
+                                  </div>
+                                );
 
-                                case 'Personal Finance':
-                                  return (
-                                    <div className="InfoBox">
-                                      <div className='InlineBlock WidthAuto VerticalAlignTop'>
-                                        <h3>Autumn</h3>
-                                        <p>2012</p>
-                                      </div>
-                                      <DiagonalDivider
-                                        id={'DiagonalDividerPersonalFinance'}
-                                        className='InlineBlock WidthAuto VerticalAlignTop'
-                                        color={'#6CCFAC'}/>
-                                      <div className='InlineBlock WidthAuto VerticalAlignTop'>
-                                        <h3>Spring</h3>
-                                        <p>2013</p>
-                                      </div>
-                                      <h3>Technology</h3>
-                                      <p>Objective-C</p>
-                                    </div>
-                                  );
+                              case 'London Travel Guide':
+                                return (
+                                  <div className="InfoBox">
+                                    <h3>Summer</h3>
+                                    <p>2012</p>
+                                    <h3>Technologies</h3>
+                                    <p>Objective-C, HTML, CSS, JavaScript</p>
+                                  </div>
+                                );
 
-                                case 'London Travel Guide':
-                                  return (
-                                    <div className="InfoBox">
-                                      <h3>Summer</h3>
-                                      <p>2012</p>
-                                      <h3>Technologies</h3>
-                                      <p>Objective-C, HTML, CSS, JavaScript</p>
-                                    </div>
-                                  );
-
-                                default:
-                                  break;
+                              default:
+                                break;
                               }
                             })()
                           }
                           <Link
                             to={project.url}
                             title={project.title}
-                            className='MoreInformation'>
+                            className='MoreInformation'
+                          >
                             More Information
                           </Link>
                         </Col>
-                      </Row>  
+                      </Row>
                     </Col>
                     <Col lg={4} md={4} sm={6} className='hidden-xs'>
                       <Link to={project.url} title={project.title}>

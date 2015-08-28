@@ -96,7 +96,8 @@ export default class SoftwareDevelopment extends React.Component {
       <CategoryDetailView>
         <DetailViewCover
           title={'Software Development'}
-          coverClassName={'SoftwareDevelopmentDetailViewCover'}>
+          coverClassName={'SoftwareDevelopmentDetailViewCover'}
+        >
           <div id='SoftwareDevelopmentDetailViewCoverImage'/>
         </DetailViewCover>
 

@@ -39,7 +39,7 @@ export default class MainLayout extends React.Component {
   }
 
   onChange() {
-    this.setState(getMenuState());
+    this.setState(getMenuState()); // eslint-disable-line react/no-set-state
   }
 
   render() {

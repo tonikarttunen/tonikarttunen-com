@@ -97,7 +97,8 @@ export default class UserExperienceDesign extends React.Component {
       <CategoryDetailView>
         <DetailViewCover
           title={'User Experience Design'}
-          coverClassName={'UserExperienceDesignDetailViewCover'}>
+          coverClassName={'UserExperienceDesignDetailViewCover'}
+        >
           <div id='UserExperienceDesignDetailViewCoverImage'/>
         </DetailViewCover>
         <div className='UserExperienceDesign'>
