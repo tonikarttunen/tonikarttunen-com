@@ -62,16 +62,20 @@ export default class Root extends Component {
           <Route path='projects/viima-mobile-user-interface/' component={Viima}/>
           <Route
             path='projects/aalto-mycourses-usability-evaluation'
-            component={InteractionDesignAndEvaluation}/>
+            component={InteractionDesignAndEvaluation}
+          />
           <Route
             path='projects/aalto-mycourses-usability-evaluation/'
-            component={InteractionDesignAndEvaluation}/>
+            component={InteractionDesignAndEvaluation}
+          />
           <Route
             path='projects/internet-of-things-solutions-for-lansimetro'
-            component={StrategicUserCentredDesign}/>
+            component={StrategicUserCentredDesign}
+          />
           <Route
             path='projects/internet-of-things-solutions-for-lansimetro/'
-            component={StrategicUserCentredDesign}/>
+            component={StrategicUserCentredDesign}
+          />
           <Route path='projects/helsinkigraph' component={HelsinkiGraph}/>
           <Route path='projects/helsinkigraph/' component={HelsinkiGraph}/>
           <Route path='projects/b-sc-thesis' component={LocationAwareApp}/>

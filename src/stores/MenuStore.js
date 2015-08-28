@@ -43,20 +43,20 @@ AppDispatcher.register((payload) => {
   let action = payload.action;
 
   switch(action.actionType) {
-    case ActionTypes.MOBILE_MENU_TOGGLE_OPEN:
-      setIsOpen(true);
-      break;
+  case ActionTypes.MOBILE_MENU_TOGGLE_OPEN:
+    setIsOpen(true);
+    break;
 
-    case ActionTypes.MOBILE_MENU_TOGGLE_CLOSED:
-      setIsOpen(false);
-      break;
+  case ActionTypes.MOBILE_MENU_TOGGLE_CLOSED:
+    setIsOpen(false);
+    break;
 
-    case ActionTypes.MOBILE_MENU_RECEIVE_DATA:
-      setData(payload.action.data);
-      break;
+  case ActionTypes.MOBILE_MENU_RECEIVE_DATA:
+    setData(payload.action.data);
+    break;
 
-    default:
-      return true;
+  default:
+    return true;
   }
 
   MenuStore.emitChange();

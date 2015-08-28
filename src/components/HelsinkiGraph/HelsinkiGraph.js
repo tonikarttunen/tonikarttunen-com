@@ -20,8 +20,8 @@ export default class HelsinkiGraph {
                 height="720"
                 src="https://www.youtube.com/embed/SnNY_iYPsw4?rel=0"
                 frameBorder="0"
-                allowFullScreen>
-              </iframe>
+                allowFullScreen
+              />
             </div>
             <Row>
               <Col md={4} className="InfoBox">

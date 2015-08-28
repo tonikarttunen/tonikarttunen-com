@@ -44,7 +44,8 @@ export default class Viima {
                 <DiagonalDivider
                   id={'DiagonalDividerViima'}
                   className='InlineBlock WidthAuto VerticalAlignTop'
-                  color={'#d7d7d7'}/>
+                  color={'#d7d7d7'}
+                />
                 <div className='InlineBlock WidthAuto VerticalAlignTop'>
                   <h3>Spring</h3>
                   <p>2015</p>

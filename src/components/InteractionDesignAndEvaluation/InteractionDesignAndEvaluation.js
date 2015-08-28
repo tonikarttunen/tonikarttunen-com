@@ -27,8 +27,8 @@ export default class InteractionDesignAndEvaluation {
                 height="720"
                 src="https://www.youtube.com/embed/xoz7yhGl3p8?rel=0"
                 frameBorder="0"
-                allowFullScreen>
-              </iframe>
+                allowFullScreen
+              />
             </div>
 
             <Row>

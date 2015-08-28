@@ -3,6 +3,6 @@
   "disallowSpacesInAnonymousFunctionExpression": null,
   "validateLineBreaks": "LF",
   "validateIndentation": 2,
-  "excludeFiles": ["build/**", "node_modules/**"],
+  "excludeFiles": ["bower_components/**", "build/**", "node_modules/**"],
   "esprima": "esprima-fb"
 }

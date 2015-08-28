@@ -31,19 +31,13 @@ const MenuToggleInternal = React.createClass({
 
     if (this.props.isOpen === true) {
       toggleElement = (
-        <span className='NavigationLink MenuToggle' onClick={
-          () => {
-            this.closeMenu();
-          }}>
+        <span className='NavigationLink MenuToggle' onClick={() => { this.closeMenu(); }}>
           Menu <span className={arrow}/>
         </span>
       );
     } else {
       toggleElement = (
-        <span className='NavigationLink MenuToggle' onClick={
-          () => {
-            this.openMenu();
-          }}>
+        <span className='NavigationLink MenuToggle' onClick={() => { this.openMenu(); }}>
           Menu <span className={arrow}/>
         </span>
       );
