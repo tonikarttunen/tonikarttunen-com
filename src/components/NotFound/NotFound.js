@@ -10,7 +10,7 @@ import withStyles from '../../decorators/withStyles';
 export default class NotFound {
   render() {
     return (
-      <DocumentTitle title='Page Not Found - Toni Karttunen'>
+      <DocumentTitle title='Page Not Found — Toni Karttunen'>
         <section className='NotFound container'>
           <h1>Page Not Found</h1>
           <p>
