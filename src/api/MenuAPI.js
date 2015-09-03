@@ -55,6 +55,6 @@ export default {
       ]
     };
 
-    MenuActions.receiveItems(data); // should probably just receive 1 item...
+    MenuActions.receiveItems(data);
   }
 };

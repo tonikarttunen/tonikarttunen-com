@@ -1,49 +1,22 @@
 import React, { Component, PropTypes } from 'react/addons';
-import { Router, Route } from 'react-router';
+import { Redirect, Route, Router } from 'react-router';
 import MainLayout from '../../components/MainLayout';
 import NotFound from '../../components/NotFound';
-import UserExperienceDesign from '../../components/UserExperienceDesign';
-import SoftwareDevelopment from '../../components/SoftwareDevelopment';
-import Projects from '../../components/Projects';
-import Viima from '../../components/Viima';
-import InteractionDesignAndEvaluation from '../../components/InteractionDesignAndEvaluation';
-import StrategicUserCentredDesign from '../../components/StrategicUserCentredDesign';
-import HelsinkiGraph from '../../components/HelsinkiGraph';
-import LocationAwareApp from '../../components/LocationAwareApp';
-import PersonalFinance from '../../components/PersonalFinance';
-import LondonTravelGuide from '../../components/LondonTravelGuide';
 import $ from 'jquery';
 
 export default class Root extends Component {
   static propTypes = {
-    history: PropTypes.object.isRequired
+    history: PropTypes.object.isRequired,
+    routeData: PropTypes.object.isRequired
   }
 
   constructor(props) {
     super(props);
-    this.handleOrientationChange.bind(this);
-  }
-
-  componentDidMount() {
-    if (window.addEventListener) {
-      window.addEventListener('orientationchange', this.handleOrientationChange);
-    }
-  }
-
-  componentWillUnmount() {
-    if (window.removeEventListener) {
-      window.removeEventListener('orientationchange', this.handleOrientationChange);
-    }
-  }
-
-  // Fix a layout bug that occurs in iOS UIWebView after orientation change
-  handleOrientationChange() {
-    $('.Header').toggleClass('Repaint');
-    $('.MobileHeader').toggleClass('Repaint');
   }
 
   render() {
     const { history } = this.props;
+    const { routes, redirects } = this.props.routeData;    
 
     // TODO: figure out how to append trailing slashes automatically
     // just like the Django router does. Additionally, consider handling
@@ -52,38 +25,24 @@ export default class Root extends Component {
     return (
       <Router history={history}>
         <Route path='/' component={MainLayout}>
-          <Route path='user-experience-design' component={UserExperienceDesign}/>
-          <Route path='user-experience-design/' component={UserExperienceDesign}/>
-          <Route path='software-development' component={SoftwareDevelopment}/>
-          <Route path='software-development/' component={SoftwareDevelopment}/>
-          <Route path='projects' component={Projects}/>
-          <Route path='projects/' component={Projects}/>
-          <Route path='projects/viima-mobile-user-interface' component={Viima}/>
-          <Route path='projects/viima-mobile-user-interface/' component={Viima}/>
-          <Route
-            path='projects/aalto-mycourses-usability-evaluation'
-            component={InteractionDesignAndEvaluation}
-          />
-          <Route
-            path='projects/aalto-mycourses-usability-evaluation/'
-            component={InteractionDesignAndEvaluation}
-          />
-          <Route
-            path='projects/internet-of-things-solutions-for-lansimetro'
-            component={StrategicUserCentredDesign}
-          />
-          <Route
-            path='projects/internet-of-things-solutions-for-lansimetro/'
-            component={StrategicUserCentredDesign}
-          />
-          <Route path='projects/helsinkigraph' component={HelsinkiGraph}/>
-          <Route path='projects/helsinkigraph/' component={HelsinkiGraph}/>
-          <Route path='projects/b-sc-thesis' component={LocationAwareApp}/>
-          <Route path='projects/b-sc-thesis/' component={LocationAwareApp}/>
-          <Route path='projects/personal-finance' component={PersonalFinance}/>
-          <Route path='projects/personal-finance/' component={PersonalFinance}/>
-          <Route path='projects/london-travel-guide' component={LondonTravelGuide}/>
-          <Route path='projects/london-travel-guide/' component={LondonTravelGuide}/>
+          {routes.map(route => {
+            return (
+              <span key={route.path}>
+                <Route path={route.path} component={route.component}/>
+                <Route path={route.path + '/'} component={route.component}/>
+              </span>
+            );
+          })}
+
+          {redirects.map(redirectPath => {
+            return (
+              <span key={redirectPath.from}>
+                <Redirect from={redirectPath.from} to={redirectPath.to}/>
+                <Redirect from={redirectPath.from + '/'} to={redirectPath.to}/>
+              </span>
+            );
+          })}
+
           <Route path='*' component={NotFound}/>
         </Route>
       </Router>

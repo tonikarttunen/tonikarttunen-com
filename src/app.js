@@ -5,6 +5,7 @@ import React from 'react/addons';
 import BrowserHistory from 'react-router/lib/BrowserHistory';
 import Root from './components/Root';
 import MenuAPI from './api/MenuAPI';
+import RouteAPI from './api/RouteAPI';
 import FastClick from 'fastclick';
 import $ from 'jquery';
 
@@ -12,10 +13,11 @@ function run() {
   // Render the top-level React component
   const rootElement = document.getElementById('root');
   const history = new BrowserHistory();
-
+  const routeData = RouteAPI.getRoutes();
+  
   MenuAPI.getMenuData();
 
-  React.render(<Root history={history}/>, rootElement);
+  React.render(<Root history={history} routeData={routeData}/>, rootElement);
 
   React.initializeTouchEvents();    // Configure React's event system to handle touch events
   FastClick.attach(document.body);  // Disable 300ms click delay on touchscreen devices

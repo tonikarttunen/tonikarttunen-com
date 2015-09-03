@@ -5,30 +5,23 @@
 
 This repository contains the source code of the [tonikarttunen.com](http://www.tonikarttunen.com) web application. It is a modern single-page-application that is written in [React](https://facebook.github.io/react/) and [EcmaScript 2015 (ES6)](https://babeljs.io/docs/learn-es2015/). The project is based on [react-starter-kit](https://github.com/kriasoft/react-starter-kit/).
 
-
-### Documentation
-
- **TODO**
-
 ### Directory Layout
 
 ```
 .
 ├── /build/                     # The folder for compiled output
-├── /docs/                      # Documentation files for the project
 ├── /node_modules/              # 3rd-party libraries and utilities
 ├── /src/                       # The source code of the application
-│   ├── /api/                   # REST API / Relay endpoints
 │   ├── /actions/               # Action creators that allow to trigger a dispatch to stores
+│   ├── /api/                   # Mock API
 │   ├── /components/            # React components
 │   ├── /constants/             # Constants (action types etc.)
-│   ├── /content/               # Static content (plain HTML or Markdown, Jade, you name it)
-│   ├── /core/                  # Core components (Flux dispatcher, base classes, utilities)
 │   ├── /decorators/            # Higher-order React components
+│   ├── /dispatcher/            # Singleton Flux dispatcher
 │   ├── /public/                # Static files which are copied into the /build/public folder
 │   ├── /stores/                # Stores contain the application state and logic
 │   ├── /templates/             # HTML templates for server-side rendering, emails etc.
-│   ├── /utils/                 # Utility classes and functions
+│   ├── /utilities/             # Utility classes and functions
 │   ├── /app.js                 # Client-side startup script
 │   └── /server.js              # Server-side startup script
 │── gulpfile.babel.js           # Configuration file for automated builds
@@ -73,15 +66,6 @@ $ gulp                          # or, `gulp --release`
 
 This will start a lightweight development server with LiveReload and
 synchronized browsing across multiple devices and browsers.
-
-### How to Deploy
-
-```shell
-$ gulp build --release          # Builds the project in release mode
-$ gulp deploy                   # or, `gulp deploy --production`
-```
-
-For more information see `deploy` task in `gulpfile.babel.js`.
 
 ### How to Test
 
