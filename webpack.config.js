@@ -133,7 +133,7 @@ const appConfig = merge({}, config, {
       new DefinePlugin(merge(GLOBALS, {'__SERVER__': false}))
     ].concat(DEBUG ? [] : [
       new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin(),
+      new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
       new webpack.optimize.AggressiveMergingPlugin()
     ])
   )
