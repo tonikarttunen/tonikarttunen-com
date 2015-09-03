@@ -57,6 +57,10 @@ footer,
 }
 
 .Cover {
+  background-size: 100% auto; // Legacy browsers
+  background-size: cover;     // Modern browsers
+  background-repeat: no-repeat;
+  background-position: center center;
   text-align: center;
   transform-style: preserve-3d;
   height: 655px;
@@ -170,7 +174,7 @@ footer,
 }
 
 .Cover.UserExperienceDesignCover {
-  .background-size-cover('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-4K.jpg');
+  background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/User-Experience-Cover-No-Text-v3-1280px.jpg');
 
   @media
   (min-width: 1281px),
@@ -280,7 +284,7 @@ footer,
 .Cover.SoftwareDevelopmentCover {
   background-color: #2FB475;
 
-  .background-size-cover('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Software-Development-v2.jpg');
+  background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Software-Development-v2.jpg');
   
   // Background image for browsers that support SVG
   background-image:
@@ -343,7 +347,7 @@ footer,
     }
   }
 
-  .background-size-cover('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Projects-Wide-v5-1280px.jpg');
+  background-image: url('http://static.tonikarttunen.com/static/src/components/Cover/images/Cover-Background-Projects-Wide-v5-1280px.jpg');
 
   @media
   (min-width: 1281px),
