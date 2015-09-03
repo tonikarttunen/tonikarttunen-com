@@ -47,6 +47,19 @@ export default class StrategicUserCentredDesign {
                   to figure out what they thought about the prototypes and the storyboards.
                 </p>
                 <p>
+                  The three final design concepts included a smart bench, a tool for
+                  disturbance reporting, and a child-tracking application for parents.
+                  The smart bench would notify a public transport user about relevant
+                  travel-related events based on realtime traffic information.
+                  The disturbance reporting tool concept was designed for increasing the
+                  safety of public transport, which was discovered to be a major concern of
+                  public transport users. The child tracking application would utilize an
+                  indoor-location system (traditional GPS-based navigation does not work
+                  well indoors and in metro tunnels) to help parents to locate their
+                  children at the Matinkylä public transport terminal and the nearby
+                  Iso Omena shopping centre.
+                </p>
+                <p>
                   The project was done with four other students for the Strategic
                   User-Centred Design course at Aalto University.
                 </p>
