@@ -37,24 +37,24 @@
     <!-- Loading indicator styles -->
     <style>
       @-webkit-keyframes LoadingIndicatorLogoBackgroundKeyframes {
-        0% { opacity: 0.3; -webkit-transform: scale(1); }
-        100% { opacity: 0.05; -webkit-transform: scale(1.27); }
+        0% { opacity: 0.3; -webkit-transform: scale(1); transform: scale(1); }
+        100% { opacity: 0.05; -webkit-transform: scale(1.27); transform: scale(1.27); }
       }
 
       @-moz-keyframes LoadingIndicatorLogoBackgroundKeyframes {
-        0% { opacity: 0.3; -moz-transform: scale(1); }
-        100% { opacity: 0.05; -moz-transform: scale(1.27); }
+        0% { opacity: 0.3; -moz-transform: scale(1); transform: scale(1); }
+        100% { opacity: 0.05; -moz-transform: scale(1.27); transform: scale(1.27); }
       }
 
 
       @-o-keyframes LoadingIndicatorLogoBackgroundKeyframes {
-        0% { opacity: 0.3; -o-transform: scale(1); }
-        100% { opacity: 0.05; -o-transform: scale(1.27); }
+        0% { opacity: 0.3; -o-transform: scale(1); transform: scale(1); }
+        100% { opacity: 0.05; -o-transform: scale(1.27); transform: scale(1.27); }
       }
 
       @-ms-keyframes LoadingIndicatorLogoBackgroundKeyframes {
-        0% { opacity: 0.3; -ms-transform: scale(1); }
-        100% { opacity: 0.05; -ms-transform: scale(1.27); }
+        0% { opacity: 0.3; -ms-transform: scale(1); transform: scale(1); }
+        100% { opacity: 0.05; -ms-transform: scale(1.27); transform: scale(1.27); }
       }
 
       @keyframes LoadingIndicatorLogoBackgroundKeyframes {
@@ -66,13 +66,20 @@
         text-align: center;
         margin: auto;
         height: 100vh;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
       }
 
       #LoadingIndicatorInnerContainer {
         position: relative;
         top: 50%;
         -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
         transform: translateY(-50%);
       }
 
