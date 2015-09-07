@@ -83,10 +83,23 @@
       </div>
     </noscript>
     <div id="root">
+      <!-- Loading indicator -->
       <div style="text-align: center; margin: auto; height: 100vh;">
-        <h1 style="font-size: 1.75em; font-family: 'Helvetica Neue', Helvetica, Roboto, 'Segoe UI', sans-serif; font-weight: 300 !important; color: #cdcdcd; position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%);">
-          Loading
-        </h1>
+        <div style="position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%);">
+          <!-- Logo -->
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="216px" height="216px" viewBox="0 0 216 216" enable-background="new 0 0 216 216" xml:space="preserve">
+            <g>
+              <g>
+                <path fill="#cccccc" d="M108,0C48.352,0,0,48.352,0,108s48.352,108,108,108s108-48.352,108-108S167.648,0,108,0z M145.842,144
+                  l-19.277-29H126v29h-23V92H86v52H62V92H44V72h82v26h0.463l19.277-26h28.561l-27.133,32.94L175.625,144H145.842z"/>
+              </g>
+            </g>
+          </svg>
+          <h1 style="font-size: 1.75em; font-family: 'Helvetica Neue', Helvetica, Roboto, 'Segoe UI', sans-serif; font-weight: 300 !important; color: #cdcdcd; margin-top: 18px;">
+            Loading
+          </h1>
+        </div>
       </div>
       <%= body %>
     </div>
