@@ -71,7 +71,7 @@ export default class Projects {
       <DocumentTitle title='Projects — Toni Karttunen'>
         <div>
           <DetailViewCover title='Projects' coverClassName={'ProjectsDetailViewCover'}/>
-          <article className='Projects' id='section2'>
+          <article className='Projects'>
             {projects.map((project) => {
               return (
                 <div key={project.title} className={project.projectClassName}>
