@@ -50,7 +50,13 @@ export default class BlogMaster extends React.Component {
         {blogPosts.map((blogPost) => {
           return (
             <Row key={blogPost.url}>
-              <Col lg={10} md={12}>
+              <Col md={4}>
+                <p className='lead'>Photo</p>
+                <p>Photo</p>
+                <p className='lead'>Published</p>
+                <p>{blogPost.date}</p>
+              </Col>
+              <Col md={8}>
                 <Link to={blogPost.url}><h3>{blogPost.title}</h3></Link>
                 <p className='lead'>{blogPost.intro}</p>
                 <p><Link to={blogPost.url} className='MoreInformation'>More Information</Link></p>

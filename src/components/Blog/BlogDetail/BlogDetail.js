@@ -34,7 +34,13 @@ export default class BlogDetail extends React.Component {
         <Grid className='Blog BlogDetail' componentClass='article'>
           <h2>{blogPost.title}</h2>
             <Row>
-              <Col md={12}>
+              <Col md={4}>
+                <p className='lead'>Published</p>
+                <p>{blogPost.date}</p>
+                <p className='lead'>Author</p>
+                <p>Toni Karttunen</p>
+              </Col>
+              <Col md={8}>
                 <p className='lead'>{blogPost.intro}</p>
                 <p>{blogPost.body_text}</p>
               </Col>
