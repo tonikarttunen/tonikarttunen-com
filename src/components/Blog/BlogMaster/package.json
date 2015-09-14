@@ -1,0 +1,6 @@
+{
+  "name": "BlogMaster",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./BlogMaster.js"
+}

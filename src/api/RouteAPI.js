@@ -1,5 +1,7 @@
 // RouteAPI
 
+import BlogMaster from '../components/Blog/BlogMaster';
+import BlogDetail from '../components/Blog/BlogDetail';
 import UserExperienceDesign from '../components/UserExperienceDesign';
 import SoftwareDevelopment from '../components/SoftwareDevelopment';
 import Projects from '../components/Projects';
@@ -14,6 +16,14 @@ import LondonTravelGuide from '../components/LondonTravelGuide';
 export default {
   getRoutes: () => {
     const routes = [
+      {
+        path: 'blog',
+        component: BlogMaster
+      },
+      {
+        path: 'blog/detail',
+        component: BlogDetail
+      },
       {
         path: 'user-experience-design',
         component: UserExperienceDesign

@@ -1,0 +1,54 @@
+// Blog.less
+
+body {
+  margin-top: 50px;
+}
+
+.Blog {
+  margin-bottom: 2em;
+
+  @media
+  (max-width: 767px),
+  (max-device-width: 767px) {
+    margin-bottom: 1em;
+  }
+
+  a.MoreInformation,
+  a.MoreInformation:active,
+  a.MoreInformation:visited {
+    color: @linkColorPrimary !important;
+    border: 1px solid @linkColorPrimary !important;
+    display: inline-block;
+    padding: 0.417em 0.9em;
+    border-radius: 21px;
+    margin-top: -12px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  a.MoreInformation:hover {
+    color: white !important;
+    background-color: @linkColorPrimary !important;
+  }
+
+  h3 {
+    font-weight: 100;
+    font-size: 3em;
+    margin-bottom: 0;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      font-size: 2em;
+      margin-top: 0.25em;
+      margin-bottom: 0;
+    }
+  }
+
+  p.lead {
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      font-size: 1.25em;
+    }
+  }
+}
