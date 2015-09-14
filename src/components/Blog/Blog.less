@@ -21,7 +21,7 @@ body {
     display: inline-block;
     padding: 0.417em 0.9em;
     border-radius: 21px;
-    margin-top: -12px;
+    // margin-top: -12px;
     transition: all 0.3s ease-in-out;
   }
 
@@ -30,7 +30,7 @@ body {
     background-color: @linkColorPrimary !important;
   }
 
-  h3 {
+  h2 {
     font-weight: 100;
     font-size: 3em;
     margin-bottom: 0;
@@ -44,11 +44,17 @@ body {
     }
   }
 
+  .lead p,
+  .lead,
   p.lead {
+    font-size: 24px;
+    margin-bottom: 18px;
+
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
       font-size: 1.25em;
+      margin-bottom: 18px;
     }
   }
 }
