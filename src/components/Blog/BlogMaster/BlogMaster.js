@@ -7,15 +7,28 @@ import { Link } from 'react-router';
 import styles from './BlogMaster.less';
 import withStyles from '../../../decorators/withStyles';
 const marked = require('marked');
+const request = require('superagent');
 
 @withStyles(styles)
 export default class BlogMaster extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      blogPosts: []
+    };
   }
 
   componentDidMount() {
-
+    request
+    .get('http://localhost:8000/api/blog-posts/')
+    .end((err, res) => {
+      if (!err) {
+        console.log(res);
+        this.setState({blogPosts: res.text}); // eslint-disable-line react/no-set-state
+      } else {
+        console.log(err);
+      }
+    });
   }
 
   componentWillUnmount() {
@@ -28,19 +41,19 @@ export default class BlogMaster extends React.Component {
         title: 'Post *1*',
         date: '2015-10-01 15:00',
         intro: 'Lorem __*ipsum*__ dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        url: '/2015/10/01/recording-mobile-devices-in-usability-tests'
+        url: '/blog/2015/10/01/recording-mobile-devices-in-usability-tests'
       },
       {
         title: 'Post 2',
         date: '2015-10-01 12:00',
         intro: 'Lorem ipsum dolor __sit__ amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        url: '/2015/10/01/second-post'
+        url: '/blog/2015/10/01/second-post'
       },
       {
         title: 'Post 3',
         date: '2015-10-01 09:00',
         intro: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        url: '/2015/10/01/third-post'
+        url: '/blog/2015/10/01/third-post'
       }
     ];
 
@@ -59,6 +72,8 @@ export default class BlogMaster extends React.Component {
                 <p>Photo</p>
                 <p className='lead'>Published</p>
                 <p>{blogPost.date}</p>
+                <p className='lead'>Filed in</p>
+                <p>Design, code</p>
               </Col>
               <Col md={8}>
                 <Link to={blogPost.url}><span dangerouslySetInnerHTML={title}/></Link>
