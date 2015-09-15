@@ -24,7 +24,7 @@ const CollapsibleContentInternal = React.createClass({
 
   onHandleToggle(event) {
     event.preventDefault();
-    this.setState({
+    this.setState({ // eslint-disable-line react/no-set-state
       expanded: !this.state.expanded
     });
   },
