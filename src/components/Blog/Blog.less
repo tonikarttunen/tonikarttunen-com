@@ -36,6 +36,16 @@ body {
     background-color: @linkColorPrimary !important;
   }
 
+  h1 {
+    margin-bottom: 0.75em;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-bottom: 1em;
+    }
+  }
+
   h2 {
     font-weight: 100;
     font-size: 3em;
@@ -62,5 +72,9 @@ body {
       font-size: 24px;
       margin-bottom: 18px;
     }
+  }
+
+  .CoverImage {
+    margin-bottom: 32px;
   }
 }

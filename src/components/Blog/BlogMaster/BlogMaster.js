@@ -67,9 +67,10 @@ export default class BlogMaster extends React.Component {
 
           return (
             <Row key={blogPost.url}>
+              <Col md={12}>
+                <img alt='' width='100%' height='360' src='' className='CoverImage'/>
+              </Col>
               <Col md={4}>
-                <p className='lead'>Photo</p>
-                <p>Photo</p>
                 <p className='lead'>Published</p>
                 <p>{blogPost.date}</p>
                 <p className='lead'>Filed in</p>

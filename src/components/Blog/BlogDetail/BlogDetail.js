@@ -53,6 +53,9 @@ export default class BlogDetail extends React.Component {
         <Grid className='Blog BlogDetail' componentClass='article'>
           <span dangerouslySetInnerHTML={title}/>
             <Row>
+              <Col md={12}>
+                <img alt='' width='100%' height='360' src='' className='CoverImage'/>
+              </Col>
               <Col md={4}>
                 <p className='lead'>Published</p>
                 <p>{blogPost.date.year}</p>
