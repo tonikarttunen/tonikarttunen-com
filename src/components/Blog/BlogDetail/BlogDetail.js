@@ -99,10 +99,11 @@ export default class BlogDetail extends React.Component {
             })()
           }
           <Col md={4}>
-            <p className='lead'>Published</p>
-            <p>{this.state.blogPost.date.year}</p>
-            <p className='lead'>Filed in</p>
-            <p>Design</p>
+            <div className='Date'>
+              <span className='Day'>{this.state.blogPost.date.day}</span>
+              <span className='Month'>{this.state.blogPost.date.month_short_form}</span>
+              <span className='Year'>{this.state.blogPost.date.year}</span>
+            </div>
           </Col>
           <Col md={8}>
             <span className='lead' dangerouslySetInnerHTML={intro}/>

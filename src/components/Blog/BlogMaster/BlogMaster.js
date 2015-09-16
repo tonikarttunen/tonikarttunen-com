@@ -72,10 +72,11 @@ export default class BlogMaster extends React.Component {
               })()
             }
             <Col md={4}>
-              <p className='lead'>Published</p>
-              <p>{blogPost.date.year}</p>
-              <p className='lead'>Filed in</p>
-              <p>Design, code</p>
+              <div className='Date'>
+                <span className='Day'>{blogPost.date.day}</span>
+                <span className='Month'>{blogPost.date.month_short_form}</span>
+                <span className='Year'>{blogPost.date.year}</span>
+              </div>
             </Col>
             <Col md={8}>
               <Link to={blogPost.url}><span dangerouslySetInnerHTML={title}/></Link>
