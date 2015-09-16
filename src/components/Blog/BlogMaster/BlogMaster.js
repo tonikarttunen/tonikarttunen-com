@@ -30,7 +30,8 @@ export default class BlogMaster extends React.Component {
       if (!err && res.status === 200) {
         this.setState({blogPosts: JSON.parse(res.text)}); // eslint-disable-line react/no-set-state
       } else {
-        this.setState({error: res.error}); // eslint-disable-line react/no-set-state
+        const error = res && res.error ? res.error : err;
+        this.setState({error: error}); // eslint-disable-line react/no-set-state
       }
     });
   }
@@ -55,9 +56,21 @@ export default class BlogMaster extends React.Component {
 
         return (
           <Row key={blogPost.url}>
-            <Col md={12}>
-              <img alt='' width='100%' height='360' src='' className='CoverImage'/>
-            </Col>
+            {
+              (() => {
+                if (blogPost.cover_image_url) {
+                  return (
+                    <Col md={12}>
+                      <Link to={blogPost.url}>
+                        <img alt='' src={blogPost.cover_image_url} className='CoverImage'/>
+                      </Link>
+                    </Col>
+                  );
+                } else {
+                  return '';
+                }
+              })()
+            }
             <Col md={4}>
               <p className='lead'>Published</p>
               <p>{blogPost.date.year}</p>

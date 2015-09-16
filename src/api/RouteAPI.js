@@ -21,7 +21,7 @@ export default {
         component: BlogMaster
       },
       {
-        path: 'blog/detail',
+        path: 'blog/:year/:month/:day/:slug',
         component: BlogDetail
       },
       {
