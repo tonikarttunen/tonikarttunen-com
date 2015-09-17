@@ -57,8 +57,8 @@ By default, it builds in debug mode. If you need to build in release mode, add
 ### How to Run
 
 **_Note to self:_** If you are intending to run the development server locally,
-you'll need to run a static file server at port 8888 with CORS enabled:  
-`http-server -p 8888 --cors`.
+you'll need to run a static file server at port 8888 with CORS enabled
+(`http-server -p 8888 --cors`) and a blog API server at port 8000.
 
 ```shell
 $ gulp                          # or, `gulp --release`
