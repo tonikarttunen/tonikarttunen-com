@@ -116,7 +116,7 @@ export default class BlogDetail extends React.Component {
 
   render() {
     let renderState;
-    let documentTitle = '';
+    let documentTitle = 'Toni Karttunen';
 
     if (this.state.error !== null) {
       renderState = this.renderErrorState;

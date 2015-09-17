@@ -79,7 +79,7 @@ body {
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      font-size: 24px;
+      font-size: 21px;
       margin-bottom: 18px;
     }
   }
@@ -102,6 +102,13 @@ body {
       margin-top: 0;
     }
 
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      font-size: 1.125em;
+      margin-bottom: 9px;
+    }
+
     .Year,
     .Month,
     .Day {
@@ -114,12 +121,29 @@ body {
       letter-spacing: 0.02em;
       padding-left: 0.4em;
       padding-right: 0.3em;
+
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        font-weight: 400;
+        text-transform: none;
+        letter-spacing: 0;
+        padding-left: 0.35em;
+        padding-right: 0.35em;
+      }
     }
 
     .Year,
     .Day {
       font-weight: 100;
       letter-spacing: -0.1em;
+
+      @media
+      (max-width: 767px),
+      (max-device-width: 991px) {
+        font-weight: 400;
+        letter-spacing: 0;
+      }
     }
   }
 }
