@@ -2,6 +2,7 @@
 
 import React from 'react/addons';
 import Cover from '../../components/Cover';
+import BlogMasterCompact from '../../components/Blog/BlogMasterCompact';
 import styles from './Home.less';
 import withStyles from '../../decorators/withStyles';
 import $ from 'jquery';
@@ -76,6 +77,7 @@ export default class Home extends React.Component {
             />
           );
         })}
+        <BlogMasterCompact/>
       </article>
     );
   }
