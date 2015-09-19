@@ -24,7 +24,7 @@ export default class BlogMasterCompact extends React.Component {
 
   componentDidMount() {
     request
-    .get(blogURL('blog-posts/'))
+    .get(blogURL('blog-post/'))
     .end((err, res) => {
       if (!err && res.status === 200) {
         this.setState({blogPosts: JSON.parse(res.text)}); // eslint-disable-line react/no-set-state
@@ -77,9 +77,9 @@ export default class BlogMasterCompact extends React.Component {
                       }
                       <Col sm={6}>
                         <div className='Date'>
-                          <span className='Day'>{blogPost.date.day}</span>
-                          <span className='Month'>{blogPost.date.month_short_form}</span>
-                          <span className='Year'>{blogPost.date.year}</span>
+                          <span className='Day'>{blogPost.date.last_saved_date.day}</span>
+                          <span className='Month'>{blogPost.date.last_saved_date.month_name_abbreviation}</span>
+                          <span className='Year'>{blogPost.date.last_saved_date.year}</span>
                         </div>
                         <Link to={blogPost.url}><span dangerouslySetInnerHTML={title}/></Link>
                         <span className='lead' dangerouslySetInnerHTML={intro}/>

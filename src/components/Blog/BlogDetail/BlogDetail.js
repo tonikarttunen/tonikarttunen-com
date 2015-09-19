@@ -34,10 +34,10 @@ export default class BlogDetail extends React.Component {
 
   componentDidMount() {
     request
-    .get(blogURL('blog-posts/' +
-                 this.props.params.year + '/' +
-                 this.props.params.month + '/' +
-                 this.props.params.day + '/' +
+    .get(blogURL('blog-post/' +
+                 ('0000' + this.props.params.year).slice(-4) + '/' +
+                 ('00' + this.props.params.month).slice(-2) + '/' +
+                 ('00' + this.props.params.day).slice(-2) + '/' +
                  this.props.params.slug + '/'))
     .end((err, res) => {
       if (!err && res.status === 200) {
@@ -100,9 +100,19 @@ export default class BlogDetail extends React.Component {
           }
           <Col md={4}>
             <div className='Date'>
-              <span className='Day'>{this.state.blogPost.date.day}</span>
-              <span className='Month'>{this.state.blogPost.date.month_short_form}</span>
-              <span className='Year'>{this.state.blogPost.date.year}</span>
+              <span className='Day'>{this.state.blogPost.date.last_saved_date.day}</span>
+              <span className='Month'>{this.state.blogPost.date.last_saved_date.month_name_abbreviation}</span>
+              <span className='Year'>{this.state.blogPost.date.last_saved_date.year}</span>
+            </div>
+            <div className='InfoBox'>
+              <h3>Categories</h3>
+              <p>
+                {
+                  this.state.blogPost.categories.map(category => {
+                    return <span key={category.url}>{category.title}</span>;
+                  })
+                }
+              </p>
             </div>
           </Col>
           <Col md={8}>

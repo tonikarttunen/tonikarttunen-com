@@ -25,7 +25,7 @@ export default class BlogMaster extends React.Component {
 
   componentDidMount() {
     request
-    .get(blogURL('blog-posts/'))
+    .get(blogURL('blog-post/'))
     .end((err, res) => {
       if (!err && res.status === 200) {
         this.setState({blogPosts: JSON.parse(res.text)}); // eslint-disable-line react/no-set-state
@@ -73,10 +73,20 @@ export default class BlogMaster extends React.Component {
             }
             <Col md={4}>
               <div className='Date'>
-                <span className='Day'>{blogPost.date.day}</span>
-                <span className='Month'>{blogPost.date.month_short_form}</span>
-                <span className='Year'>{blogPost.date.year}</span>
+                <span className='Day'>{blogPost.date.last_saved_date.day}</span>
+                <span className='Month'>{blogPost.date.last_saved_date.month_name_abbreviation}</span>
+                <span className='Year'>{blogPost.date.last_saved_date.year}</span>
               </div>
+              <div className='InfoBox'>
+              <h3>Categories</h3>
+              <p>
+                {
+                  blogPost.categories.map(category => {
+                    return <span key={category.url}>{category.title}</span>;
+                  })
+                }
+              </p>
+            </div>
             </Col>
             <Col md={8}>
               <Link to={blogPost.url}><span dangerouslySetInnerHTML={title}/></Link>
