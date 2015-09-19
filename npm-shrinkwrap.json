@@ -1,6 +1,6 @@
 {
   "name": "tonikarttunen-com",
-  "version": "0.9.0",
+  "version": "0.9.5",
   "dependencies": {
     "babel": {
       "version": "5.8.21",
@@ -1348,6 +1348,11 @@
       "version": "3.9.3",
       "from": "https://registry.npmjs.org/lodash/-/lodash-3.9.3.tgz",
       "resolved": "https://registry.npmjs.org/lodash/-/lodash-3.9.3.tgz"
+    },
+    "marked": {
+      "version": "0.3.5",
+      "from": "marked@*",
+      "resolved": "https://registry.npmjs.org/marked/-/marked-0.3.5.tgz"
     },
     "node-libs-browser": {
       "version": "0.5.2",

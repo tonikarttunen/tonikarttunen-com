@@ -1,7 +1,6 @@
 // MenuToggle
 
-import React from 'react/addons'; // eslint-disable-line no-unused-vars
-// import { canUseDOM } from 'react/lib/ExecutionEnvironment';
+import React from 'react/addons';
 import styles from './MenuToggle.less';
 import withStyles from '../../decorators/withStyles';
 import MenuActions from '../../actions/MenuActions';
@@ -11,7 +10,7 @@ const MenuToggleInternal = React.createClass({
     isOpen: React.PropTypes.bool
   },
 
-  getDefaultProps: function() {
+  getDefaultProps: () => {
     return {
       isOpen: false
     };
@@ -26,26 +25,14 @@ const MenuToggleInternal = React.createClass({
   },
 
   render() {
-    let arrow = this.props.isOpen ? 'ion-arrow-up-b' : 'ion-arrow-down-b';
-    let toggleElement;
-
-    if (this.props.isOpen === true) {
-      toggleElement = (
-        <span className='NavigationLink MenuToggle' onClick={() => { this.closeMenu(); }}>
-          Menu <span className={arrow}/>
-        </span>
-      );
-    } else {
-      toggleElement = (
-        <span className='NavigationLink MenuToggle' onClick={() => { this.openMenu(); }}>
-          Menu <span className={arrow}/>
-        </span>
-      );
-    }
+    const arrow = this.props.isOpen ? 'ion-arrow-up-b' : 'ion-arrow-down-b';
+    const menuToggleAction = this.props.isOpen ? this.closeMenu : this.openMenu;
 
     return (
       <div className='MenuToggleContainer visible-sm visible-xs'>
-        {toggleElement}
+        <span className='NavigationLink MenuToggle' onClick={() => { menuToggleAction(); }}>
+          Menu <span className={arrow}/>
+        </span>
       </div>
     );
   }

@@ -21,6 +21,10 @@ export default {
         {
           title: 'Projects',
           url: '/projects'
+        },
+        {
+          title: 'Blog',
+          url: '/blog'
         }
       ],
       projects: [
