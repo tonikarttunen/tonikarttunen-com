@@ -53,6 +53,7 @@ export default class BlogMaster extends React.Component {
       this.state.blogPosts.map((blogPost) => {
         const title = {__html: marked('## ' + blogPost.title)};
         const intro = {__html: marked(blogPost.intro)};
+        const categoryTitle = blogPost.categories.length > 1 ? 'Categories' : 'Category';
 
         return (
           <Row key={blogPost.url}>
@@ -77,20 +78,34 @@ export default class BlogMaster extends React.Component {
                 <span className='Month'>{blogPost.date.last_saved_date.month_name_abbreviation}</span>
                 <span className='Year'>{blogPost.date.last_saved_date.year}</span>
               </div>
-              <div className='InfoBox'>
-              <h3>Categories</h3>
-              <p>
-                {
-                  blogPost.categories.map(category => {
-                    return <span key={category.url}>{category.title}</span>;
-                  })
-                }
-              </p>
-            </div>
+              <div className='InfoBox hidden-xs hidden-sm'>
+                <h3>
+                  {categoryTitle}
+                </h3>
+                <p>
+                  {
+                    blogPost.categories.map(category => {
+                      return <span key={category.url}>{category.title}</span>;
+                    })
+                  }
+                </p>
+              </div>
             </Col>
             <Col md={8}>
               <Link to={blogPost.url}><span dangerouslySetInnerHTML={title}/></Link>
               <span className='lead' dangerouslySetInnerHTML={intro}/>
+              <div className='InfoBox visible-xs-block visible-sm-block'>
+                <h3>
+                  {categoryTitle}
+                </h3>
+                <p>
+                  {
+                    blogPost.categories.map(category => {
+                      return <span key={category.url}>{category.title}</span>;
+                    })
+                  }
+                </p>
+              </div>
               <p><Link to={blogPost.url} className='MoreInformation'>Read More</Link></p>
             </Col>
           </Row>
