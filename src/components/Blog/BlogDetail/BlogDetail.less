@@ -4,8 +4,16 @@
 @import '../Blog.less';
 
 .Blog.BlogDetail {
+  margin-bottom: 3em;
+
+  @media
+  (max-width: 767px),
+  (max-device-width: 767px) {
+    margin-bottom: 1.5em;
+  }
+
   .Date {
-  	@media
+    @media
     (max-width: 767px),
     (max-device-width: 767px) {
       margin-bottom: 18px;
