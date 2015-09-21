@@ -4,9 +4,9 @@ import React from 'react/addons';
 import DocumentTitle from 'react-document-title';
 import { Carousel, CarouselItem, Grid, Row, Col } from 'react-bootstrap';
 import styles from './LondonTravelGuide.less';
-import withStyles from '../../decorators/withStyles';
-import { staticPath } from '../../utilities/static/StaticPath';
-import ProjectDetailView from '../../components/ProjectDetailView';
+import withStyles from '../../../decorators/withStyles';
+import { staticPath } from '../../../utilities/static/StaticPath';
+import ProjectDetailView from '../../../components/Projects/ProjectDetailView';
 
 @withStyles(styles)
 export default class LondonTravelGuide extends React.Component {

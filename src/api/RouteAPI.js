@@ -4,14 +4,14 @@ import BlogMaster from '../components/Blog/BlogMaster';
 import BlogDetail from '../components/Blog/BlogDetail';
 import UserExperienceDesign from '../components/UserExperienceDesign';
 import SoftwareDevelopment from '../components/SoftwareDevelopment';
-import Projects from '../components/Projects';
-import Viima from '../components/Viima';
-import InteractionDesignAndEvaluation from '../components/InteractionDesignAndEvaluation';
-import StrategicUserCentredDesign from '../components/StrategicUserCentredDesign';
-import HelsinkiGraph from '../components/HelsinkiGraph';
-import LocationAwareApp from '../components/LocationAwareApp';
-import PersonalFinance from '../components/PersonalFinance';
-import LondonTravelGuide from '../components/LondonTravelGuide';
+import Projects from '../components/Projects/Projects';
+import Viima from '../components/Projects/Viima';
+import InteractionDesignAndEvaluation from '../components/Projects/InteractionDesignAndEvaluation';
+import StrategicUserCentredDesign from '../components/Projects/StrategicUserCentredDesign';
+import HelsinkiGraph from '../components/Projects/HelsinkiGraph';
+import LocationAwareApp from '../components/Projects/LocationAwareApp';
+import PersonalFinance from '../components/Projects/PersonalFinance';
+import LondonTravelGuide from '../components/Projects/LondonTravelGuide';
 
 export default {
   getRoutes: () => {

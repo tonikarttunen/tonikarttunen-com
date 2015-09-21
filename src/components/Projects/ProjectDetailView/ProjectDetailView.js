@@ -2,7 +2,7 @@
 
 import React, { PropTypes } from 'react/addons';  // eslint-disable-line no-unused-vars
 import styles from './ProjectDetailView.less';
-import withStyles from '../../decorators/withStyles';
+import withStyles from '../../../decorators/withStyles';
 
 @withStyles(styles)
 export default class ProjectDetailView {

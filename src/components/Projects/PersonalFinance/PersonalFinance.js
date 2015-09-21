@@ -4,10 +4,10 @@ import React from 'react/addons';
 import DocumentTitle from 'react-document-title';
 import { Carousel, CarouselItem, Grid, Row, Col } from 'react-bootstrap';
 import styles from './PersonalFinance.less';
-import withStyles from '../../decorators/withStyles';
-import DiagonalDivider from '../../components/DiagonalDivider';
-import { staticPath } from '../../utilities/static/StaticPath';
-import ProjectDetailView from '../../components/ProjectDetailView';
+import withStyles from '../../../decorators/withStyles';
+import DiagonalDivider from '../../../components/DiagonalDivider';
+import { staticPath } from '../../../utilities/static/StaticPath';
+import ProjectDetailView from '../../../components/Projects/ProjectDetailView';
 
 @withStyles(styles)
 export default class PersonalFinance extends React.Component {
