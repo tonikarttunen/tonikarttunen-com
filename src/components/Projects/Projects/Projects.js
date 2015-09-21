@@ -5,10 +5,10 @@ import DocumentTitle from 'react-document-title';
 import { Link } from 'react-router';
 import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Projects.less';
-import withStyles from '../../decorators/withStyles';
-import { staticPath } from '../../utilities/static/StaticPath';
-import DetailViewCover from '../../components/DetailViewCover';
-import DiagonalDivider from '../../components/DiagonalDivider';
+import withStyles from '../../../decorators/withStyles';
+import { staticPath } from '../../../utilities/static/StaticPath';
+import DetailViewCover from '../../../components/DetailViewCover';
+import DiagonalDivider from '../../../components/DiagonalDivider';
 
 @withStyles(styles)
 export default class Projects {

@@ -4,8 +4,8 @@ import React from 'react/addons';
 import DocumentTitle from 'react-document-title';
 import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './InteractionDesignAndEvaluation.less';
-import withStyles from '../../decorators/withStyles';
-import ProjectDetailView from '../../components/ProjectDetailView';
+import withStyles from '../../../decorators/withStyles';
+import ProjectDetailView from '../../../components/Projects/ProjectDetailView';
 
 @withStyles(styles)
 export default class InteractionDesignAndEvaluation {
