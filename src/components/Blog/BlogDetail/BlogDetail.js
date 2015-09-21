@@ -80,6 +80,7 @@ export default class BlogDetail extends React.Component {
     const title = {__html: marked('# ' + this.state.blogPost.title)};
     const intro = {__html: marked(this.state.blogPost.intro)};
     const body = {__html: marked(this.state.blogPost.body)};
+    const categoryTitle = this.state.blogPost.categories.length > 1 ? 'Categories' : 'Category';
 
     return (
       <span>
@@ -105,7 +106,9 @@ export default class BlogDetail extends React.Component {
               <span className='Year'>{this.state.blogPost.date.last_saved_date.year}</span>
             </div>
             <div className='InfoBox'>
-              <h3>Categories</h3>
+              <h3>
+                {categoryTitle}
+              </h3>
               <p>
                 {
                   this.state.blogPost.categories.map(category => {
