@@ -69,7 +69,7 @@ export default class Cover extends React.Component {
 
   insertSVG(titleImageFileName, selectorName) {
     if (this.svgAnimation) {
-      this.svgAnimation.stop().reset();
+      this.svgAnimation.stop();
     }
 
     request

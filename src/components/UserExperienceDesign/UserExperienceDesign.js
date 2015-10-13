@@ -46,7 +46,7 @@ export default class UserExperienceDesign extends React.Component {
 
   insertSVG() {
     if (this.svgAnimation) {
-      this.svgAnimation.stop().reset();
+      this.svgAnimation.stop();
     }
 
     request
