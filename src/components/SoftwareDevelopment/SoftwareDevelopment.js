@@ -45,6 +45,10 @@ export default class SoftwareDevelopment extends React.Component {
   }
 
   insertSVG() {
+    if (this.svgAnimation) {
+      this.svgAnimation.stop().reset();
+    }
+
     request
     .get(staticPath('src/components/Cover/images/Software-Development-Cover.svg'))
     .end((err, res) => {

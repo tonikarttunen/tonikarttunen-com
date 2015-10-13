@@ -45,6 +45,10 @@ export default class UserExperienceDesign extends React.Component {
   }
 
   insertSVG() {
+    if (this.svgAnimation) {
+      this.svgAnimation.stop().reset();
+    }
+
     request
     .get(staticPath('src/components/Cover/images/User-Experience-Design-Cover-Thin.svg'))
     .end((err, res) => {
