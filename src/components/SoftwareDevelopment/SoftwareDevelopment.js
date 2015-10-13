@@ -46,7 +46,7 @@ export default class SoftwareDevelopment extends React.Component {
 
   insertSVG() {
     if (this.svgAnimation) {
-      this.svgAnimation.stop().reset();
+      this.svgAnimation.stop();
     }
 
     request
