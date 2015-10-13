@@ -68,6 +68,10 @@ export default class Cover extends React.Component {
   }
 
   insertSVG(titleImageFileName, selectorName) {
+    if (this.svgAnimation) {
+      this.svgAnimation.stop().reset();
+    }
+
     request
     .get(staticPath(titleImageFileName + '.svg'))
     .end((err, res) => {
