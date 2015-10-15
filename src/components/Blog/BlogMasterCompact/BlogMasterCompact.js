@@ -24,7 +24,7 @@ export default class BlogMasterCompact extends React.Component {
 
   componentDidMount() {
     request
-    .get(blogURL('blog-post/'))
+    .get(blogURL('blog-post/?latest-posts=2'))
     .end((err, res) => {
       if (!err && res.status === 200) {
         this.setState({blogPosts: JSON.parse(res.text)}); // eslint-disable-line react/no-set-state
