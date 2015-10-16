@@ -7,8 +7,10 @@ import NotFound from '../../../components/NotFound';
 import styles from './BlogDetail.less';
 import withStyles from '../../../decorators/withStyles';
 import { blogURL } from '../BlogUtilities';
+import { isIE9OrOlder } from '../../../utilities/FeatureDetection/FeatureDetection';
 const marked = require('marked');
 const request = require('superagent');
+const legacyIESupport = require('superagent-legacyiesupport');
 
 @withStyles(styles)
 export default class BlogDetail extends React.Component {
@@ -33,12 +35,15 @@ export default class BlogDetail extends React.Component {
   }
 
   componentDidMount() {
+    const legacyIE = isIE9OrOlder() ? legacyIESupport : (() => {});
+
     request
     .get(blogURL('blog-post/' +
                  ('0000' + this.props.params.year).slice(-4) + '/' +
                  ('00' + this.props.params.month).slice(-2) + '/' +
                  ('00' + this.props.params.day).slice(-2) + '/' +
                  this.props.params.slug + '/'))
+    .use(legacyIE)
     .end((err, res) => {
       if (!err && res.status === 200) {
         this.setState({blogPost: JSON.parse(res.text)}); // eslint-disable-line react/no-set-state
