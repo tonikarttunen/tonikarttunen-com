@@ -37,7 +37,7 @@ export default class BlogMasterCompact extends React.Component {
 
   renderLoadingState() {
     return (
-      <p className='lead'>Loading</p>
+      <p className='lead LoadingState'>Loading</p>
     );
   }
 

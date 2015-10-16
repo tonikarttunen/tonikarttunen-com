@@ -10,7 +10,7 @@ import CategoryDetailView from '../../components/CategoryDetailView';
 import ContentGrid from '../../components/ContentGrid';
 import DetailViewCover from '../../components/DetailViewCover';
 import { staticPath } from '../../utilities/static/StaticPath';
-import { supportsSVG } from '../../utilities/FeatureDetection/FeatureDetection';
+import { supportsSVG, isIE10OrOlder } from '../../utilities/FeatureDetection/FeatureDetection';
 import Vivus from 'vivus';
 import $ from 'jquery';
 const request = require('superagent');
@@ -28,7 +28,17 @@ export default class UserExperienceDesign extends React.Component {
 
   componentDidMount() {
     if (supportsSVG() === true) {
-      this.loadSVG();
+      if (isIE10OrOlder() === false) {
+        this.loadSVG();
+      } else {
+        // Disable SVG animations in IE 10 and older because of errors that occur
+        // when unmounting the component. SVG animations work fine in IE 11 and MS Edge.
+        $('#UserExperienceDesignDetailViewCoverImage').html(
+          '<img alt="User Experience Design" src="' +
+          staticPath('src/components/Cover/images/User-Experience-Design-Cover-Thin.svg') +
+          '"/>'
+        );
+      }
     } else {
       $('#UserExperienceDesignDetailViewCoverImage').html(
         '<img alt="User Experience Design" src="' +
@@ -72,25 +82,16 @@ export default class UserExperienceDesign extends React.Component {
   }
 
   loadSVG() {
-    try {
-      request
-      .get(staticPath('src/components/Cover/images/User-Experience-Design-Cover-Thin-Paths.svg'))
-      .end((err, res) => {
-        if (err) {
-          this.insertSVG();
-        } else {
-          $('#UserExperienceDesignDetailViewCoverImage').html(res.text);
-          this.animateSVG();
-        }
-      });
-    } catch (e) {
-      // Loading an SVG file with an XHR will fail in IE 9
-      $('#UserExperienceDesignDetailViewCoverImage').html(
-        '<img alt="User Experience Design" src="' +
-        staticPath('src/components/Cover/images/User-Experience-Design-Cover-Thin.svg') +
-        '"/>'
-      );
-    }
+    request
+    .get(staticPath('src/components/Cover/images/User-Experience-Design-Cover-Thin-Paths.svg'))
+    .end((err, res) => {
+      if (err) {
+        this.insertSVG();
+      } else {
+        $('#UserExperienceDesignDetailViewCoverImage').html(res.text);
+        this.animateSVG();
+      }
+    });
   }
 
   render() {
