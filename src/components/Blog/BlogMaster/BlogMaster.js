@@ -7,8 +7,10 @@ import { Link } from 'react-router';
 import styles from './BlogMaster.less';
 import withStyles from '../../../decorators/withStyles';
 import { blogURL } from '../BlogUtilities';
+import { isIE9OrOlder } from '../../../utilities/FeatureDetection/FeatureDetection';
 const marked = require('marked');
 const request = require('superagent');
+const legacyIESupport = require('superagent-legacyiesupport');
 
 @withStyles(styles)
 export default class BlogMaster extends React.Component {
@@ -24,8 +26,11 @@ export default class BlogMaster extends React.Component {
   }
 
   componentDidMount() {
+    const legacyIE = isIE9OrOlder() ? legacyIESupport : (() => {});
+
     request
     .get(blogURL('blog-post/'))
+    .use(legacyIE)
     .end((err, res) => {
       if (!err && res.status === 200) {
         this.setState({blogPosts: JSON.parse(res.text)}); // eslint-disable-line react/no-set-state
