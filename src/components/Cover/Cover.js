@@ -6,7 +6,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Cover.less';
 import withStyles from '../../decorators/withStyles';
 import { staticPath } from '../../utilities/static/StaticPath';
-import { supportsSVG } from '../../utilities/FeatureDetection/FeatureDetection';
+import { supportsSVG, isIE10OrOlder } from '../../utilities/FeatureDetection/FeatureDetection';
 import Vivus from 'vivus';
 import $ from 'jquery';
 const request = require('superagent');
@@ -34,7 +34,7 @@ export default class Cover extends React.Component {
     const elementId = this.props.coverClassName + '-SVG';
 
     if (supportsSVG() === true) {
-      try {
+      if (isIE10OrOlder() === false) {
         request
         .get(staticPath(titleImageFileName + '-Outline.svg'))
         .end((err, res) => {
@@ -52,8 +52,9 @@ export default class Cover extends React.Component {
             );
           }
         });
-      } catch (e) {
-        // Loading an SVG file with an XHR will fail in IE 9
+      } else {
+        // Disable SVG animations in IE 10 and older because of errors that occur
+        // when unmounting the component. SVG animations work fine in IE 11 and MS Edge.
         $(selectorName).html('<img alt="" src="' + staticPath(titleImageFileName + '.svg') + '"/>');
       }
     } else {

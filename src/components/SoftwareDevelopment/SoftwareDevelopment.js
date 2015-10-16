@@ -10,7 +10,7 @@ import CategoryDetailView from '../../components/CategoryDetailView';
 import ContentGrid from '../../components/ContentGrid';
 import DetailViewCover from '../../components/DetailViewCover';
 import { staticPath } from '../../utilities/static/StaticPath';
-import { supportsSVG } from '../../utilities/FeatureDetection/FeatureDetection';
+import { supportsSVG, isIE10OrOlder } from '../../utilities/FeatureDetection/FeatureDetection';
 import Vivus from 'vivus';
 import $ from 'jquery';
 const request = require('superagent');
@@ -28,7 +28,18 @@ export default class SoftwareDevelopment extends React.Component {
 
   componentDidMount() {
     if (supportsSVG() === true) {
-      this.loadSVG();
+      if (isIE10OrOlder() === false) {
+        this.loadSVG();
+      }
+      else {
+        // Disable SVG animations in IE 10 and older because of errors that occur
+        // when unmounting the component. SVG animations work fine in IE 11 and MS Edge.
+        $('#SoftwareDevelopmentDetailViewCoverImage').html(
+          '<img alt="Software Development" src="' +
+          staticPath('src/components/Cover/images/Software-Development-Cover.svg') +
+          '"/>'
+        );
+      }
     } else {
       $('#SoftwareDevelopmentDetailViewCoverImage').html(
         '<img alt="Software Development" src="' +
@@ -72,25 +83,16 @@ export default class SoftwareDevelopment extends React.Component {
   }
 
   loadSVG() {
-    try {
-      request
-      .get(staticPath('src/components/Cover/images/Software-Development-Cover-Paths.svg'))
-      .end((err, res) => {
-        if (err) {
-          this.insertSVG();
-        } else {
-          $('#SoftwareDevelopmentDetailViewCoverImage').html(res.text);
-          this.animateSVG();
-        }
-      });
-    } catch (e) {
-      // Loading an SVG file with an XHR will fail in IE 9
-      $('#SoftwareDevelopmentDetailViewCoverImage').html(
-        '<img alt="Software Development" src="' +
-        staticPath('src/components/Cover/images/Software-Development-Cover.svg') +
-        '"/>'
-      );
-    }
+    request
+    .get(staticPath('src/components/Cover/images/Software-Development-Cover-Paths.svg'))
+    .end((err, res) => {
+      if (err) {
+        this.insertSVG();
+      } else {
+        $('#SoftwareDevelopmentDetailViewCoverImage').html(res.text);
+        this.animateSVG();
+      }
+    });
   }
 
   render() {
@@ -125,8 +127,9 @@ export default class SoftwareDevelopment extends React.Component {
                   <p>
                     I have some experience in developing web apps with the Django framework in Python.
                     I have also tried some other web app frameworks; for example, this web app that
-                    you are using right now is written using the Express framework and Node.js (the
-                    source code is available on <a href='https://github.com/tonikarttunen/tonikarttunen-com'>GitHub</a>).
+                    you are using right now uses the Express framework and Node.js for some parts
+                    of its backend (the source code is available
+                    on <a href='https://github.com/tonikarttunen/tonikarttunen-com'>GitHub</a>).
                   </p>
                 </Col>
                 <Col md={4}>
