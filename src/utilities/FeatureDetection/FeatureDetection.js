@@ -16,7 +16,7 @@ const isIE10 = () => {
 
 // IE 10 or older
 const isIE10OrOlder = () => {
-  return isIE10() && isIE9OrOlder();
+  return isIE10() || isIE9OrOlder();
 };
 
 // CSS transforms
