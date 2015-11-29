@@ -4,53 +4,89 @@ import React from 'react/addons';
 import { Grid, Row, Col } from 'react-bootstrap';
 import styles from './Contact.less';
 import withStyles from '../../decorators/withStyles';
+import { staticPath } from '../../utilities/static/StaticPath';
+import { supportsSVG, isIE10OrOlder } from '../../utilities/FeatureDetection/FeatureDetection';
+import $ from 'jquery';
+const request = require('superagent');
 
 @withStyles(styles)
 export default class Contact {
   render() {
+    const socialMedia = [
+      {
+        title: 'Behance',
+        url: 'https://www.behance.net/tonikarttunen',
+        imageFilename: 'behance'
+      },
+      {
+        title: 'GitHub',
+        url: 'https://github.com/tonikarttunen',
+        imageFilename: 'github'
+      },
+      {
+        title: 'Medium',
+        url: 'https://medium.com/@tonikarttunen',
+        imageFilename: 'medium'
+      },
+      {
+        title: 'Twitter',
+        url: 'https://twitter.com/tonikarttunen',
+        imageFilename: 'twitter'
+      },
+      {
+        title: 'Instagram',
+        url: 'http://instagram.com/tonikarttunen',
+        imageFilename: 'instagram'
+      },
+      {
+        title: '500px',
+        url: 'http://500px.com/tonikarttunen',
+        imageFilename: '500px'
+      }
+    ];
+
+    const socialMediaImageBasePath = 'src/components/Contact/images/';
+
     return (
       <Grid componentClass='section' className='Contact'>
         <Row>
-          <a href='https://github.com/tonikarttunen/'>
-            <Col md={3} sm={6} className='ContactRow'>
-              <div className='InlineBlock IconContainer'>
-                <span className='ion-social-github'/>
-              </div>
-              <div className='InlineBlock TextContainer'>
-                GitHub
-              </div>
-            </Col>
-          </a>
-          <a href='https://twitter.com/tonikarttunen'>
-            <Col md={3} sm={6} className='ContactRow'>
-              <div className='InlineBlock IconContainer'>
-                <span className='ion-social-twitter'/>
-              </div>
-              <div className='InlineBlock TextContainer'>
-                Twitter
-              </div>
-            </Col>
-          </a>
-          <a href='http://instagram.com/tonikarttunen'>
-            <Col md={3} sm={6} className='ContactRow'>
-              <div className='InlineBlock IconContainer'>
-                <span className='ion-social-instagram'/>
-              </div>
-              <div className='InlineBlock TextContainer'>
-                Instagram
-              </div>
-            </Col>
-          </a>
-          <a href='http://500px.com/toni_karttunen'>
-            <Col md={3} sm={6} className='ContactRow'>
-              <div className='InlineBlock IconContainer'>
-                <span className='icon-500px'/>
-              </div>
-              <div className='InlineBlock TextContainer'>
-                500px
-              </div>
-            </Col>
-          </a>
+          {
+            socialMedia.map(
+              (media) => {
+                return (
+                  <a key={media.title} href={media.url}>
+                    <Col md={3} sm={6} className='ContactRow'>
+                      <div id={'ContactSocialMedia' + media.title} className='InlineBlock IconContainer'>
+                        {
+                          (() => {
+                            if (supportsSVG() && !isIE10OrOlder()) {
+                              request
+                              .get(staticPath(socialMediaImageBasePath + 'SVG/' + media.imageFilename + '.svg'))
+                              .end((err, res) => {
+                                if (!err) {
+                                  $('#ContactSocialMedia' + media.title).html(res.text);
+                                }
+                              });
+                            } else {
+                              return (
+                                <img
+                                  src={staticPath(socialMediaImageBasePath + 'PNG/' + media.imageFilename + '.png')}
+                                  alt=''
+                                />
+                              )
+                            }
+                          })()
+                        }
+                      </div>
+                      <div className='InlineBlock TextContainer'>
+                        {media.title}
+                      </div>
+                    </Col>
+                  </a>
+                );
+              }
+            )
+          }
         </Row>
       </Grid>
     );
