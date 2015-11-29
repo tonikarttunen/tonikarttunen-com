@@ -95,6 +95,20 @@ header,
             margin-right: 6px;
           }
         }
+
+        &:hover,
+        &:active,
+        &:focus {
+          .Logo {
+            // Legacy browsers
+            background-image:
+              url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Hover.png);
+            // Modern browsers
+            background-image:
+              url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Hover.svg),
+              linear-gradient(transparent, transparent);
+          }
+        }
       }
     }
 
