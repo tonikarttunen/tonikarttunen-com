@@ -36,32 +36,6 @@
     
     <!-- Loading indicator styles -->
     <style>
-      @-webkit-keyframes LoadingIndicatorLogoBackgroundKeyframes {
-        0% { opacity: 0.58; -webkit-transform: scale(1); transform: scale(1); }
-        100% { opacity: 0.05; -webkit-transform: scale(1.27); transform: scale(1.27); }
-      }
-
-      @-moz-keyframes LoadingIndicatorLogoBackgroundKeyframes {
-        0% { opacity: 0.58; -moz-transform: scale(1); transform: scale(1); }
-        100% { opacity: 0.05; -moz-transform: scale(1.27); transform: scale(1.27); }
-      }
-
-
-      @-o-keyframes LoadingIndicatorLogoBackgroundKeyframes {
-        0% { opacity: 0.58; -o-transform: scale(1); transform: scale(1); }
-        100% { opacity: 0.05; -o-transform: scale(1.27); transform: scale(1.27); }
-      }
-
-      @-ms-keyframes LoadingIndicatorLogoBackgroundKeyframes {
-        0% { opacity: 0.58; -ms-transform: scale(1); transform: scale(1); }
-        100% { opacity: 0.05; -ms-transform: scale(1.27); transform: scale(1.27); }
-      }
-
-      @keyframes LoadingIndicatorLogoBackgroundKeyframes {
-        0% { opacity: 0.58; transform: scale(1); }
-        100% { opacity: 0.05; transform: scale(1.27); }
-      }
-
       #LoadingIndicatorOuterContainer {
         text-align: center;
         margin: auto;
@@ -83,36 +57,10 @@
         transform: translateY(-50%);
       }
 
-      #LoadingIndicatorLogoContainer {
-        width: 216px;
-        height: 216px;
-        margin: 0 auto;
-        position: relative;
-      }
-
-      #LoadingIndicatorLogoBackground,
-      #LoadingIndicatorLogo {
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-
-      #LoadingIndicatorLogoBackground {
-        z-index: 2;
-        -webkit-animation: LoadingIndicatorLogoBackgroundKeyframes 1.5s ease-out infinite;
-        -moz-animation: LoadingIndicatorLogoBackgroundKeyframes 1.5s ease-out infinite;
-        -o-animation: LoadingIndicatorLogoBackgroundKeyframes 1.5s ease-out infinite;
-        -ms-animation: LoadingIndicatorLogoBackgroundKeyframes 1.5s ease-out infinite;
-        animation: LoadingIndicatorLogoBackgroundKeyframes 1.5s ease-out infinite;
-      }
-
-      #LoadingIndicatorLogo {
-        z-index: 3;
-      }
-
       #LoadingIndicatorText {
         font-size: 1.75em;
-        font-family: 'Helvetica Neue', Helvetica, Roboto, 'Segoe UI', sans-serif;
+        font-family: 'SF UI Display', 'San Francisco Display',
+                     'Helvetica Neue', Helvetica, Roboto, 'Segoe UI', sans-serif;
         font-weight: 300 !important; color: #cdcdcd;
         margin-top: 36px;
         margin-bottom: 0;
@@ -179,27 +127,6 @@
       <!-- Loading indicator -->
       <div id="LoadingIndicatorOuterContainer">
         <div id="LoadingIndicatorInnerContainer">
-          <div id="LoadingIndicatorLogoContainer">
-            <!-- Animated logo background -->
-            <svg id="LoadingIndicatorLogoBackground" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="216" height="216" viewBox="0 0 216 216" version="1.1" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="108" cy="108" r="108" fill="#cccccc"></circle>
-            </svg>
-
-            <!-- Logo -->
-            <svg version="1.1" id="LoadingIndicatorLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              width="216px" height="216px" viewBox="0 0 216 216" enable-background="new 0 0 216 216" xml:space="preserve">
-              <g>
-                <g>
-                  <circle fill="#CCCCCC" cx="108" cy="108" r="108"/>
-                </g>
-              </g>
-              <g>
-                <path fill="#FFFFFF" d="M86.071,143.984H61.795V92.271H44.047V71.769h59.772v20.502H86.071V143.984z"/>
-                <path fill="#FFFFFF" d="M126.564,115.221h-0.205v28.764h-23.562V71.769h23.46V98.39h0.205l19.277-26.622h28.561l-27.133,33.048
-                  l28.457,39.168h-29.783L126.564,115.221z"/>
-              </g>
-            </svg>
-          </div>
           <h1 id="LoadingIndicatorText">
             Loading
           </h1>
