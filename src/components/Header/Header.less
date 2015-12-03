@@ -75,7 +75,8 @@ header,
         .Logo {
           width: 36px;
           height: 36px;
-          background-size: 100% 100%;
+          background-position: 0 0;
+          background-repeat: no-repeat;
           display: inline-block;
           margin-right: 8px;
           margin-top: -3px;
@@ -83,10 +84,10 @@ header,
           
           // Legacy browsers
           background-image:
-            url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Light-Text.png);
+            url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Sprite.png);
           // Modern browsers
           background-image:
-            url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Light-Text.svg),
+            url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Sprite.svg),
             linear-gradient(transparent, transparent);
 
           @media
@@ -100,13 +101,7 @@ header,
         &:active,
         &:focus {
           .Logo {
-            // Legacy browsers
-            background-image:
-              url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Hover.png);
-            // Modern browsers
-            background-image:
-              url(http://static.tonikarttunen.com/static/src/components/Header/images/Header-Logo-Hover.svg),
-              linear-gradient(transparent, transparent);
+            background-position: -144px 0;
           }
         }
       }
