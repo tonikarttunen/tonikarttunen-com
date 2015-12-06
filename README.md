@@ -3,7 +3,9 @@
 [![Build Status](https://travis-ci.org/tonikarttunen/tonikarttunen-com.svg)](https://travis-ci.org/tonikarttunen/tonikarttunen-com)
 [![Dependency Status](https://david-dm.org/tonikarttunen/tonikarttunen-com.svg)](https://david-dm.org/tonikarttunen/tonikarttunen-com)
 
-This repository contains the source code of the [tonikarttunen.com](http://www.tonikarttunen.com) web application. It is a modern single-page-application that is written in [React](https://facebook.github.io/react/) and [ECMAScript 2015 (ES6)](https://babeljs.io/docs/learn-es2015/). The project is based on [react-starter-kit](https://github.com/kriasoft/react-starter-kit/).
+This repository contains the source code of the [tonikarttunen.com](http://www.tonikarttunen.com) web application.
+It is a single-page-application that is written in [React](https://facebook.github.io/react/) and [ECMAScript 2015 (ES6)](https://babeljs.io/docs/learn-es2015/). The project is based on [react-starter-kit](https://github.com/kriasoft/react-starter-kit/).  
+**Note:** when running this project locally, you also need to have a static file server and a blog API server running locally; the static file server and the blog API server are not available in this public repository).
 
 ## TODOs
 
@@ -53,7 +55,7 @@ More detailed task list can be found on a (private)
 
 ## Getting Started
 
-First, install [Node.js](https://nodejs.org) and [Git](https://git-scm.com/downloads) if you have not already installed them.
+First, install [Node.js](https://nodejs.org) (or [IO.js](https://iojs.org/)) and [Git](https://git-scm.com/downloads) if you have not already installed them.
 Then, you can clone the repository and install all the required dependencies with the following commands:
 
 ```shell
@@ -77,16 +79,23 @@ By default, it builds in debug mode. If you need to build in release mode, add
 
 ## How to Run
 
-**_Note to self:_** If you are intending to run the development server locally,
-you'll need to run a static file server at port 8888 with CORS enabled
-(`http-server -p 8888 --cors`) and a blog API server at port 8000.
-
+Start a Node.js/IO.js development server with LiveReload and synchronized browsing across multiple devices and browsers:  
 ```shell
 $ gulp                          # or, `gulp --release`
 ```
 
-This will start a lightweight development server with LiveReload and
-synchronized browsing across multiple devices and browsers.
+Run the blog API server (a Django app) at port 8000;
+the blog API server is not available in this public repository.  
+```shell
+$ source venv/bin/activate          # Activate Python 3 virtualenv
+$ python3 manage.py runserver 8000  # Run Django development server
+```
+
+Run the static file server at port 8888 with CORS enabled;
+the static file server is not available in this public repository.  
+```shell
+$ http-server -p 8888 --cors
+```
 
 ## How to Test
 
