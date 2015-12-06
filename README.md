@@ -3,9 +3,32 @@
 [![Build Status](https://travis-ci.org/tonikarttunen/tonikarttunen-com.svg)](https://travis-ci.org/tonikarttunen/tonikarttunen-com)
 [![Dependency Status](https://david-dm.org/tonikarttunen/tonikarttunen-com.svg)](https://david-dm.org/tonikarttunen/tonikarttunen-com)
 
-This repository contains the source code of the [tonikarttunen.com](http://www.tonikarttunen.com) web application. It is a modern single-page-application that is written in [React](https://facebook.github.io/react/) and [EcmaScript 2015 (ES6)](https://babeljs.io/docs/learn-es2015/). The project is based on [react-starter-kit](https://github.com/kriasoft/react-starter-kit/).
+This repository contains the source code of the [tonikarttunen.com](http://www.tonikarttunen.com) web application.
+It is a single-page-application that is written in [React](https://facebook.github.io/react/) and [ECMAScript 2015 (ES6)](https://babeljs.io/docs/learn-es2015/). The project is based on [react-starter-kit](https://github.com/kriasoft/react-starter-kit/).  
+**Note:** when running this project locally, you also need to have a static file server and a blog API server running locally; the static file server and the blog API server are not available in this public repository).
 
-### Directory Layout
+## TODOs
+
+More detailed task list can be found on a (private)
+[Trello board](https://trello.com/b/dKdilHaW/tonikarttunen-com-current-sprint).
+
+- [ ] New homepage with video background in the first section
+- [ ] Paginate blog posts view when there are more than 10 blog posts
+- [ ] Support filtering of blog posts based on category etc.
+- [ ] Support custom CSS and JS in blog posts to enable inline tech demos
+- [ ] Add possibility to add cover images to blog posts (with similar layout as on Medium.com)
+- [ ] Rewrite projects section so that it fetches page contents from a REST API.
+      At the moment, the page contents are hardcoded in React components. Originally,
+      my plan was to design a different layout for each project page and therefore I felt that
+     it was much faster to implement the projects section by simply hardcoding all the page contents
+     in React components.
+- [ ] Use Flux in the blog
+- [ ] Refactor software development and UX design sections;
+      they can be combined into one React component because they have nearly identical layout.
+- [ ] Add some Jest tests
+- [ ] Update dependencies
+
+## Directory Layout
 
 ```
 .
@@ -30,9 +53,9 @@ This repository contains the source code of the [tonikarttunen.com](http://www.t
 └── webpack.config.js           # Webpack configuration for bundling and optimization
 ```
 
-### Getting Started
+## Getting Started
 
-First, install [Node.js](https://nodejs.org) and [Git](https://git-scm.com/downloads) if you have not already installed them.
+First, install [Node.js](https://nodejs.org) (or [IO.js](https://iojs.org/)) and [Git](https://git-scm.com/downloads) if you have not already installed them.
 Then, you can clone the repository and install all the required dependencies with the following commands:
 
 ```shell
@@ -45,7 +68,7 @@ $ bower install                 # Install Bower modules
 $ npm install                   # Install Node.js components listed in ./package.json
 ```
 
-### How to Build
+## How to Build
 
 ```shell
 $ gulp build                    # or, `gulp build --release`
@@ -54,20 +77,27 @@ $ gulp build                    # or, `gulp build --release`
 By default, it builds in debug mode. If you need to build in release mode, add
 `--release` flag.
 
-### How to Run
+## How to Run
 
-**_Note to self:_** If you are intending to run the development server locally,
-you'll need to run a static file server at port 8888 with CORS enabled
-(`http-server -p 8888 --cors`) and a blog API server at port 8000.
-
+Start a Node.js/IO.js development server with LiveReload and synchronized browsing across multiple devices and browsers:  
 ```shell
 $ gulp                          # or, `gulp --release`
 ```
 
-This will start a lightweight development server with LiveReload and
-synchronized browsing across multiple devices and browsers.
+Run the blog API server (a Django app) at port 8000;
+the blog API server is not available in this public repository.  
+```shell
+$ source venv/bin/activate          # Activate Python 3 virtualenv
+$ python3 manage.py runserver 8000  # Run Django development server
+```
 
-### How to Test
+Run the static file server at port 8888 with CORS enabled;
+the static file server is not available in this public repository.  
+```shell
+$ http-server -p 8888 --cors
+```
+
+## How to Test
 
 Run unit tests powered by [Jest](https://facebook.github.io/jest/) with the following
 [npm](https://www.npmjs.org/doc/misc/npm-scripts.html) command:
@@ -80,7 +110,7 @@ Test any javascript module by creating a `__tests__/` directory where
 the file is. Name the test by appending `-test.js` to the js file.
 [Jest](https://facebook.github.io/jest/) will do the rest.
 
-### Copyright and License
+## Copyright and License
 
 * `react-starter-kit` source code is licensed under the MIT License (MIT). See [LICENSE.txt](./LICENSE.txt)
 file in the project root.
