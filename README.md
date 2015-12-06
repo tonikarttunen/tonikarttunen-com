@@ -15,7 +15,7 @@ More detailed task list can be found on a (private)
 - [ ] Support filtering of blog posts based on category etc.
 - [ ] Support custom CSS and JS in blog posts to enable inline tech demos
 - [ ] Add possibility to add cover images to blog posts (with similar layout as on Medium.com)
-- [ ] Rewrite the projects section so that it fetches the page contents from a REST API.
+- [ ] Rewrite projects section so that it fetches page contents from a REST API.
       At the moment, the page contents are hardcoded in React components. Originally,
       my plan was to design a different layout for each project page and therefore I felt that
      it was much faster to implement the projects section by simply hardcoding all the page contents
