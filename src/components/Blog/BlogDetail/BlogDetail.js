@@ -106,8 +106,8 @@ export default class BlogDetail extends React.Component {
           }
           <Col md={4}>
             <div className='Date'>
-              <span className='Day'>{this.state.blogPost.date.last_saved_date.day}</span>
-              <span className='Month'>{this.state.blogPost.date.last_saved_date.month_name_abbreviation}</span>
+              <span className='Day'>{this.state.blogPost.date.last_saved_date.day}</span>&nbsp;
+              <span className='Month'>{this.state.blogPost.date.last_saved_date.month_name_abbreviation}</span>&nbsp;
               <span className='Year'>{this.state.blogPost.date.last_saved_date.year}</span>
             </div>
             <div className='InfoBox'>
