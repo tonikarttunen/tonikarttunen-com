@@ -82,8 +82,8 @@ export default class BlogMasterCompact extends React.Component {
                       }
                       <Col sm={6}>
                         <div className='Date'>
-                          <span className='Day'>{blogPost.date.last_saved_date.day}</span>
-                          <span className='Month'>{blogPost.date.last_saved_date.month_name_abbreviation}</span>
+                          <span className='Day'>{blogPost.date.last_saved_date.day}</span>&nbsp;
+                          <span className='Month'>{blogPost.date.last_saved_date.month_name_abbreviation}</span>&nbsp;
                           <span className='Year'>{blogPost.date.last_saved_date.year}</span>
                         </div>
                         <Link to={blogPost.url}><span dangerouslySetInnerHTML={title}/></Link>

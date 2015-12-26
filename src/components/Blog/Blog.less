@@ -5,6 +5,15 @@ body {
 }
 
 .Blog {
+  audio,
+  canvas,
+  iframe,
+  img,
+  svg,
+  video {
+    max-width: 100%;
+  }
+
   margin-bottom: 2em;
 
   @media
@@ -95,98 +104,28 @@ body {
 
   .Date {
     color: #a7a7a7;
-    font-size: 2.5em;
-    line-height: 1;
-    margin-top: 4px;
-
-    @media
-    (max-width: 991px),
-    (max-device-width: 991px) {
-      font-size: 2em;
-      margin-bottom: 18px;
-      margin-top: 0;
-    }
+    font-size: 18px;
+    margin-bottom: 18px;
 
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
       font-size: 14px;
-      margin-bottom: 9px;
-      line-height: 1.444;
-    }
-
-    .Year,
-    .Month,
-    .Day {
-      display: inline-block;
-    }
-
-    .Month {
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      padding-left: 0.4em;
-      padding-right: 0.3em;
-      color: #b7b7b7;
-
-      @media
-      (max-width: 767px),
-      (max-device-width: 767px) {
-        font-weight: 400;
-        text-transform: none;
-        letter-spacing: 0;
-        padding-left: 0.35em;
-        padding-right: 0.35em;
-        color: #a7a7a7;
-      }
-    }
-
-    .Year,
-    .Day {
-      font-weight: 300;
-      letter-spacing: -0.1em;
-
-      @media
-      (max-width: 767px),
-      (max-device-width: 767px) {
-        font-weight: 400;
-        letter-spacing: 0;
-      }
     }
   }
 
   .InfoBox {
-    margin-top: 25px;
-
-    @media
-    (max-width: 767px),
-    (max-device-width: 767px) {
-      margin-top: 18px;
-    }
+    margin-top: 18px;
 
     h3 {
       font-size: 1.5em;
       font-weight: 700;
-      line-height: 0.94;
-      margin-top: 0;
-      margin-bottom: 0.2em;
       text-transform: uppercase;
       color: #bfbfbf;
     }
 
     p {
-      color: #676767;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.5em;
-      line-height: 0.87;
-      font-weight: 300;
-      margin-bottom: 0.565em;
-
-      @media
-      (max-width: 767px),
-      (max-device-width: 767px) {
-        font-size: 2.0em;
-      }
+      color: #3d3d3d;
 
       a,
       a:hover,
