@@ -4,13 +4,6 @@
 @import '../Blog.less';
 
 .Blog.BlogMaster {
-  a,
-  a:active,
-  a:visited,
-  a:hover {
-    text-decoration: none;
-  }
-
   h2 {
     margin-top: 0;
     color: #3d3d3d;
@@ -46,6 +39,12 @@
     (max-width: 767px),
     (max-device-width: 767px) {
       margin-top: 0.75em;
+    }
+  }
+
+  .ViewAll {
+    .ion-chevron-right {
+      font-size: 0.875em;
     }
   }
 }

@@ -1,8 +1,9 @@
 // Home
 
 import React from 'react/addons';
-import Cover from '../../components/Cover';
-import BlogMasterCompact from '../../components/Blog/BlogMasterCompact';
+import { Grid, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router';
+import BlogMaster from '../../components/Blog/BlogMaster';
 import styles from './Home.less';
 import withStyles from '../../decorators/withStyles';
 import $ from 'jquery';
@@ -45,39 +46,50 @@ export default class Home extends React.Component {
   render() {
     const categories = [
       {
-        coverClassName: 'UserExperienceDesignCover',
-        titleImageFileName: 'src/components/Cover/images/Title-Texts/UserExperienceDesignTitle',
+        title: 'User Experience Design',
         url: '/user-experience-design'
       },
       {
-        coverClassName: 'SoftwareDevelopmentCover',
-        titleImageFileName: 'src/components/Cover/images/Title-Texts/SoftwareDevelopmentTitle',
+        title: 'Software Development',
         url: '/software-development'
-      },
-      {
-        coverClassName: 'ProjectsCover',
-        titleImageFileName: 'src/components/Cover/images/Title-Texts/ProjectsTitle',
-        url: '/projects'
       }
     ];
 
     return (
       <article className='Home'>
-        {categories.map((category, index) => {
-          let isLastElement = index === (categories.length - 1) ? true : false;
-
-          return (
-            <Cover
-              key={category.url}
-              coverClassName={category.coverClassName}
-              titleImageFileName={category.titleImageFileName}
-              url={category.url}
-              isLastElement={isLastElement}
-              sectionId={index + 1}
-            />
-          );
-        })}
-        <BlogMasterCompact/>
+        <div className='Services'>
+          <Grid>
+            <h1>Services</h1>
+            <Row>
+              {categories.map((category) => {
+                return (
+                  <Col sm={6} key={category.url}>
+                    <Link to={category.url}>
+                      <h2>{category.title}</h2>
+                    </Link>
+                  </Col>
+                );
+              })}
+            </Row>
+          </Grid>
+        </div>
+        <div className='FeaturedProjects'>
+          <Grid>
+            <h1>Featured Projects</h1>
+            <Row>
+              {categories.map((category) => {
+                return (
+                  <Col sm={4} key={category.url}>
+                    <Link to={category.url}>
+                      <h2>{category.title}</h2>
+                    </Link>
+                  </Col>
+                );
+              })}
+            </Row>
+          </Grid>
+        </div>
+        <BlogMaster isCompact/>
       </article>
     );
   }
