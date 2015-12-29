@@ -3,6 +3,7 @@
 import React from 'react/addons';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router';
+import ProjectMaster from '../../components/Projects/ProjectMaster';
 import BlogMaster from '../../components/Blog/BlogMaster';
 import styles from './Home.less';
 import withStyles from '../../decorators/withStyles';
@@ -73,21 +74,8 @@ export default class Home extends React.Component {
             </Row>
           </Grid>
         </div>
-        <div className='FeaturedProjects'>
-          <Grid>
-            <h1>Featured Projects</h1>
-            <Row>
-              {categories.map((category) => {
-                return (
-                  <Col sm={4} key={category.url}>
-                    <Link to={category.url}>
-                      <h2>{category.title}</h2>
-                    </Link>
-                  </Col>
-                );
-              })}
-            </Row>
-          </Grid>
+        <div className='ProjectMasterContainer Compact'>
+          <ProjectMaster isCompact/>
         </div>
         <BlogMaster isCompact/>
       </article>
