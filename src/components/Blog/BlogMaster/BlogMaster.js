@@ -166,7 +166,7 @@ export default class BlogMaster extends React.Component {
 
     return this.props.isCompact === true ?
     (
-      <Grid className='Blog BlogMaster'>
+      <Grid className='Blog BlogMaster Compact'>
         {this.renderTitle()}
         {renderState()}
         {this.renderViewAllLink()}
