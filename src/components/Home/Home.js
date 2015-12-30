@@ -45,14 +45,16 @@ export default class Home extends React.Component {
   }
 
   render() {
-    const categories = [
+    const services = [
       {
         title: 'User Experience Design',
-        url: '/user-experience-design'
+        url: '/user-experience-design',
+        intro: 'Usability evaluation, user interface design, prototyping and ideation'
       },
       {
         title: 'Software Development',
-        url: '/software-development'
+        url: '/software-development',
+        intro: 'Web app development and mobile app development'
       }
     ];
 
@@ -62,12 +64,12 @@ export default class Home extends React.Component {
           <Grid>
             <h1>Services</h1>
             <Row>
-              {categories.map((category) => {
+              {services.map((service) => {
                 return (
-                  <Col sm={6} key={category.url}>
-                    <Link to={category.url}>
-                      <h2>{category.title}</h2>
-                    </Link>
+                  <Col md={6}>
+                    <Link to={service.url}><h2>{service.title}</h2></Link>
+                    <p className='lead'>{service.intro}</p>
+                    <p><Link to={service.url} className='MoreInformation'>Read More</Link></p>
                   </Col>
                 );
               })}

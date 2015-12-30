@@ -1,23 +1,25 @@
 // Home.less
 
+@import '../variables.less';
+@import '../less-mixins-and-utils.less';
+
 .Home {
-  a:hover,
-  a:active,
-  a:visited {
-    text-decoration: none;
-  }
+  .CommonStyles;
+  .CommonMasterStyles;
 
   .Services {
-    background-color: #ddd;
+    border-bottom: 1px solid #a7a7a7;
+    padding-bottom: 2em;
 
-    h2 {
-      color: white;
-      font-weight: 100;
-      font-size: 2.25em;
+    @media
+    (max-width: 767px),
+    (max-device-width:767px) {
+      padding-bottom: 1em;
     }
-  }
 
-  .FeaturedProjects {
-    background-color: #ccc;
+    .row {
+      margin-top: -1em;
+    }
+    // background-color: #ddd;
   }
 }
