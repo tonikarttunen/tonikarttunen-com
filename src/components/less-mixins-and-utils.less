@@ -60,6 +60,14 @@
   user-select:  none;
 }
 
+.truncated-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
 /* Common styles for blog, projects and homepage */
 
 .CommonStyles {
@@ -191,6 +199,17 @@
 
     p {
       color: #3d3d3d;
+    }
+
+    a {
+      .truncated-text;
+
+      &.MoreInformation,
+      &.MoreInformation:active,
+      &.MoreInformation:visited,
+      &.MoreInformation:hover {
+        height: auto;
+      }
     }
   }
 }
