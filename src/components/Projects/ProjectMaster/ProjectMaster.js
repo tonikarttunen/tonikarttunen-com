@@ -104,7 +104,7 @@ export default class ProjectMaster extends React.Component {
         }
         {
           () => {
-            if (project.my_role) {
+            if (project.my_role.length > 0) {
               return (
                 <span>
                   <h3>My Role</h3>
@@ -125,7 +125,7 @@ export default class ProjectMaster extends React.Component {
         }
         {
           () => {
-            if (project.client) {
+            if (project.client.length > 0) {
               return (
                 <span>
                   <h3>{() => {if (project.client.length > 1) { return 'Clients' } else { return 'Client' }}()}</h3>
@@ -146,7 +146,7 @@ export default class ProjectMaster extends React.Component {
         }
         {
           () => {
-            if (project.project_type) {
+            if (project.project_type.length > 0) {
               return (
                 <span>
                   <h3>Project Type</h3>
@@ -167,7 +167,7 @@ export default class ProjectMaster extends React.Component {
         }
         {
           () => {
-            if (project.technology) {
+            if (project.technology.length > 0) {
               return (
                 <span>
                   <h3>{() => {if (project.technology.length > 1) { return 'Technologies' } else { return 'Technology' }}()}</h3>
