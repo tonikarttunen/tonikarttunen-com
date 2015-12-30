@@ -6,7 +6,7 @@ import DocumentTitle from 'react-document-title';
 import { Link } from 'react-router';
 import styles from './BlogMaster.less';
 import withStyles from '../../../decorators/withStyles';
-import { blogURL } from '../BlogUtilities';
+import { APIURL } from '../../../api/APIUtilities';
 import { isIE9OrOlder } from '../../../utilities/FeatureDetection/FeatureDetection';
 const marked = require('marked');
 const request = require('superagent');
@@ -14,6 +14,10 @@ const legacyIESupport = require('superagent-legacyiesupport');
 
 @withStyles(styles)
 export default class BlogMaster extends React.Component {
+  static propTypes = {
+    isCompact: React.PropTypes.bool
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -23,13 +27,19 @@ export default class BlogMaster extends React.Component {
     this.renderLoadingState = this.renderLoadingState.bind(this);
     this.renderErrorState = this.renderErrorState.bind(this);
     this.renderReadyState = this.renderReadyState.bind(this);
+    this.renderViewAllLink = this.renderViewAllLink.bind(this);
+    this.renderTitle = this.renderTitle.bind(this);
   }
 
   componentDidMount() {
     const legacyIE = isIE9OrOlder() ? legacyIESupport : (() => {});
 
+    const url = this.props.isCompact === true ?
+                'blog-post/?latest-posts=2' :
+                'blog-post/';
+
     request
-    .get(blogURL('blog-post/'))
+    .get(APIURL(url))
     .use(legacyIE)
     .end((err, res) => {
       if (!err && res.status === 200) {
@@ -119,6 +129,30 @@ export default class BlogMaster extends React.Component {
     );
   }
 
+  renderViewAllLink() {
+    if (this.props.isCompact !== true) {
+      return null;
+    }
+
+    return (
+      <Row>
+        <Col sm={12}>
+          <p>
+            <Link to='/blog' className='ViewAll'>
+              View More Blog Posts <span className='ion-chevron-right'/>
+            </Link>
+          </p>
+        </Col>
+      </Row>
+    );
+  }
+
+  renderTitle() {
+    return this.props.isCompact !== true ?
+    <h1>Blog</h1> :
+    <h1>Latest Blog Posts</h1>;
+  }
+
   render() {
     let renderState;
 
@@ -130,12 +164,21 @@ export default class BlogMaster extends React.Component {
       renderState = this.renderLoadingState;
     }
 
-    return (
-      <DocumentTitle title='Blog — Toni Karttunen'>
-      <Grid className='Blog BlogMaster' componentClass='article'>
-        <h1>Blog</h1>
+    return this.props.isCompact === true ?
+    (
+      <Grid className='Blog BlogMaster Compact'>
+        {this.renderTitle()}
         {renderState()}
+        {this.renderViewAllLink()}
       </Grid>
+    ) :
+    (
+      <DocumentTitle title='Blog — Toni Karttunen'>
+        <Grid className='Blog BlogMaster' componentClass='article'>
+          {this.renderTitle()}
+          {renderState()}
+          {this.renderViewAllLink()}
+        </Grid>
       </DocumentTitle>
     );
   }

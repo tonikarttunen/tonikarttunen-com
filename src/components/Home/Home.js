@@ -1,8 +1,10 @@
 // Home
 
 import React from 'react/addons';
-import Cover from '../../components/Cover';
-import BlogMasterCompact from '../../components/Blog/BlogMasterCompact';
+import { Grid, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router';
+import ProjectMaster from '../../components/Projects/ProjectMaster';
+import BlogMaster from '../../components/Blog/BlogMaster';
 import styles from './Home.less';
 import withStyles from '../../decorators/withStyles';
 import $ from 'jquery';
@@ -43,41 +45,41 @@ export default class Home extends React.Component {
   }
 
   render() {
-    const categories = [
+    const services = [
       {
-        coverClassName: 'UserExperienceDesignCover',
-        titleImageFileName: 'src/components/Cover/images/Title-Texts/UserExperienceDesignTitle',
-        url: '/user-experience-design'
+        title: 'User Experience Design',
+        url: '/user-experience-design',
+        intro: 'Usability evaluation, user interface design, prototyping and ideation'
       },
       {
-        coverClassName: 'SoftwareDevelopmentCover',
-        titleImageFileName: 'src/components/Cover/images/Title-Texts/SoftwareDevelopmentTitle',
-        url: '/software-development'
-      },
-      {
-        coverClassName: 'ProjectsCover',
-        titleImageFileName: 'src/components/Cover/images/Title-Texts/ProjectsTitle',
-        url: '/projects'
+        title: 'Software Development',
+        url: '/software-development',
+        intro: 'Web app development and mobile app development'
       }
     ];
 
     return (
       <article className='Home'>
-        {categories.map((category, index) => {
-          let isLastElement = index === (categories.length - 1) ? true : false;
-
-          return (
-            <Cover
-              key={category.url}
-              coverClassName={category.coverClassName}
-              titleImageFileName={category.titleImageFileName}
-              url={category.url}
-              isLastElement={isLastElement}
-              sectionId={index + 1}
-            />
-          );
-        })}
-        <BlogMasterCompact/>
+        <div className='Services'>
+          <Grid>
+            <h1>Services</h1>
+            <Row>
+              {services.map((service) => {
+                return (
+                  <Col md={6}>
+                    <Link to={service.url}><h2>{service.title}</h2></Link>
+                    <p className='lead'>{service.intro}</p>
+                    <p><Link to={service.url} className='MoreInformation'>Read More</Link></p>
+                  </Col>
+                );
+              })}
+            </Row>
+          </Grid>
+        </div>
+        <div className='ProjectMasterContainer Compact'>
+          <ProjectMaster isCompact/>
+        </div>
+        <BlogMaster isCompact/>
       </article>
     );
   }

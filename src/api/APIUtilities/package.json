@@ -1,0 +1,6 @@
+{
+  "name": "APIUtilities",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./APIUtilities.js"
+}

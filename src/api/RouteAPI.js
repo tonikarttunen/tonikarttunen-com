@@ -4,7 +4,7 @@ import BlogMaster from '../components/Blog/BlogMaster';
 import BlogDetail from '../components/Blog/BlogDetail';
 import UserExperienceDesign from '../components/UserExperienceDesign';
 import SoftwareDevelopment from '../components/SoftwareDevelopment';
-import Projects from '../components/Projects/Projects';
+import ProjectMaster from '../components/Projects/ProjectMaster';
 import Viima from '../components/Projects/Viima';
 import InteractionDesignAndEvaluation from '../components/Projects/InteractionDesignAndEvaluation';
 import StrategicUserCentredDesign from '../components/Projects/StrategicUserCentredDesign';
@@ -34,7 +34,7 @@ export default {
       },
       {
         path: 'projects',
-        component: Projects
+        component: ProjectMaster
       },
       {
         path: 'projects/viima-mobile-user-interface',
