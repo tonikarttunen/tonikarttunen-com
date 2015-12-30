@@ -49,12 +49,12 @@ export default class Home extends React.Component {
       {
         title: 'User Experience Design',
         url: '/user-experience-design',
-        intro: 'Usability evaluation, user interface design, prototyping and ideation'
+        intro: 'My UX design skills include usability evaluation, user interface design, prototyping, wireframing, user research, and ideation.'
       },
       {
         title: 'Software Development',
         url: '/software-development',
-        intro: 'Web app development and mobile app development'
+        intro: 'I develop web apps and native iOS apps.'
       }
     ];
 
@@ -64,9 +64,9 @@ export default class Home extends React.Component {
           <Grid>
             <h1>Services</h1>
             <Row>
-              {services.map((service) => {
+              {services.map((service, index) => {
                 return (
-                  <Col md={6} key={service.url}>
+                  <Col md={6} key={service.url} className={'Service-' + index}>
                     <Link to={service.url}><h2>{service.title}</h2></Link>
                     <p className='lead'>{service.intro}</p>
                     <p><Link to={service.url} className='MoreInformation'>Read More</Link></p>

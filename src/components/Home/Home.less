@@ -19,7 +19,28 @@
 
     .row {
       margin-top: -1em;
+      padding-bottom: 1.5em;
+
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        padding-bottom: 0.25em;
+      }
     }
-    // background-color: #ddd;
+
+    .Service-0 {
+      @media
+      (max-width: 991px),
+      (max-device-width: 991px) {
+        padding-bottom: 1.125em;
+      }
+
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        padding-bottom: 0.75em;
+        padding-top: 0.5em;
+      }
+    }
   }
 }
