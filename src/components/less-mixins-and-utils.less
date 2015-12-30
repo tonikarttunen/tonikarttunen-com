@@ -60,6 +60,14 @@
   user-select:  none;
 }
 
+.truncated-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
 /* Common styles for blog, projects and homepage */
 
 .CommonStyles {
@@ -79,12 +87,12 @@
     text-decoration: none;
   }
 
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 
   @media
   (max-width: 767px),
   (max-device-width: 767px) {
-    margin-bottom: 1em;
+    margin-bottom: 1.25em;
   }
 
   .NotFound {
@@ -192,6 +200,17 @@
     p {
       color: #3d3d3d;
     }
+
+    a {
+      .truncated-text;
+
+      &.MoreInformation,
+      &.MoreInformation:active,
+      &.MoreInformation:visited,
+      &.MoreInformation:hover {
+        height: auto;
+      }
+    }
   }
 }
 
@@ -238,12 +257,12 @@
   }
 
   .row {
-    margin-top: 2em;
+    margin-top: 3em;
 
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      margin-top: 0.75em;
+      margin-top: 1.25em;
     }
   }
 
