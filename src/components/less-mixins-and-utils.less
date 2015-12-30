@@ -1,5 +1,7 @@
 // LESS mixins and helpers
 
+@standardMargin: 18px;
+
 .background-size-auto(@url) {
   -webkit-background-size: auto;
   -moz-background-size: auto;
@@ -66,6 +68,14 @@
   display: inline-block;
   white-space: nowrap;
   max-width: 100%;
+}
+
+.standard-top-margin {
+  margin-top: @standardMargin;
+}
+
+.standard-bottom-margin {
+  margin-bottom: @standardMargin;
 }
 
 /* Common styles for blog, projects and homepage */
@@ -161,13 +171,13 @@
   .lead,
   p.lead {
     font-size: 24px;
-    margin-bottom: 18px;
+    .standard-bottom-margin;
 
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
       font-size: 21px;
-      margin-bottom: 18px;
+      .standard-bottom-margin;
     }
   }
 
@@ -175,10 +185,19 @@
     margin-bottom: 32px;
   }
 
+  .UpperFullWidthSection {
+    .standard-bottom-margin;
+    margin-top: -8px;
+  }
+
+  .LowerFullWidthSection {
+    margin-top: 18px;
+  }
+
   .Date {
     color: #a7a7a7;
     font-size: 18px;
-    margin-bottom: 18px;
+    .standard-bottom-margin;
 
     @media
     (max-width: 767px),
@@ -306,6 +325,12 @@
       margin-bottom: 18px;
       font-size: 1.125em;
       line-height: 1;
+    }
+  }
+
+  .Footer {
+    p {
+      font-size: 1.125em;
     }
   }
 }
