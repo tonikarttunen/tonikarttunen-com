@@ -1,6 +1,0 @@
-{
-  "name": "PersonalFinance",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./PersonalFinance.js"
-}

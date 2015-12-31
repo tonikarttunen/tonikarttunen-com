@@ -1,6 +1,0 @@
-{
-  "name": "LocationAwareApp",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./LocationAwareApp.js"
-}

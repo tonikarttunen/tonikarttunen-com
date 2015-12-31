@@ -85,6 +85,7 @@ export default class BlogDetail extends React.Component {
     const title = {__html: marked('# ' + this.state.blogPost.title)};
     const intro = {__html: marked(this.state.blogPost.intro)};
     const body = {__html: marked(this.state.blogPost.body)};
+    const footer = {__html: marked(this.state.blogPost.footer)};
     const categoryTitle = this.state.blogPost.categories.length > 1 ? 'Categories' : 'Category';
 
     return (
@@ -126,6 +127,7 @@ export default class BlogDetail extends React.Component {
           <Col md={8}>
             <span className='lead' dangerouslySetInnerHTML={intro}/>
             <span dangerouslySetInnerHTML={body}/>
+            <span className='Footer' dangerouslySetInnerHTML={footer}/>
           </Col>
         </Row>
       </span>

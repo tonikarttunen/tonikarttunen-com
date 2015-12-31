@@ -5,13 +5,7 @@ import BlogDetail from '../components/Blog/BlogDetail';
 import UserExperienceDesign from '../components/UserExperienceDesign';
 import SoftwareDevelopment from '../components/SoftwareDevelopment';
 import ProjectMaster from '../components/Projects/ProjectMaster';
-import Viima from '../components/Projects/Viima';
-import InteractionDesignAndEvaluation from '../components/Projects/InteractionDesignAndEvaluation';
-import StrategicUserCentredDesign from '../components/Projects/StrategicUserCentredDesign';
-import HelsinkiGraph from '../components/Projects/HelsinkiGraph';
-import LocationAwareApp from '../components/Projects/LocationAwareApp';
-import PersonalFinance from '../components/Projects/PersonalFinance';
-import LondonTravelGuide from '../components/Projects/LondonTravelGuide';
+import ProjectDetail from '../components/Projects/ProjectDetail';
 
 export default {
   getRoutes: () => {
@@ -37,32 +31,8 @@ export default {
         component: ProjectMaster
       },
       {
-        path: 'projects/viima-mobile-user-interface',
-        component: Viima
-      },
-      {
-        path: 'projects/aalto-mycourses-usability-evaluation',
-        component: InteractionDesignAndEvaluation
-      },
-      {
-        path: 'projects/internet-of-things-solutions-for-lansimetro',
-        component: StrategicUserCentredDesign
-      },
-      {
-        path: 'projects/helsinkigraph',
-        component: HelsinkiGraph
-      },
-      {
-        path: 'projects/b-sc-thesis',
-        component: LocationAwareApp
-      },
-      {
-        path: 'projects/personal-finance',
-        component: PersonalFinance
-      },
-      {
-        path: 'projects/london-travel-guide',
-        component: LondonTravelGuide
+        path: 'projects/:slug',
+        component: ProjectDetail
       }
     ];
 

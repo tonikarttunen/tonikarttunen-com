@@ -1,0 +1,22 @@
+// ProjectDetail.less
+
+@import '../../variables.less';
+@import '../../less-mixins-and-utils.less';
+@import '../Project.less';
+
+.Project.ProjectDetail {
+  .CommonDetailStyles;
+}
+
+.ProjectDetailContainer {
+  &.Compact {
+    border-bottom: 1px solid #a7a7a7;
+    padding-bottom: 1.5em;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+    	padding-bottom: 0.5em;
+    }
+  }
+}

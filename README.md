@@ -12,17 +12,11 @@ It is a single-page-application that is written in [React](https://facebook.gith
 More detailed task list can be found on a (private)
 [Trello board](https://trello.com/b/dKdilHaW/tonikarttunen-com-current-sprint).
 
-- [ ] New homepage with video background in the first section
+- [ ] New homepage with a video in the first section
 - [ ] Paginate blog posts view when there are more than 10 blog posts
-- [ ] Support filtering of blog posts based on category etc.
-- [ ] Support custom CSS and JS in blog posts to enable inline tech demos
-- [ ] Add possibility to add cover images to blog posts (with similar layout as on Medium.com)
-- [ ] Rewrite projects section so that it fetches page contents from a REST API.
-      At the moment, the page contents are hardcoded in React components. Originally,
-      my plan was to design a different layout for each project page and therefore I felt that
-     it was much faster to implement the projects section by simply hardcoding all the page contents
-     in React components.
-- [ ] Use Flux in the blog
+- [ ] Support filtering of blog posts  and projects based on category etc.
+- [ ] Support custom CSS and JS in blog posts and project pages to enable inline tech demos
+- [ ] Use Flux in the blog and project pages
 - [ ] Refactor software development and UX design sections;
       they can be combined into one React component because they have nearly identical layout.
 - [ ] Add some Jest tests
