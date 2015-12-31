@@ -87,6 +87,14 @@ export default class BlogDetail extends React.Component {
     const body = {__html: marked(this.state.blogPost.body)};
     const footer = {__html: marked(this.state.blogPost.footer)};
     const categoryTitle = this.state.blogPost.categories.length > 1 ? 'Categories' : 'Category';
+    const upperFullWidthSection =
+    this.state.blogPost.upper_full_width_section != null ?
+    {__html: marked(this.state.blogPost.upper_full_width_section)} :
+    '';
+    const lowerFullWidthSection =
+    this.state.blogPost.lower_full_width_section !== null ?
+    {__html: marked(this.state.blogPost.lower_full_width_section)} :
+    '';
 
     return (
       <span>
@@ -102,6 +110,17 @@ export default class BlogDetail extends React.Component {
                 );
               } else {
                 return '';
+              }
+            })()
+          }
+          {
+            (() => {
+              if (this.state.blogPost.upper_full_width_section !== null && this.state.blogPost.upper_full_width_section.length > 0) {
+                return (
+                  <Col md={12} className='UpperFullWidthSection'>
+                    <span dangerouslySetInnerHTML={upperFullWidthSection}/>
+                  </Col>
+                );
               }
             })()
           }
@@ -122,6 +141,18 @@ export default class BlogDetail extends React.Component {
                   })
                 }
               </p>
+              {
+                () => {
+                  if (this.state.blogPost.website !== null && this.state.blogPost.website.length > 0) {
+                    return (
+                      <span>
+                        <h3>Website</h3>
+                        <p><a href={this.state.blogPost.website}>{this.state.blogPost.website}</a></p>
+                      </span>
+                    );
+                  }
+                }()
+              }
             </div>
           </Col>
           <Col md={8}>
@@ -129,6 +160,17 @@ export default class BlogDetail extends React.Component {
             <span dangerouslySetInnerHTML={body}/>
             <span className='Footer' dangerouslySetInnerHTML={footer}/>
           </Col>
+          {
+            (() => {
+              if (this.state.blogPost.lower_full_width_section !== null && this.state.blogPost.lower_full_width_section.length > 0) {
+                return (
+                  <Col md={12} className='LowerFullWidthSection'>
+                    <span dangerouslySetInnerHTML={lowerFullWidthSection}/>
+                  </Col>
+                );
+              }
+            })()
+          }
         </Row>
       </span>
     );
