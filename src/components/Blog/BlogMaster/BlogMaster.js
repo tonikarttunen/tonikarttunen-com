@@ -134,7 +134,7 @@ export default class BlogMaster extends React.Component {
                 </p>
                 {
                   () => {
-                    if (blogPost.website.length > 0) {
+                    if (blogPost.website !== null && blogPost.website.length > 0) {
                       return (
                         <span>
                           <h3>Website</h3>
