@@ -3,7 +3,7 @@
 @import '../variables.less';
 @import '../less-mixins-and-utils.less';
 
-@headerTextColor: #a7a7a7;
+@headerTextColor: @accentColorSecondary;
 
 // Force iOS UIWebView to repaint a fixed positioned element after orientation change
 @keyframes RepaintKeyframes {
@@ -125,7 +125,7 @@ header,
           }
 
           &.selected {
-            color: #3d3d3d !important;
+            color: @midDarkTextColor !important;
             font-weight: 600;
           }
 

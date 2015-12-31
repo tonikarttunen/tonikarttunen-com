@@ -1,6 +1,6 @@
 // LESS mixins and helpers
 
-@standardMargin: 18px;
+@import 'variables.less';
 
 .background-size-auto(@url) {
   -webkit-background-size: auto;
@@ -88,6 +88,21 @@
   svg,
   video {
     max-width: 100%;
+  }
+
+  caption,
+  .caption {
+    color: @lightTextColor;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 9px;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      text-align: left;
+      margin-bottom: 12px;
+    }
   }
 
   a,
@@ -191,11 +206,17 @@
   }
 
   .LowerFullWidthSection {
-    margin-top: 18px;
+    margin-top: -12px;
+    
+    @media
+    (max-width: 991px),
+    (max-device-width: 991px) {
+      margin-top: 16px;
+    }
   }
 
   .Date {
-    color: #a7a7a7;
+    color: @lightTextColor;
     font-size: 18px;
     .standard-bottom-margin;
 
@@ -217,7 +238,7 @@
     }
 
     p {
-      color: #3d3d3d;
+      color: @midDarkTextColor;
     }
 
     a {
@@ -248,7 +269,7 @@
 
   h2 {
     margin-top: 0;
-    color: #3d3d3d;
+    color: @midDarkTextColor;
     transition: color 0.25s ease-in-out;
     margin-bottom: 18px;
 
@@ -271,7 +292,7 @@
     (max-width: 767px),
     (max-device-width: 767px) {
       font-size: 18px;
-      color: #3d3d3d;
+      color: @midDarkTextColor;
     }
   }
 
