@@ -17,7 +17,7 @@ export default class Footer {
         <Grid className='LegalContent'>
           <p>
             &copy; 2011—{currentYear} Toni Karttunen. All rights reserved.&nbsp;
-            <a href='https://github.com/tonikarttunen/tonikarttunen-com/'>Source code</a>
+            <a href='https://github.com/tonikarttunen/tonikarttunen-com/'>Source code</a>.
           </p>
         </Grid>
       </footer>
