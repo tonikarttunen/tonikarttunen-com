@@ -234,9 +234,7 @@ export default class ProjectDetail extends React.Component {
               if (this.state.project.cover_image_url) {
                 return (
                   <Col md={12}>
-                    <Link to={this.state.project.url}>
-                      <img alt='' src={this.state.project.cover_image_url} className='CoverImage'/>
-                    </Link>
+                    <img alt='' src={this.state.project.cover_image_url} className='CoverImage'/>
                   </Col>
                 );
               } else {
