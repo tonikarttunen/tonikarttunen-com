@@ -67,7 +67,8 @@
   text-overflow: ellipsis;
   display: inline-block;
   white-space: nowrap;
-  max-width: 100%;
+  // 1% less than full element width because Chrome may otherwise render the last dot outside the container
+  max-width: 99%;
 }
 
 .standard-top-margin {
@@ -271,7 +272,7 @@
     margin-top: 0;
     color: @midDarkTextColor;
     transition: color 0.25s ease-in-out;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 
     @media
     (max-width: 767px),
