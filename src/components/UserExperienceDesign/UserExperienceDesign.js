@@ -243,6 +243,25 @@ export default class UserExperienceDesign extends React.Component {
                   </p>
                 </Col>
               </Row>
+              <Row>
+                <Col md={4}>
+                  <h4>Navigation While Running: Understanding Mobile User Experience</h4>
+                  <p>
+                    The goal of the project was to gain understanding of what types of
+                    navigational aids runners need while exercising. We wanted to know,
+                    whether or not mobile devices are useful tools for runners when
+                    navigating in an unfamiliar environment.
+                  </p>
+                  <p>
+                    <Link
+                      to='/projects/navigation-while-running-understanding-mobile-user-experience'
+                      className='MoreInformation'
+                    >
+                      More Information
+                    </Link>
+                  </p>
+                </Col>
+              </Row>
             </ContentGrid>
           </div>
         </CategoryDetailView>
