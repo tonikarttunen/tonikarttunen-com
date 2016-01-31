@@ -45,7 +45,7 @@ const socialMedia = [
   {
     title: 'YouTube',
     url: 'https://www.youtube.com/user/tk1tk2tk3/',
-    imageFilename: 'YouTube'
+    imageFilename: 'youtube'
   },
   {
     title: 'Email',
