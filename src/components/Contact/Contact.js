@@ -41,6 +41,16 @@ const socialMedia = [
     title: '500px',
     url: 'http://500px.com/tonikarttunen',
     imageFilename: '500px'
+  },
+  {
+    title: 'YouTube',
+    url: 'https://www.youtube.com/user/tk1tk2tk3/',
+    imageFilename: 'YouTube'
+  },
+  {
+    title: 'Email',
+    url: 'mailto:toni.antero.karttunen@gmail.com?subject=Hello',
+    imageFilename: 'mail'
   }
 ];
 
