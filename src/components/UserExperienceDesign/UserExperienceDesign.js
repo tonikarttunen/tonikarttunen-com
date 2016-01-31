@@ -130,27 +130,16 @@ export default class UserExperienceDesign extends React.Component {
                     of <Link to='/projects/viima-mobile-user-interface'>
                       Viima mobile user interface
                     </Link>)
-                    and mobile apps (<Link to='/projects/helsinkigraph'>
-                      1
-                    </Link>, <Link to='/projects/b-sc-thesis'>
-                      2
-                    </Link>, <Link to='/projects/personal-finance'>
-                      3
-                    </Link>, <Link to='/projects/london-travel-guide'>
-                      4
-                    </Link>).
+                    and mobile apps.
                     I have also learned how to create wireframes and prototypes
-                    (including clickable prototypes and paper prototypes).
+                    (paper prototypes and clickable prototypes).
                   </p>
                 </Col>
                 <Col md={4}>
                   <h4>User Research</h4>
                   <p>
                     I am familiar with common user research methods, such as observation
-                    and user surveys. I have conducted some user research in
-                    the <Link to='/projects/internet-of-things-solutions-for-lansimetro'>
-                      Länsimetro Internet of Things project
-                    </Link> in the Strategic User-Centred Design course at Aalto University.
+                    and user surveys.
                   </p>
                 </Col>
               </Row>
