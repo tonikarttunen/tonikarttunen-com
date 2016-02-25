@@ -36,7 +36,7 @@ export default class ProjectMaster extends React.Component {
     const legacyIE = isIE9OrOlder() ? legacyIESupport : (() => {});
 
     const url = this.props.isCompact === true ?
-                'project/?latest-projects=3' :
+                'project/?latest-projects=2' :
                 'project/';
 
     request

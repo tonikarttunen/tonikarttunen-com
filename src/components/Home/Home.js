@@ -60,6 +60,21 @@ export default class Home extends React.Component {
 
     return (
       <article className='Home'>
+        <div className='Intro WideScreenMediaContainer'>
+          <div className='WideScreenMedia vertical-align-middle-parent'>
+            <div className='vertical-align-middle vertical-align-middle-element'>
+              <Grid>
+                <Row>
+                  <Col xs={12}>
+                    <h1>
+                      I design & develop<br/><span className='IntroTitleAccent'>digital</span> services
+                    </h1>
+                  </Col>
+                </Row>
+              </Grid>
+            </div>
+          </div>
+        </div>
         <div className='Services'>
           <Grid>
             <h1>Services</h1>

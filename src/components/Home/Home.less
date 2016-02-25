@@ -7,14 +7,119 @@
   .CommonStyles;
   .CommonMasterStyles;
 
+  .Intro {
+    background-color: #135BBB; // #0c52b0; // #0F69E3;
+
+    * {
+      // z-index: -1;
+    }
+
+    h1 {
+      z-index: 5;
+      color: white;
+      font-size: 6em;
+      text-align: center;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -0.0325em;
+
+      @media
+      (max-width: 991px),
+      (max-device-width: 991px) {
+        font-size: 4em;
+      }
+
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        font-size: 3em;
+      }
+
+      @media
+      (max-width: 480px),
+      (max-device-width: 480px) {
+        font-size: 2.5em;
+      }
+
+      @media
+      (max-width: 400px),
+      (max-device-width: 400px) {
+        font-size: 1.8em;
+      }
+
+      .IntroTitleAccent {
+        color: #F7CFAD;
+      }
+
+      * {
+        z-index: 5;
+      }
+    }
+
+    .row {
+      margin-top: 0;
+      padding-bottom: 0;
+
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        padding-bottom: 0;
+      }
+    }
+  }
+
   .Services {
-    border-bottom: 1px solid @accentColorSecondary;
+    border-bottom: 1px solid hsl(152, 59%, 45%); // hsl(350, 79%, 45%);
     padding-bottom: 2em;
+    background-color: @accentColorPrimary;
 
     @media
     (max-width: 767px),
     (max-device-width:767px) {
       padding-bottom: 1em;
+    }
+
+    h1 {
+      color: hsl(152, 59%, 14.5%);
+      margin-top: 1em;
+
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        margin-top: 1.25em;
+      }
+    }
+
+    h2 {
+      color: white;
+
+      &:hover {
+        color: hsl(152, 59%, 89%);
+      }
+    }
+
+    a.MoreInformation,
+    a.MoreInformation:active,
+    a.MoreInformation:visited {
+      color: @accentColorPrimary !important;
+      background-color: white !important;
+    }
+
+    a.MoreInformation:hover {
+      color: @accentColorPrimary !important;
+      background-color: hsl(152, 59%, 91%) !important;
+    }
+
+    .lead p,
+    .lead,
+    p.lead {
+      color: hsl(152, 59%, 24%); // 22%; hsl(350, 79%, 93%);
+
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        color: hsl(152, 59%, 21%);
+      }
     }
 
     .row {
