@@ -241,7 +241,7 @@ export default class ProjectMaster extends React.Component {
             <Col md={8}>
               <Link to={project.url}><span dangerouslySetInnerHTML={title}/></Link>
               <span className='lead' dangerouslySetInnerHTML={intro}/>
-              <div className='InfoBox visible-xs-block visible-sm-block'>
+              <div className='InfoBox visible-sm-block'>
                 {this.renderInfoBox(project)}
               </div>
               <p><Link to={project.url} className='MoreInformation'>Read More</Link></p>

@@ -121,7 +121,7 @@ export default class BlogMaster extends React.Component {
             <Col md={8}>
               <Link to={blogPost.url}><span dangerouslySetInnerHTML={title}/></Link>
               <span className='lead' dangerouslySetInnerHTML={intro}/>
-              <div className='InfoBox visible-xs-block visible-sm-block'>
+              <div className='InfoBox visible-sm-block'>
                 <h3>
                   {categoryTitle}
                 </h3>
