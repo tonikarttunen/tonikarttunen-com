@@ -221,7 +221,7 @@
   }
 
   .CoverImage {
-    margin-bottom: 32px;
+    margin-bottom: 26px;
   }
 
   .UpperFullWidthSection {
@@ -293,7 +293,7 @@
   }
 
   h2 {
-    margin-top: -4px;
+    margin-top: 0;
     color: @midDarkTextColor;
     transition: color 0.25s ease-in-out;
     margin-bottom: 12px;
@@ -332,7 +332,14 @@
   }
 
   .Date {
-    margin-top: -4px;
+    margin-top: 0;
+
+    @media
+    (max-width: 991px),
+    (max-device-width: 991px) {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
 
     @media
     (max-width: 767px),
