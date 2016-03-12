@@ -2,6 +2,16 @@
 
 @import 'variables.less';
 
+@keyframes FadeIn {
+  0% { opacity: 0.01; }
+  100% { opacity: 1; }
+}
+
+@keyframes FadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0.01; }
+}
+
 .background-size-auto(@url) {
   -webkit-background-size: auto;
   -moz-background-size: auto;
@@ -248,6 +258,7 @@
   .CoverImage {
     margin-bottom: 26px;
     width: 100%;
+    animation: FadeIn @standardAnimationDuration;
 
     @media
     (max-width: 767px),
@@ -433,6 +444,14 @@
   (max-width: 767px),
   (max-device-width: 767px) {
     margin-bottom: 1.5em;
+  }
+
+  img,
+  video,
+  svg,
+  iframe,
+  audio {
+    animation: FadeIn @standardAnimationDuration;
   }
 
   .CoverImage {
