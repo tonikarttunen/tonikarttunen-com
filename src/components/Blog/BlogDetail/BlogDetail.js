@@ -104,7 +104,7 @@ export default class BlogDetail extends React.Component {
             (() => {
               if (this.state.blogPost.cover_image_url) {
                 return (
-                  <Col md={12}>
+                  <Col md={12} className='CoverImageContainer'>
                     <img alt='' src={this.state.blogPost.cover_image_url} className='CoverImage'/>
                   </Col>
                 );

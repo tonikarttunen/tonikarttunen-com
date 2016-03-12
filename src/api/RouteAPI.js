@@ -2,8 +2,6 @@
 
 import BlogMaster from '../components/Blog/BlogMaster';
 import BlogDetail from '../components/Blog/BlogDetail';
-import UserExperienceDesign from '../components/UserExperienceDesign';
-import SoftwareDevelopment from '../components/SoftwareDevelopment';
 import ProjectMaster from '../components/Projects/ProjectMaster';
 import ProjectDetail from '../components/Projects/ProjectDetail';
 
@@ -19,27 +17,35 @@ export default {
         component: BlogDetail
       },
       {
-        path: 'user-experience-design',
-        component: UserExperienceDesign
-      },
-      {
-        path: 'software-development',
-        component: SoftwareDevelopment
-      },
-      {
-        path: 'projects',
+        path: 'case-studies',
         component: ProjectMaster
       },
       {
-        path: 'projects/:slug',
+        path: 'case-studies/:slug',
         component: ProjectDetail
       }
     ];
 
     const redirects = [
       {
+        from: '/user-experience-design',
+        to: '/case-studies'
+      },
+      {
+        from: '/software-development',
+        to: '/case-studies'
+      },
+      {
+        from: '/projects',
+        to: '/case-studies'
+      },
+      {
+        from: '/projects/:slug',
+        to: '/case-studies/:slug'
+      },
+      {
         from: '/about/bachelorsthesis',
-        to: '/projects/b-sc-thesis'
+        to: '/case-studies/b-sc-thesis'
       },
       {
         from: '/software',
@@ -47,15 +53,15 @@ export default {
       },
       {
         from: '/software/locationawareapp',
-        to: '/projects/b-sc-thesis'
+        to: '/case-studies/b-sc-thesis'
       },
       {
         from: '/software/personalfinance',
-        to: '/projects/personal-finance'
+        to: '/case-studies/personal-finance'
       },
       {
         from: '/software/londontravelguide',
-        to: '/projects/london-travel-guide'
+        to: '/case-studies/london-travel-guide'
       }
     ];
 

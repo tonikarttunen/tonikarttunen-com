@@ -30,6 +30,9 @@ export default class ProjectMaster extends React.Component {
     this.renderViewAllLink = this.renderViewAllLink.bind(this);
     this.renderTitle = this.renderTitle.bind(this);
     this.renderInfoBox = this.renderInfoBox.bind(this);
+    this.renderCaseStudies = this.renderCaseStudies.bind(this);
+    this.renderProjectArchive = this.renderProjectArchive.bind(this);
+    this.renderProjectArchiveTitle = this.renderProjectArchiveTitle.bind(this);
   }
 
   componentDidMount() {
@@ -202,9 +205,11 @@ export default class ProjectMaster extends React.Component {
     );
   }
 
-  renderReadyState() {
+  renderCaseStudies() {
     return (
-      this.state.projects.map((project) => {
+      this.state.projects
+      .filter(project => { return project.featured })
+      .map(project => {
         const title = {__html: marked('## ' + project.title)};
         const intro = {__html: marked(project.intro)};
 
@@ -219,7 +224,7 @@ export default class ProjectMaster extends React.Component {
               (() => {
                 if (project.cover_image_url) {
                   return (
-                    <Col md={12}>
+                    <Col md={12} className='CoverImageContainer'>
                       <Link to={project.url}>
                         <img alt='' src={project.cover_image_url} className='CoverImage'/>
                       </Link>
@@ -240,7 +245,7 @@ export default class ProjectMaster extends React.Component {
             </Col>
             <Col md={8}>
               <Link to={project.url}><span dangerouslySetInnerHTML={title}/></Link>
-              <span className='lead' dangerouslySetInnerHTML={intro}/>
+              <span className='lead hidden-xs' dangerouslySetInnerHTML={intro}/>
               <div className='InfoBox visible-sm-block'>
                 {this.renderInfoBox(project)}
               </div>
@@ -252,6 +257,69 @@ export default class ProjectMaster extends React.Component {
     );
   }
 
+  renderProjectArchiveTitle() {
+    return (<h1>Project Archive</h1>);
+  }
+
+  renderProjectArchive() {
+    return (
+      <div className='ProjectArchive'>
+        {
+          this.state.projects
+          .filter(project => { return !project.featured })
+          .map(project => {
+            const title = {__html: marked('## ' + project.title)};
+            const intro = {__html: marked(project.intro)};
+
+            const formattedStartDate = project.date.start.season.charAt(0).toUpperCase() + project.date.start.season.slice(1) + ' ' + project.date.start.year.toString();
+            const formattedEndDate = project.date.end.season + ' ' + project.date.end.year.toString();
+            const projectDate = project.date.start.year === project.date.end.year && project.date.start.season === project.date.end.season ?
+            formattedStartDate : formattedStartDate + '–' + formattedEndDate;
+
+            return (
+              <Row key={project.url}>
+                {
+                  (() => {
+                    if (project.cover_image_url) {
+                      return (
+                        <Col sm={6} className='CoverImageContainer'>
+                          <Link to={project.url}>
+                            <img alt='' src={project.cover_image_url} className='CoverImage'/>
+                          </Link>
+                        </Col>
+                      );
+                    } else {
+                      return '';
+                    }
+                  })()
+                }
+                <Col sm={6} className='TextContainer'>
+                  <div className='Date'>{projectDate}</div>
+                  <Link to={project.url}><span dangerouslySetInnerHTML={title}/></Link>
+                  <span className='lead hidden-sm hidden-xs' dangerouslySetInnerHTML={intro}/>
+                  <p><Link to={project.url} className='MoreInformation'>Read More</Link></p>
+                </Col>
+                <Col sm={12} className='hidden-xs'>
+                  <div className='ProjectArchiveRowBottomBorder'/>
+                </Col>
+              </Row>
+            );
+          })
+        }
+      </div>
+    );
+  }
+
+  renderReadyState() {
+    return (
+      <span>
+        {this.renderCaseStudies()}
+        {this.props.isCompact !== true ? this.renderProjectArchiveTitle() : ''}
+        {this.props.isCompact !== true ? this.renderProjectArchive() : ''}
+      </span>
+    );
+  }
+
   renderViewAllLink() {
     if (this.props.isCompact !== true) {
       return null;
@@ -259,10 +327,10 @@ export default class ProjectMaster extends React.Component {
 
     return (
       <Row>
-        <Col sm={12}>
+        <Col sm={12} className='ViewAllContainer'>
           <p>
-            <Link to='/projects' className='ViewAll'>
-              View More Projects <span className='ion-chevron-right'/>
+            <Link to='/case-studies' className='ViewAll'>
+              View More Case Studies <span className='ion-chevron-right hidden-xs'/>
             </Link>
           </p>
         </Col>
@@ -272,8 +340,8 @@ export default class ProjectMaster extends React.Component {
 
   renderTitle() {
     return this.props.isCompact !== true ?
-    <h1>Projects</h1> :
-    <h1>Latest Projects</h1>;
+    <h1>Case Studies</h1> :
+    <h1>Latest Case Studies</h1>;
   }
 
   render() {

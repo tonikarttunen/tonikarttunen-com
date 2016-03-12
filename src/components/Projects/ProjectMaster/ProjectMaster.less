@@ -6,6 +6,14 @@
 
 .Project.ProjectMaster {
   .CommonMasterStyles;
+
+  &.Compact {
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-bottom: 0.575em;
+    }
+  }
 }
 
 .ProjectMasterContainer {
@@ -17,6 +25,93 @@
     (max-width: 767px),
     (max-device-width: 767px) {
     	padding-bottom: 0.5em;
+      border-bottom: 2px solid #f3f3f3;
+    }
+
+    .ViewAllContainer {
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        background-color: @linkColorPrimary;
+        margin-bottom: -9px;
+      }
+    }
+  }
+}
+
+.ProjectArchive {
+  .row {
+    @media
+    (min-width: 768px) {
+      margin-top: 2em !important;
+    }
+  }
+
+  .Date {
+    margin-bottom: 0;
+
+    @media
+    (max-width: 991px),
+    (max-device-width: 991px) {
+      margin-bottom: 0 !important;
+    }
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-bottom: 12px !important;
+    }
+
+    @media
+    (min-width: 768px) {
+      margin-top: -5px !important;
+    }
+  }
+
+  .lead p,
+  .lead,
+  p.lead {
+    font-size: 18px;
+  }
+
+  h2 {
+    margin-top: 0 !important;
+    font-size: 2em;
+
+    @media
+    (max-width: 991px),
+    (max-device-width: 991px) {
+      margin-top: 0 !important;
+      margin-bottom: 10px !important;
+    }
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  a.MoreInformation {
+    font-size: 16px;
+    border-radius: 19px;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      font-size: 18px;
+    }
+  }
+
+  .ProjectArchiveRowBottomBorder {
+    border-bottom: 2px solid #f3f3f3;
+    margin-top: -1px;
+  }
+
+  .CoverImage {
+    @media
+    (min-width: 768px) {
+      margin-bottom: 0 !important;
     }
   }
 }

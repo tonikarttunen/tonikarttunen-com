@@ -97,6 +97,15 @@
   margin-bottom: @standardMargin;
 }
 
+.no-horizontal-padding-xs {
+  @media
+  (max-width: 767px),
+  (max-device-width: 767px) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
 /* Common styles for blog, projects and homepage */
 
 .CommonStyles {
@@ -162,13 +171,35 @@
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      margin-top: -3px;
+      display: block;
+      padding: 12px 0 18px 0 !important;
+      border-radius: 0 !important;
+      border: 0px solid transparent !important;
+      border-bottom: 2px solid #f3f3f3 !important;
+      font-weight: 600;
+    }
+
+    &:after {
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        float: right;
+        content: '\f3d1';
+        font-family: 'Ionicons';
+      }
     }
   }
 
   a.MoreInformation:hover {
     color: white !important;
     background-color: @linkColorPrimary !important;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      color: @linkColorPrimary !important;
+      background-color: transparent !important;
+    }
   }
 
   h1,
@@ -222,6 +253,18 @@
 
   .CoverImage {
     margin-bottom: 26px;
+    width: 100%;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      font-size: 21px;
+      .standard-bottom-margin;
+    }
+  }
+
+  .CoverImageContainer {
+    .no-horizontal-padding-xs;
   }
 
   .UpperFullWidthSection {
@@ -247,7 +290,7 @@
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      font-size: 14px;
+      // font-size: 14px;
     }
   }
 
@@ -306,7 +349,7 @@
     }
 
     &:hover {
-      color: @midDarkTextColor; // @linkColorPrimary;
+      color: @midDarkTextColor;
     }
   }
 
@@ -318,6 +361,7 @@
     (max-device-width: 767px) {
       font-size: 18px;
       color: @midDarkTextColor;
+      margin-bottom: 0;
     }
   }
 
@@ -327,7 +371,7 @@
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      margin-top: 1.25em;
+      margin-top: 6px; // 1.125em;
     }
   }
 
@@ -344,7 +388,7 @@
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      margin-bottom: 2px;
+      margin-bottom: 12px;
       line-height: 1.444;
     }
   }
@@ -355,11 +399,36 @@
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
+      color: white !important;
       font-size: 1em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: block;
+      padding: 18px 0;
+    }
+
+    &:after {
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        float: right;
+        content: '\f3d1';
+        font-family: 'Ionicons';
+      }
     }
 
     .ion-chevron-right {
       font-size: 0.875em;
+    }
+  }
+
+  .ViewAllContainer {
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      background-color: @linkColorPrimary;
+      margin-bottom: 18px;
     }
   }
 }

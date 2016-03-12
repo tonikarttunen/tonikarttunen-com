@@ -54,7 +54,7 @@ export default class ProjectDetail extends React.Component {
   renderLoadingState() {
     return (
       <span>
-        <h1>Projects</h1>
+        <h1>Case Study</h1>
         <p className='lead'>Loading</p>
       </span>
     );
@@ -233,7 +233,7 @@ export default class ProjectDetail extends React.Component {
             (() => {
               if (this.state.project.cover_image_url) {
                 return (
-                  <Col md={12}>
+                  <Col md={12} className='CoverImageContainer'>
                     <img alt='' src={this.state.project.cover_image_url} className='CoverImage'/>
                   </Col>
                 );

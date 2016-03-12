@@ -76,7 +76,7 @@ export default class BlogMaster extends React.Component {
               (() => {
                 if (blogPost.cover_image_url) {
                   return (
-                    <Col md={12}>
+                    <Col md={12} className='CoverImageContainer'>
                       <Link to={blogPost.url}>
                         <img alt='' src={blogPost.cover_image_url} className='CoverImage'/>
                       </Link>
@@ -120,7 +120,7 @@ export default class BlogMaster extends React.Component {
             </Col>
             <Col md={8}>
               <Link to={blogPost.url}><span dangerouslySetInnerHTML={title}/></Link>
-              <span className='lead' dangerouslySetInnerHTML={intro}/>
+              <span className='lead hidden-xs' dangerouslySetInnerHTML={intro}/>
               <div className='InfoBox visible-sm-block'>
                 <h3>
                   {categoryTitle}
@@ -160,10 +160,10 @@ export default class BlogMaster extends React.Component {
 
     return (
       <Row>
-        <Col sm={12}>
+        <Col sm={12} className='ViewAllContainer'>
           <p>
             <Link to='/blog' className='ViewAll'>
-              View More Blog Posts <span className='ion-chevron-right'/>
+              View More Blog Posts <span className='ion-chevron-right hidden-xs'/>
             </Link>
           </p>
         </Col>
