@@ -28,22 +28,25 @@ export default class Cover extends React.Component {
 
     let date = '';
     switch (this.props.type) {
-      case 'project': {
-        const formattedStartDate = this.props.item.date.start.season.charAt(0).toUpperCase() + this.props.item.date.start.season.slice(1) + ' ' + this.props.item.date.start.year.toString();
-        const formattedEndDate = this.props.item.date.end.season + ' ' + this.props.item.date.end.year.toString();
-        date = this.props.item.date.start.year === this.props.item.date.end.year && this.props.item.date.start.season === this.props.item.date.end.season ?
-        formattedStartDate : formattedStartDate + '–' + formattedEndDate;
-        break;
-      }
+    case 'project': {
+      const formattedStartDate = this.props.item.date.start.season.charAt(0).toUpperCase() + this.props.item.date.start.season.slice(1) + ' ' + this.props.item.date.start.year.toString();
+      const formattedEndDate = this.props.item.date.end.season + ' ' + this.props.item.date.end.year.toString();
+      date = this.props.item.date.start.year === this.props.item.date.end.year && this.props.item.date.start.season === this.props.item.date.end.season ?
+      formattedStartDate : formattedStartDate + '–' + formattedEndDate;
+      break;
+    }
 
-      case 'blogPost': {
+    case 'blog': {
+      date =
+      this.props.item.date.last_saved_date.day + ' ' +
+      this.props.item.date.last_saved_date.month_name_abbreviation + ' ' +
+      this.props.item.date.last_saved_date.year;
+      break;
+    }
 
-        break;
-      }
-
-      default: {
-        break;
-      }
+    default: {
+      break;
+    }
     }
 
     return (
