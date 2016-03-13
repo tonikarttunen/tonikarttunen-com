@@ -53,24 +53,30 @@ export default class ProjectDetail extends React.Component {
   }
 
   renderLoadingState() {
+    const item = {
+      title: 'Case Study',
+      intro: 'Loading…',
+      cover_background_color: '#e6e6e6',
+    };
     return (
-      <span>
-        <h1>Case Study</h1>
-        <p className='lead'>Loading</p>
-      </span>
+      <Cover item={item} type={'loading'}/>
     );
   }
 
   renderErrorState() {
+    const item = {
+      punch_line: 'Error',
+      title: 'Could not load data from web server',
+      intro: 'An error occurred while fetching the case study.',
+      cover_background_color: 'rgb(51, 148, 184)',
+    };
+
     switch (this.state.error.status) {
     case 404:
       return (<Row><NotFound/></Row>);
     default:
       return (
-        <span>
-          <h1>Projects</h1>
-          <p className='lead'>An error occurred while fetching the project.</p>
-        </span>
+        <Cover item={item} type={'error'}/>
       );
     }
   }
@@ -214,20 +220,14 @@ export default class ProjectDetail extends React.Component {
   }
 
   renderReadyState() {
-    const intro = {__html: marked(this.state.project.intro)};
     const body = {__html: marked(this.state.project.body)};
     const footer = {__html: marked(this.state.project.footer)};
     const upperFullWidthSection = {__html: marked(this.state.project.upper_full_width_section)};
     const lowerFullWidthSection = {__html: marked(this.state.project.lower_full_width_section)};
 
-    const formattedStartDate = this.state.project.date.start.season.charAt(0).toUpperCase() + this.state.project.date.start.season.slice(1) + ' ' + this.state.project.date.start.year.toString();
-    const formattedEndDate = this.state.project.date.end.season + ' ' + this.state.project.date.end.year.toString();
-    const projectDate = this.state.project.date.start.year === this.state.project.date.end.year && this.state.project.date.start.season === this.state.project.date.end.season ?
-    formattedStartDate : formattedStartDate + '–' + formattedEndDate;
-
     return (
       <span>
-        <Cover item={this.state.project}/>
+        <Cover item={this.state.project} type={'project'}/>
         <div className='AfterCoverSection'>
           <Grid>
             <Row>
@@ -256,15 +256,11 @@ export default class ProjectDetail extends React.Component {
                 })()
               }
               <Col md={4}>
-                <div className='Date'>
-                  {projectDate}
-                </div>
                 <div className='InfoBox'>
                   {this.renderInfoBox(this.state.project)}
                 </div>
               </Col>
               <Col md={8}>
-                <span className='lead' dangerouslySetInnerHTML={intro}/>
                 <span dangerouslySetInnerHTML={body}/>
                 <span className='Footer' dangerouslySetInnerHTML={footer}/>
               </Col>

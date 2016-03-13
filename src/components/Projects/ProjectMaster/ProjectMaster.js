@@ -57,7 +57,7 @@ export default class ProjectMaster extends React.Component {
 
   renderLoadingState() {
     return (
-      <p className='lead'>Loading</p>
+      <p className='lead'>Loading…</p>
     );
   }
 

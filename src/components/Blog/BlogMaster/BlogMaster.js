@@ -53,7 +53,7 @@ export default class BlogMaster extends React.Component {
 
   renderLoadingState() {
     return (
-      <p className='lead'>Loading</p>
+      <p className='lead'>Loading…</p>
     );
   }
 

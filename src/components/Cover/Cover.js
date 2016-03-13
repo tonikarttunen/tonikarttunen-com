@@ -14,24 +14,57 @@ export default class Cover extends React.Component {
   render() {
     const title = {__html: marked('# ' + this.props.item.title)};
     const intro = {__html: marked(this.props.item.intro)};
+    const punch_line =
+    !!this.props.item.punch_line ?
+    {__html: marked(this.props.item.punch_line)} : {__html: null};
+
+    let style = {};
+    if (!!this.props.item.cover_background_color) {
+      style.backgroundColor = this.props.item.cover_background_color;
+    }
+    if (!!this.props.item.cover_background_image_url) {
+      style.backgroundImage = 'url(\"' + this.props.item.cover_background_image_url + '\")';
+    }
+
+    let date = '';
+    switch (this.props.type) {
+      case 'project': {
+        const formattedStartDate = this.props.item.date.start.season.charAt(0).toUpperCase() + this.props.item.date.start.season.slice(1) + ' ' + this.props.item.date.start.year.toString();
+        const formattedEndDate = this.props.item.date.end.season + ' ' + this.props.item.date.end.year.toString();
+        date = this.props.item.date.start.year === this.props.item.date.end.year && this.props.item.date.start.season === this.props.item.date.end.season ?
+        formattedStartDate : formattedStartDate + '–' + formattedEndDate;
+        break;
+      }
+
+      case 'blogPost': {
+
+        break;
+      }
+
+      default: {
+        break;
+      }
+    }
 
     return (
-      <div className='Cover'>
+      <div className='Cover' style={style}>
         <div className='CoverContents'>
           <Grid>
             <Row>
               <Col xs={12}>
-                <div className='PunchLine'>
-                  Punch line + bottom border
-                </div>
+                <div className='PunchLine' dangerouslySetInnerHTML={punch_line}/>
                 <span dangerouslySetInnerHTML={title}/>
                 <span className='lead' dangerouslySetInnerHTML={intro}/>
                 <p className='Date'>
-                  16 Jan 2016
+                  {date}
                 </p>
-                <p className='AwardsAndHounours'>
-                  Accenture Quality Award Finalist
-                </p>
+                {
+                  /*
+                  <p className='AwardsAndHounours'>
+                    Accenture Quality Award Finalist
+                  </p>
+                  */
+                }
               </Col>
             </Row>
           </Grid>

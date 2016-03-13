@@ -159,7 +159,7 @@
   }
 
   .NotFound {
-    margin-bottom: -1em;
+    margin-bottom: 0;
 
     @media
     (max-width: 767px),
@@ -273,7 +273,13 @@
 
   .UpperFullWidthSection {
     .standard-bottom-margin;
-    margin-top: -8px;
+    margin-top: 0px;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      padding-bottom: 9px;
+    }
   }
 
   .LowerFullWidthSection {
@@ -446,19 +452,40 @@
     margin-bottom: 1.5em;
   }
 
-  img,
-  video,
-  svg,
-  iframe,
-  audio {
-    animation: FadeIn @standardAnimationDuration;
+  .NotFound {
+    .row {
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
   }
 
   .CoverImage {
+    margin-bottom: 16px;
+
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      margin-bottom: 26px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .InfoBox {
+    margin-top: 40px;
+
+    @media
+    (max-width: 991px),
+    (max-device-width: 991px) {
+      margin-top: 0;
+    }
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      margin-top: -18px; // -9px;
     }
   }
 
@@ -468,7 +495,7 @@
     (max-device-width: 767px) {
       margin-bottom: 18px;
       font-size: 1.125em;
-      line-height: 1;
+      line-height: 1.444; // 1;
     }
   }
 

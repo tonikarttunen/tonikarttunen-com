@@ -3,28 +3,6 @@
 @import '../variables.less';
 @import '../less-mixins-and-utils.less';
 
-html,
-body,
-.root,
-.MainLayout,
-.BlogDetail,
-.BlogDetail > span,
-.ProjectDetail,
-.ProjectDetail > span,
-.Cover {
-  // height: 100% !important;
-  // position: relative;
-}
-
-html,
-body {
-  margin: 0;
-}
-
-body {
-  // position: relative;
-}
-
 .Cover {
   color: white;
   background-color: #585858;
@@ -36,11 +14,6 @@ body {
   width: 100%;
   padding: 134px 0 66px 0;
   margin: 0;
-  // position: absolute;
-  // top: 0;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
   overflow: hidden !important;  // Hide scrollbar in Firefox
 
   @media
@@ -52,7 +25,7 @@ body {
   @media
   (max-width: 767px),
   (max-device-width: 767px) {
-    padding: 76px 0 8px 0;
+    padding: 30px 0 12px 0;
   }
 
   @media
@@ -75,12 +48,13 @@ body {
     font-size: 18px;
     margin-bottom: 9px;
     font-weight: 500;
+    line-height: 1.2;
     letter-spacing: 0.125em;
 
     @media
     (max-width: 1199px),
     (max-device-width: 1199px) {
-      margin-bottom: 12px;
+      margin-bottom: 18px;
     }
 
     @media
@@ -93,6 +67,12 @@ body {
     (max-width: 767px),
     (max-device-width: 767px) {
       font-size: 18px;
+    }
+
+    p {
+      margin-bottom: 0;
+      line-height: 1.2;
+      font-size: 1em;
     }
   }
 
@@ -138,9 +118,4 @@ body {
   (max-device-width: 767px) {
     padding-top: 26px;
   }
-
-  // top: 100%;
-  // position: absolute;
-  // left: 0;
-  // right: 0;
 }

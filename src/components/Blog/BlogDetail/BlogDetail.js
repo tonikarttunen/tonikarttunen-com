@@ -59,7 +59,7 @@ export default class BlogDetail extends React.Component {
       <Row>
         <Col md={12}>
           <h1>Blog</h1>
-          <p className='lead'>Loading</p>
+          <p className='lead'>Loading…</p>
         </Col>
       </Row>
     );
