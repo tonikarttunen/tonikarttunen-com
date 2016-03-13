@@ -1,0 +1,146 @@
+// Cover
+
+@import '../variables.less';
+@import '../less-mixins-and-utils.less';
+
+html,
+body,
+.root,
+.MainLayout,
+.BlogDetail,
+.BlogDetail > span,
+.ProjectDetail,
+.ProjectDetail > span,
+.Cover {
+  // height: 100% !important;
+  // position: relative;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  // position: relative;
+}
+
+.Cover {
+  color: white;
+  background-color: #585858;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: 500;
+  display: table;
+  width: 100%;
+  padding: 134px 0 66px 0;
+  margin: 0;
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  overflow: hidden !important;  // Hide scrollbar in Firefox
+
+  @media
+  (max-width: 991px),
+  (max-device-width: 991px) {
+    padding: 114px 0 46px 0;
+  }
+
+  @media
+  (max-width: 767px),
+  (max-device-width: 767px) {
+    padding: 76px 0 8px 0;
+  }
+
+  @media
+  (min-width: 768px) {
+    min-height: 100vh;
+  }
+
+  h1 {
+    color: white;
+    margin: 0;
+  }
+
+  .CoverContents {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .PunchLine {
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 9px;
+    font-weight: 500;
+    letter-spacing: 0.125em;
+
+    @media
+    (max-width: 1199px),
+    (max-device-width: 1199px) {
+      margin-bottom: 12px;
+    }
+
+    @media
+    (max-width: 991px),
+    (max-device-width: 991px) {
+      margin-bottom: 18px;
+    }
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      font-size: 18px;
+    }
+  }
+
+  .lead p,
+  .lead,
+  p.lead {
+    font-size: 30px;
+    color: white !important;
+    margin-top: 12px;
+    margin-bottom: 18px;
+
+    @media
+    (max-width: 1199px),
+    (max-device-width: 1199px) {
+      font-size: 24px;
+    }
+
+    @media
+    (max-width: 991px),
+    (max-device-width: 991px) {
+      font-size: 24px;
+    }
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      font-size: 18px;
+      color: white !important;
+    }
+  }
+
+  .Date {
+    color: white !important;
+    font-weight: 500;
+  }
+}
+
+.AfterCoverSection {
+  padding-top: 4em;
+
+  @media
+  (max-width: 767px),
+  (max-device-width: 767px) {
+    padding-top: 26px;
+  }
+
+  // top: 100%;
+  // position: absolute;
+  // left: 0;
+  // right: 0;
+}
