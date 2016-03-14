@@ -58,6 +58,7 @@ header,
       float: left;
       margin-top: -1px;
       letter-spacing: 0.05em;
+      white-space: nowrap; // Prevent site name from going to 2 lines in desktop Safari
 
       @media
       (max-width: 991px),
@@ -134,7 +135,7 @@ header,
           @media
           (max-width: 991px),
           (max-device-width: 991px) {
-            margin: 16px 0 15px 15px;
+            margin: 0 0 15px 15px;
           }
 
           &.selected {
