@@ -52,7 +52,12 @@
   a:focus {
     svg * {
       fill: @linkColorPrimary;
-      transition: fill 0.25s ease-in-out; 
+      transition: fill 0.25s ease-in-out;
+
+      @media
+      (max-width: 767px) {
+        fill: @accentColorSecondary;
+      }
     }
   }
 
