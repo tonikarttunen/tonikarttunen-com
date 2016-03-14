@@ -5,7 +5,7 @@
 
 .Cover {
   color: white;
-  background-color: #585858;
+  background-color: #404040;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -76,6 +76,15 @@
         padding: 30px 0 16px 0;
       }
     }
+  }
+
+  a,
+  a:hover,
+  a:active,
+  a:focus,
+  a:visited {
+    color: white !important;
+    text-decoration: underline !important;
   }
 
   h1 {
@@ -165,6 +174,17 @@
       font-size: 18px;
       color: white !important;
       opacity: 1;
+    }
+
+    a,
+    a:hover,
+    a:active,
+    a:focus,
+    a:visited {
+      @media
+      (min-width: 768px) {
+        font-weight: 600;
+      }
     }
   }
 

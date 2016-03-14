@@ -187,7 +187,7 @@ export default class BlogMaster extends React.Component {
       punch_line: 'Thoughts on design, tech, and life',
       title: this.props.isCompact !== true ? 'Blog' : 'Latest Blog Posts',
       intro: '',
-      cover_background_color: '#e6e6e6'
+      cover_background_color: '#3d3d3d'
     };
     return (
       <Cover item={item} type={'compact'} position={position}/>

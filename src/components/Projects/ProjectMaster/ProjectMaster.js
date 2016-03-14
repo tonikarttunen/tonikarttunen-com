@@ -284,7 +284,7 @@ export default class ProjectMaster extends React.Component {
       punch_line: 'Projects from 2013 and earlier',
       title: 'Project Archive',
       intro: '',
-      cover_background_color: '#e6e6e6'
+      cover_background_color: '#3d3d3d'
     };
     return (
       <Cover item={item} type={'compact'} position={position}/>
@@ -377,7 +377,7 @@ export default class ProjectMaster extends React.Component {
       punch_line: 'UX design and software development projects',
       title: this.props.isCompact !== true ? 'Case Studies' : 'Latest Case Studies',
       intro: '',
-      cover_background_color: '#e6e6e6'
+      cover_background_color: '#3d3d3d'
     };
     return (
       <Cover item={item} type={'compact'}/>
