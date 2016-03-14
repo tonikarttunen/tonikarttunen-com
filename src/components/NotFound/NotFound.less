@@ -1,17 +1,31 @@
 // 404 Not Found error view
 
 @import '../variables.less';
+@import '../less-mixins-and-utils.less';
 
 body {
-  margin-top: 50px;
+  margin-top: 0;
+
+  @media
+  (max-width: 767px) {
+    margin-top: 50px;
+  }
 }
 
 .NotFound {
-  margin-bottom: 1em;
+  .CommonStyles;
 
-  h1 {
-    margin-bottom: 0.25em;
+  // margin-bottom: 0;
+
+  @media
+  (max-width: 767px),
+  (max-device-width: 767px) {
+    margin-bottom: 2em;
   }
+  
+  // h1 {
+  //   margin-bottom: 0.25em;
+  // }
 
   a,
   a:hover,

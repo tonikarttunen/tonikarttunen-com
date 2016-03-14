@@ -84,7 +84,6 @@ export default class Home extends React.Component {
                   <Col md={6} key={service.url} className={'Service-' + index}>
                     <Link to={service.url}><h2>{service.title}</h2></Link>
                     <p className='lead'>{service.intro}</p>
-                    <p><Link to={service.url} className='MoreInformation'>Read More</Link></p>
                   </Col>
                 );
               })}

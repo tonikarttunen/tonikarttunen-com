@@ -3,7 +3,12 @@
 @import '../less-mixins-and-utils.less';
 
 body {
-  margin-top: 50px;
+  margin-top: 0;
+
+  @media
+  (max-width: 767px) {
+  	margin-top: 50px;
+  }
 }
 
 .Project {

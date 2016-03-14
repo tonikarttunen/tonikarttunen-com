@@ -3,7 +3,7 @@
 @import '../variables.less';
 @import '../less-mixins-and-utils.less';
 
-@headerTextColor: @accentColorSecondary;
+@headerTextColor: @midDarkTextColor;
 
 // Force iOS UIWebView to repaint a fixed positioned element after orientation change
 @keyframes RepaintKeyframes {
@@ -36,20 +36,17 @@ header,
   a,
   a:active,
   a:focus,
-  a:visited {
+  a:visited,
+  a:hover {
     color: @headerTextColor !important;
     text-decoration: none;
-  }
-
-  a:hover {
-    color: @linkColorPrimary !important;
   }
 
   .NavigationBar {
     position: fixed;
     top: 0;
     background-color: white;
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid #f3f3f3;
     font-size: 1.0625em;
     line-height: 1;
     height: @navigationBarHeight;
@@ -60,6 +57,13 @@ header,
     .NavigationBarLeft {
       float: left;
       margin-top: -1px;
+      letter-spacing: 0.05em;
+
+      @media
+      (max-width: 991px),
+      (max-device-width: 991px) {
+        letter-spacing: 0.04em;
+      }
 
       .LogoContainer {
         padding: 15px 15px 15px 0;
@@ -97,24 +101,33 @@ header,
           }
         }
 
-        &:hover,
-        &:active {
-          .Logo {
-            background-position: -144px 0;
-          }
-        }
+        // &:hover,
+        // &:active {
+        //   .Logo {
+        //     background-position: -144px 0;
+        //   }
+        // }
       }
     }
 
     .NavigationBarRight {
       float: right;
+      text-transform: uppercase;
+      letter-spacing: 0.125em;
+
+      @media
+      (max-width: 991px),
+      (max-device-width: 991px) {
+        letter-spacing: 0.04em;
+      }
 
       .NavigationBarRightContainer {
         position: relative;
         vertical-align: middle;
 
         .NavigationLink {
-          margin: 16px 0 15px 24px;
+          margin: 0 0 0 24px;
+          padding: 16px 0 15px 0;
           display: inline-block;
           vertical-align: middle;
 
@@ -126,7 +139,9 @@ header,
 
           &.selected {
             color: @midDarkTextColor !important;
-            font-weight: 600;
+            // font-weight: 600;
+            padding: 12px 0 15px 0;
+            border-top: 4px solid @midDarkTextColor;
           }
 
           &.MenuToggle {
@@ -142,7 +157,7 @@ header,
             transition: color 0.25s ease-in-out; 
 
             &:hover {
-              color: @linkColorPrimary !important;
+              // color: @linkColorPrimary !important;
               cursor: pointer;
             }
 
@@ -166,6 +181,6 @@ header,
 
 .MobileHeader .NavigationBar {
   background-color: white;
-  border-bottom: 1px solid white !important;
+  border-bottom: 2px solid white !important;
   z-index: 5002;
 }

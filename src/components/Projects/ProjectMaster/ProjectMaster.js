@@ -5,6 +5,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import DocumentTitle from 'react-document-title';
 import { Link } from 'react-router';
 import styles from './ProjectMaster.less';
+import Cover from '../../../components/Cover';
 import withStyles from '../../../decorators/withStyles';
 import { APIURL } from '../../../api/APIUtilities';
 import { isIE9OrOlder } from '../../../utilities/FeatureDetection/FeatureDetection';
@@ -30,6 +31,9 @@ export default class ProjectMaster extends React.Component {
     this.renderViewAllLink = this.renderViewAllLink.bind(this);
     this.renderTitle = this.renderTitle.bind(this);
     this.renderInfoBox = this.renderInfoBox.bind(this);
+    this.renderCaseStudies = this.renderCaseStudies.bind(this);
+    this.renderProjectArchive = this.renderProjectArchive.bind(this);
+    this.renderProjectArchiveTitle = this.renderProjectArchiveTitle.bind(this);
   }
 
   componentDidMount() {
@@ -54,13 +58,25 @@ export default class ProjectMaster extends React.Component {
 
   renderLoadingState() {
     return (
-      <p className='lead'>Loading</p>
+      <Grid>
+        <Row>
+          <Col xs={12}>
+            <p className='lead'>Loading…</p>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 
   renderErrorState() {
     return (
-      <p className='lead'>An error occurred while fetching the projects.</p>
+      <Grid>
+        <Row>
+          <Col xs={12}>
+            <p className='lead'>An error occurred while fetching the case studies.</p>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 
@@ -202,53 +218,137 @@ export default class ProjectMaster extends React.Component {
     );
   }
 
+  renderCaseStudies() {
+    const className = !!this.props.isCompact ? '' : 'RecentCaseStudies';
+
+    return (
+      <div className={className}>
+        <Grid>
+          {
+            this.state.projects
+            .filter(project => { return project.featured })
+            .map(project => {
+              const title = {__html: marked('## ' + project.title)};
+              const intro = {__html: marked(project.intro)};
+
+              const formattedStartDate = project.date.start.season.charAt(0).toUpperCase() + project.date.start.season.slice(1) + ' ' + project.date.start.year.toString();
+              const formattedEndDate = project.date.end.season + ' ' + project.date.end.year.toString();
+              const projectDate = project.date.start.year === project.date.end.year && project.date.start.season === project.date.end.season ?
+              formattedStartDate : formattedStartDate + '–' + formattedEndDate;
+
+              return (
+                <Row key={project.url}>
+                  {
+                    (() => {
+                      if (project.cover_image_url) {
+                        return (
+                          <Col md={12} className='CoverImageContainer'>
+                            <Link to={project.url}>
+                              <img alt='' src={project.cover_image_url} className='CoverImage'/>
+                            </Link>
+                          </Col>
+                        );
+                      } else {
+                        return '';
+                      }
+                    })()
+                  }
+                  <Col md={4}>
+                    <div className='Date'>
+                      {projectDate}
+                    </div>
+                    <div className='InfoBox hidden-xs hidden-sm'>
+                      {this.renderInfoBox(project)}
+                    </div>
+                  </Col>
+                  <Col md={8}>
+                    <Link to={project.url}><span dangerouslySetInnerHTML={title}/></Link>
+                    <span className='lead hidden-xs' dangerouslySetInnerHTML={intro}/>
+                    <div className='InfoBox visible-sm-block'>
+                      {this.renderInfoBox(project)}
+                    </div>
+                    <p><Link to={project.url} className='MoreInformation'>Read More</Link></p>
+                  </Col>
+                </Row>
+              );
+            })
+          }
+        </Grid>
+      </div>
+    );
+  }
+
+  renderProjectArchiveTitle() {
+    const position = 'NotTopOfThePage';
+    const item = {
+      punch_line: 'Projects from 2013 and earlier',
+      title: 'Project Archive',
+      intro: '',
+      cover_background_color: '#e6e6e6'
+    };
+    return (
+      <Cover item={item} type={'compact'} position={position}/>
+    );
+  }
+
+  renderProjectArchive() {
+    return (
+      <div className='ProjectArchive'>
+        {
+          this.state.projects
+          .filter(project => { return !project.featured })
+          .map(project => {
+            const title = {__html: marked('## ' + project.title)};
+            const intro = {__html: marked(project.intro)};
+
+            const formattedStartDate = project.date.start.season.charAt(0).toUpperCase() + project.date.start.season.slice(1) + ' ' + project.date.start.year.toString();
+            const formattedEndDate = project.date.end.season + ' ' + project.date.end.year.toString();
+            const projectDate = project.date.start.year === project.date.end.year && project.date.start.season === project.date.end.season ?
+            formattedStartDate : formattedStartDate + '–' + formattedEndDate;
+
+            return (
+              <Grid key={project.url}>
+                <Row>
+                  {
+                    (() => {
+                      if (project.cover_image_url) {
+                        return (
+                          <Col sm={6} className='CoverImageContainer'>
+                            <Link to={project.url}>
+                              <img alt='' src={project.cover_image_url} className='CoverImage'/>
+                            </Link>
+                          </Col>
+                        );
+                      } else {
+                        return '';
+                      }
+                    })()
+                  }
+                  <Col sm={6} className='TextContainer'>
+                    <div className='Date'>{projectDate}</div>
+                    <Link to={project.url}><span dangerouslySetInnerHTML={title}/></Link>
+                    <span className='lead hidden-sm hidden-xs' dangerouslySetInnerHTML={intro}/>
+                    <p><Link to={project.url} className='MoreInformation'>Read More</Link></p>
+                  </Col>
+                  <Col sm={12} className='hidden-xs'>
+                    <div className='ProjectArchiveRowBottomBorder'/>
+                  </Col>
+                </Row>
+              </Grid>
+            );
+          })
+        }
+      </div>
+    );
+  }
+
   renderReadyState() {
     return (
-      this.state.projects.map((project) => {
-        const title = {__html: marked('## ' + project.title)};
-        const intro = {__html: marked(project.intro)};
-
-        const formattedStartDate = project.date.start.season.charAt(0).toUpperCase() + project.date.start.season.slice(1) + ' ' + project.date.start.year.toString();
-        const formattedEndDate = project.date.end.season + ' ' + project.date.end.year.toString();
-        const projectDate = project.date.start.year === project.date.end.year && project.date.start.season === project.date.end.season ?
-        formattedStartDate : formattedStartDate + '–' + formattedEndDate;
-
-        return (
-          <Row key={project.url}>
-            {
-              (() => {
-                if (project.cover_image_url) {
-                  return (
-                    <Col md={12}>
-                      <Link to={project.url}>
-                        <img alt='' src={project.cover_image_url} className='CoverImage'/>
-                      </Link>
-                    </Col>
-                  );
-                } else {
-                  return '';
-                }
-              })()
-            }
-            <Col md={4}>
-              <div className='Date'>
-                {projectDate}
-              </div>
-              <div className='InfoBox hidden-xs hidden-sm'>
-                {this.renderInfoBox(project)}
-              </div>
-            </Col>
-            <Col md={8}>
-              <Link to={project.url}><span dangerouslySetInnerHTML={title}/></Link>
-              <span className='lead' dangerouslySetInnerHTML={intro}/>
-              <div className='InfoBox visible-xs-block visible-sm-block'>
-                {this.renderInfoBox(project)}
-              </div>
-              <p><Link to={project.url} className='MoreInformation'>Read More</Link></p>
-            </Col>
-          </Row>
-        );
-      })
+      <span>
+        {this.renderCaseStudies()}
+        {this.props.isCompact !== true ? this.renderProjectArchiveTitle() : ''}
+        {this.props.isCompact !== true ? this.renderProjectArchive() : ''}
+      </span>
     );
   }
 
@@ -258,22 +358,30 @@ export default class ProjectMaster extends React.Component {
     }
 
     return (
-      <Row>
-        <Col sm={12}>
-          <p>
-            <Link to='/projects' className='ViewAll'>
-              View More Projects <span className='ion-chevron-right'/>
-            </Link>
-          </p>
-        </Col>
-      </Row>
+      <Grid>
+        <Row>
+          <Col sm={12} className='ViewAllContainer'>
+            <p>
+              <Link to='/case-studies' className='ViewAll'>
+                View More Case Studies <span className='ion-chevron-right hidden-xs'/>
+              </Link>
+            </p>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 
   renderTitle() {
-    return this.props.isCompact !== true ?
-    <h1>Projects</h1> :
-    <h1>Latest Projects</h1>;
+    const item = {
+      punch_line: 'UX design and software development projects',
+      title: this.props.isCompact !== true ? 'Case Studies' : 'Latest Case Studies',
+      intro: '',
+      cover_background_color: '#e6e6e6'
+    };
+    return (
+      <Cover item={item} type={'compact'}/>
+    );
   }
 
   render() {
@@ -289,19 +397,19 @@ export default class ProjectMaster extends React.Component {
 
     return this.props.isCompact === true ?
     (
-      <Grid className='Project ProjectMaster Compact'>
+      <div className='Project ProjectMaster Compact'>
         {this.renderTitle()}
         {renderState()}
         {this.renderViewAllLink()}
-      </Grid>
+      </div>
     ) :
     (
       <DocumentTitle title='Projects — Toni Karttunen'>
-        <Grid className='Project ProjectMaster' componentClass='article'>
+        <div className='Project ProjectMaster' componentClass='article'>
           {this.renderTitle()}
           {renderState()}
           {this.renderViewAllLink()}
-        </Grid>
+        </div>
       </DocumentTitle>
     );
   }

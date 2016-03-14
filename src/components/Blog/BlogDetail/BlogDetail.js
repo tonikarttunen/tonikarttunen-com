@@ -4,6 +4,7 @@ import React from 'react/addons';
 import { Grid, Row, Col } from 'react-bootstrap';
 import DocumentTitle from 'react-document-title';
 import NotFound from '../../../components/NotFound';
+import Cover from '../../../components/Cover';
 import styles from './BlogDetail.less';
 import withStyles from '../../../decorators/withStyles';
 import { APIURL } from '../../../api/APIUtilities';
@@ -55,35 +56,35 @@ export default class BlogDetail extends React.Component {
   }
 
   renderLoadingState() {
+    const item = {
+      title: 'Blog',
+      intro: 'Loading…',
+      cover_background_color: '#e6e6e6',
+    };
     return (
-      <Row>
-        <Col md={12}>
-          <h1>Blog</h1>
-          <p className='lead'>Loading</p>
-        </Col>
-      </Row>
+      <Cover item={item} type={'loading'}/>
     );
   }
 
   renderErrorState() {
+    const item = {
+      punch_line: 'Error',
+      title: 'Could Not Load Data from Web Server',
+      intro: 'An error occurred while fetching the blog post.',
+      cover_background_color: 'rgb(51, 148, 184)',
+    };
+
     switch (this.state.error.status) {
     case 404:
       return (<Row><NotFound/></Row>);
     default:
       return (
-        <Row>
-          <Col md={12}>
-            <h1>Blog</h1>
-            <p className='lead'>An error occurred while fetching the blog post.</p>
-          </Col>
-        </Row>
+        <Cover item={item} type={'error'}/>
       );
     }
   }
 
   renderReadyState() {
-    const title = {__html: marked('# ' + this.state.blogPost.title)};
-    const intro = {__html: marked(this.state.blogPost.intro)};
     const body = {__html: marked(this.state.blogPost.body)};
     const footer = {__html: marked(this.state.blogPost.footer)};
     const categoryTitle = this.state.blogPost.categories.length > 1 ? 'Categories' : 'Category';
@@ -98,80 +99,78 @@ export default class BlogDetail extends React.Component {
 
     return (
       <span>
-        <span dangerouslySetInnerHTML={title}/>
-        <Row>
-          {
-            (() => {
-              if (this.state.blogPost.cover_image_url) {
-                return (
-                  <Col md={12}>
-                    <img alt='' src={this.state.blogPost.cover_image_url} className='CoverImage'/>
-                  </Col>
-                );
-              } else {
-                return '';
-              }
-            })()
-          }
-          {
-            (() => {
-              if (this.state.blogPost.upper_full_width_section !== null && this.state.blogPost.upper_full_width_section.length > 0) {
-                return (
-                  <Col md={12} className='UpperFullWidthSection'>
-                    <span dangerouslySetInnerHTML={upperFullWidthSection}/>
-                  </Col>
-                );
-              }
-            })()
-          }
-          <Col md={4}>
-            <div className='Date'>
-              <span className='Day'>{this.state.blogPost.date.last_saved_date.day}</span>&nbsp;
-              <span className='Month'>{this.state.blogPost.date.last_saved_date.month_name_abbreviation}</span>&nbsp;
-              <span className='Year'>{this.state.blogPost.date.last_saved_date.year}</span>
-            </div>
-            <div className='InfoBox'>
-              <h3>
-                {categoryTitle}
-              </h3>
-              <p>
-                {
-                  this.state.blogPost.categories.map(category => {
-                    return <span key={category.url}>{category.title}</span>;
-                  })
-                }
-              </p>
+        <Cover item={this.state.blogPost} type={'blog'}/>
+        <div className='AfterCoverSection'>
+          <Grid>
+            <Row>
               {
-                () => {
-                  if (this.state.blogPost.website !== null && this.state.blogPost.website.length > 0) {
+                (() => {
+                  if (this.state.blogPost.cover_image_url) {
                     return (
-                      <span>
-                        <h3>Website</h3>
-                        <p><a href={this.state.blogPost.website}>{this.state.blogPost.website}</a></p>
-                      </span>
+                      <Col md={12} className='CoverImageContainer'>
+                        <img alt='' src={this.state.blogPost.cover_image_url} className='CoverImage'/>
+                      </Col>
+                    );
+                  } else {
+                    return '';
+                  }
+                })()
+              }
+              {
+                (() => {
+                  if (this.state.blogPost.upper_full_width_section !== null && this.state.blogPost.upper_full_width_section.length > 0) {
+                    return (
+                      <Col md={12} className='UpperFullWidthSection'>
+                        <span dangerouslySetInnerHTML={upperFullWidthSection}/>
+                      </Col>
                     );
                   }
-                }()
+                })()
               }
-            </div>
-          </Col>
-          <Col md={8}>
-            <span className='lead' dangerouslySetInnerHTML={intro}/>
-            <span dangerouslySetInnerHTML={body}/>
-            <span className='Footer' dangerouslySetInnerHTML={footer}/>
-          </Col>
-          {
-            (() => {
-              if (this.state.blogPost.lower_full_width_section !== null && this.state.blogPost.lower_full_width_section.length > 0) {
-                return (
-                  <Col md={12} className='LowerFullWidthSection'>
-                    <span dangerouslySetInnerHTML={lowerFullWidthSection}/>
-                  </Col>
-                );
+              <Col md={4}>
+                <div className='InfoBox'>
+                  <h3>
+                    {categoryTitle}
+                  </h3>
+                  <p>
+                    {
+                      this.state.blogPost.categories.map(category => {
+                        return <span key={category.url}>{category.title}</span>;
+                      })
+                    }
+                  </p>
+                  {
+                    () => {
+                      if (this.state.blogPost.website !== null && this.state.blogPost.website.length > 0) {
+                        return (
+                          <span>
+                            <h3>Website</h3>
+                            <p><a href={this.state.blogPost.website}>{this.state.blogPost.website}</a></p>
+                          </span>
+                        );
+                      }
+                    }()
+                  }
+                </div>
+              </Col>
+              <Col md={8}>
+                <span dangerouslySetInnerHTML={body}/>
+                <span className='Footer' dangerouslySetInnerHTML={footer}/>
+              </Col>
+              {
+                (() => {
+                  if (this.state.blogPost.lower_full_width_section !== null && this.state.blogPost.lower_full_width_section.length > 0) {
+                    return (
+                      <Col md={12} className='LowerFullWidthSection'>
+                        <span dangerouslySetInnerHTML={lowerFullWidthSection}/>
+                      </Col>
+                    );
+                  }
+                })()
               }
-            })()
-          }
-        </Row>
+            </Row>
+          </Grid>
+        </div>
       </span>
     );
   }
@@ -191,9 +190,9 @@ export default class BlogDetail extends React.Component {
 
     return (
       <DocumentTitle title={documentTitle}>
-        <Grid className='Blog BlogDetail' componentClass='article'>
+        <div className='Blog BlogDetail' componentClass='article'>
           {renderState()}
-        </Grid>
+        </div>
       </DocumentTitle>
     );
   }
