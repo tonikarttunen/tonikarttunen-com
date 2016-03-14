@@ -1,6 +1,6 @@
 {
   "name": "tonikarttunen-com",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "private": true,
   "engines": {
     "node": ">= 0.12",
