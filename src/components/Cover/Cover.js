@@ -18,6 +18,11 @@ export default class Cover extends React.Component {
     !!this.props.item.punch_line ?
     {__html: marked(this.props.item.punch_line)} : {__html: null};
 
+    let className = this.props.type === 'compact' ? 'Cover Compact' : 'Cover';
+    if (this.props.position && this.props.position === 'NotTopOfThePage') {
+      className += ' NotTopOfThePage';
+    }
+
     let style = {};
     if (!!this.props.item.cover_background_color) {
       style.backgroundColor = this.props.item.cover_background_color;
@@ -50,12 +55,13 @@ export default class Cover extends React.Component {
     }
 
     return (
-      <div className='Cover' style={style}>
+      <div className={className} style={style}>
         <div className='CoverContents'>
           <Grid>
             <Row>
               <Col xs={12}>
                 <div className='PunchLine' dangerouslySetInnerHTML={punch_line}/>
+                <div className='Divider'/>
                 <span dangerouslySetInnerHTML={title}/>
                 <span className='lead' dangerouslySetInnerHTML={intro}/>
                 <p className='Date'>

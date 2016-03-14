@@ -7,6 +7,15 @@
 .Project.ProjectMaster {
   .CommonMasterStyles;
 
+  .RecentCaseStudies {
+    margin-bottom: 3px;
+
+    @media
+    (min-width: 768px) {
+      margin-bottom: 3em;
+    }
+  }
+
   &.Compact {
     @media
     (max-width: 767px),
@@ -18,14 +27,14 @@
 
 .ProjectMasterContainer {
   &.Compact {
-    border-bottom: 1px solid @accentColorSecondary;
+    // border-bottom: 1px solid @accentColorSecondary;
     padding-bottom: 1.5em;
 
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
     	padding-bottom: 0.5em;
-      border-bottom: 2px solid #f3f3f3;
+      // border-bottom: 2px solid #f3f3f3;
     }
 
     .ViewAllContainer {
@@ -40,6 +49,11 @@
 }
 
 .ProjectArchive {
+  @media
+  (min-width: 768px) {
+    padding: 1em 0;
+  }
+
   .row {
     @media
     (min-width: 768px) {

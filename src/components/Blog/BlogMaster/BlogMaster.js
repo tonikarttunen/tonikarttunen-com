@@ -5,6 +5,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import DocumentTitle from 'react-document-title';
 import { Link } from 'react-router';
 import styles from './BlogMaster.less';
+import Cover from '../../../components/Cover';
 import withStyles from '../../../decorators/withStyles';
 import { APIURL } from '../../../api/APIUtilities';
 import { isIE9OrOlder } from '../../../utilities/FeatureDetection/FeatureDetection';
@@ -53,13 +54,21 @@ export default class BlogMaster extends React.Component {
 
   renderLoadingState() {
     return (
-      <p className='lead'>Loading…</p>
+      <Row>
+        <Col xs={12}>
+          <p className='lead'>Loading…</p>
+        </Col>
+      </Row>
     );
   }
 
   renderErrorState() {
     return (
-      <p className='lead'>An error occurred while fetching the blog posts.</p>
+      <Row>
+        <Col xs={12}>
+          <p className='lead'>An error occurred while fetching the blog posts.</p>
+        </Col>
+      </Row>
     );
   }
 
@@ -159,6 +168,7 @@ export default class BlogMaster extends React.Component {
     }
 
     return (
+
       <Row>
         <Col sm={12} className='ViewAllContainer'>
           <p>
@@ -172,9 +182,16 @@ export default class BlogMaster extends React.Component {
   }
 
   renderTitle() {
-    return this.props.isCompact !== true ?
-    <h1>Blog</h1> :
-    <h1>Latest Blog Posts</h1>;
+    const position = !!this.props.isCompact ? 'NotTopOfThePage' : '';
+    const item = {
+      punch_line: 'Thoughts on design, tech, and life',
+      title: this.props.isCompact !== true ? 'Blog' : 'Latest Blog Posts',
+      intro: '',
+      cover_background_color: '#e6e6e6'
+    };
+    return (
+      <Cover item={item} type={'compact'} position={position}/>
+    );
   }
 
   render() {
@@ -190,19 +207,23 @@ export default class BlogMaster extends React.Component {
 
     return this.props.isCompact === true ?
     (
-      <Grid className='Blog BlogMaster Compact'>
+      <div className='Blog BlogMaster Compact'>
         {this.renderTitle()}
-        {renderState()}
-        {this.renderViewAllLink()}
-      </Grid>
-    ) :
-    (
-      <DocumentTitle title='Blog — Toni Karttunen'>
-        <Grid className='Blog BlogMaster' componentClass='article'>
-          {this.renderTitle()}
+        <Grid>
           {renderState()}
           {this.renderViewAllLink()}
         </Grid>
+      </div>
+    ) :
+    (
+      <DocumentTitle title='Blog — Toni Karttunen'>
+        <div className='Blog BlogMaster' componentClass='article'>
+          {this.renderTitle()}
+          <Grid>
+            {renderState()}
+            {this.renderViewAllLink()}
+          </Grid>
+        </div>
       </DocumentTitle>
     );
   }
