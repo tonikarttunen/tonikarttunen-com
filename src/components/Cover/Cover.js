@@ -11,6 +11,19 @@ const marked = require('marked');
 
 @withStyles(styles)
 export default class Cover extends React.Component {
+  static propTypes = {
+    item: React.PropTypes.shape({
+      title: React.PropTypes.string,
+      punch_line: React.PropTypes.string,
+      intro: React.PropTypes.string,
+      date: React.PropTypes.object,
+      type: React.PropTypes.string,
+      position: React.PropTypes.string,
+      cover_background_color: React.PropTypes.string,
+      cover_background_image_url: React.PropTypes.string
+    })
+  };
+
   render() {
     const title = {__html: marked('# ' + this.props.item.title)};
     const intro = {__html: marked(this.props.item.intro)};
