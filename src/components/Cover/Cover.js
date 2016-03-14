@@ -31,8 +31,9 @@ export default class Cover extends React.Component {
     !!this.props.item.punch_line ?
     {__html: marked(this.props.item.punch_line)} : {__html: null};
 
-    let className = this.props.type === 'compact' ? 'Cover Compact' : 'Cover';
-    if (this.props.position && this.props.position === 'NotTopOfThePage') {
+    let className = this.props.type === 'compact' ? 'Cover Compact' : 'Cover FullHeight';
+    if (this.props.type === 'compact' &&
+        this.props.position && this.props.position === 'NotTopOfThePage') {
       className += ' NotTopOfThePage';
     }
 
