@@ -29,8 +29,19 @@
   }
 
   &.FullHeight {
-    min-height: 100vh;
-    height: 100vh; // Make 100% height work in Firefox
+    @media
+    (min-width: 768px) {
+      min-height: 100vh;
+      height: 100vh; // Make 100% height work in Firefox
+    }
+
+    // Take fixed navigation bar height into account
+    @media
+    (min-width: 768px) and
+    (max-width: 991px) {
+      min-height: calc(100vh - 50px);
+      height: calc(100vh - 50px); // Make 100% height work in Firefox
+    }
   }
 
   &.Compact {
