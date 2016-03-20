@@ -66,7 +66,7 @@ export default class ProjectDetail extends React.Component {
   renderErrorState() {
     const item = {
       punch_line: 'Error',
-      title: 'Could Not Load Data from Web Server',
+      title: 'Could Not Load Data From Server',
       intro: 'An error occurred while fetching the case study.',
       cover_background_color: 'rgb(51, 148, 184)',
     };

@@ -53,23 +53,21 @@ export default class BlogMaster extends React.Component {
   }
 
   renderLoadingState() {
-    return (
-      <Row>
-        <Col xs={12}>
-          <p className='lead'>Loading…</p>
-        </Col>
-      </Row>
-    );
+    const item = {
+      punch_line: '',
+      title: 'Loading…',
+      intro: ''
+    };
+    return <Cover item={item} type={'loading'} size={'Medium'}/>;
   }
 
   renderErrorState() {
-    return (
-      <Row>
-        <Col xs={12}>
-          <p className='lead'>An error occurred while fetching the blog posts.</p>
-        </Col>
-      </Row>
-    );
+    const item = {
+      punch_line: 'Error',
+      title: 'Could Not Load Data From Server',
+      intro: ''
+    };
+    return <Cover item={item} type={'loading'} size={'Medium'}/>;
   }
 
   renderReadyState() {

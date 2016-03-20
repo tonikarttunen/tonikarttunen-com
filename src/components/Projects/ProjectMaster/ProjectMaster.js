@@ -57,27 +57,21 @@ export default class ProjectMaster extends React.Component {
   }
 
   renderLoadingState() {
-    return (
-      <Grid>
-        <Row>
-          <Col xs={12}>
-            <p className='lead'>Loading…</p>
-          </Col>
-        </Row>
-      </Grid>
-    );
+    const item = {
+      punch_line: '',
+      title: 'Loading…',
+      intro: ''
+    };
+    return <Cover item={item} type={'loading'} size={'Medium'}/>;
   }
 
   renderErrorState() {
-    return (
-      <Grid>
-        <Row>
-          <Col xs={12}>
-            <p className='lead'>An error occurred while fetching the case studies.</p>
-          </Col>
-        </Row>
-      </Grid>
-    );
+    const item = {
+      punch_line: 'Error',
+      title: 'Could Not Load Data From Server',
+      intro: ''
+    };
+    return <Cover item={item} type={'loading'} size={'Medium'}/>;
   }
 
   renderInfoBox(project) {
