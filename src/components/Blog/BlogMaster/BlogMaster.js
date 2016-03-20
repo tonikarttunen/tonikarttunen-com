@@ -53,23 +53,21 @@ export default class BlogMaster extends React.Component {
   }
 
   renderLoadingState() {
-    return (
-      <Row>
-        <Col xs={12}>
-          <p className='lead'>Loading…</p>
-        </Col>
-      </Row>
-    );
+    const item = {
+      punch_line: '',
+      title: 'Loading…',
+      intro: ''
+    };
+    return <Cover item={item} type={'loading'} size={'Medium'}/>;
   }
 
   renderErrorState() {
-    return (
-      <Row>
-        <Col xs={12}>
-          <p className='lead'>An error occurred while fetching the blog posts.</p>
-        </Col>
-      </Row>
-    );
+    const item = {
+      punch_line: 'Error',
+      title: 'Could Not Load Data From Server',
+      intro: ''
+    };
+    return <Cover item={item} type={'loading'} size={'Medium'}/>;
   }
 
   renderReadyState() {
@@ -80,83 +78,9 @@ export default class BlogMaster extends React.Component {
         const categoryTitle = blogPost.categories.length > 1 ? 'Categories' : 'Category';
 
         return (
-          <Row key={blogPost.url}>
-            {
-              (() => {
-                if (blogPost.cover_image_url) {
-                  return (
-                    <Col md={12} className='CoverImageContainer'>
-                      <Link to={blogPost.url}>
-                        <img alt='' src={blogPost.cover_image_url} className='CoverImage'/>
-                      </Link>
-                    </Col>
-                  );
-                } else {
-                  return '';
-                }
-              })()
-            }
-            <Col md={4}>
-              <div className='Date'>
-                <span className='Day'>{blogPost.date.last_saved_date.day}</span>&nbsp;
-                <span className='Month'>{blogPost.date.last_saved_date.month_name_abbreviation}</span>&nbsp;
-                <span className='Year'>{blogPost.date.last_saved_date.year}</span>
-              </div>
-              <div className='InfoBox hidden-xs hidden-sm'>
-                <h3>
-                  {categoryTitle}
-                </h3>
-                <p>
-                  {
-                    blogPost.categories.map(category => {
-                      return <span key={category.url}>{category.title}</span>;
-                    })
-                  }
-                </p>
-                {
-                  () => {
-                    if (blogPost.website !== null && blogPost.website.length > 0) {
-                      return (
-                        <span>
-                          <h3>Website</h3>
-                          <p><a href={blogPost.website}>{blogPost.website}</a></p>
-                        </span>
-                      );
-                    }
-                  }()
-                }
-              </div>
-            </Col>
-            <Col md={8}>
-              <Link to={blogPost.url}><span dangerouslySetInnerHTML={title}/></Link>
-              <span className='lead hidden-xs' dangerouslySetInnerHTML={intro}/>
-              <div className='InfoBox visible-sm-block'>
-                <h3>
-                  {categoryTitle}
-                </h3>
-                <p>
-                  {
-                    blogPost.categories.map(category => {
-                      return <span key={category.url}>{category.title}</span>;
-                    })
-                  }
-                </p>
-                {
-                  () => {
-                    if (blogPost.website !== null && blogPost.website.length > 0) {
-                      return (
-                        <span>
-                          <h3>Website</h3>
-                          <p><a href={blogPost.website}>{blogPost.website}</a></p>
-                        </span>
-                      );
-                    }
-                  }()
-                }
-              </div>
-              <p><Link to={blogPost.url} className='MoreInformation'>Read More</Link></p>
-            </Col>
-          </Row>
+          <Link to={blogPost.url} key={blogPost.url}>
+            <Cover item={blogPost} type={'blog'} size={'Medium'}/>
+          </Link>
         );
       })
     );
@@ -168,16 +92,17 @@ export default class BlogMaster extends React.Component {
     }
 
     return (
-
-      <Row>
-        <Col sm={12} className='ViewAllContainer'>
-          <p>
-            <Link to='/blog' className='ViewAll'>
-              View More Blog Posts <span className='ion-chevron-right hidden-xs'/>
-            </Link>
-          </p>
-        </Col>
-      </Row>
+      <div className='ViewAllContainer'>
+        <Grid>
+          <Row>
+            <Col sm={12}>
+              <Link to='/blog' className='ViewAll'>
+                View More Case Studies <span className='ion-chevron-right hidden-xs hidden-sm'/>
+              </Link>
+            </Col>
+          </Row>
+        </Grid>
+      </div>
     );
   }
 
@@ -209,20 +134,16 @@ export default class BlogMaster extends React.Component {
     (
       <div className='Blog BlogMaster Compact'>
         {this.renderTitle()}
-        <Grid>
-          {renderState()}
-          {this.renderViewAllLink()}
-        </Grid>
+        {renderState()}
+        {this.renderViewAllLink()}
       </div>
     ) :
     (
       <DocumentTitle title='Blog — Toni Karttunen'>
         <div className='Blog BlogMaster' componentClass='article'>
           {this.renderTitle()}
-          <Grid>
-            {renderState()}
-            {this.renderViewAllLink()}
-          </Grid>
+          {renderState()}
+          {this.renderViewAllLink()}
         </div>
       </DocumentTitle>
     );

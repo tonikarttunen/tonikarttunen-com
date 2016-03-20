@@ -8,24 +8,25 @@
   background-color: #404040;
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: 100% auto; // Legacy browsers
   background-size: cover;
   font-weight: 500;
   display: table;
   width: 100%;
-  padding: 134px 0 66px 0;
+  padding: 134px 0 84px 0;
   margin: 0;
   overflow: hidden !important;  // Hide scrollbar in Firefox
 
   @media
   (max-width: 991px),
   (max-device-width: 991px) {
-    padding: 114px 0 46px 0;
+    padding: 114px 0 64px 0;
   }
 
   @media
   (max-width: 767px),
   (max-device-width: 767px) {
-    padding: 30px 0 12px 0;
+    padding: 30px 0 30px 0;
   }
 
   &.FullHeight {
@@ -34,52 +35,79 @@
       min-height: 100vh;
       height: 100vh; // Make 100% height work in Firefox
     }
-
-    // Take fixed navigation bar height into account
-    @media
-    (min-width: 768px) and
-    (max-width: 991px) {
-      min-height: calc(100vh - 50px);
-      height: calc(100vh - 50px); // Make 100% height work in Firefox
-    }
   }
 
-  &.Compact {
-    padding: 98px 0 42px 0;
-    margin-bottom: 1em;
+  &.Medium {
+    border-bottom: 1px solid #3d3d3d;
+    padding: 84px 0 84px 0;
+    min-height: 640px;
 
     @media
     (max-width: 991px),
     (max-device-width: 991px) {
-      padding: 98px 0 42px 0;
+      padding: 64px 0 64px 0;
+      min-height: 480px;
     }
 
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      margin-bottom: 18px;
-      padding: 30px 0 16px 0;
+      margin-bottom: 0;
+      padding: 30px 0 30px 0;
+      min-height: 320px;
+
+      .CoverContents {
+        vertical-align: top;
+      }
     }
+
+    .Date {
+      margin-top: 10px;
+
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        margin-top: 18px;
+      }
+    }
+
+    .row {
+      margin-top: 0 !important;
+    }
+  }
+
+  &.Compact {
+    border-bottom: 1px solid #3d3d3d;
+
+    // h1 {
+    //   text-transform: uppercase;
+    //   letter-spacing: 0.125em;
+    //   font-weight: 300;
+
+    //   @media
+    //   (max-width: 767px),
+    //   (max-device-width: 767px) {
+    //     font-weight: 400;
+    //   }
+    // }
 
     .row {
       margin-top: 0 !important;
     }
 
     &.NotTopOfThePage {
-      padding: 48px 0 42px 0;
-      margin-bottom: 1em;
+      padding: 84px 0 84px 0;
 
       @media
       (max-width: 991px),
       (max-device-width: 991px) {
-        padding: 48px 0 42px 0;
+        padding: 64px 0 64px 0;
       }
 
       @media
       (max-width: 767px),
       (max-device-width: 767px) {
-        margin-bottom: 18px;
-        padding: 30px 0 16px 0;
+        padding: 30px 0 30px 0;
       }
     }
   }
@@ -155,6 +183,19 @@
 
   .lead p,
   .lead,
+  p.lead,
+  .Date,
+  .AwardsAndHonours {
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      font-weight: 400 !important;
+      opacity: 1 !important;
+    }
+  }
+
+  .lead p,
+  .lead,
   p.lead {
     font-size: 30px;
     color: white !important;
@@ -179,7 +220,7 @@
     (max-device-width: 767px) {
       font-size: 18px;
       color: white !important;
-      opacity: 1;
+      opacity: 1 !important;
     }
 
     a,
@@ -194,16 +235,89 @@
     }
   }
 
+  .AwardsAndHonours,
   .Date {
-    color: white !important;
-    font-weight: 500;
     opacity: 0.525;
 
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      font-size: 18px;
       opacity: 0.95;
+    }
+  }
+
+  .AwardsAndHonours {
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .Date {
+    color: white !important;
+    font-weight: 500;
+    margin-bottom: 0 !important;
+
+    @media
+    (max-width: 767px),
+    (max-device-width: 767px) {
+      font-size: 18px;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  &.NoBackgroundImage {
+    background-color: transparent;
+    border-bottom: 2px solid #f3f3f3 !important;
+
+    &.Medium {
+      min-height: auto;
+      height: auto;
+
+      .AwardsAndHonours {
+        p {
+          margin-bottom: -10px;
+
+          @media
+          (max-width: 767px),
+          (max-device-width: 767px) {
+            margin-bottom: -18px;
+            margin-top: 18px;
+          }
+        }
+      }
+    }
+
+    h1,
+    .PunchLine {
+      color: #3d3d3d;
+    }
+
+    .PunchLine {
+      opacity: 1;
+    }
+
+    .Divider {
+      background-color: #3d3d3d;
+    }
+
+    .lead p,
+    .lead,
+    p.lead,
+    .Date,
+    .AwardsAndHonours {
+      color: @lightTextColor !important;
+    }
+
+    .lead p,
+    .lead,
+    p.lead {
+      opacity: 1 !important;
+
+      @media
+      (max-width: 767px),
+      (max-device-width: 767px) {
+        color: @midDarkTextColor !important;
+      }
     }
   }
 }
