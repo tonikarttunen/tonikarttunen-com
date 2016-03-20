@@ -59,19 +59,19 @@ export default class BlogDetail extends React.Component {
     const item = {
       title: 'Blog',
       intro: 'Loading…',
-      cover_background_color: '#e6e6e6',
+      cover_background_color: '#e6e6e6'
     };
     return (
-      <Cover item={item} type={'loading'}/>
+      <Cover item={item} type={'loading'} size={'FullHeight'}/>
     );
   }
 
   renderErrorState() {
     const item = {
       punch_line: 'Error',
-      title: 'Could Not Load Data from Web Server',
+      title: 'Could Not Load Data From Server',
       intro: 'An error occurred while fetching the blog post.',
-      cover_background_color: 'rgb(51, 148, 184)',
+      cover_background_color: 'rgb(51, 148, 184)'
     };
 
     switch (this.state.error.status) {
@@ -79,7 +79,7 @@ export default class BlogDetail extends React.Component {
       return (<Row><NotFound/></Row>);
     default:
       return (
-        <Cover item={item} type={'error'}/>
+        <Cover item={item} type={'error'} size={'FullHeight'}/>
       );
     }
   }
@@ -99,7 +99,7 @@ export default class BlogDetail extends React.Component {
 
     return (
       <span>
-        <Cover item={this.state.blogPost} type={'blog'}/>
+        <Cover item={this.state.blogPost} type={'blog'} size={'FullHeight'}/>
         <div className='AfterCoverSection'>
           <Grid>
             <Row>
