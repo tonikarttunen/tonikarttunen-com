@@ -305,7 +305,8 @@ export default class ProjectMaster extends React.Component {
           <Row>
             <Col sm={12}>
               <Link to='/case-studies' className='ViewAll'>
-                View More Case Studies <span className='ion-chevron-right hidden-xs hidden-sm'/>
+                <span className='hidden-xs'>View </span>More Case Studies&nbsp;
+                <span className='ion-chevron-right hidden-xs hidden-sm'/>
               </Link>
             </Col>
           </Row>

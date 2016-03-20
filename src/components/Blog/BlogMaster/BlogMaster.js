@@ -97,7 +97,8 @@ export default class BlogMaster extends React.Component {
           <Row>
             <Col sm={12}>
               <Link to='/blog' className='ViewAll'>
-                View More Case Studies <span className='ion-chevron-right hidden-xs hidden-sm'/>
+                <span className='hidden-xs'>View </span>More Blog Posts&nbsp;
+                <span className='ion-chevron-right hidden-xs hidden-sm'/>
               </Link>
             </Col>
           </Row>
