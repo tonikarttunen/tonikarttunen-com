@@ -46,6 +46,7 @@ export default class Cover extends React.Component {
     }
     if (!!this.props.item.cover_background_image_url) {
       style.backgroundImage = 'url(\"' + this.props.item.cover_background_image_url + '\")';
+      className += ' BackgroundImage';
     } else {
       className += ' NoBackgroundImage';
     }
@@ -109,12 +110,12 @@ export default class Cover extends React.Component {
                     } else if (this.props.size && this.props.size === 'Medium') {
                       if (this.props.item.cover_background_image_url) {
                         return (
-                          <span>
+                          <div className='DescriptionWrapper'>
                             {awards}
                             <p className='Date'>
                               {date}
                             </p>
-                          </span>
+                          </div>
                         );
                       }
                     }
