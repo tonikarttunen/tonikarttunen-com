@@ -7,44 +7,20 @@
 .Project.ProjectMaster {
   .CommonMasterStyles;
 
-  .RecentCaseStudies {
-    margin-bottom: 3px;
-
-    @media
-    (min-width: 768px) {
-      margin-bottom: 3em;
-    }
-  }
-
   &.Compact {
+    margin-bottom: 0;
+
     @media
     (max-width: 767px),
     (max-device-width: 767px) {
-      margin-bottom: 0.575em;
+      margin-bottom: 0;
     }
   }
 }
 
 .ProjectMasterContainer {
   &.Compact {
-    // border-bottom: 1px solid @accentColorSecondary;
-    padding-bottom: 1.5em;
-
-    @media
-    (max-width: 767px),
-    (max-device-width: 767px) {
-    	padding-bottom: 0.5em;
-      // border-bottom: 2px solid #f3f3f3;
-    }
-
-    .ViewAllContainer {
-      @media
-      (max-width: 767px),
-      (max-device-width: 767px) {
-        background-color: @linkColorPrimary;
-        margin-bottom: -9px;
-      }
-    }
+    padding-bottom: 0;
   }
 }
 

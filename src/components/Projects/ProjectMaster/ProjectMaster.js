@@ -306,17 +306,17 @@ export default class ProjectMaster extends React.Component {
     }
 
     return (
-      <Grid>
-        <Row>
-          <Col sm={12} className='ViewAllContainer'>
-            <p>
+      <div className='ViewAllContainer'>
+        <Grid>
+          <Row>
+            <Col sm={12}>
               <Link to='/case-studies' className='ViewAll'>
-                View More Case Studies <span className='ion-chevron-right hidden-xs'/>
+                View More Case Studies <span className='ion-chevron-right hidden-xs hidden-sm'/>
               </Link>
-            </p>
-          </Col>
-        </Row>
-      </Grid>
+            </Col>
+          </Row>
+        </Grid>
+      </div>
     );
   }
 

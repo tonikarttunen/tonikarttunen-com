@@ -41,11 +41,13 @@ export default class Cover extends React.Component {
     }
 
     let style = {};
-    if (!!this.props.item.cover_background_color) {
+    if (!!this.props.item.cover_background_color && !!this.props.item.cover_background_image_url) {
       style.backgroundColor = this.props.item.cover_background_color;
     }
     if (!!this.props.item.cover_background_image_url) {
       style.backgroundImage = 'url(\"' + this.props.item.cover_background_image_url + '\")';
+    } else {
+      className += ' NoBackgroundImage';
     }
 
     let awards = null;
@@ -91,7 +93,10 @@ export default class Cover extends React.Component {
                 <span dangerouslySetInnerHTML={title}/>
                 {
                   () => {
-                    if (this.props.size && this.props.size === 'FullHeight') {
+                    if (this.props.size && this.props.size === 'FullHeight' ||
+                        (this.props.size && this.props.size === 'Medium' &&
+                         !this.props.item.cover_background_image_url)
+                        ) {
                       return (
                         <span>
                           <span className='lead' dangerouslySetInnerHTML={intro}/>
@@ -102,7 +107,16 @@ export default class Cover extends React.Component {
                         </span>
                       )
                     } else if (this.props.size && this.props.size === 'Medium') {
-                      return <span>{awards}</span>;
+                      if (this.props.item.cover_background_image_url) {
+                        return (
+                          <span>
+                            {awards}
+                            <p className='Date'>
+                              {date}
+                            </p>
+                          </span>
+                        );
+                      }
                     }
                   }()
                 }
