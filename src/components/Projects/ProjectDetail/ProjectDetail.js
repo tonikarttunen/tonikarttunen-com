@@ -59,7 +59,7 @@ export default class ProjectDetail extends React.Component {
       cover_background_color: '#e6e6e6',
     };
     return (
-      <Cover item={item} type={'loading'}/>
+      <Cover item={item} type={'loading'} size={'FullHeight'}/>
     );
   }
 
@@ -76,7 +76,7 @@ export default class ProjectDetail extends React.Component {
       return (<Row><NotFound/></Row>);
     default:
       return (
-        <Cover item={item} type={'error'}/>
+        <Cover item={item} type={'error'} size={'FullHeight'}/>
       );
     }
   }
@@ -86,18 +86,6 @@ export default class ProjectDetail extends React.Component {
 
     return (
       <span>
-        {
-          () => {
-            if (project.awards_and_honours.length > 0) {
-              return (
-                <span>
-                  <h3>Awards & Honours</h3>
-                  <span dangerouslySetInnerHTML={{__html: marked(project.awards_and_honours)}}/>
-                </span>
-              );
-            }
-          }()
-        }
         {
           () => {
             if (project.categories.length > 0) {
@@ -227,7 +215,7 @@ export default class ProjectDetail extends React.Component {
 
     return (
       <span>
-        <Cover item={this.state.project} type={'project'}/>
+        <Cover item={this.state.project} type={'project'} size={'FullHeight'}/>
         <div className='AfterCoverSection'>
           <Grid>
             <Row>

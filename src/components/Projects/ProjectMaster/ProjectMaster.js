@@ -87,18 +87,6 @@ export default class ProjectMaster extends React.Component {
       <span>
         {
           () => {
-            if (project.awards_and_honours.length > 0) {
-              return (
-                <span>
-                  <h3>Awards & Honours</h3>
-                  <span dangerouslySetInnerHTML={{__html: marked(project.awards_and_honours)}}/>
-                </span>
-              );
-            }
-          }()
-        }
-        {
-          () => {
             if (project.categories.length > 0) {
               return (
                 <span>
@@ -223,57 +211,17 @@ export default class ProjectMaster extends React.Component {
 
     return (
       <div className={className}>
-        <Grid>
           {
             this.state.projects
             .filter(project => { return project.featured })
             .map(project => {
-              const title = {__html: marked('## ' + project.title)};
-              const intro = {__html: marked(project.intro)};
-
-              const formattedStartDate = project.date.start.season.charAt(0).toUpperCase() + project.date.start.season.slice(1) + ' ' + project.date.start.year.toString();
-              const formattedEndDate = project.date.end.season + ' ' + project.date.end.year.toString();
-              const projectDate = project.date.start.year === project.date.end.year && project.date.start.season === project.date.end.season ?
-              formattedStartDate : formattedStartDate + '–' + formattedEndDate;
-
               return (
-                <Row key={project.url}>
-                  {
-                    (() => {
-                      if (project.cover_image_url) {
-                        return (
-                          <Col md={12} className='CoverImageContainer'>
-                            <Link to={project.url}>
-                              <img alt='' src={project.cover_image_url} className='CoverImage'/>
-                            </Link>
-                          </Col>
-                        );
-                      } else {
-                        return '';
-                      }
-                    })()
-                  }
-                  <Col md={4}>
-                    <div className='Date'>
-                      {projectDate}
-                    </div>
-                    <div className='InfoBox hidden-xs hidden-sm'>
-                      {this.renderInfoBox(project)}
-                    </div>
-                  </Col>
-                  <Col md={8}>
-                    <Link to={project.url}><span dangerouslySetInnerHTML={title}/></Link>
-                    <span className='lead hidden-xs' dangerouslySetInnerHTML={intro}/>
-                    <div className='InfoBox visible-sm-block'>
-                      {this.renderInfoBox(project)}
-                    </div>
-                    <p><Link to={project.url} className='MoreInformation'>Read More</Link></p>
-                  </Col>
-                </Row>
+                <Link to={project.url} key={project.url}>
+                  <Cover item={project} type={'project'} size={'Medium'}/>
+                </Link>
               );
             })
           }
-        </Grid>
       </div>
     );
   }

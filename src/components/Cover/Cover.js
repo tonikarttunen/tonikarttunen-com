@@ -18,6 +18,7 @@ export default class Cover extends React.Component {
       intro: React.PropTypes.string,
       date: React.PropTypes.object,
       type: React.PropTypes.string,
+      size: React.PropTypes.string,
       position: React.PropTypes.string,
       cover_background_color: React.PropTypes.string,
       cover_background_image_url: React.PropTypes.string
@@ -31,10 +32,12 @@ export default class Cover extends React.Component {
     !!this.props.item.punch_line ?
     {__html: marked(this.props.item.punch_line)} : {__html: null};
 
-    let className = this.props.type === 'compact' ? 'Cover Compact' : 'Cover FullHeight';
-    if (this.props.type === 'compact' &&
-        this.props.position && this.props.position === 'NotTopOfThePage') {
+    let className = this.props.type === 'compact' ? 'Cover Compact' : 'Cover';
+    if (this.props.position && this.props.position === 'NotTopOfThePage') {
       className += ' NotTopOfThePage';
+    }
+    if (!!this.props.size) {
+      className += ' ' + this.props.size;
     }
 
     let style = {};
@@ -45,7 +48,16 @@ export default class Cover extends React.Component {
       style.backgroundImage = 'url(\"' + this.props.item.cover_background_image_url + '\")';
     }
 
-    let date = '';
+    let awards = null;
+    if (this.props.item.awards_and_honours && this.props.item.awards_and_honours.length > 0) {
+      awards = (
+        <div className='AwardsAndHonours'>
+          <span dangerouslySetInnerHTML={{__html: marked(this.props.item.awards_and_honours)}}/>
+        </div>
+      );
+    }
+
+    let date = null;
     switch (this.props.type) {
     case 'project': {
       const formattedStartDate = this.props.item.date.start.season.charAt(0).toUpperCase() + this.props.item.date.start.season.slice(1) + ' ' + this.props.item.date.start.year.toString();
@@ -77,16 +89,22 @@ export default class Cover extends React.Component {
                 <div className='PunchLine' dangerouslySetInnerHTML={punch_line}/>
                 <div className='Divider'/>
                 <span dangerouslySetInnerHTML={title}/>
-                <span className='lead' dangerouslySetInnerHTML={intro}/>
-                <p className='Date'>
-                  {date}
-                </p>
                 {
-                  /*
-                  <p className='AwardsAndHounours'>
-                    Accenture Quality Award Finalist
-                  </p>
-                  */
+                  () => {
+                    if (this.props.size && this.props.size === 'FullHeight') {
+                      return (
+                        <span>
+                          <span className='lead' dangerouslySetInnerHTML={intro}/>
+                          {awards}
+                          <p className='Date'>
+                            {date}
+                          </p>
+                        </span>
+                      )
+                    } else if (this.props.size && this.props.size === 'Medium') {
+                      return <span>{awards}</span>;
+                    }
+                  }()
                 }
               </Col>
             </Row>

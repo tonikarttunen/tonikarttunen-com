@@ -62,7 +62,7 @@ export default class BlogDetail extends React.Component {
       cover_background_color: '#e6e6e6',
     };
     return (
-      <Cover item={item} type={'loading'}/>
+      <Cover item={item} type={'loading'} size={'FullHeight'}/>
     );
   }
 
@@ -79,7 +79,7 @@ export default class BlogDetail extends React.Component {
       return (<Row><NotFound/></Row>);
     default:
       return (
-        <Cover item={item} type={'error'}/>
+        <Cover item={item} type={'error'} size={'FullHeight'}/>
       );
     }
   }
@@ -99,7 +99,7 @@ export default class BlogDetail extends React.Component {
 
     return (
       <span>
-        <Cover item={this.state.blogPost} type={'blog'}/>
+        <Cover item={this.state.blogPost} type={'blog'} size={'FullHeight'}/>
         <div className='AfterCoverSection'>
           <Grid>
             <Row>
