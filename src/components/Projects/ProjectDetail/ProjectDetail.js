@@ -54,8 +54,9 @@ export default class ProjectDetail extends React.Component {
 
   renderLoadingState() {
     const item = {
-      title: 'Case Study',
-      intro: 'Loading…',
+      punch_line: 'Case Study',
+      title: 'Loading…',
+      intro: '',
       cover_background_color: '#e6e6e6',
     };
     return (

@@ -39,6 +39,9 @@ export default class Cover extends React.Component {
     if (!!this.props.size) {
       className += ' ' + this.props.size;
     }
+    if (!!this.props.type && this.props.type === 'loading') {
+      className += ' Loading';
+    }
 
     let style = {};
     if (!!this.props.item.cover_background_color && !!this.props.item.cover_background_image_url) {
@@ -124,7 +127,6 @@ export default class Cover extends React.Component {
               </Col>
             </Row>
           </Grid>
-        {/* Down Arrow */}
         </div>
       </div>
     );

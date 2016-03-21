@@ -57,8 +57,9 @@ export default class BlogDetail extends React.Component {
 
   renderLoadingState() {
     const item = {
-      title: 'Blog',
-      intro: 'Loading…',
+      punch_line: 'Blog',
+      title: 'Loading…',
+      intro: '',
       cover_background_color: '#e6e6e6'
     };
     return (
