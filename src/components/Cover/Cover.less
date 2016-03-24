@@ -44,6 +44,21 @@
     padding: 30px 0 30px 0;
   }
 
+  // Make text readable in Safari
+  @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+    &.BackgroundImage {
+      .PunchLine,
+      .lead p,
+      .lead,
+      p.lead,
+      .Date,
+      .AwardsAndHonours {
+        -webkit-font-smoothing: antialiased;
+        font-weight: 500;
+      }
+    }
+  }
+
   &.FullHeight,
   &.Medium {
     * { animation: none; }
