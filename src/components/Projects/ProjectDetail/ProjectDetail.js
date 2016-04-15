@@ -279,7 +279,7 @@ export default class ProjectDetail extends React.Component {
       renderState = this.renderErrorState;
     } else if (this.state.project !== null) {
       renderState = this.renderReadyState;
-      documentTitle = this.state.project.title.replace(/\_|\*/g, '') + ' — Projects — Toni Karttunen';
+      documentTitle = this.state.project.title.replace(/\_|\*/g, '') + ' — Case Studies — Toni Karttunen';
     } else {
       renderState = this.renderLoadingState;
     }

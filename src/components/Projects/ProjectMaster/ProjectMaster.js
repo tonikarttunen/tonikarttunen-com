@@ -347,7 +347,7 @@ export default class ProjectMaster extends React.Component {
       </div>
     ) :
     (
-      <DocumentTitle title='Projects — Toni Karttunen'>
+      <DocumentTitle title='Case Studies — Toni Karttunen'>
         <div className='Project ProjectMaster' componentClass='article'>
           {this.renderTitle()}
           {renderState()}
