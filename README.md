@@ -17,8 +17,6 @@ More detailed task list can be found on a (private)
 - [ ] Support filtering of blog posts  and projects based on category etc.
 - [ ] Support custom CSS and JS in blog posts and project pages to enable inline tech demos
 - [ ] Use Flux in the blog and project pages
-- [ ] Refactor software development and UX design sections;
-      they can be combined into one React component because they have nearly identical layout.
 - [ ] Add some Jest tests
 - [ ] Update dependencies
 
