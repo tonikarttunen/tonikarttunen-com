@@ -1,5 +1,6 @@
 // RouteAPI
 
+import Home from '../components/Home/Home';
 import BlogMaster from '../components/Blog/BlogMaster';
 import BlogDetail from '../components/Blog/BlogDetail';
 import ProjectMaster from '../components/Projects/ProjectMaster';
@@ -8,6 +9,10 @@ import ProjectDetail from '../components/Projects/ProjectDetail';
 export default {
   getRoutes: () => {
     const routes = [
+      {
+        path: 'portfolio',
+        component: Home
+      },
       {
         path: 'blog',
         component: BlogMaster

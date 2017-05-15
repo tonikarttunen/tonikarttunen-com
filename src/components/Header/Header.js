@@ -41,7 +41,7 @@ export default class Header extends React.Component {
         <nav className='NavigationBar' role='navigation'>
           <Grid>
             <div className='NavigationBarLeft'>
-              <Link to='/' className='LogoContainer' onClick={() => { this.closeMenu(); }}>
+              <Link to='/portfolio' className='LogoContainer' onClick={() => { this.closeMenu(); }}>
                 <span className='Logo'/>Toni Karttunen
               </Link>
             </div>
