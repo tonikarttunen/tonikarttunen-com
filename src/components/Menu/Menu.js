@@ -42,7 +42,6 @@ export default class Menu extends React.Component {
 
   render() {
     const categories = this.props.menuItems.categories;
-    // const projects = this.props.menuItems.projects;
 
     let displayStyle = (this.props.viewport.width <= 991 && this.props.isOpen === true) ?
     {display: 'block'} :
@@ -54,7 +53,7 @@ export default class Menu extends React.Component {
           <nav className='NavigationBar' role='navigation'>
             <Grid>
               <div className='NavigationBarLeft'>
-                <Link to='/' className='LogoContainer' onClick={() => { this.closeMenu(); }}>
+                <Link to='/portfolio' className='LogoContainer' onClick={() => { this.closeMenu(); }}>
                   <span className='Logo'/>Toni Karttunen
                 </Link>
               </div>

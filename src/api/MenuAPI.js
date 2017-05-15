@@ -8,7 +8,7 @@ export default {
       categories: [
         {
           title: 'Home',
-          url: '/'
+          url: '/portfolio'
         },
         {
           title: 'Case Studies',

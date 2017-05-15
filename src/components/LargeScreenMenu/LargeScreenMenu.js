@@ -23,9 +23,9 @@ export default class LargeScreenMenu {
           let selectedClassName = '';
           let pathname = window.location.pathname;
 
-          if (pathname === '/' && item.url === '/') {  // Special case: homepage
+          if (pathname === '/portfolio' && item.url === '/portfolio') {  // Special case: homepage
             selectedClassName = ' selected';
-          } else if (pathname.includes(item.url) && item.url !== '/') {
+          } else if (pathname.includes(item.url) && item.url !== '/portfolio') {
             selectedClassName = ' selected';
           }
 
